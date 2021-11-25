@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-                <div><a href="/admin/creazione-menu">menu</a> </div>
+                <div><a href="{{route('admin.show')}}">menu</a> </div>
                 <div><a href="/admin/ordini">ordini</a></div>
                 <div><a href="/admin/statistiche">statistiche</a></div>
             </div>

@@ -22,8 +22,13 @@ Auth::routes();
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
 ->group(function(){
     
-    Route::get('/', 'HomeController@index')->name('index');
-    Route::get('/creazione-menu', 'HomeController@menu')->name('menu');
+    // Route::get('/', 'HomeController@index')->name('index');
+    // Route::get('/creazione-menu', 'HomeController@menu')->name('menu');
     Route::get('/ordini', 'HomeController@ordini')->name('ordini');
     Route::get('/statistiche', 'HomeController@statistiche')->name('statistiche');
+    Route::get('/', 'DishController@index')->name('dashboard');
+    Route::resource('/', 'DishController');
+    Route::get('/show', 'DishController@show')->name('show');
+    Route::get('/create', 'DishController@create')->name('create');
+    Route::get('/edit', 'DishController@edit')->name('edit');
 });
