@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('guest.welcome');
     }
+
+    public function home(){
+        return view('api.home');
+    }
 }
