@@ -1,0 +1,41 @@
+<?php
+
+return [
+    [
+        "cuisine"=>"italiano"
+    ],
+    [
+        "cuisine"=>"cinese"
+    ],
+    [
+        "cuisine"=>"giapponese"
+    ],
+    [
+        "cuisine"=>"pizza"
+    ],
+    [
+        "cuisine"=>"kebab"
+    ],
+    [
+        "cuisine"=>"hamburger"
+    ],
+    [
+        "cuisine"=>"poke"
+    ],
+    [
+        "cuisine"=>"sudamericano"
+    ],
+    [
+        "cuisine"=>"peruviano"
+    ],
+    [
+        "cuisine"=>"panini"
+    ],
+    [
+        "cuisine"=>"indiano"
+    ],
+    [
+        "cuisine"=>"gourmet"
+    ],
+];
+
