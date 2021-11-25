@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+ 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,9 +17,10 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-                <div><a href="/admin/creazione-menu">menu</a> </div>
+                
+                <div><a href="{{route('admin.menu', ['id' => $user['id']])}}">menu</a> </div>
                 <div><a href="/admin/ordini">ordini</a></div>
-                <div><a href="/admin/statistiche">statistiche prova</a></div>
+                <div><a href="/admin/statistiche">statistiche</a></div>
             </div>
         </div>
     </div>

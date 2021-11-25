@@ -23,7 +23,7 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
 ->group(function(){
     
     Route::get('/', 'HomeController@index')->name('index');
-    Route::get('/creazione-menu', 'HomeController@menu')->name('menu');
+    Route::get('/creazione-menu/{id}', 'HomeController@menu')->name('menu');
     Route::get('/ordini', 'HomeController@ordini')->name('ordini');
     Route::get('/statistiche', 'HomeController@statistiche')->name('statistiche');
 });

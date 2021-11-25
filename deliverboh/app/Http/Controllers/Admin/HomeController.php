@@ -3,17 +3,26 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Dish;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $user = Auth::user();
+        // $id = Auth::id();
+
+
+        return view('admin.dashboard',compact('user'));
     }
-    public function menu()
+    public function menu($id)
     {
-        return view('admin.menu');
+        $menu=Dish::where('user_id', $id)->get();
+        
+        
+        return view('admin.menu', compact('menu'));
     }
     public function ordini()
     {
