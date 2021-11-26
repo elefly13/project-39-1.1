@@ -21,6 +21,7 @@ Auth::routes();
  
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
 ->group(function(){
+    
     // Route::get('/', 'HomeController@index')->name('index');
     // Route::get('/creazione-menu', 'HomeController@menu')->name('menu');
     Route::get('/ordini', 'HomeController@ordini')->name('ordini');
