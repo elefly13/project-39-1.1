@@ -71,11 +71,10 @@ class DishController extends Controller
      * @param  Dish $dish
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dish $dish)
+    public function edit($id)
     {   
-        // $dish = Dish::findOrFail($id);
-        dd($dish);
-        return view('admin.edit');
+        $dish = Dish::findOrFail($id);
+        return view('admin.edit', compact('dish'));
     }
 
     /**
@@ -87,7 +86,11 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dish = Dish::findOrFail($id);
+        $data = $request->all();
+        $dish->update($data);
+        return redirect()->route('admin.index');
+
     }
 
     /**
@@ -98,6 +101,10 @@ class DishController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dish = Dish::findOrFail($id);
+        // dd($dish);
+        $dish->delete();
+        return redirect()->route('admin.index');
+
     }
 }

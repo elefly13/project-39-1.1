@@ -30,5 +30,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     Route::resource('/', 'DishController');
     Route::get('/show', 'DishController@show')->name('show');
     Route::get('/create', 'DishController@create')->name('create');
-    Route::get('/edit', 'DishController@edit')->name('edit');
+    Route::get('/{id}/edit', 'DishController@edit')->name('edit');
+    Route::put('/{id}', 'DishController@update')->name('update');
+    Route::delete('/{id}', 'DishController@destroy')->name('destroy');
+    
 });
