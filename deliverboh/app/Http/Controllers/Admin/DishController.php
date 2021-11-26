@@ -48,7 +48,7 @@ class DishController extends Controller
         $new_dish->user_id = $user->id;
         $new_dish->save();
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.show');
     }
 
     /**
@@ -89,7 +89,7 @@ class DishController extends Controller
         $dish = Dish::findOrFail($id);
         $data = $request->all();
         $dish->update($data);
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.show');
 
     }
 
@@ -104,7 +104,7 @@ class DishController extends Controller
         $dish = Dish::findOrFail($id);
         // dd($dish);
         $dish->delete();
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.show');
 
     }
 }
