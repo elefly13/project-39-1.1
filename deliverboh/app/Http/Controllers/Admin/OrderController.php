@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function index()
     {
         $order = Order::all();
-        $data = [$order];
+        $data = $order;
         return view('admin.orders.index', compact('data'));
     }
 

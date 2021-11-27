@@ -1,35 +1,34 @@
 <div>
     @foreach ($data as $order)
-        @foreach ($order as $item)
         <div>
-            {{$item['delivery_address']}} 
+            {{$order['delivery_address']}} 
         </div>
         <div>
-            {{$item['total']}}
+            {{$order['total']}}
         </div>
         <div>
-            {{$item['note']}}
+            {{$order['note']}}
         </div>
         <div>
-            {{$item['name_user']}}
+            {{$order['name_user']}}
         </div>
         <div>
-            {{$item['lastname_user']}}
+            {{$order['lastname_user']}}
         </div>
 
-        <a href="{{route('admin.orders.show', $item->id)}}">dettaglio</a>
-        <a href="{{route('admin.orders.edit', $item->id)}}">modifica ordine</a>
-        <form action="{{route('admin.orders.destroy', $item->id)}}" method="POST">
+        <a href="{{route('admin.orders.show', $order->id)}}">dettaglio</a>
+        <a href="{{route('admin.orders.edit', $order->id)}}">modifica ordine</a>
+        <form action="{{route('admin.orders.destroy', $order->id)}}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Delete</button>
         </form> 
-            
-        @endforeach   
-        <br>
-        <a href="{{route('admin.orders.create')}}">aggiungi un nuovo ordine</a>
+             
+        
         
     @endforeach
+    <br>
+        <a href="{{route('admin.orders.create')}}">aggiungi un nuovo ordine</a>
 </div>
 
 
