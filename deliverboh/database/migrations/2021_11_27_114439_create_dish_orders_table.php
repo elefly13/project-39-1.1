@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDishOrderTable extends Migration
+class CreateDishOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,8 @@ class CreateDishOrderTable extends Migration
             $table->foreign('dish_id')->references('id')->on('orders');
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('dishes');
-            $table->integer('quantity');
+            $table->integer('quantity')->default('1');
+            $table->timestamps();
         });
     }
 

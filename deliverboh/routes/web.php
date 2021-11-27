@@ -33,5 +33,5 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     Route::get('/{id}/edit', 'DishController@edit')->name('edit');
     Route::put('/{id}', 'DishController@update')->name('update');
     Route::delete('/{id}', 'DishController@destroy')->name('destroy');
-    
+    Route::resource('/orders','OrderController');
 });
