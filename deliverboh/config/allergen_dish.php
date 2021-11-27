@@ -1,0 +1,58 @@
+<?php
+
+return [
+    [
+        "allergen_id"=>"1",
+        "dish_id"=>"1",
+    ],
+    [
+        "allergen_id"=>"6",
+        "dish_id"=>"1",
+    ],
+    [
+        "allergen_id"=>"6",
+        "dish_id"=>"2",
+    ],
+    [
+        "allergen_id"=>"6",
+        "dish_id"=>"3",
+    ],
+    [
+        "allergen_id"=>"6",
+        "dish_id"=>"4",
+    ],
+    [
+        "allergen_id"=>"6",
+        "dish_id"=>"5",
+    ],
+    [
+        "allergen_id"=>"6",
+        "dish_id"=>"6",
+    ],
+    [
+        "allergen_id"=>"6",
+        "dish_id"=>"7",
+    ],
+    [
+        "allergen_id"=>"5",
+        "dish_id"=>"16",
+    ],
+    [
+        "allergen_id"=>"5",
+        "dish_id"=>"17",
+    ],
+    [
+        "allergen_id"=>"7",
+        "dish_id"=>"18",
+    ],
+    [
+        "allergen_id"=>"4",
+        "dish_id"=>"21",
+    ],
+    [
+        "allergen_id"=>"4",
+        "dish_id"=>"22",
+    ],
+    
+];
+

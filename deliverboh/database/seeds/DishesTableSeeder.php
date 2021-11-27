@@ -24,6 +24,8 @@ class DishesTableSeeder extends Seeder
             $new_dish->image = $dish['image'];
             $new_dish->course = $dish['course'];
             $new_dish->save();
+            // $new_dish->orders()->attach($dish['id']);
+
         }
     }
 }
