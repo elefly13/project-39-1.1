@@ -1,5 +1,5 @@
 @foreach ($data as $item)
-     <div>
+    <div>
         {{$item['delivery_address']}} 
     </div>
     <div>

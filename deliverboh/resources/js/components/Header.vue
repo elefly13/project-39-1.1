@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Sono L'header</h1>
+    
   </header>
 </template>
 
