@@ -32,4 +32,5 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     Route::resource('/orders','OrderController');
     Route::resource('/categories','CategoriesController');
     Route::resource('/user','UserCategoryController');
+    Route::resource('/allergens','AllergenController');
 });
