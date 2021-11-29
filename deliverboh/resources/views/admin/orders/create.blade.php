@@ -30,6 +30,11 @@
 		<label for="note">note</label>
 		<input type="text" name="note" class="form-control" id="note" placeholder="Add a note to the order">     
 	</div>
-
+	@foreach ($dishes as $dish)
+	<div class="form-group">
+		<label for="{{$dish->id}}">{{$dish->name}}</label>
+		<input type="checkbox" name="dish[]" class="form-control" id="{{$dish->id}}" value="{{('checked' ? $dish->id : NULL)}}">
+	</div>
+	@endforeach
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
