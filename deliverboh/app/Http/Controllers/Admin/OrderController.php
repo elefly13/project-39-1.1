@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Dish;
 use App\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -15,9 +16,9 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $order = Order::all();
-        $data = $order;
+    {   
+        $orders = Order::all();
+        $data = $orders;
         return view('admin.orders.index', compact('data'));
     }
 
@@ -28,7 +29,9 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('admin.orders.create');
+        $user = Auth::user();
+        $dishes = Dish::where('user_id', $user->id)->get();
+        return view('admin.orders.create', compact('dishes'));
     }
 
     /**
@@ -39,10 +42,12 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $data = $request->all();
         $new_order = new Order();
         $new_order->fill($data);
         $new_order->save();
+        $new_order->dishes()->attach($data['dish']);
 
         return redirect()->route('admin.orders.index');
     }
@@ -68,8 +73,11 @@ class OrderController extends Controller
      */
     public function edit($id)
     {   
-        $order = Order::find($id);
-        return view('admin.orders.edit', compact('order'));
+
+        $orders = Order::find($id);
+        $user = Auth::user();
+        $dishes = Dish::where('user_id', $user->id)->get();
+        return view('admin.orders.edit', compact('orders', 'dishes'));
     }
 
     /**
@@ -84,7 +92,13 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $data = $request->all();
         $order->update($data);
+        if(array_key_exists('dish', $data)){
+            $order->dishes()->sync($data['dish']);
+        }else{
+            $order->dishes()->sync([]);
+        }
         return redirect()->route('admin.orders.index');
+        
     }
 
     /**
@@ -93,9 +107,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Order $order)
     {
-        $order = Order::findOrFail($id);
+        $order->dishes()->detach($order->id);
+        $order = Order::findOrFail($order->id);
         $order->delete();
         return redirect()->route('admin.orders.index');
 
