@@ -1,26 +1,43 @@
 <header>
-  <div class="box-80">
-      <div>
-          <a href="{{ url('/') }}">
-              {{-- inserisco il logo --}}
-              <img class="logo" src="../images/Logo.png" alt="Logo Deliverboh">
-          </a>
-      </div>
-      <div class="nav">
-        @if (Route::has('login'))
-                @auth
-                    <a href="{{ url('/admin') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Accedi</a>
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <a class="navbar-brand" href="{{ url('/') }}">
+          {{-- inserisco il logo --}}
+          <img src="../images/Logo.png" class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Registrati</a>
-                        @endif
-                        <a href="#">Carrello</a>        
-                @endauth
-        @endif
-      </div>
-  </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Left Side Of Navbar -->
+              <ul class="navbar-nav mr-auto">
+
+              </ul>
+
+              <!-- Right Side Of Navbar -->
+              <ul class="navbar-nav ml-auto">
+                  <!-- Authentication Links -->
+                  @if (Route::has('login'))
+                  @auth
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ url('/admin') }}">Home</a>
+                      </li>
+                  @else
+                      
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ route('login') }}">Accedi</a>
+                      </li>
+                      @if (Route::has('register'))
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+                      </li>   
+                      @endif 
+                  @endauth
+                  @endif
+                   
+              </ul>
+          </div>
+  </nav>
 </header>
 
 

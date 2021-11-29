@@ -1,6 +1,6 @@
 <template>
     <main>
-        <!-- <h1>Sono il Main</h1> -->
+        <h1>Sono il Main</h1>
     </main>
 </template>
 
