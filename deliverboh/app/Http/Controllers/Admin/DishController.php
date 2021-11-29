@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
 use App\Dish;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 
 class DishController extends Controller
@@ -20,7 +18,10 @@ class DishController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('admin.dashboard', compact('user'));
+        $dish = Dish::where('user_id', $user->id)->get();
+        $i = 0;
+        $data = $dish;
+        return view('admin.dishes.index', compact('data'));
     }
 
     /**
@@ -30,7 +31,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        return view('admin.dishes.create');
     }
 
     /**
@@ -40,15 +41,15 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $user = Auth::user();
         $data = $request->all();
         $new_dish = new Dish();
-        $new_dish->fill($data);
         $new_dish->user_id = $user->id;
+        $new_dish->fill($data);
         $new_dish->save();
 
-        return redirect()->route('admin.show');
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -57,24 +58,23 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
-    {   
-        $user = Auth::user();
-        $dish = Dish::where('user_id', $user->id)->get();
-        $data = [$user, $dish];
-        return view('admin.show', compact('data'));
+    public function show($id)
+    {
+        $dish = Dish::find($id);
+        $data = [$dish];
+        return view('admin.dishes.show', compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Dish $dish
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   
-        $dish = Dish::findOrFail($id);
-        return view('admin.edit', compact('dish'));
+    {
+        $dish = Dish::find($id);
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -89,8 +89,7 @@ class DishController extends Controller
         $dish = Dish::findOrFail($id);
         $data = $request->all();
         $dish->update($data);
-        return redirect()->route('admin.show');
-
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -102,9 +101,7 @@ class DishController extends Controller
     public function destroy($id)
     {
         $dish = Dish::findOrFail($id);
-        // dd($dish);
         $dish->delete();
-        return redirect()->route('admin.show');
-
+        return redirect()->route('admin.dishes.index');
     }
 }
