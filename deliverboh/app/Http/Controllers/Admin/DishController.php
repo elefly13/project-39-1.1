@@ -44,6 +44,11 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required',  
+            'price'=>'required',
+            'course'=>'required',
+        ]);
         $user = Auth::user();
         $data = $request->all();
         $new_dish = new Dish();
@@ -51,7 +56,7 @@ class DishController extends Controller
         $new_dish->fill($data);
         $new_dish->save();
         $new_dish->allergens()->attach($data['allergens']);
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('inserted', 'Il record è stato correttamente salvato');
     }
 
     /**
