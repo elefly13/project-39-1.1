@@ -10019,3 +10019,38 @@ h3 {
     border-color: #dee2e6;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  background-color: aqua;
+}
+
+.box-80 {
+  width: 1280px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main {
+  width: 100vw;
+}
+
+.wrapper {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: limegreen;
+}

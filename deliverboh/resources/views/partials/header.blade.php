@@ -1,5 +1,32 @@
-<header class="d-flex flex-column align-items-center">
-    {{-- <div class="container-logo">
+<header>
+  <div class="box-80">
+      <div>
+          <a href="{{ url('/') }}">
+              {{-- inserisco il logo --}}
+              <img class="logo" src="../images/Logo.png" alt="Logo Deliverboh">
+          </a>
+      </div>
+      <div class="nav">
+        @if (Route::has('login'))
+                @auth
+                    <a href="{{ url('/admin') }}">Home</a>
+                @else
+                    <a href="{{ route('login') }}">Accedi</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Registrati</a>
+                        @endif
+                        <a href="#">Carrello</a>        
+                @endauth
+        @endif
+      </div>
+  </div>
+</header>
+
+
+
+{{-- <header class="d-flex flex-column align-items-center">
+    <div class="container-logo">
         <span id="logo">Deliverboh</span>
     </div>
     @if (Route::has('login'))
@@ -12,7 +39,7 @@
                 <a href="{{ route('register') }}">Register</a>
             @endif
         @endauth
-    @endif --}}
+    @endif
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><span id="logo">Deliverboh</span></a>
@@ -70,4 +97,4 @@
           <img src="https://buonricordo.com/ristoranti/veneto/ristorante-da-gigetto/@@images/eac57071-7f07-4456-b738-b279ab56dd13.jpeg" alt="" srcset="">
       </section>
 </header>
-
+ --}}

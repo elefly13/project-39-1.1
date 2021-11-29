@@ -2494,16 +2494,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("main")
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("main", [_c("h1", [_vm._v("Sono il Footer")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -2525,16 +2518,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("header")
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", [_c("h1", [_vm._v("Sono L'header")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -2556,16 +2542,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("main")
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("main", [_c("h1", [_vm._v("Sono il Main")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -15090,7 +15069,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\Boolean\project-39-1.1\deliverboh\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/davidenapolitano/Desktop/HTML-CSS-JS/pro/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
