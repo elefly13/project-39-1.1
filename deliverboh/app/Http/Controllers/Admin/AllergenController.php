@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Allergen;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Dish;
-use Illuminate\Support\Facades\Auth;
-
-
-class DishController extends Controller
+use App\Allergen;
+class AllergenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +14,11 @@ class DishController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $dish = Dish::where('user_id', $user->id)->get();
-        $i = 0;
-        $data = $dish;
-        return view('admin.dishes.index', compact('data'));
+         
+        $allergen = Allergen::all();
+        
+        $data = $allergen;
+        return view('admin.allergens.index', compact('data'));
     }
 
     /**
@@ -32,8 +28,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        $allergens = Allergen::all();
-        return view('admin.dishes.create', compact('allergens'));
+        return view('admin.allergens.create');
     }
 
     /**
@@ -44,14 +39,14 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
+         
         $data = $request->all();
-        $new_dish = new Dish();
-        $new_dish->user_id = $user->id;
+        $new_dish = new Allergen();
+        
         $new_dish->fill($data);
         $new_dish->save();
-        $new_dish->allergens()->attach($data['allergens']);
-        return redirect()->route('admin.dishes.index');
+
+        return redirect()->route('admin.allergens.index');
     }
 
     /**
@@ -62,9 +57,9 @@ class DishController extends Controller
      */
     public function show($id)
     {
-        $dish = Dish::find($id);
-        $data = [$dish];
-        return view('admin.dishes.show', compact('data'));
+        $allergen = Allergen::find($id);
+        $data = [$allergen];
+        return view('admin.allergens.show', compact('data'));
     }
 
     /**
@@ -75,9 +70,8 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        $dish = Dish::find($id);
-        $allergens = Allergen::all();
-        return view('admin.dishes.edit', compact('dish','allergens'));
+        $allergen = Allergen::find($id);
+        return view('admin.allergens.edit', compact('allergen'));
     }
 
     /**
@@ -89,11 +83,10 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dish = Dish::findOrFail($id);
+        $allergen = Allergen::findOrFail($id);
         $data = $request->all();
-        $dish->update($data);
-        $dish->allergens()->sync($data['allergens']);
-        return redirect()->route('admin.dishes.index');
+        $allergen->update($data);
+        return redirect()->route('admin.allergens.index');
     }
 
     /**
@@ -104,9 +97,8 @@ class DishController extends Controller
      */
     public function destroy($id)
     {
-        $dish = Dish::findOrFail($id);
-        $dish->allergens()->detach($dish->id);
-        $dish->delete();
-        return redirect()->route('admin.dishes.index');
+        $allergen = Allergen::findOrFail($id);
+        $allergen->delete();
+        return redirect()->route('admin.allergens.index');
     }
 }

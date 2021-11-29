@@ -30,6 +30,15 @@
 		<label for="course">course</label>
 		<input type="text" name="course" class="form-control" id="course" placeholder="scrivi il tipo di portata">     
 	</div>
+	<div class="form-group">
+    <p>Seleziona gli allergeni:</p>
+    @foreach ($allergens as $allergen)
+        <div class="form-check form-check-inline">
+            <input {{$dish->allergens->contains($allergen) ? 'checked' : null}} value="{{ $allergen->id }}" type="checkbox" name="allergens[]" class="form-check-input" id="{{'allergen' . $allergen->id}}">
+            <label class="form-check-label" for="{{'allergen' . $allergen->id}}">{{ $allergen->name }}</label>
+        </div>   
+    @endforeach
+	</div>
 
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
