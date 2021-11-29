@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 class CategoriesController extends Controller
 {
     /**
@@ -38,11 +39,12 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $new_order = new Order();
-        $new_order->fill($data);
-        $new_order->save();
+        $new_category = new Category();
+        $new_category->fill($data);
+        $new_category->save();
+        // $new_category->dishes()->attach($data['dish']);
 
-        return redirect()->route('admin.orders.index');
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -66,7 +68,10 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::find($id);
+        // $user = Auth::user();
+        // $dishes = Dish::where('user_id', $user->id)->get();'dishes'
+        return view('admin.categories.edit', compact('categories'));
     }
 
     /**
@@ -78,7 +83,15 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $data = $request->all();
+        $category->update($data);
+        // if(array_key_exists('dish', $data)){
+        //     $category->user()->sync($data['user']);
+        // }else{
+        //     $category->user()->sync([]);
+        // }
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -87,8 +100,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        // $order->dishes()->detach($order->id);
+        $categories = Category::findOrFail($category->id);
+        $categories->delete();
+        return redirect()->route('admin.categories.index');
     }
 }
