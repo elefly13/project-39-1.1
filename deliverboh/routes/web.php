@@ -15,8 +15,10 @@ use \Illuminate\Support\Facades\Auth;
 // Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/', 'HomeController@home')->name('homepage');
- 
+
+
 Auth::routes();
+
 
  
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
@@ -29,4 +31,5 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     Route::resource('/dishes', 'DishController');
     Route::resource('/orders','OrderController');
     Route::resource('/categories','CategoriesController');
+    Route::resource('/user','UserCategoryController');
 });
