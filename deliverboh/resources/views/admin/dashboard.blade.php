@@ -19,6 +19,7 @@
                 </div>
                 <div><a href="{{route('admin.dishes.index')}}">menu</a> </div>
                 <div><a href="{{route('admin.orders.index')}}">ordini</a></div>
+                <div><a href="{{route('admin.categories.index')}}">categorie</a></div>
                 <div><a href="/admin/statistiche">statistiche</a></div>
             </div>
         </div>

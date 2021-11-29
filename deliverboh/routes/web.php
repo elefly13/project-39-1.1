@@ -28,4 +28,5 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     // Route::get('/statistiche', 'HomeController@statistiche')->name('statistiche');
     Route::resource('/dishes', 'DishController');
     Route::resource('/orders','OrderController');
+    Route::resource('/categories','CategoriesController');
 });
