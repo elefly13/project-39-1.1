@@ -1,17 +1,22 @@
-header {
-    
-    background-color: aquamarine;
-    .navbar {
-        width: 100%;
-    }
-    #logo {
-        font-size: 30px;
-    }
-    #header-searchbar {
-        width: 300px;
-    }
+.box-80 {
+    width: 1280px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.logo {
+    width: 150px;
+    object-fit: cover;
+}
 
-@media screen and (max-width: 480px) {
+.nav {
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }
