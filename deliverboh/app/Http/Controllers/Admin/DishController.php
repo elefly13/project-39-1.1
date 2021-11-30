@@ -56,7 +56,7 @@ class DishController extends Controller
         $new_dish->fill($data);
         $new_dish->save();
         $new_dish->allergens()->attach($data['allergens']);
-        return redirect()->route('admin.dishes.index')->with('inserted', 'Il record è stato correttamente salvato');
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
