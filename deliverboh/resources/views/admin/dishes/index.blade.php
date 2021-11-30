@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div>
     @foreach ($data as $dish)
         <div>
@@ -30,5 +33,4 @@
         <a href="{{route('admin.dishes.create')}}">aggiungi un nuovo piatto</a>
         <a href="{{route('admin.index')}}">torna indietro</a>   
 </div>
-
-
+@endsection
