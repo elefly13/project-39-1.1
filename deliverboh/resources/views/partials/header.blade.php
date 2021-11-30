@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand" href="{{ url('/') }}">
       {{-- inserisco il logo --}}
-      <img src="{{ asset('images/Logo.png')}}" class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
+      <img src=" {{ asset('images/Logo.png') }} " class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
     </a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
