@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <Header />
+        <Api />
         <Main />
         <Footer />
     </div>
@@ -8,6 +9,7 @@
 
 <script>
 import Header from "../components/Header";
+import Api from "../components/Api";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 
@@ -15,6 +17,7 @@ export default {
     name: "App",
     components: {
         Header,
+        Api,
         Main,
         Footer,
     },

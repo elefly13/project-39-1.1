@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Dish;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,11 @@ use App\Dish;
 |
 */
 Route::resource('/test1', 'Api\Postcontroller');
+Route::get('/dishes', 'Api\ApiController@dishes');
+Route::get('/users', 'Api\ApiController@users');
+Route::get('/categories', 'Api\ApiController@categories');
+Route::get('/allergens', 'Api\ApiController@allergens');
+Route::get('/orders', 'Api\ApiController@orders');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
