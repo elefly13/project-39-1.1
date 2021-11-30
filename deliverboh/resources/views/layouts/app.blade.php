@@ -80,5 +80,9 @@
             @yield('content')
         </main> --}}
     </div>
+    @include('partials.header')
+    <section>
+        @yield('content')
+    </section>
 </body>
 </html>

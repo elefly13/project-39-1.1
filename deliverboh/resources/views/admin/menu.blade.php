@@ -1,8 +1,8 @@
 @foreach ($menu as $dish)
-	 <div>
+	 {{-- <div>
          {{$dish['name']}}
      </div>
      <div>
          {{$dish['price']}}
-     </div>
+     </div> --}}
 @endforeach

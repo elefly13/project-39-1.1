@@ -3221,6 +3221,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+<<<<<<< HEAD
   return _c("main", [
     _c("div", { staticClass: "wrapper" }, [
       _c("div", { staticClass: "check-box" }),
@@ -3278,12 +3279,16 @@ var render = function () {
       _vm._m(2),
     ]),
   ])
+=======
+  return _vm._m(0)
+>>>>>>> 17c323f6d709556d6bc6c9c3300c6d5e889b3a8d
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+<<<<<<< HEAD
     return _c("div", { staticClass: "box-80" }, [
       _c("h1", [_vm._v("I piatti che ami, a domicilio")]),
     ])
@@ -3305,6 +3310,9 @@ var staticRenderFns = [
         _c("h3", [_vm._v("I più popolari")]),
       ]),
     ])
+=======
+    return _c("main", [_c("h1", [_vm._v("Sono il Main")])])
+>>>>>>> 17c323f6d709556d6bc6c9c3300c6d5e889b3a8d
   },
 ]
 render._withStripped = true

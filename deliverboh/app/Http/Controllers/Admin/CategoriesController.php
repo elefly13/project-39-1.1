@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Allergen;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Dish;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
-
-
-class DishController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +15,9 @@ class DishController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $dish = Dish::where('user_id', $user->id)->get();
-        $i = 0;
-        $data = $dish;
-        return view('admin.dishes.index', compact('data'));
+        $categories = Category::all();
+        $data = $categories;
+        return view('admin.categories.index', compact('data'));
     }
 
     /**
@@ -32,8 +27,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        $allergens = Allergen::all();
-        return view('admin.dishes.create', compact('allergens'));
+        return view('admin.categories.create');
     }
 
     /**
@@ -44,19 +38,13 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required',  
-            'price'=>'required',
-            'course'=>'required',
-        ]);
-        $user = Auth::user();
         $data = $request->all();
-        $new_dish = new Dish();
-        $new_dish->user_id = $user->id;
-        $new_dish->fill($data);
-        $new_dish->save();
-        $new_dish->allergens()->attach($data['allergens']);
-        return redirect()->route('admin.dishes.index');
+        $new_category = new Category();
+        $new_category->fill($data);
+        $new_category->save();
+        // $new_category->dishes()->attach($data['dish']);
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -67,9 +55,9 @@ class DishController extends Controller
      */
     public function show($id)
     {
-        $dish = Dish::find($id);
-        $data = [$dish];
-        return view('admin.dishes.show', compact('data'));
+        $categories = Category::find($id);
+        $data = [$categories];
+        return view('admin.categories.show', compact('data'));
     }
 
     /**
@@ -80,9 +68,10 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        $dish = Dish::find($id);
-        $allergens = Allergen::all();
-        return view('admin.dishes.edit', compact('dish','allergens'));
+        $categories = Category::find($id);
+        // $user = Auth::user();
+        // $dishes = Dish::where('user_id', $user->id)->get();'dishes'
+        return view('admin.categories.edit', compact('categories'));
     }
 
     /**
@@ -94,11 +83,15 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dish = Dish::findOrFail($id);
+        $category = Category::findOrFail($id);
         $data = $request->all();
-        $dish->update($data);
-        $dish->allergens()->sync($data['allergens']);
-        return redirect()->route('admin.dishes.index');
+        $category->update($data);
+        // if(array_key_exists('dish', $data)){
+        //     $category->user()->sync($data['user']);
+        // }else{
+        //     $category->user()->sync([]);
+        // }
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -107,11 +100,11 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        $dish = Dish::findOrFail($id);
-        $dish->allergens()->detach($dish->id);
-        $dish->delete();
-        return redirect()->route('admin.dishes.index');
+        // $order->dishes()->detach($order->id);
+        $categories = Category::findOrFail($category->id);
+        $categories->delete();
+        return redirect()->route('admin.categories.index');
     }
 }
