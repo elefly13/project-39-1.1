@@ -13,7 +13,7 @@ class CreateCategoryUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_users', function (Blueprint $table) {
+        Schema::create('category_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
