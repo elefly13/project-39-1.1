@@ -81,8 +81,13 @@ class DishController extends Controller
     public function edit($id)
     {
         $dish = Dish::find($id);
+        $user = Auth::user();
+        if ($dish['user_id']==$user['id']){
+            
+        
         $allergens = Allergen::all();
-        return view('admin.dishes.edit', compact('dish','allergens'));
+        return view('admin.dishes.edit', compact('dish','allergens'));};
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -95,6 +100,7 @@ class DishController extends Controller
     public function update(Request $request, $id)
     {
         $dish = Dish::findOrFail($id);
+
         $data = $request->all();
         $dish->update($data);
         $dish->allergens()->sync($data['allergens']);
