@@ -1,16 +1,7 @@
 @extends('layouts.app')
-@if (session('status'))
-	<div class="alert alert-success">
-		pippopolo
-		{{ session('status') }}
-	</div>
-@endif
+ 
 @section('content')
-@if (session('status'))
-	<div class="alert alert-success">
-		{{ session('status') }}
-	</div>
-@endif
+ 
 
 <form action="{{route('admin.dishes.store')}}" method="post">
 	@csrf
