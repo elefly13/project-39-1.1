@@ -44,6 +44,11 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required',  
+            'price'=>'required',
+            'course'=>'required',
+        ]);
         $user = Auth::user();
         $data = $request->all();
         $new_dish = new Dish();
