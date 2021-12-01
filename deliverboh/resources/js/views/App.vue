@@ -1,7 +1,8 @@
 <template>
     <div class="container">
         <Header />
-        <Api />
+        <!-- <Api /> -->
+        <Cart />
         <Main />
         <Menu />
 
@@ -11,19 +12,22 @@
 
 <script>
 import Header from "../components/Header";
-import Api from "../components/Api";
+// import Api from "../components/Api";
 import Main from "../components/Main";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
+import Cart from '../components/Cart.vue';
 
 export default {
     name: "App",
     components: {
         Header,
-        Api,
+        // Api,
+        Cart,
         Main,
         Menu,
-        Footer,
+        Footer
+        
     },
 };
 </script>
