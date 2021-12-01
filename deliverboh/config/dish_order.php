@@ -8,7 +8,7 @@ return [
     ],
     [
         "dish_id"=>"2",
-        "order_id"=>"2",
+        "order_id"=>"1",
         "quantity"=>"1"
     ],
     [
@@ -18,7 +18,7 @@ return [
     ],
     [
         "dish_id"=>"4",
-        "order_id"=>"4",
+        "order_id"=>"1",
         "quantity"=>"1"
     ],
     [
@@ -111,31 +111,7 @@ return [
         "order_id"=>"22",
         "quantity"=>"1"
     ],
-    [
-        "dish_id"=>"23",
-        "order_id"=>"23",
-        "quantity"=>"1"
-    ],
-    [
-        "dish_id"=>"24",
-        "order_id"=>"24",
-        "quantity"=>"1"
-    ],
-    [
-        "dish_id"=>"25",
-        "order_id"=>"25",
-        "quantity"=>"1"
-    ],
-    [
-        "dish_id"=>"26",
-        "order_id"=>"26",
-        "quantity"=>"1"
-    ],
-    [
-        "dish_id"=>"27",
-        "order_id"=>"27",
-        "quantity"=>"1"
-    ],
+    
     
 ];
 

@@ -2241,14 +2241,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
-
-/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
-
 /* harmony import */ var _components_Api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Api */ "./resources/js/components/Api.vue");
 /* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
-
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
+//
 //
 //
 //
@@ -2268,14 +2265,10 @@ __webpack_require__.r(__webpack_exports__);
   name: "App",
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-
-    Main: _components_Main__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_2__["default"],
-
     Api: _components_Api__WEBPACK_IMPORTED_MODULE_1__["default"],
     Main: _components_Main__WEBPACK_IMPORTED_MODULE_2__["default"],
-
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"]
+    Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 
@@ -3777,15 +3770,11 @@ var render = function () {
     [
       _c("Header"),
       _vm._v(" "),
-
-      _c("Main"),
-      _vm._v(" "),
-      _c("Menu"),
-
       _c("Api"),
       _vm._v(" "),
       _c("Main"),
-
+      _vm._v(" "),
+      _c("Menu"),
       _vm._v(" "),
       _c("Footer"),
     ],
@@ -16462,7 +16451,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\felk0\OneDrive\Desktop\Boolan\progetto1.6\project-39-1.1\deliverboh\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
