@@ -4,8 +4,8 @@
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" href="#collapse1">carrello</a>
+                        <h4 class="cart-title">
+                            <a data-toggle="collapse" href="#collapse1">Carrello</a>
                         </h4>
                     </div>
                     <div id="collapse1" class="panel-collapse collapse">
@@ -18,7 +18,7 @@
                                 <li><button>+</button><button>-</button></li>
                             </ul>
                         </div>
-                        <div class="panel-footer"><button>procedi al pagamento</button></div>
+                        <div class="panel-footer"><button class="cart-btn">procedi al pagamento</button></div>
                     </div>
                 </div>
             </div>
@@ -44,3 +44,43 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+    ul {
+        list-style: none;
+    }
+    .area-carrello {
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        .panel-group {
+            padding: 20px;
+            background-color: white;
+            width: 230px;
+            border-radius: 20px;
+            // .cart-title {
+                
+            // }
+            .cart-btn {
+                font-size: 15px;
+                margin: 10px;
+                padding: 5px;
+                border-color: #439373;
+                border-radius: 3px;
+                border-bottom-right-radius: 10px;
+                background-color:  #439373;
+                color: #f4f0e2;
+                transition: 0.6s;
+            }
+            .cart-btn:hover {
+                margin: 10px;
+                padding: 5px;
+                border-color: #f1c692;
+                border-radius: 3px;
+                border-bottom-right-radius: 10px;
+                background-color:  #f1c692;
+                color: #343434;
+            }
+        }
+    }
+</style>
