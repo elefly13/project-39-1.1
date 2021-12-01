@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
- 
 
 <form action="{{route('admin.dishes.store')}}" method="post">
 	@csrf
@@ -47,13 +46,13 @@
 	</div>
 	<div class="form-group">
     <p>Seleziona gli allergeni:</p>
-    @foreach ($allergens as $allergen)
-        <div class="form-check form-check-inline">
-            <input {{in_array($allergen->id, old('allergens', [])) ? 'checked' : null}}
-			 value="{{ $allergen->id }}" type="checkbox" name="allergens[]" class="form-check-input" id="{{'allergen' . $allergen->id}}">
-            <label class="form-check-label" for="{{'allergen' . $allergen->id}}">{{ $allergen->name }}</label>
-        </div>   
-    @endforeach
+		@foreach ($allergens as $allergen)
+			<div class="form-check form-check-inline">
+				<input {{in_array($allergen->id, old('allergens', [])) ? 'checked' : null}}
+				value="{{ $allergen->id }}" type="checkbox" name="allergens[]" class="form-check-input" id="{{'allergen' . $allergen->id}}">
+				<label class="form-check-label" for="{{'allergen' . $allergen->id}}">{{ $allergen->name }}</label>
+			</div>   
+		@endforeach
 	</div>
 
 	<button type="submit" class="btn btn-primary">Submit</button>
