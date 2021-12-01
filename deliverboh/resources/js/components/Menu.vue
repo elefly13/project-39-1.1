@@ -13,26 +13,11 @@
                         <!-- <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg" alt=""> -->
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
-                        <h4>{{ dish.price }}0</h4>
+                        <h4>{{ dish.price }}</h4>
                         <p>{{ dish.ingredients }}</p>
                         <p>Allergeni:</p>  
-                         <button class="button" @click.prevent>Aggiungi al carrello</button>               
+                         <button class="button" @click.prevent="sendCart(dish), $emit('cartContent', cart)">Aggiungi al carrello</button>               
                     </div> 
-                    <div class="area-carrello">
-                        <div class="panel-group">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
-                                    </h4>
-                                </div>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <div class="panel-body">Panel Body</div>
-                                    <div class="panel-footer">Panel Footer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div> 
@@ -50,6 +35,8 @@ export default {
             url: "http://127.0.0.1:8000/api/",
             flag: false,
             dishes: [],
+            cart: [],
+            restaurant: 0,
             api_token:
                 "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
         };
@@ -58,6 +45,17 @@ export default {
         this.getDishes();
     },
     methods: {
+        sendCart(dish) {
+            if(this.restaurant == 0) {
+                this.restaurant = dish.user_id
+            }
+            
+            if(dish.user_id == this.restaurant) {
+                this.cart.push(dish)
+            } else {
+                alert("Puoi ordinare da un solo ristorante alla volta")
+            }
+        },
         getDishes(){
             const bodyParameters = {
                 key: "value",

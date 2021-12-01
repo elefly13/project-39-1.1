@@ -2,9 +2,9 @@
     <div class="container">
         <Header />
         <!-- <Api /> -->
-        <Cart />
+        <Cart :cartContent="cart"/>
         <Main />
-        <Menu />
+        <Menu @cartContent="test" />
 
         <Footer />
     </div>
@@ -28,6 +28,16 @@ export default {
         Menu,
         Footer
         
+    },
+    data() {
+        return {
+            cart: [],
+        }
+    },
+    methods: {
+        test(cartContent) {
+            this.cart.push(cartContent)
+        },
     },
 };
 </script>
