@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Dish;
+use App\DishOrder;
+use App\Order;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,7 +31,34 @@ class HomeController extends Controller
         return view('admin.ordini');
     }
     public function statistiche()
+
     {
-        return view('admin.statistiche');
+        $data_month=[];
+        $year_now=now()->year;
+
+        for ($i = 1; $i <= 12; $i++) {
+            $temp =count( Order::whereMonth('created_at', $i)->whereYear('created_at', $year_now )->get());
+           array_push($data_month, $temp);
+        };
+
+
+        $data_year=[];
+        for ($i = 1; $i <= 5; $i++) {
+            $temp =count( Order::whereYear('created_at', ($year_now - $i))->get());
+           array_push($data_year, $temp);
+        };
+       
+        $user = Auth::user();
+        $test=Order::whereHas('dishes',function($q ) use ($user) {
+            $q->where('user_id', $user['id']);
+        })->get();
+
+        $sum=0;
+          for ($i = 0; $i < count($test); $i++){
+            $sum=$test[$i]['total']+$sum;
+        };
+    
+         
+        return view('admin.statistiche',compact('test'));
     }
 }
