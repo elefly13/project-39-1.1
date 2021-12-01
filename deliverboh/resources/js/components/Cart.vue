@@ -15,10 +15,17 @@
                                 <li>{{ dish[index].description}}</li>
                                 <li>{{ dish[index].ingredients }}</li>
                                 <li>{{ dish[index].price }}</li>
-                                <li><button @click="getMoreQuantity(dish[index].quantity)">+</button>{{ quantity }}<button>-</button></li>
+                                <li>
+                                    <button @click="dish[index].quantity++">+</button>
+                                    {{ dish[index].quantity }}
+                                    <button @click="((dish[index].quantity > 1 ) ? dish[index].quantity-- : null)">-</button>
+                                </li>
                             </ul>
                         </div>
-                        <div class="panel-footer"><button class="cart-btn">procedi al pagamento</button></div>
+                        <div class="panel-footer">
+                            <span>totale: {{ price }} €</span>
+                            <button class="cart-btn" @click="getTotalPrice()">calcola prezzo</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,18 +40,25 @@ export default {
     props: ['cartContent'],
     data() {
         return {
-            quantity: 1,
+            price: 0,
         };
     },
-    watch: {
-        
-    },
     methods: {
-        getPriceQuantity(quantity) {
-            // this.quantity = quantity;
-            console.log(quantity)
+        getTotalPrice() {
+            console.log(this.cartContent)
+            let somma = 0;
+            for(let i = 0; i < this.cartContent.length; i++) {
+               
+                let tmp = this.cartContent[i];
+        
+                let totalPrice = tmp[i].quantity * tmp[i].price;
+                somma += totalPrice;
+                console.log(tmp[i].price)
+                
+            }
+            return this.price = somma;
         }
-    }
+    },       
 };
 </script>
 

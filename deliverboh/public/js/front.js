@@ -1936,19 +1936,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   props: ['cartContent'],
   data: function data() {
     return {
-      quantity: 1
+      price: 0
     };
   },
-  watch: {},
   methods: {
-    getPriceQuantity: function getPriceQuantity(quantity) {
-      // this.quantity = quantity;
-      console.log(quantity);
+    getTotalPrice: function getTotalPrice() {
+      console.log(this.cartContent);
+      var somma = 0;
+
+      for (var i = 0; i < this.cartContent.length; i++) {
+        var tmp = this.cartContent[i];
+        var totalPrice = tmp[i].quantity * tmp[i].price;
+        somma += totalPrice;
+        console.log(tmp[i].price);
+      }
+
+      return this.price = somma;
     }
   }
 });
@@ -3467,20 +3482,51 @@ var render = function () {
                         {
                           on: {
                             click: function ($event) {
-                              return _vm.getMoreQuantity(dish[index].quantity)
+                              dish[index].quantity++
                             },
                           },
                         },
                         [_vm._v("+")]
                       ),
-                      _vm._v(_vm._s(_vm.quantity)),
-                      _c("button", [_vm._v("-")]),
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(dish[index].quantity) +
+                          "\n                                "
+                      ),
+                      _c(
+                        "button",
+                        {
+                          on: {
+                            click: function ($event) {
+                              dish[index].quantity > 1
+                                ? dish[index].quantity--
+                                : null
+                            },
+                          },
+                        },
+                        [_vm._v("-")]
+                      ),
                     ]),
                   ]),
                 ])
               }),
               _vm._v(" "),
-              _vm._m(1),
+              _c("div", { staticClass: "panel-footer" }, [
+                _c("span", [_vm._v("totale: " + _vm._s(_vm.price) + " €")]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "cart-btn",
+                    on: {
+                      click: function ($event) {
+                        return _vm.getTotalPrice()
+                      },
+                    },
+                  },
+                  [_vm._v("calcola prezzo")]
+                ),
+              ]),
             ],
             2
           ),
@@ -3499,16 +3545,6 @@ var staticRenderFns = [
         _c("a", { attrs: { "data-toggle": "collapse", href: "#collapse1" } }, [
           _vm._v("Carrello"),
         ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "panel-footer" }, [
-      _c("button", { staticClass: "cart-btn" }, [
-        _vm._v("procedi al pagamento"),
       ]),
     ])
   },

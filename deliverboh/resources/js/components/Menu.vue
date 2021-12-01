@@ -16,7 +16,7 @@
                         <h4>{{ dish.price }}</h4>
                         <p>{{ dish.ingredients }}</p>
                         <p>Allergeni:</p>  
-                         <button class="button" @click.prevent="sendCart(dish), $emit('cartContent', cart)">Aggiungi al carrello</button>               
+                        <button class="button" @click.prevent="sendCart(dish), $emit('cartContent', cart)">Aggiungi al carrello</button>               
                     </div> 
                 </div>
 
