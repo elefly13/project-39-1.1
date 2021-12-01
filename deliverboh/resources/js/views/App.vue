@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <button @click="prova()">ciao</button>
         <Header />
         <!-- <Api /> -->
         <Cart :cartContent="cart"/>
@@ -35,6 +36,9 @@ export default {
         }
     },
     methods: {
+        prova() {
+            console.log(this.cart)
+        },
         test(cartContent) {
             this.cart.push(cartContent)
         },

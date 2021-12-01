@@ -15,7 +15,7 @@
                                 <li>{{ dish[index].description}}</li>
                                 <li>{{ dish[index].ingredients }}</li>
                                 <li>{{ dish[index].price }}</li>
-                                <li><button>+</button><button>-</button></li>
+                                <li><button @click="getMoreQuantity(dish[index].quantity)">+</button>{{ quantity }}<button>-</button></li>
                             </ul>
                         </div>
                         <div class="panel-footer"><button class="cart-btn">procedi al pagamento</button></div>
@@ -33,14 +33,17 @@ export default {
     props: ['cartContent'],
     data() {
         return {
-            
+            quantity: 1,
         };
     },
-    created() {
+    watch: {
         
     },
     methods: {
-        
+        getPriceQuantity(quantity) {
+            // this.quantity = quantity;
+            console.log(quantity)
+        }
     }
 };
 </script>

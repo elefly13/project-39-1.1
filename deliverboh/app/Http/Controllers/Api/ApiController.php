@@ -15,6 +15,9 @@ class ApiController extends Controller
     public function dishes()
     {
         $dishes= Dish::all();
+        for ($i=0; $i<Count($dishes); $i++){
+            $dishes[$i]->quantity = 1;
+        }
         return response()->json([
             'success'=>true,
             'results'=>$dishes

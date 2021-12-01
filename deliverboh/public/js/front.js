@@ -1940,10 +1940,17 @@ __webpack_require__.r(__webpack_exports__);
   name: "Cart",
   props: ['cartContent'],
   data: function data() {
-    return {};
+    return {
+      quantity: 1
+    };
   },
-  created: function created() {},
-  methods: {}
+  watch: {},
+  methods: {
+    getPriceQuantity: function getPriceQuantity(quantity) {
+      // this.quantity = quantity;
+      console.log(quantity);
+    }
+  }
 });
 
 /***/ }),
@@ -2170,6 +2177,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
  // import Api from "../components/Api";
 
 
@@ -2192,6 +2200,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    prova: function prova() {
+      console.log(this.cart);
+    },
     test: function test(cartContent) {
       this.cart.push(cartContent);
     }
@@ -3450,12 +3461,26 @@ var render = function () {
                     _vm._v(" "),
                     _c("li", [_vm._v(_vm._s(dish[index].price))]),
                     _vm._v(" "),
-                    _vm._m(1, true),
+                    _c("li", [
+                      _c(
+                        "button",
+                        {
+                          on: {
+                            click: function ($event) {
+                              return _vm.getMoreQuantity(dish[index].quantity)
+                            },
+                          },
+                        },
+                        [_vm._v("+")]
+                      ),
+                      _vm._v(_vm._s(_vm.quantity)),
+                      _c("button", [_vm._v("-")]),
+                    ]),
                   ]),
                 ])
               }),
               _vm._v(" "),
-              _vm._m(2),
+              _vm._m(1),
             ],
             2
           ),
@@ -3476,12 +3501,6 @@ var staticRenderFns = [
         ]),
       ]),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("button", [_vm._v("+")]), _c("button", [_vm._v("-")])])
   },
   function () {
     var _vm = this
@@ -3754,6 +3773,18 @@ var render = function () {
     "div",
     { staticClass: "container" },
     [
+      _c(
+        "button",
+        {
+          on: {
+            click: function ($event) {
+              return _vm.prova()
+            },
+          },
+        },
+        [_vm._v("ciao")]
+      ),
+      _vm._v(" "),
       _c("Header"),
       _vm._v(" "),
       _c("Cart", { attrs: { cartContent: _vm.cart } }),
