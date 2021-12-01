@@ -55,8 +55,11 @@ class DishController extends Controller
         $new_dish->user_id = $user->id;
         $new_dish->fill($data);
         $new_dish->save();
-        $new_dish->allergens()->attach($data['allergens']);
-        return redirect()->route('admin.dishes.index');
+        //issued to not choosing any allergen solved
+        if(isset($data['allergens'])){
+            $new_dish->allergens()->attach( $data['allergens']);
+        }
+        return redirect()->route('admin.dishes.index')->with('status', 'piatto aggiunto con successo');
     }
 
     /**
@@ -103,8 +106,10 @@ class DishController extends Controller
 
         $data = $request->all();
         $dish->update($data);
-        $dish->allergens()->sync($data['allergens']);
-        return redirect()->route('admin.dishes.index');
+        if(isset($data['allergens'])){
+            $dish->allergens()->sync($data['allergens']);
+        }
+        return redirect()->route('admin.dishes.index')->with('status', 'piatto modificato con successo');
     }
 
     /**
@@ -118,6 +123,6 @@ class DishController extends Controller
         $dish = Dish::findOrFail($id);
         $dish->allergens()->detach($dish->id);
         $dish->delete();
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.index')->with('status', 'piatto correttamente eliminato');
     }
 }
