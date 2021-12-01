@@ -2,6 +2,8 @@
     <div class="container">
         <Header />
         <Main />
+        <Menu />
+
         <Footer />
     </div>
 </template>
@@ -9,6 +11,7 @@
 <script>
 import Header from "../components/Header";
 import Main from "../components/Main";
+import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 
 export default {
@@ -16,6 +19,7 @@ export default {
     components: {
         Header,
         Main,
+        Menu,
         Footer,
     },
 };

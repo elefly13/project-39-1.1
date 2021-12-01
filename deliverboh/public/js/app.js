@@ -37367,12 +37367,3 @@ module.exports = __webpack_require__(/*! /Users/elena/Desktop/classe 39/Esecizio
 /***/ })
 
 /******/ });
-const deleteForm = document.querySelectorAll('.delete-post');
-deleteForm.forEach(item => {
-    item.addEventListener('submit', function(e){
-        const resp = confirm('Vuoi cancellare?');
-        if(!resp){
-            e.preventDefault();
-        }
-    })
-})
