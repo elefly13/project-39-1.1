@@ -13054,7 +13054,9 @@ h3 {
 
 body {
   width: 100vw;
-  padding-left: 30px;
+  //decommentare per vedere meglio i dati nel backend
+  //padding-left: 30px;
+  font-family: "Raleway", sans-serif;
 }
 
 .prova-2 {
