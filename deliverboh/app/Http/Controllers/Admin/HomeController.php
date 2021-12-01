@@ -43,7 +43,7 @@ class HomeController extends Controller
 
 
         $data_year=[];
-        for ($i = 1; $i <= 5; $i++) {
+        for ($i = 0; $i <= 4; $i++) {
             $temp =count( Order::whereYear('created_at', ($year_now - $i))->get());
            array_push($data_year, $temp);
         };
