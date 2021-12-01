@@ -1,4 +1,7 @@
-<header class="container">
+<header class="container-fluid">
+  <div class="box">
+
+  
   <nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand" href="{{ url('/') }}">
       {{-- inserisco il logo --}}
@@ -58,6 +61,7 @@
       </ul>
     </div>
   </nav>
+</div>
 
   <div class="container prova">
     <span></span>

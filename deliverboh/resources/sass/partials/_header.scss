@@ -2,9 +2,17 @@
     width: 1280px;
     height: 80px;
     margin: 0 auto;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // background-color: brown;
+}
+
+.box {
+    width: 1280px;
+    height: 80px;
+    margin: 0 auto;
 }
 
 .logo {
