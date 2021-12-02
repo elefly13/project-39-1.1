@@ -1,53 +1,52 @@
 <template>
-
     <main>
-       
         <div class="wrapper">
-            <div class="check-box">
-                    <form action="">
-                        <div class="bottone">
-                            <input type="checkbox" id="cusine" name="cusine" value="Italiano">
-                            <label for="cusine"> Italiano</label><br>
-                        </div>
-                    </form>
-            </div>
+            <div class="box-center">
+                <div class="chekbox">
+                    <Checked />
+                   <!-- <input type="checkbox" class="btn-check" id="cusine" autocomplete="off" value="ita">
+                   <label class="test" for="cusine">Italiano</label><br>
+                   <input type="checkbox" class="btn-check" id="cusine" autocomplete="off" value="esp">
+                   <label class="test" for="cusine">Spagnolo</label><br> -->
+                  
 
-           
-            <div class="slogan">
-                <Search @search= "searchProva"/>
-            </div>
-
-            <div class="sfondo">
-                <img src="/images/unarota.svg" />
-            </div>
-
-            <div class="sponsor">
-                <div class="box-80">
-                    <h3>I più popolari</h3>
+                </div>
+                <div class="cerca">
+                    <Search @search= "effettuaRicerca"/>
+                    <p class="box-80">{{risultato}}</p>
+                    <div class="jumbo">
+                        <img src="/images/unarota.svg" alt="">
+                    </div>
                 </div>
             </div>
+            <div class="popolari">
+                <h3 class="box-80">I più popolari</h3>
+            </div>
+
         </div>
     </main>
 </template>
 
 <script>
 import Search from './Search.vue';
+import Checked from './Checked.vue';
 
 export default {
-    name: "Main",
+    name: "MainDue",
     components: {
-        Search
-  
+        Search,
+        Checked
     },
     data() {
         return {
-
+          risultato: ''
         };
     },
-    created() {},
+    created() {
+    },
     methods: {
-        searchProva(text) {
-            console.log(text);
+        effettuaRicerca(text) {
+            this.risultato = text;
         }
     },
 };
@@ -56,91 +55,77 @@ export default {
 <style scoped lang="scss">
 
 
+[type=checkbox] { 
+   position: absolute;
+   opacity: 0;
+   width: 0;
+   height: 0;
+}
+
+[type=checkbox]:checked + label {
+background-color:#638F64;
+color: white;
+}
+
+.test {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+    border: 1px solid #638F64;
+}
+
+
 .wrapper {
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 80px);
-    position: relative;
-    display: flex;
 }
 
-.check-box {
-    z-index: 5;
-    width: 10%;
-    height: calc(100% - 30%);
-    background-color: chocolate;
-}
-
-// .box-search {
-//     width: 1280px;
-//     height: 80px;
-//     margin: 0 auto;
-//     z-index: 5;
-//     padding: 0 15px;
-// }
-
-// .ricerca {
-//     width: 25%;
-//     height: 50px;
-//     color: grey;
-//     font-size: 1em;
-//     outline: none;
-//     border: 0px;
-//     border-radius: 10px;
-//     padding: 5px;
-// }
-
-// .cerca {
-//     margin-left: 10px;
-//     width: 10%;
-//     height: 50px;
-//     color: white;
-//     font-size: 1em;
-//     outline: none;
-//     border: 0px;
-//     border-radius: 10px;
-//     padding: 5px;
-//     background-color: #638f64;
-// }
-
-// width: 300px;
-// input:focus,
-// select:focus,
-// textarea:focus,
-// button:focus {
-//     outline: none;
-// }
-
-.slogan {
-    padding: 0 15px;
-    position: absolute;
+.box-center {
     width: 100%;
-    height: 30%;
-    padding-top: 50px;
+    height: 70%;
     display: flex;
-    flex-direction: column;
-    z-index: 10;
-    // background-color: #f4f0e1;
 }
 
-.sfondo {
-    position: absolute;
+.chekbox {
+    width: 15%;
+    height: 100%;
+    padding-top: 20px;
+    // background-color: crimson;
+}
+
+.cerca {
+    width: 85%;
+    height: 100%;
+    position: relative;
+    // background-color: yellow;
+}
+
+.jumbo {
+    position:absolute;
     right: 0;
-    width: 90%;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
     height: 100%;
     text-align: right;
-    // background-color: cornflowerblue;
 }
 
-.sfondo > img {
-    height: 75%;
-    object-fit: contain;
+.jumbo > img {
+    object-fit: cover;
+    height: 100%;
 }
 
-.sponsor {
-    position: absolute;
-    bottom: 0;
+.popolari {
     width: 100%;
     height: 30%;
-    background-color: #f4f0e1;
+    background-color:#F4F0E1;
 }
+
+
+
 </style>
