@@ -1,16 +1,6 @@
 @extends('layouts.app')
-@if (session('status'))
-	<div class="alert alert-success">
-		pippopolo
-		{{ session('status') }}
-	</div>
-@endif
+
 @section('content')
-@if (session('status'))
-	<div class="alert alert-success">
-		{{ session('status') }}
-	</div>
-@endif
 
 <form action="{{route('admin.dishes.store')}}" method="post">
 	@csrf
@@ -39,10 +29,10 @@
 		<label for="description">description</label>
 		<input value="{{old('description')}}" type="text" name="description" class="form-control" id="description" placeholder="descrivi il piatto">     
 	</div>
-	<!-- <div class="form-group">
+	 <div class="form-group">
 		<label for="visibility">visibility</label>
 		<input   type="checkbox" name="visibility" class="form-control" id="visibility" value="{{ ('checked' ? 1 : 0)}}">     
-	</div> -->
+	</div>
 	{{-- <div class="form-group">
 		<label for="lastname">lastname</label> INSERIRE IMMAGINE
 		<input value="{{old('lastname_user')}}" type="text" name="lastname_user" class="form-control" id="lastname" placeholder="buyer lastname">     
@@ -56,15 +46,15 @@
 	</div>
 	<div class="form-group">
     <p>Seleziona gli allergeni:</p>
-    @foreach ($allergens as $allergen)
-        <div class="form-check form-check-inline">
-            <input {{in_array($allergen->id, old('allergens', [])) ? 'checked' : null}}
-			 value="{{ $allergen->id }}" type="checkbox" name="allergens[]" class="form-check-input" id="{{'allergen' . $allergen->id}}">
-            <label class="form-check-label" for="{{'allergen' . $allergen->id}}">{{ $allergen->name }}</label>
-        </div>   
-    @endforeach
+		@foreach ($allergens as $allergen)
+			<div class="form-check form-check-inline">
+				<input {{in_array($allergen->id, old('allergens', [])) ? 'checked' : null}}
+				value="{{ $allergen->id }}" type="checkbox" name="allergens[]" class="form-check-input" id="{{'allergen' . $allergen->id}}">
+				<label class="form-check-label" for="{{'allergen' . $allergen->id}}">{{ $allergen->name }}</label>
+			</div>   
+		@endforeach
 	</div>
 
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
-@endsection('content')
+@endsection

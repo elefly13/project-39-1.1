@@ -38,13 +38,16 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'cuisine'=>'required',  
+        ]);
         $data = $request->all();
         $new_category = new Category();
         $new_category->fill($data);
         $new_category->save();
         // $new_category->dishes()->attach($data['dish']);
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.categories.index')->with('status', 'categoria aggiunta con successo');
     }
 
     /**
@@ -83,6 +86,9 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'cuisine'=>'required',  
+        ]);
         $category = Category::findOrFail($id);
         $data = $request->all();
         $category->update($data);
@@ -91,7 +97,7 @@ class CategoriesController extends Controller
         // }else{
         //     $category->user()->sync([]);
         // }
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.categories.index')->with('status', 'categoria modificata con successo');
     }
 
     /**
@@ -105,6 +111,6 @@ class CategoriesController extends Controller
         // $order->dishes()->detach($order->id);
         $categories = Category::findOrFail($category->id);
         $categories->delete();
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.categories.index')->with('status', 'categoria eliminata con successo');
     }
 }

@@ -1,4 +1,13 @@
+@extends('layouts.app')
+
+@section('content')
+ 
 <div>
+    @if (session('status'))
+	<div class="alert alert-success">
+		{{ session('status') }}
+	</div>
+    @endif
     @foreach ($data as $category)
         <div>
             {{$category['cuisine']}} 
@@ -18,4 +27,4 @@
         <a href="{{route('admin.categories.create')}}">aggiungi un nuovo ordine</a>
 </div>
 
-
+@endsection
