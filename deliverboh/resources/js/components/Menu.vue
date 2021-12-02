@@ -1,22 +1,21 @@
 <template>
     <section>
-        <h1>Sono la pagina menu del ristorante</h1>
         <div class="container-menu">
             <div class="top">
                 <p class="saluto">Benvenuto nell nostro ristorante</p>
                 <h1>Nome ristorante selezionato</h1>
                 <h3>Il nostro menu</h3>
             </div>
+            <Cart :cartContent="cart"/>
             <div class="box">
                 <div class="big-box-img">
                     <div class="image" :key="dish['id']" v-for="dish in dishes">
-                        <!-- <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg" alt=""> -->
+                        <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg" alt="">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
-                        <h4>{{ dish.price }}</h4>
+                        <h4>{{ dish.price }}€</h4>
                         <p>{{ dish.ingredients }}</p>
-                        <p>Allergeni:</p>  
-                        <button class="button" @click.prevent="sendCart(dish), $emit('cartContent', cart)">Aggiungi al carrello</button>               
+                        <button class="button" @click="sendCart(dish)">Aggiungi al carrello</button>               
                     </div> 
                 </div>
 
@@ -27,15 +26,22 @@
 </template>
 
 <script>
+import Cart from './Cart.vue';
+
 export default {
     
     name: "Menu",
+    components: {
+        Cart,
+    },
     data() {
         return {
             url: "http://127.0.0.1:8000/api/",
             flag: false,
             dishes: [],
             cart: [],
+            price: 0,
+            // firstClick: "Aggiungi al carrello",
             restaurant: 0,
             api_token:
                 "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
@@ -45,17 +51,30 @@ export default {
         this.getDishes();
     },
     methods: {
-        sendCart(dish) {
-            if(this.restaurant == 0) {
-                this.restaurant = dish.user_id
-            }
-            
-            if(dish.user_id == this.restaurant) {
-                this.cart.push(dish)
+        sendCart(dish) { 
+            if (this.cart.includes(dish)) {
+                for (const i in this.cart) {
+                    if (dish.id == this.cart[i].id) {
+                        this.cart[i].quantity += 1
+                    }
+                }
             } else {
-                alert("Puoi ordinare da un solo ristorante alla volta")
+                if(this.restaurant == 0) {
+                    this.restaurant = dish.user_id
+                }
+                if(dish.user_id == this.restaurant) {
+                    this.cart.push(dish)
+                } else {
+                    alert("Puoi ordinare da un solo ristorante alla volta")
+                }
             }
-        },
+        }, 
+        // addToCart() {
+        //     if(this.firstClick == "Aggiungi al carrello") {
+        //         this.firstClick = "Aggiunto al carrello"
+                
+        //     }
+        // },
         getDishes(){
             const bodyParameters = {
                 key: "value",
@@ -94,8 +113,8 @@ export default {
         margin: 0 auto;
         padding: 40px 60px;
         background-color: #439373;
-        border-bottom-right-radius: 50px;
         .saluto {
+            margin-left: 3px;
             color: #fff7df;
         }
         h1 {

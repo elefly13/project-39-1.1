@@ -1948,22 +1948,43 @@ __webpack_require__.r(__webpack_exports__);
   props: ['cartContent'],
   data: function data() {
     return {
-      price: 0
+      price: 0,
+      test: 0
     };
   },
-  methods: {
-    getTotalPrice: function getTotalPrice() {
-      console.log(this.cartContent);
+  watch: {
+    // test: function prova(id) {
+    //     for (const i in this.cartContent) {
+    //         if (this.cartContent[i].id == id) {
+    //             this.price += this.cartContent[i].price
+    //         }
+    //     }
+    // },
+    cartContent: function cartContent() {
       var somma = 0;
 
-      for (var i = 0; i < this.cartContent.length; i++) {
-        var tmp = this.cartContent[i];
-        var totalPrice = tmp[i].quantity * tmp[i].price;
+      for (var i in this.cartContent) {
+        var totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
         somma += totalPrice;
-        console.log(tmp[i].price);
       }
 
-      return this.price = somma;
+      this.price = somma;
+    }
+  },
+  methods: {
+    moreQuantity: function moreQuantity(id) {
+      for (var i in this.cartContent) {
+        if (this.cartContent[i].id == id) {
+          this.price += this.cartContent[i].price;
+        }
+      }
+    },
+    lessQuantity: function lessQuantity(id) {
+      for (var i in this.cartContent) {
+        if (this.cartContent[i].id == id) {
+          this.price -= this.cartContent[i].price;
+        }
+      }
     }
   }
 });
@@ -2092,6 +2113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Cart_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cart.vue */ "./resources/js/components/Cart.vue");
 //
 //
 //
@@ -2119,15 +2141,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Menu",
+  components: {
+    Cart: _Cart_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       url: "http://127.0.0.1:8000/api/",
       flag: false,
       dishes: [],
       cart: [],
+      price: 0,
+      // firstClick: "Aggiungi al carrello",
       restaurant: 0,
       api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k"
     };
@@ -2137,16 +2164,29 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendCart: function sendCart(dish) {
-      if (this.restaurant == 0) {
-        this.restaurant = dish.user_id;
-      }
-
-      if (dish.user_id == this.restaurant) {
-        this.cart.push(dish);
+      if (this.cart.includes(dish)) {
+        for (var i in this.cart) {
+          if (dish.id == this.cart[i].id) {
+            this.cart[i].quantity += 1;
+          }
+        }
       } else {
-        alert("Puoi ordinare da un solo ristorante alla volta");
+        if (this.restaurant == 0) {
+          this.restaurant = dish.user_id;
+        }
+
+        if (dish.user_id == this.restaurant) {
+          this.cart.push(dish);
+        } else {
+          alert("Puoi ordinare da un solo ristorante alla volta");
+        }
       }
     },
+    // addToCart() {
+    //     if(this.firstClick == "Aggiungi al carrello") {
+    //         this.firstClick = "Aggiunto al carrello"
+    //     }
+    // },
     getDishes: function getDishes() {
       var _this = this;
 
@@ -2271,19 +2311,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
-<<<<<<< HEAD
-/* harmony import */ var _components_Api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Api */ "./resources/js/components/Api.vue");
-/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
-//
-=======
 /* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
-/* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
->>>>>>> main
-//
 //
 //
 //
@@ -2301,35 +2331,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-<<<<<<< HEAD
-    Api: _components_Api__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Main: _components_Main__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"]
-=======
     // Api,
-    Cart: _components_Cart_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
     Main: _components_Main__WEBPACK_IMPORTED_MODULE_1__["default"],
     Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_2__["default"],
     Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
-    return {
-      cart: []
-    };
+    return {};
   },
-  methods: {
-    passCart: function passCart(cartContent) {
-      this.cart = cartContent;
-      console.log(this.cart);
-    }
->>>>>>> main
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -2346,7 +2360,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-b7f93bea] {\n  list-style: none;\n}\n.area-carrello[data-v-b7f93bea] {\n  position: absolute;\n  z-index: 99;\n  right: 0;\n}\n.area-carrello .panel-group[data-v-b7f93bea] {\n  padding: 20px;\n  background-color: white;\n  width: 230px;\n  border-radius: 20px;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea] {\n  font-size: 15px;\n  margin: 10px;\n  padding: 5px;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea]:hover {\n  margin: 10px;\n  padding: 5px;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}", ""]);
+exports.push([module.i, "ul[data-v-b7f93bea] {\n  list-style: none;\n}\n.area-carrello[data-v-b7f93bea] {\n  position: absolute;\n  z-index: 99;\n  right: 0;\n}\n.area-carrello .panel-group[data-v-b7f93bea] {\n  padding: 20px;\n  background-color: white;\n  width: 230px;\n  border-bottom-left-radius: 20px;\n}\n.area-carrello .panel-group .cart-title[data-v-b7f93bea] {\n  text-align: center;\n}\n.area-carrello .panel-group .cart-title a[data-v-b7f93bea] {\n  color: #439373;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea] {\n  font-size: 15px;\n  margin: 10px;\n  padding: 5px;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea]:hover {\n  margin: 10px;\n  padding: 5px;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}", ""]);
 
 // exports
 
@@ -2384,7 +2398,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap);", ""]);
 
 // module
-exports.push([module.i, "*[data-v-7fa2c4ca] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Raleway\", sans-serif;\n}\n.container-menu[data-v-7fa2c4ca] {\n  width: 100%;\n  background-image: linear-gradient(to bottom right, #b5d8ba 20%, #f1c692 80%);\n}\n.container-menu .top[data-v-7fa2c4ca] {\n  width: 100%;\n  margin: 0 auto;\n  padding: 40px 60px;\n  background-color: #439373;\n  border-bottom-right-radius: 50px;\n}\n.container-menu .top .saluto[data-v-7fa2c4ca] {\n  color: #fff7df;\n}\n.container-menu .top h1[data-v-7fa2c4ca] {\n  color: #f1c692;\n  font-size: 34px;\n}\n.container-menu .top h3[data-v-7fa2c4ca] {\n  color: #fff7df;\n}\n.container-menu .box[data-v-7fa2c4ca] {\n  display: flex;\n}\n.container-menu .box .big-box-img[data-v-7fa2c4ca] {\n  width: 75%;\n  margin: 0 auto;\n  padding: 40px;\n  display: flex;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n}\n.container-menu .box .big-box-img .image[data-v-7fa2c4ca] {\n  display: column;\n  text-align: center;\n  width: 220px;\n  height: 350px;\n  background-color: white;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #a09f9f;\n  cursor: pointer;\n  padding: 10px;\n  margin: 20px;\n}\n.container-menu .box .big-box-img .image img[data-v-7fa2c4ca] {\n  width: 200px;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n}\n.container-menu .box .big-box-img .image h4[data-v-7fa2c4ca] {\n  color: #be541e;\n  padding: 8px 0;\n}\n.container-menu .box .big-box-img .image p[data-v-7fa2c4ca] {\n  font-size: 12px;\n  padding: 3px 0;\n}\n.container-menu .box .big-box-img .image button[data-v-7fa2c4ca] {\n  margin: 10px;\n  padding: 5px;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.container-menu .box .big-box-img .image button[data-v-7fa2c4ca]:hover {\n  margin: 10px;\n  padding: 5px;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.container-menu .box .big-box-img .image[data-v-7fa2c4ca]:hover {\n  transform: scale(1.05);\n}\n.container-menu .box .big-box-img .image[data-v-7fa2c4ca]:active {\n  transform: scale(1);\n}\n.container-menu .box .area-carrello[data-v-7fa2c4ca] {\n  width: 35%;\n  height: 100%;\n}", ""]);
+exports.push([module.i, "*[data-v-7fa2c4ca] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Raleway\", sans-serif;\n}\n.container-menu[data-v-7fa2c4ca] {\n  width: 100%;\n  background-image: linear-gradient(to bottom right, #b5d8ba 20%, #f1c692 80%);\n}\n.container-menu .top[data-v-7fa2c4ca] {\n  width: 100%;\n  margin: 0 auto;\n  padding: 40px 60px;\n  background-color: #439373;\n}\n.container-menu .top .saluto[data-v-7fa2c4ca] {\n  margin-left: 3px;\n  color: #fff7df;\n}\n.container-menu .top h1[data-v-7fa2c4ca] {\n  color: #f1c692;\n  font-size: 34px;\n}\n.container-menu .top h3[data-v-7fa2c4ca] {\n  color: #fff7df;\n}\n.container-menu .box[data-v-7fa2c4ca] {\n  display: flex;\n}\n.container-menu .box .big-box-img[data-v-7fa2c4ca] {\n  width: 75%;\n  margin: 0 auto;\n  padding: 40px;\n  display: flex;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n}\n.container-menu .box .big-box-img .image[data-v-7fa2c4ca] {\n  display: column;\n  text-align: center;\n  width: 220px;\n  height: 350px;\n  background-color: white;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #a09f9f;\n  cursor: pointer;\n  padding: 10px;\n  margin: 20px;\n}\n.container-menu .box .big-box-img .image img[data-v-7fa2c4ca] {\n  width: 200px;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n}\n.container-menu .box .big-box-img .image h4[data-v-7fa2c4ca] {\n  color: #be541e;\n  padding: 8px 0;\n}\n.container-menu .box .big-box-img .image p[data-v-7fa2c4ca] {\n  font-size: 12px;\n  padding: 3px 0;\n}\n.container-menu .box .big-box-img .image button[data-v-7fa2c4ca] {\n  margin: 10px;\n  padding: 5px;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.container-menu .box .big-box-img .image button[data-v-7fa2c4ca]:hover {\n  margin: 10px;\n  padding: 5px;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.container-menu .box .big-box-img .image[data-v-7fa2c4ca]:hover {\n  transform: scale(1.05);\n}\n.container-menu .box .big-box-img .image[data-v-7fa2c4ca]:active {\n  transform: scale(1);\n}\n.container-menu .box .area-carrello[data-v-7fa2c4ca] {\n  width: 35%;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -3723,13 +3737,13 @@ var render = function () {
               _vm._l(_vm.cartContent, function (dish, index) {
                 return _c("div", { key: index, staticClass: "panel-body" }, [
                   _c("ul", [
-                    _c("li", [_vm._v(_vm._s(dish[index].name))]),
+                    _c("li", [_vm._v(_vm._s(dish.name))]),
                     _vm._v(" "),
-                    _c("li", [_vm._v(_vm._s(dish[index].description))]),
+                    _c("li", [_vm._v(_vm._s(dish.description))]),
                     _vm._v(" "),
-                    _c("li", [_vm._v(_vm._s(dish[index].ingredients))]),
+                    _c("li", [_vm._v(_vm._s(dish.ingredients))]),
                     _vm._v(" "),
-                    _c("li", [_vm._v(_vm._s(dish[index].price))]),
+                    _c("li", [_vm._v(_vm._s(dish.price))]),
                     _vm._v(" "),
                     _c("li", [
                       _c(
@@ -3737,7 +3751,7 @@ var render = function () {
                         {
                           on: {
                             click: function ($event) {
-                              dish[index].quantity++
+                              dish.quantity++, _vm.moreQuantity(dish.id)
                             },
                           },
                         },
@@ -3745,7 +3759,7 @@ var render = function () {
                       ),
                       _vm._v(
                         "\n                                " +
-                          _vm._s(dish[index].quantity) +
+                          _vm._s(dish.quantity) +
                           "\n                                "
                       ),
                       _c(
@@ -3753,13 +3767,14 @@ var render = function () {
                         {
                           on: {
                             click: function ($event) {
-                              dish[index].quantity > 1
-                                ? dish[index].quantity--
-                                : null
+                              dish.quantity > 1
+                                ? dish.quantity--
+                                : _vm.cartContent.splice(index, 1),
+                                _vm.lessQuantity(dish.id)
                             },
                           },
                         },
-                        [_vm._v("-")]
+                        [_vm._v("x")]
                       ),
                     ]),
                   ]),
@@ -3769,18 +3784,9 @@ var render = function () {
               _c("div", { staticClass: "panel-footer" }, [
                 _c("span", [_vm._v("totale: " + _vm._s(_vm.price) + " €")]),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "cart-btn",
-                    on: {
-                      click: function ($event) {
-                        return _vm.getTotalPrice()
-                      },
-                    },
-                  },
-                  [_vm._v("calcola prezzo")]
-                ),
+                _c("button", { staticClass: "cart-btn" }, [
+                  _vm._v("Procedi al pagamento"),
+                ]),
               ]),
             ],
             2
@@ -3929,46 +3935,55 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _c("h1", [_vm._v("Sono la pagina menu del ristorante")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "container-menu" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "box" }, [
-        _c(
-          "div",
-          { staticClass: "big-box-img" },
-          _vm._l(_vm.dishes, function (dish) {
-            return _c("div", { key: dish["id"], staticClass: "image" }, [
-              _c("h4", [_vm._v(_vm._s(dish.name))]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(dish.description))]),
-              _vm._v(" "),
-              _c("h4", [_vm._v(_vm._s(dish.price))]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Allergeni:")]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "button",
-                  on: {
-                    click: function ($event) {
-                      $event.preventDefault()
-                      _vm.sendCart(dish), _vm.$emit("cartContent", _vm.cart)
+    _c(
+      "div",
+      { staticClass: "container-menu" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("Cart", { attrs: { cartContent: _vm.cart } }),
+        _vm._v(" "),
+        _c("div", { staticClass: "box" }, [
+          _c(
+            "div",
+            { staticClass: "big-box-img" },
+            _vm._l(_vm.dishes, function (dish) {
+              return _c("div", { key: dish["id"], staticClass: "image" }, [
+                _c("img", {
+                  attrs: {
+                    src: "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg",
+                    alt: "",
+                  },
+                }),
+                _vm._v(" "),
+                _c("h4", [_vm._v(_vm._s(dish.name))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(dish.description))]),
+                _vm._v(" "),
+                _c("h4", [_vm._v(_vm._s(dish.price) + "€")]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(dish.ingredients))]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "button",
+                    on: {
+                      click: function ($event) {
+                        return _vm.sendCart(dish)
+                      },
                     },
                   },
-                },
-                [_vm._v("Aggiungi al carrello")]
-              ),
-            ])
-          }),
-          0
-        ),
-      ]),
-    ]),
+                  [_vm._v("Aggiungi al carrello")]
+                ),
+              ])
+            }),
+            0
+          ),
+        ]),
+      ],
+      1
+    ),
   ])
 }
 var staticRenderFns = [
@@ -4138,23 +4153,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-<<<<<<< HEAD
-      _c("Api"),
-      _vm._v(" "),
-      _c("Main"),
-      _vm._v(" "),
-      _c("Menu"),
-=======
-      _c("Cart", { attrs: { cartContent: _vm.cart } }),
-      _vm._v(" "),
-      _c("Main"),
->>>>>>> main
-      _vm._v(" "),
-      _c("Menu", { on: { cartContent: _vm.passCart } }),
-    ],
+    [_c("Header"), _vm._v(" "), _c("Main"), _vm._v(" "), _c("Menu")],
     1
   )
 }
@@ -17038,7 +17037,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\Boolean\project-39-1.1\deliverboh\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

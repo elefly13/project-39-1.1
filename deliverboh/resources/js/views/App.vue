@@ -2,9 +2,8 @@
     <div>
         <Header />
         <!-- <Api /> -->
-        <Cart :cartContent="cart"/>
         <Main />
-        <Menu @cartContent="passCart" />
+        <Menu />
         <!-- <button @click="prova()">ciao</button> -->
 
         <!-- <Footer /> -->
@@ -17,14 +16,12 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
-import Cart from '../components/Cart.vue';
 
 export default {
     name: "App",
     components: {
         Header,
         // Api,
-        Cart,
         Main,
         Menu,
         Footer
@@ -32,15 +29,11 @@ export default {
     },
     data() {
         return {
-            cart:[],
+    
         }
     },
     methods: {
-        passCart(cartContent) {
-            this.cart = cartContent
-            console.log(this.cart)
-
-        },
+    
     },
 };
 </script>
