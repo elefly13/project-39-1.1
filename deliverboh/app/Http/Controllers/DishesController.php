@@ -35,7 +35,7 @@ class DishesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**

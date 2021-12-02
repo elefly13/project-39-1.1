@@ -9,7 +9,7 @@ return [
         "price"=>"5.50",
         "description"=>"Pizza Margherita",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-1.jpg",
         "course"=>"pizze"
 
     ],
@@ -21,7 +21,7 @@ return [
         "price"=>"7",
         "description"=>"Pizza Napoli",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-2.jpg",
         "course"=>"pizze"
 
     ],
@@ -33,7 +33,7 @@ return [
         "price"=>"7.50",
         "description"=>"Pizza cotto e funghi",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-3.jpg",
         "course"=>"pizze"
 
     ],
@@ -45,7 +45,7 @@ return [
         "price"=>"7",
         "description"=>"Pizza vegetariana",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-4.jpg",
         "course"=>"pizze"
 
     ],
@@ -57,7 +57,7 @@ return [
         "price"=>"7.50",
         "description"=>"Pizza indiavolata",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-5.jpg",
         "course"=>"pizze sfiziose"
 
     ],
@@ -69,7 +69,7 @@ return [
         "price"=>"7.50",
         "description"=>"Pizza porrina",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-6.jpg",
         "course"=>"pizze sfiziose"
 
     ],
@@ -81,7 +81,7 @@ return [
         "price"=>"7.50",
         "description"=>"Pizza clandestina",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-7.jpg",
         "course"=>"pizze sfiziose"
 
     ],
@@ -93,7 +93,7 @@ return [
         "price"=>"1",
         "description"=>"acqua naturale",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-8.jpg",
         "course"=>"bevande"
 
     ],
@@ -105,7 +105,7 @@ return [
         "price"=>"1",
         "description"=>"acqua frizzante",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-9.jpg",
         "course"=>"bevande"
 
     ],
@@ -117,7 +117,7 @@ return [
         "price"=>"3.50",
         "description"=>"bibita rinfrescante",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-10.jpg",
         "course"=>"bevande"
 
     ],
@@ -129,7 +129,7 @@ return [
         "price"=>"3.40",
         "description"=>"bibita rinfrescante",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-11.jpg",
         "course"=>"bevande"
 
     ],
@@ -141,7 +141,7 @@ return [
         "price"=>"1.10",
         "description"=>"gustoso involtino di verdure miste",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-12.jpg",
         "course"=>"antipasti"
 
     ],
@@ -153,7 +153,7 @@ return [
         "price"=>"1.60",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-13.jpg",
         "course"=>"antipasti"
 
     ],
@@ -165,19 +165,19 @@ return [
         "price"=>"3.50",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-14.jpg",
         "course"=>"antipasti"
 
     ],
     [
         "id"=>"15",
         "user_id"=>"2",
-        "name"=>"goma wakame",
-        "ingredients"=>"alghe",
+        "name"=>"sushi",
+        "ingredients"=>"riso",
         "price"=>"3.50",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-15.jpg",
         "course"=>"antipasti"
 
     ],
@@ -189,7 +189,7 @@ return [
         "price"=>"4",
         "description"=>"4 pezzi",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-16.jpg",
         "course"=>"antipasti"
 
     ],
@@ -201,7 +201,7 @@ return [
         "price"=>"4",
         "description"=>"4 pezzi",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-17.jpg",
         "course"=>"antipasti"
 
     ],
@@ -213,7 +213,7 @@ return [
         "price"=>"4.50",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-18.jpg",
         "course"=>"primi"
 
     ],
@@ -225,7 +225,7 @@ return [
         "price"=>"4.50",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-19.jpg",
         "course"=>"primi"
 
     ],
@@ -237,7 +237,7 @@ return [
         "price"=>"4",
         "description"=>"piccante",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-20.jpg",
         "course"=>"primi"
 
     ],
@@ -249,7 +249,7 @@ return [
         "price"=>"5.50",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-21.jpg",
         "course"=>"secondi"
 
     ],
@@ -261,7 +261,7 @@ return [
         "price"=>"5.50",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-22.jpg",
         "course"=>"secondi"
 
     ],
@@ -273,7 +273,7 @@ return [
         "price"=>"5",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-23.jpg",
         "course"=>"secondi"
 
     ],
@@ -285,7 +285,7 @@ return [
         "price"=>"2",
         "description"=>"informazioni: il prodotto contiene cereali contenenti glutine, cioè grano, segale, orzo, avena, kamut o i loro ceppi derivati",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-24.jpg",
         "course"=>"antipasti"
 
     ],
@@ -297,7 +297,7 @@ return [
         "price"=>"2.50",
         "description"=>"informazioni: il prodotto contiene cereali contenenti glutine, cioè grano, segale, orzo, avena, kamut o i loro ceppi derivati",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-25.jpg",
         "course"=>"antipasti"
 
     ],
@@ -309,7 +309,7 @@ return [
         "price"=>"7",
         "description"=>"informazioni: il prodotto contiene cereali contenenti glutine, cioè grano, segale, orzo, avena, kamut o i loro ceppi derivati",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-26.jpg",
         "course"=>"primi"
 
     ],
@@ -321,7 +321,7 @@ return [
         "price"=>"9",
         "description"=>"",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-27.jpg",
         "course"=>"primi"
 
     ],
@@ -333,19 +333,19 @@ return [
         "price"=>"16",
         "description"=>"informazioni: il prodotto contiene latte e prodotti a base di latte, lattosio incluso",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-28.jpg",
         "course"=>"secondi"
 
     ],
     [
         "id"=>"29",
         "user_id"=>"3",
-        "name"=>"Gnocco fritto con crema di melanzane(vegetariano)",
+        "name"=>"Gnocco fritto con crema di melanzane (vegetariano)",
         "ingredients"=>"",
         "price"=>"2",
         "description"=>"informazioni: il prodotto contiene cereali contenenti glutine, cioè grano, segale, orzo, avena, kamut o i loro ceppi derivati e semi di sesamo e prodotti a base di semi di sesamo",
         "visibility"=>true,
-        "image"=>"",
+        "image"=>"dish-29.jpg",
         "course"=>"secondi"
 
     ],
