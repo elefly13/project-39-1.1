@@ -1,22 +1,18 @@
-.box-80 {
-    width: 1280px;
-    height: 80px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .logo {
     width: 150px;
     object-fit: cover;
 }
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
 
-.nav {
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    text-decoration: none;
-    text-transform: uppercase;
+.h-header {
+    height: 80px;
+}
+
+.space {
+    margin-top: 200px;
 }

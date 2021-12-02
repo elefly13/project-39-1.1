@@ -23,7 +23,7 @@
 </head>
 <body>
     @include('partials.header')
-    <section>
+    <section class="space">
         @yield('content')
     </section>
 </body>
