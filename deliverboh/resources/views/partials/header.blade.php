@@ -1,20 +1,10 @@
-<header class="container">
-  <nav class="navbar navbar-expand-md navbar-light">
+<header class="container-fluid h-header">
+  <nav class="navbar navbar-expand-md navbar-light justify-content-around">
     <a class="navbar-brand" href="{{ url('/') }}">
-      {{-- inserisco il logo --}}
       <img src=" {{ asset('images/Logo.png') }} " class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
     </a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Left Side Of Navbar -->
-      <ul class="navbar-nav mr-auto"></ul>
-
       <!-- Right Side Of Navbar -->
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav">
         <!-- Authentication Links -->
         @if (Route::has('login'))
           @auth
@@ -58,10 +48,6 @@
       </ul>
     </div>
   </nav>
-
-  <div class="container prova">
-    <span></span>
-  </div>
 </header>
 
 

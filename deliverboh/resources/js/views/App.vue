@@ -1,13 +1,13 @@
 <template>
-    <div class="container">
-        <button @click="prova()">ciao</button>
+    <div>
         <Header />
         <!-- <Api /> -->
         <Cart :cartContent="cart"/>
         <Main />
-        <Menu @cartContent="test" />
+        <Menu @cartContent="passCart" />
+        <!-- <button @click="prova()">ciao</button> -->
 
-        <Footer />
+        <!-- <Footer /> -->
     </div>
 </template>
 
@@ -32,15 +32,14 @@ export default {
     },
     data() {
         return {
-            cart: [],
+            cart:[],
         }
     },
     methods: {
-        prova() {
+        passCart(cartContent) {
+            this.cart = cartContent
             console.log(this.cart)
-        },
-        test(cartContent) {
-            this.cart.push(cartContent)
+
         },
     },
 };
@@ -52,4 +51,5 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
+
 </style>
