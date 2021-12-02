@@ -29,16 +29,16 @@ export default {
     name: "Api",
     data() {
         return {
-      url: "http://127.0.0.1:8000/api/",
-      flag: false,
-      dishes: [],
-      users: [],
-      categories: [],
-      allergens: [],
-      orders: [],
-      api_token:
-        "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
-    };
+            url: "http://127.0.0.1:8000/api/",
+            flag: false,
+            dishes: [],
+            users: [],
+            categories: [],
+            allergens: [],
+            orders: [],
+            api_token:
+                "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
+        };
     },
     created() {
         this.getDishes();

@@ -9,12 +9,16 @@ use App\User;
 use App\Category;
 use App\Allergen;
 use App\Order;
+use PHPUnit\Framework\Constraint\Count;
 
 class ApiController extends Controller
 {
     public function dishes()
     {
         $dishes= Dish::all();
+        for ($i=0; $i<Count($dishes); $i++){
+            $dishes[$i]->quantity = 1;
+        }
         return response()->json([
             'success'=>true,
             'results'=>$dishes

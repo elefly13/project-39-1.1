@@ -3,6 +3,11 @@
 @section('content')
  
 <div>
+    @if (session('status'))
+	<div class="alert alert-success">
+		{{ session('status') }}
+	</div>
+    @endif
     @foreach ($data as $category)
         <div>
             {{$category['cuisine']}} 

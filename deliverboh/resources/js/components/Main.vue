@@ -1,50 +1,73 @@
 <template>
-    <main>
-        <div class="wrapper">
-            <div class="check-box"></div>
-
-            <div class="slogan">
-                <div class="box-80">
-                    <h1>I piatti che ami, a domicilio</h1>
-                </div>
-                <form class="box-search">
-                    <input
-                        class="ricerca"
-                        v-model="ricercaPiatto"
-                        type="text"
-                        placeholder="Inserisci il tuo piatto preferito"
-                        @keyup="$emit('search', ricercaPiatto)"
-                    />
-                    <button
-                        class="cerca"
-                        @click.prevent="$emit('search', ricercaPiatto)"
-                    >
-                        Cerca
-                    </button>
-                </form>
+    <main class="wrapper">
+            <div class="check-box d-flex flex-column justify-content-around">
+                <p v-for="category in categories" :key="category['id']">
+                    {{category['cuisine']}}
+                </p>
             </div>
-
-            <div class="sfondo">
-                <img src="/images/unarota.svg" />
-            </div>
-            <div class="sponsor">
-                <div class="box-80">
-                    <h3>I più popolari</h3>
-                </div>
-            </div>
-        </div>
+            <Middle class="middle" />
+            <Background class="background" />
     </main>
 </template>
 
 <script>
+import Background from './partials/Background';
+import Middle from './partials/Middle'
 export default {
     name: "Main",
     data() {
         return {
-            ricercaPiatto: "",
+            url: "http://127.0.0.1:8000/api/",
+            categories: [],
         };
     },
-    created() {},
-    methods: {},
+    components: {
+        Middle,
+        Background
+    },
+    created() {
+        this.getCategories()
+    },
+    methods: {
+        getCategories(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'categories', bodyParameters, config)
+                .then((resp)=>{
+                    this.categories = resp.data.results
+                })
+                .catch();
+        },
+    },
 };
 </script>
+
+<style lang="scss" scoped>
+.wrapper{
+    margin-top: 80px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+}
+.check-box {
+    width: calc(100%/6);
+    height: 100%;
+    background-color: chocolate;
+}
+.middle {
+    width: calc((100%/6) * 3);
+    // height: 100%;
+    // background-color: chocolate;
+}
+.background {
+    width: calc((100%/6) * 2);
+    // height: 100%;
+    // background-color: chocolate;
+}
+</style>
