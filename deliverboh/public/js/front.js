@@ -1908,6 +1908,13 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1947,7 +1954,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Api",
   data: function data() {
-    return {
+    var _ref;
+
+    return _ref = {
       url: "http://127.0.0.1:8000/api/",
       flag: false,
       dishes: [],
@@ -1957,8 +1966,8 @@ __webpack_require__.r(__webpack_exports__);
       orders: [],
       dishOrders: [],
       allergenDishes: [],
-      api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k"
-    };
+      categoryUsers: []
+    }, _defineProperty(_ref, "categoryUsers", []), _defineProperty(_ref, "api_token", "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k"), _ref;
   },
   created: function created() {
     this.getDishes();
@@ -1968,6 +1977,7 @@ __webpack_require__.r(__webpack_exports__);
     this.getOrders();
     this.getDishOrders();
     this.getAllergenDishes();
+    this.getCategoryUsers();
   },
   methods: {
     getDishes: function getDishes() {
@@ -2073,6 +2083,21 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.get(this.url + 'allergenDishes', bodyParameters, config).then(function (resp) {
         _this7.allergenDishes = resp.data.results;
+      })["catch"]();
+    },
+    getCategoryUsers: function getCategoryUsers() {
+      var _this8 = this;
+
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'categoryUsers', bodyParameters, config).then(function (resp) {
+        _this8.categoryUsers = resp.data.results;
       })["catch"]();
     }
   }
@@ -4115,6 +4140,20 @@ var render = function () {
                 _vm._s(allergenDish.allergen_id) +
                 "\n            " +
                 _vm._s(allergenDish.dish_id) +
+                "\n        "
+            ),
+          ])
+        }),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._l(_vm.categoryUsers, function (categoryUser) {
+          return _c("li", { key: categoryUser["id"] + 600 }, [
+            _vm._v(
+              "\n            " +
+                _vm._s(categoryUser.category_id) +
+                "\n            " +
+                _vm._s(categoryUser.user_id) +
                 "\n        "
             ),
           ])

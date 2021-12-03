@@ -30,6 +30,11 @@
                 {{ allergenDish.allergen_id }}
                 {{ allergenDish.dish_id }}
             </li>
+            <br>
+            <li :key="(categoryUser['id']) + 600" v-for="categoryUser in categoryUsers">
+                {{ categoryUser.category_id }}
+                {{ categoryUser.user_id }}
+            </li>
         </ul>
     </section>
 </template>
@@ -48,6 +53,8 @@ export default {
             orders: [],
             dishOrders: [],
             allergenDishes: [],
+            categoryUsers: [],
+            categoryUsers: [],
             api_token:
                 "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
         };
@@ -60,6 +67,7 @@ export default {
         this.getOrders();
         this.getDishOrders();
         this.getAllergenDishes();
+        this.getCategoryUsers();
     },
     methods: {
         getDishes(){
@@ -164,6 +172,21 @@ export default {
                 .get(this.url + 'allergenDishes', bodyParameters, config)
                 .then((resp)=>{
                     this.allergenDishes = resp.data.results
+                })
+                .catch();
+        },
+        getCategoryUsers(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'categoryUsers', bodyParameters, config)
+                .then((resp)=>{
+                    this.categoryUsers = resp.data.results
                 })
                 .catch();
         },
