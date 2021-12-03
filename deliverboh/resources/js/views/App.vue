@@ -12,9 +12,10 @@
 
 <script>
 import Header from "../components/Header";
-// import Api from "../components/Api";
+import Api from "../components/Api";
 import Main from "../components/Main";
 import Menu from "../components/Menu";
+import ConfermaOrdine from "../components/ConfermaOrdine";
 import Footer from "../components/Footer";
 
 export default {
@@ -24,6 +25,7 @@ export default {
         // Api,
         Main,
         Menu,
+        ConfermaOrdine,
         Footer
         
     },

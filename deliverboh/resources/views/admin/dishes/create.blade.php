@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('admin.dishes.store')}}" method="post">
+<form action="{{route('admin.dishes.store')}}" method="post" enctype="multipart/form-data">
 	@csrf
 	@method('POST') 
 
