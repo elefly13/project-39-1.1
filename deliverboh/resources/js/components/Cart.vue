@@ -23,7 +23,7 @@
                             </ul>
                         </div>
                         <div class="panel-footer">
-                            <span>totale: {{ price }} €</span>
+                            <span>totale: {{ price + this.finalPrice}} €</span>
                             <button class="cart-btn">Procedi al pagamento</button>
                         </div>
                     </div>
@@ -37,24 +37,33 @@
 export default {
     
     name: "Cart",
-    props: ['cartContent'],
+    props: ['cartContent','initialPrice'],
     data() {
         return {
+            finalPrice: 0,
             price: 0,
             test: 0,
         };
     },
     watch: {
-        cartContent: function() {
-
+        initialPrice: function () {
+            this.finalPrice = this.initialPrice
+        },
+        cartContent: function () {
             let somma = 0;
             
             for (const i in this.cartContent) {
                 let totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
                 somma += totalPrice;   
             }
+            
             this.price = somma;
-        }
+
+            
+            if(this.cartContent == 0) {
+                this.finalPrice = 0
+            }
+        },
     },
     methods: {
         moreQuantity(id) {
