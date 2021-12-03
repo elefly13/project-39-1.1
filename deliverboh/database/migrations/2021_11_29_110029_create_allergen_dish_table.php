@@ -19,6 +19,8 @@ class CreateAllergenDishTable extends Migration
             $table->foreign('allergen_id')->references('id')->on('allergens')->onDelete('cascade');
             $table->unsignedBigInteger('dish_id');
             $table->foreign('dish_id')->references('id')->on('dishes')->onDelete('cascade');
+            $table->timestamps();
+
         });
     }
 

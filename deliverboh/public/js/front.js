@@ -1934,6 +1934,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Api",
   data: function data() {
@@ -1945,6 +1955,8 @@ __webpack_require__.r(__webpack_exports__);
       categories: [],
       allergens: [],
       orders: [],
+      dishOrders: [],
+      allergenDishes: [],
       api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k"
     };
   },
@@ -1954,6 +1966,8 @@ __webpack_require__.r(__webpack_exports__);
     this.getCategories();
     this.getAllergens();
     this.getOrders();
+    this.getDishOrders();
+    this.getAllergenDishes();
   },
   methods: {
     getDishes: function getDishes() {
@@ -2029,6 +2043,36 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.get(this.url + 'orders', bodyParameters, config).then(function (resp) {
         _this5.orders = resp.data.results;
+      })["catch"]();
+    },
+    getDishOrders: function getDishOrders() {
+      var _this6 = this;
+
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'dishOrders', bodyParameters, config).then(function (resp) {
+        _this6.dishOrders = resp.data.results;
+      })["catch"]();
+    },
+    getAllergenDishes: function getAllergenDishes() {
+      var _this7 = this;
+
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'allergenDishes', bodyParameters, config).then(function (resp) {
+        _this7.allergenDishes = resp.data.results;
       })["catch"]();
     }
   }
@@ -2570,7 +2614,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "App",
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
-    // Api,
+    Api: _components_Api__WEBPACK_IMPORTED_MODULE_1__["default"],
     Main: _components_Main__WEBPACK_IMPORTED_MODULE_2__["default"],
     Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"],
     ConfermaOrdine: _components_ConfermaOrdine__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -4009,7 +4053,6 @@ var render = function () {
   return _c("section", [
     _c(
       "ul",
-      { staticClass: "d-flex" },
       [
         _vm._l(_vm.dishes, function (dish) {
           return _c("li", { key: dish["id"] }, [
@@ -4046,6 +4089,34 @@ var render = function () {
         _vm._l(_vm.orders, function (order) {
           return _c("li", { key: order["id"] + 400 }, [
             _vm._v("\n            " + _vm._s(order.name_user) + "\n        "),
+          ])
+        }),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._l(_vm.dishOrders, function (dishOrder) {
+          return _c("li", { key: dishOrder["id"] + 500 }, [
+            _vm._v(
+              "\n            " +
+                _vm._s(dishOrder.dish_id) +
+                "\n            " +
+                _vm._s(dishOrder.order_id) +
+                "\n        "
+            ),
+          ])
+        }),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._l(_vm.allergenDishes, function (allergenDish) {
+          return _c("li", { key: allergenDish["id"] + 600 }, [
+            _vm._v(
+              "\n            " +
+                _vm._s(allergenDish.allergen_id) +
+                "\n            " +
+                _vm._s(allergenDish.dish_id) +
+                "\n        "
+            ),
           ])
         }),
       ],
@@ -4667,7 +4738,15 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("Header"), _vm._v(" "), _c("Main"), _vm._v(" "), _c("Menu")],
+    [
+      _c("Header"),
+      _vm._v(" "),
+      _c("Main"),
+      _vm._v(" "),
+      _c("Menu"),
+      _vm._v(" "),
+      _c("Api"),
+    ],
     1
   )
 }
@@ -17707,7 +17786,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! F:\Boolean\project-39-1.1\deliverboh\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

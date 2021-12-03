@@ -1,9 +1,9 @@
 <template>
     <div>
         <Header />
-        <!-- <Api /> -->
         <Main />
         <Menu />
+        <Api />
         <!-- <button @click="prova()">ciao</button> -->
 
         <!-- <Footer /> -->
@@ -22,7 +22,7 @@ export default {
     name: "App",
     components: {
         Header,
-        // Api,
+        Api,
         Main,
         Menu,
         ConfermaOrdine,

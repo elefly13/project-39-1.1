@@ -20,6 +20,8 @@ Route::get('/users', 'Api\ApiController@users');
 Route::get('/categories', 'Api\ApiController@categories');
 Route::get('/allergens', 'Api\ApiController@allergens');
 Route::get('/orders', 'Api\ApiController@orders');
+Route::get('/dishOrders', 'Api\ApiController@dishOrders');
+Route::get('/allergenDishes', 'Api\ApiController@allergenDishes');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

@@ -1,6 +1,6 @@
 <template>
     <section>
-        <ul class="d-flex">
+        <ul>
             <li :key="dish['id']" v-for="dish in dishes">
                 {{ dish.name }}
             </li>
@@ -20,6 +20,16 @@
             <li :key="(order['id']) + 400" v-for="order in orders">
                 {{ order.name_user }}
             </li>
+            <br>
+            <li :key="(dishOrder['id']) + 500" v-for="dishOrder in dishOrders">
+                {{ dishOrder.dish_id }}
+                {{ dishOrder.order_id }}
+            </li>
+            <br>
+            <li :key="(allergenDish['id']) + 600" v-for="allergenDish in allergenDishes">
+                {{ allergenDish.allergen_id }}
+                {{ allergenDish.dish_id }}
+            </li>
         </ul>
     </section>
 </template>
@@ -36,6 +46,8 @@ export default {
             categories: [],
             allergens: [],
             orders: [],
+            dishOrders: [],
+            allergenDishes: [],
             api_token:
                 "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
         };
@@ -46,6 +58,8 @@ export default {
         this.getCategories();
         this.getAllergens();
         this.getOrders();
+        this.getDishOrders();
+        this.getAllergenDishes();
     },
     methods: {
         getDishes(){
@@ -120,6 +134,36 @@ export default {
                 .get(this.url + 'orders', bodyParameters, config)
                 .then((resp)=>{
                     this.orders = resp.data.results
+                })
+                .catch();
+        },
+        getDishOrders(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'dishOrders', bodyParameters, config)
+                .then((resp)=>{
+                    this.dishOrders = resp.data.results
+                })
+                .catch();
+        },
+        getAllergenDishes(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'allergenDishes', bodyParameters, config)
+                .then((resp)=>{
+                    this.allergenDishes = resp.data.results
                 })
                 .catch();
         },
