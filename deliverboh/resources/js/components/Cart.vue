@@ -45,13 +45,6 @@ export default {
         };
     },
     watch: {
-        // test: function prova(id) {
-        //     for (const i in this.cartContent) {
-        //         if (this.cartContent[i].id == id) {
-        //             this.price += this.cartContent[i].price
-        //         }
-        //     }
-        // },
         cartContent: function() {
 
             let somma = 0;

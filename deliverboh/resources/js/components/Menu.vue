@@ -41,7 +41,6 @@ export default {
             dishes: [],
             cart: [],
             price: 0,
-            // firstClick: "Aggiungi al carrello",
             restaurant: 0,
             api_token:
                 "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
@@ -69,12 +68,6 @@ export default {
                 }
             }
         }, 
-        // addToCart() {
-        //     if(this.firstClick == "Aggiungi al carrello") {
-        //         this.firstClick = "Aggiunto al carrello"
-                
-        //     }
-        // },
         getDishes(){
             const bodyParameters = {
                 key: "value",
@@ -107,7 +100,6 @@ export default {
 .container-menu {
     width: 100%;
     background-image: linear-gradient(to bottom right, #b5d8ba 20%, #f1c692 80%);
-    //background-color:#fff7df ;
     .top {
         width: 100%;
         margin: 0 auto;
@@ -120,25 +112,20 @@ export default {
         h1 {
             color:#f1c692;
             font-size: 34px;
-            
         }
         h3 {
             color: #fff7df;
         }
-
-
     }
     .box {
         display: flex;
         .big-box-img {
-        width: 75%;
-        margin: 0 auto;
-        padding: 40px;
-       
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        
+            width: 75%;
+            margin: 0 auto;
+            padding: 40px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
         .image {
             display: column;
             text-align: center;
@@ -187,10 +174,10 @@ export default {
            
         }
         .image:hover {
-        transform: scale(1.05);
+            transform: scale(1.05);
         }
         .image:active {
-        transform: scale(1);
+            transform: scale(1);
         }
     }
     .area-carrello {
@@ -198,10 +185,6 @@ export default {
         height: 100%;
         
     }
-
     }
-    
-    
-           
 }
 </style>

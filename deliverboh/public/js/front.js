@@ -1953,13 +1953,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   watch: {
-    // test: function prova(id) {
-    //     for (const i in this.cartContent) {
-    //         if (this.cartContent[i].id == id) {
-    //             this.price += this.cartContent[i].price
-    //         }
-    //     }
-    // },
     cartContent: function cartContent() {
       var somma = 0;
 
@@ -2154,7 +2147,6 @@ __webpack_require__.r(__webpack_exports__);
       dishes: [],
       cart: [],
       price: 0,
-      // firstClick: "Aggiungi al carrello",
       restaurant: 0,
       api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k"
     };
@@ -2182,11 +2174,6 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    // addToCart() {
-    //     if(this.firstClick == "Aggiungi al carrello") {
-    //         this.firstClick = "Aggiunto al carrello"
-    //     }
-    // },
     getDishes: function getDishes() {
       var _this = this;
 
