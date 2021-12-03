@@ -4535,10 +4535,7 @@ var render = function () {
             _vm._l(_vm.dishes, function (dish) {
               return _c("div", { key: dish["id"], staticClass: "image" }, [
                 _c("img", {
-                  attrs: {
-                    src: "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg",
-                    alt: "",
-                  },
+                  attrs: { src: "./images/image-dish/" + dish.image, alt: "" },
                 }),
                 _vm._v(" "),
                 _c("h4", [_vm._v(_vm._s(dish.name))]),

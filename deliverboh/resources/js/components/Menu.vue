@@ -10,7 +10,7 @@
             <div class="box">
                 <div class="big-box-img">
                     <div class="image" :key="dish['id']" v-for="dish in dishes">
-                        <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg" alt="">
+                        <img :src="'./images/image-dish/' + dish.image" alt="">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
                         <h4>{{ dish.price }}€</h4>
