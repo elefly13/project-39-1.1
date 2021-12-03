@@ -1,15 +1,23 @@
 <template>
     <section>
-        <h1>Sono la pagina menu del ristorante</h1>
         <div class="container-menu">
             <div class="top">
                 <p class="saluto">Benvenuto nell nostro ristorante</p>
                 <h1>Nome ristorante selezionato</h1>
                 <h3>Il nostro menu</h3>
             </div>
+            <Cart :cartContent="cart"/>
             <div class="box">
                 <div class="big-box-img">
                     <div class="image" :key="dish['id']" v-for="dish in dishes">
+<<<<<<< HEAD
+                        <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg" alt="">
+                        <h4>{{ dish.name }}</h4>
+                        <p>{{ dish.description }}</p>
+                        <h4>{{ dish.price }}€</h4>
+                        <p>{{ dish.ingredients }}</p>
+                        <button class="button" @click="sendCart(dish)">Aggiungi al carrello</button>               
+=======
                         <img :src=" './images/image-dish/' + dish.image " :alt=" dish.name ">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
@@ -19,6 +27,7 @@
                         <p>ALLERGENI</p>
                         <p> {{ myAllergen[5] }}</p>  
                         <button class="button" @click.prevent="sendCart(dish), $emit('cartContent', cart)">Aggiungi al carrello</button>               
+>>>>>>> main
                     </div> 
                 </div>
 
@@ -29,9 +38,14 @@
 </template>
 
 <script>
+import Cart from './Cart.vue';
+
 export default {
     
     name: "Menu",
+    components: {
+        Cart,
+    },
     data() {
         return {
             url: "http://127.0.0.1:8000/api/",
@@ -39,6 +53,7 @@ export default {
             dishes: [],
             allergens: [],
             cart: [],
+            price: 0,
             restaurant: 0,
             api_token:
                 "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
@@ -70,9 +85,16 @@ export default {
             if(dish.user_id == this.restaurant) {
                 this.cart.push(dish)
             } else {
-                alert("Puoi ordinare da un solo ristorante alla volta")
+                if(this.restaurant == 0) {
+                    this.restaurant = dish.user_id
+                }
+                if(dish.user_id == this.restaurant) {
+                    this.cart.push(dish)
+                } else {
+                    alert("Puoi ordinare da un solo ristorante alla volta")
+                }
             }
-        },
+        }, 
         getDishes(){
             const bodyParameters = {
                 key: "value",
@@ -120,38 +142,32 @@ export default {
 .container-menu {
     width: 100%;
     background-image: linear-gradient(to bottom right, #b5d8ba 20%, #f1c692 80%);
-    //background-color:#fff7df ;
     .top {
         width: 100%;
         margin: 0 auto;
         padding: 40px 60px;
         background-color: #439373;
-        border-bottom-right-radius: 50px;
         .saluto {
+            margin-left: 3px;
             color: #fff7df;
         }
         h1 {
             color:#f1c692;
             font-size: 34px;
-            
         }
         h3 {
             color: #fff7df;
         }
-
-
     }
     .box {
         display: flex;
         .big-box-img {
-        width: 75%;
-        margin: 0 auto;
-        padding: 40px;
-       
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        
+            width: 75%;
+            margin: 0 auto;
+            padding: 40px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
         .image {
             position: relative;
             display: column;
@@ -208,10 +224,10 @@ export default {
            
         }
         .image:hover {
-        transform: scale(1.05);
+            transform: scale(1.05);
         }
         .image:active {
-        transform: scale(1);
+            transform: scale(1);
         }
     }
     .area-carrello {
@@ -219,10 +235,6 @@ export default {
         height: 100%;
         
     }
-
     }
-    
-    
-           
 }
 </style>

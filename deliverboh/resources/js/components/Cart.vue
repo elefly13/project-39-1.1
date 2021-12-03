@@ -11,20 +11,20 @@
                     <div id="collapse1" class="panel-collapse collapse">
                         <div class="panel-body" v-for="(dish, index) in cartContent" :key="index">
                             <ul>
-                                <li>{{ dish[index].name }}</li>
-                                <li>{{ dish[index].description}}</li>
-                                <li>{{ dish[index].ingredients }}</li>
-                                <li>{{ dish[index].price }}</li>
+                                <li>{{ dish.name }}</li>
+                                <li>{{ dish.description}}</li>
+                                <li>{{ dish.ingredients }}</li>
+                                <li>{{ dish.price }}</li>
                                 <li>
-                                    <button @click="dish[index].quantity++">+</button>
-                                    {{ dish[index].quantity }}
-                                    <button @click="((dish[index].quantity > 1 ) ? dish[index].quantity-- : null)">-</button>
+                                    <button @click="dish.quantity++, moreQuantity(dish.id)">+</button>
+                                    {{ dish.quantity }}
+                                    <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">x</button>
                                 </li>
                             </ul>
                         </div>
                         <div class="panel-footer">
                             <span>totale: {{ price }} €</span>
-                            <button class="cart-btn" @click="getTotalPrice()">calcola prezzo</button>
+                            <button class="cart-btn">Procedi al pagamento</button>
                         </div>
                     </div>
                 </div>
@@ -41,24 +41,37 @@ export default {
     data() {
         return {
             price: 0,
+            test: 0,
         };
     },
-    methods: {
-        getTotalPrice() {
-            console.log(this.cartContent)
+    watch: {
+        cartContent: function() {
+
             let somma = 0;
-            for(let i = 0; i < this.cartContent.length; i++) {
-               
-                let tmp = this.cartContent[i];
-        
-                let totalPrice = tmp[i].quantity * tmp[i].price;
-                somma += totalPrice;
-                console.log(tmp[i].price)
-                
+            
+            for (const i in this.cartContent) {
+                let totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
+                somma += totalPrice;   
             }
-            return this.price = somma;
+            this.price = somma;
         }
-    },       
+    },
+    methods: {
+        moreQuantity(id) {
+            for (const i in this.cartContent) {
+                if (this.cartContent[i].id == id) {
+                    this.price += this.cartContent[i].price
+                }
+            }
+        },
+        lessQuantity(id) {
+            for (const i in this.cartContent) {
+                if (this.cartContent[i].id == id) {
+                    this.price -= this.cartContent[i].price
+                }
+            }
+        }
+    }
 };
 </script>
 
@@ -74,10 +87,13 @@ export default {
             padding: 20px;
             background-color: white;
             width: 230px;
-            border-radius: 20px;
-            // .cart-title {
-                
-            // }
+            border-bottom-left-radius: 20px;
+            .cart-title {
+                text-align: center;
+                a {
+                    color: #439373;
+                }
+            }
             .cart-btn {
                 font-size: 15px;
                 margin: 10px;

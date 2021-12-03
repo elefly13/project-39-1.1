@@ -12,7 +12,8 @@
 
 <script>
 import Background from './partials/Background';
-import Middle from './partials/Middle'
+import Middle from './partials/Middle';
+
 export default {
     name: "Main",
     data() {
