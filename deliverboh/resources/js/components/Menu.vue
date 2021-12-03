@@ -10,24 +10,12 @@
             <div class="box">
                 <div class="big-box-img">
                     <div class="image" :key="dish['id']" v-for="dish in dishes">
-<<<<<<< HEAD
                         <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg" alt="">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
                         <h4>{{ dish.price }}€</h4>
                         <p>{{ dish.ingredients }}</p>
                         <button class="button" @click="sendCart(dish)">Aggiungi al carrello</button>               
-=======
-                        <img :src=" './images/image-dish/' + dish.image " :alt=" dish.name ">
-                        <h4>{{ dish.name }}</h4>
-                        <p>{{ dish.description }}</p>
-                        <h4>€ {{ dish.price }}</h4>
-                        <p>INGREDIENTI</p>
-                        <p>{{ dish.ingredients }}</p>
-                        <p>ALLERGENI</p>
-                        <p> {{ myAllergen[5] }}</p>  
-                        <button class="button" @click.prevent="sendCart(dish), $emit('cartContent', cart)">Aggiungi al carrello</button>               
->>>>>>> main
                     </div> 
                 </div>
 

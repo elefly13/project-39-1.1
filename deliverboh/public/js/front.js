@@ -2360,18 +2360,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Menu",
@@ -4475,7 +4463,6 @@ var render = function () {
             { staticClass: "big-box-img" },
             _vm._l(_vm.dishes, function (dish) {
               return _c("div", { key: dish["id"], staticClass: "image" }, [
-                _vm._v("\n<<<<<<< HEAD\n                        "),
                 _c("img", {
                   attrs: {
                     src: "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg",
@@ -4503,42 +4490,6 @@ var render = function () {
                   },
                   [_vm._v("Aggiungi al carrello")]
                 ),
-                _vm._v("               \n=======\n                        "),
-                _c("img", {
-                  attrs: {
-                    src: "./images/image-dish/" + dish.image,
-                    alt: dish.name,
-                  },
-                }),
-                _vm._v(" "),
-                _c("h4", [_vm._v(_vm._s(dish.name))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.description))]),
-                _vm._v(" "),
-                _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
-                _vm._v(" "),
-                _c("p", [_vm._v("INGREDIENTI")]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                _vm._v(" "),
-                _c("p", [_vm._v("ALLERGENI")]),
-                _vm._v(" "),
-                _c("p", [_vm._v(" " + _vm._s(_vm.myAllergen[5]))]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "button",
-                    on: {
-                      click: function ($event) {
-                        $event.preventDefault()
-                        _vm.sendCart(dish), _vm.$emit("cartContent", _vm.cart)
-                      },
-                    },
-                  },
-                  [_vm._v("Aggiungi al carrello")]
-                ),
-                _vm._v("               \n>>>>>>> main\n                    "),
               ])
             }),
             0
