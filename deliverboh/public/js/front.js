@@ -2524,6 +2524,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ConfermaOrdine__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/ConfermaOrdine */ "./resources/js/components/ConfermaOrdine.vue");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
 /* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
+
+/* harmony import */ var _components_Api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Api */ "./resources/js/components/Api.vue");
+/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
+//
+
+/* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
+
+
 //
 //
 //
@@ -2554,6 +2567,18 @@ __webpack_require__.r(__webpack_exports__);
     Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"],
     ConfermaOrdine: _components_ConfermaOrdine__WEBPACK_IMPORTED_MODULE_4__["default"],
     Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"]
+
+    Api: _components_Api__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Main: _components_Main__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"]
+
+    // Api,
+    Cart: _components_Cart_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    Main: _components_Main__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Menu: _components_Menu__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"]
+
   },
   data: function data() {
     return {
@@ -2565,6 +2590,7 @@ __webpack_require__.r(__webpack_exports__);
       this.cart = cartContent;
       console.log(this.cart);
     }
+
   }
 });
 
@@ -2589,33 +2615,31 @@ exports.push([module.i, "ul[data-v-b7f93bea] {\n  list-style: none;\n}\n.area-ca
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ConfermaOrdine.vue?vue&type=style&index=0&id=53e3e70f&lang=scss&scoped=true&":
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ConfermaOrdine.vue?vue&type=style&index=0&id=53e3e70f&lang=scss&scoped=true& ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-=======
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss&scoped=true&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss&scoped=true& ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************/
->>>>>>> main
+
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-<<<<<<< HEAD
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap);", ""]);
 
 // module
 exports.push([module.i, "*[data-v-53e3e70f] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Raleway\", sans-serif;\n}\n.container-conf-ordine[data-v-53e3e70f] {\n  width: 100%;\n  height: 900px;\n  background-image: linear-gradient(to bottom right, #b5d8ba 20%, #f1c692 80%);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.container-conf-ordine .big-box[data-v-53e3e70f] {\n  width: 60%;\n  display: flex;\n}\n.container-conf-ordine .big-box .box-riepilogo[data-v-53e3e70f] {\n  display: column;\n  width: 40%;\n  min-width: 300px;\n  position: relative;\n  margin: 20px;\n  padding: 20px;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n  box-shadow: 5px 10px 18px #a09f9f;\n  background-color: white;\n}\n.container-conf-ordine .big-box .box-riepilogo h2[data-v-53e3e70f] {\n  margin-bottom: 15px;\n  border-bottom: 1px solid #439373;\n  color: #be541e;\n  padding: 10px;\n}\n.container-conf-ordine .big-box .box-riepilogo .sezione-piatto[data-v-53e3e70f] {\n  margin-bottom: 20px;\n}\n.container-conf-ordine .big-box .box-riepilogo .sezione-piatto h3[data-v-53e3e70f] {\n  margin-bottom: 10px;\n}\n.container-conf-ordine .big-box .box-riepilogo .sezione-piatto p[data-v-53e3e70f] {\n  text-align: right;\n}\n.container-conf-ordine .big-box .box-riepilogo .sezione-totale h4[data-v-53e3e70f] {\n  font-size: 30px;\n  color: #be541e;\n  text-align: right;\n}\n.container-conf-ordine .big-box .box-riepilogo .note-cliente[data-v-53e3e70f] {\n  height: 100px;\n  margin-top: 40px;\n  border: 1px solid #be541e;\n  padding: 8px;\n  border-radius: 5px;\n}\n.container-conf-ordine .big-box .box-riepilogo button[data-v-53e3e70f] {\n  position: absolute;\n  left: 20px;\n  bottom: 20px;\n  padding: 5px;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.container-conf-ordine .big-box .box-riepilogo button[data-v-53e3e70f]:hover {\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.container-conf-ordine .big-box .box-pago[data-v-53e3e70f] {\n  width: 60%;\n  min-width: 300px;\n  position: relative;\n  margin: 20px;\n  padding: 20px;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n  box-shadow: 5px 10px 18px #a09f9f;\n  background-color: white;\n}\n.container-conf-ordine .big-box .box-pago h2[data-v-53e3e70f] {\n  margin-bottom: 15px;\n  border-bottom: 1px solid #439373;\n  color: #be541e;\n  padding: 10px;\n}\n.container-conf-ordine .big-box .box-pago form[data-v-53e3e70f] {\n  margin-top: 30px;\n}\n.container-conf-ordine .big-box .box-pago form .input[data-v-53e3e70f] {\n  margin-top: 30px;\n}\n.container-conf-ordine .big-box .box-pago form label[data-v-53e3e70f] {\n  margin-bottom: 20px;\n}\n.container-conf-ordine .big-box .box-pago form input[data-v-53e3e70f] {\n  width: 100%;\n  height: 30px;\n  margin-top: 10px;\n  padding: 10px;\n}\n.container-conf-ordine .big-box .box-pago form .text-area[data-v-53e3e70f] {\n  width: 100%;\n  height: 60px;\n  margin-top: 10px;\n  padding: 10px;\n}\n.container-conf-ordine .big-box .box-pago form .totale[data-v-53e3e70f] {\n  margin: 30px 0;\n}\n.container-conf-ordine .big-box .box-pago form button[data-v-53e3e70f] {\n  position: absolute;\n  left: 20px;\n  bottom: 20px;\n  margin-top: 20px;\n  padding: 5px;\n  border-color: #be541e;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #be541e;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.container-conf-ordine .big-box .box-pago form button[data-v-53e3e70f]:hover {\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}", ""]);
-=======
+
 
 
 // module
 exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  height: 100%;\n  background-color: chocolate;\n}\n.middle[data-v-b9c20fb8] {\n  width: 50%;\n}\n.background[data-v-b9c20fb8] {\n  width: 33.3333333333%;\n}", ""]);
->>>>>>> main
+
 
 // exports
 
@@ -3208,26 +3232,24 @@ if(false) {}
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ConfermaOrdine.vue?vue&type=style&index=0&id=53e3e70f&lang=scss&scoped=true&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ConfermaOrdine.vue?vue&type=style&index=0&id=53e3e70f&lang=scss&scoped=true& ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-=======
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss&scoped=true&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss&scoped=true& ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
->>>>>>> main
+
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-<<<<<<< HEAD
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./ConfermaOrdine.vue?vue&type=style&index=0&id=53e3e70f&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ConfermaOrdine.vue?vue&type=style&index=0&id=53e3e70f&lang=scss&scoped=true&");
-=======
+
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss&scoped=true&");
->>>>>>> main
+
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -4644,19 +4666,23 @@ var render = function () {
       _vm._v(" "),
       _c("Api"),
       _vm._v(" "),
+
+      _c("Api"),
+      _vm._v(" "),
+      _c("Main"),
+      _vm._v(" "),
+      _c("Menu"),
+
       _c("Cart", { attrs: { cartContent: _vm.cart } }),
       _vm._v(" "),
       _c("Main"),
       _vm._v(" "),
-<<<<<<< HEAD
       _c("Menu", { on: { cartContent: _vm.test } }),
       _vm._v(" "),
       _c("ConfermaOrdine"),
       _vm._v(" "),
       _c("Footer"),
-=======
       _c("Menu", { on: { cartContent: _vm.passCart } }),
->>>>>>> main
     ],
     1
   )
