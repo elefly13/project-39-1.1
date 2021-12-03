@@ -1,6 +1,6 @@
 <template>
     <section>
-        <ul>
+        <ul class="d-flex">
             <li :key="dish['id']" v-for="dish in dishes">
                 {{ dish.name }}
             </li>

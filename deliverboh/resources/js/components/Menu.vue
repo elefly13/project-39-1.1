@@ -10,12 +10,14 @@
             <div class="box">
                 <div class="big-box-img">
                     <div class="image" :key="dish['id']" v-for="dish in dishes">
-                        <!-- <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg" alt=""> -->
+                        <img :src=" './images/image-dish/' + dish.image " :alt=" dish.name ">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
-                        <h4>{{ dish.price }}</h4>
+                        <h4>€ {{ dish.price }}</h4>
+                        <p>INGREDIENTI</p>
                         <p>{{ dish.ingredients }}</p>
-                        <p>Allergeni:</p>  
+                        <p>ALLERGENI</p>
+                        <p> {{ myAllergen[5] }}</p>  
                         <button class="button" @click.prevent="sendCart(dish), $emit('cartContent', cart)">Aggiungi al carrello</button>               
                     </div> 
                 </div>
@@ -35,16 +37,31 @@ export default {
             url: "http://127.0.0.1:8000/api/",
             flag: false,
             dishes: [],
+            allergens: [],
             cart: [],
             restaurant: 0,
             api_token:
                 "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
+
+// Aggiungo un array provvisorio per impostare la grafica
+            myAllergen: [
+                "latte",
+                "uova",
+                "arachidi",
+                "frutta secca",
+                "soia",
+                "grano e derivati",
+                "crostacei"
+
+            ]    
         };
     },
     created() {
         this.getDishes();
+        this.getAllergens();
     },
     methods: {
+
         sendCart(dish) {
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
@@ -68,6 +85,21 @@ export default {
                 .get(this.url + 'dishes' , bodyParameters, config)
                 .then((resp)=>{
                     this.dishes = resp.data.results
+                })
+                .catch();
+        },
+         getAllergens(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'allergens', bodyParameters, config)
+                .then((resp)=>{
+                    this.allergens = resp.data.results
                 })
                 .catch();
         },
@@ -121,10 +153,11 @@ export default {
         flex-wrap: wrap;
         
         .image {
+            position: relative;
             display: column;
             text-align: center;
             width: 220px;
-            height: 350px;
+            height: 400px;
             background-color:white ;
             border-radius: 5px;
             border-bottom-right-radius: 40px;
@@ -135,18 +168,25 @@ export default {
             margin: 20px;
             img {
                 width: 200px;
+                height: 150px;
                 border-radius: 5px;
                 border-bottom-right-radius: 40px;
             }
             h4 {
+               font-size: 18px; 
                color: #be541e; 
                padding: 8px 0;
             }
             p {
                 font-size: 12px;
                 padding: 3px 0;
+
+               
+                max-width: 180px;
             }
             button {
+                position: absolute;
+
                 margin: 10px;
                 padding: 5px;
                 border-color: #439373;
