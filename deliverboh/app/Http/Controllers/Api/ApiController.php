@@ -11,6 +11,7 @@ use App\Allergen;
 use App\Order;
 use App\DishOrder;
 use App\AllergenDish;
+use App\CategoryUser;
 use PHPUnit\Framework\Constraint\Count;
 
 class ApiController extends Controller
@@ -72,6 +73,14 @@ class ApiController extends Controller
         return response()->json([
             'success'=>true,
             'results'=>$allergenDishes
+        ]);
+    }
+    public function categoryUsers()
+    {
+        $categoryUsers= CategoryUser::all();
+        return response()->json([
+            'success'=>true,
+            'results'=>$categoryUsers
         ]);
     }
 
