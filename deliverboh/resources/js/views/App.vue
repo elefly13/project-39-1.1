@@ -1,6 +1,5 @@
 <template>
-    <div class="container">
-        <button @click="prova()">ciao</button>
+    <div>
         <Header />
         <Api />
         <Cart :cartContent="cart"/>
@@ -34,15 +33,14 @@ export default {
     },
     data() {
         return {
-            cart: [],
+            cart:[],
         }
     },
     methods: {
-        prova() {
+        passCart(cartContent) {
+            this.cart = cartContent
             console.log(this.cart)
-        },
-        test(cartContent) {
-            this.cart.push(cartContent)
+
         },
     },
 };
@@ -54,4 +52,5 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
+
 </style>
