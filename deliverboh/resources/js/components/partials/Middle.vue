@@ -5,11 +5,11 @@
             <Search @performSearch="searchRest"/>
         </div>
         <div class="test">
-            <i @click="left" class="fas fa-chevron-left"></i>
+       
             <div v-for="(user, index) in filterUsers" :key="index" class="col-6 col-md-4 col-lg-3 fi">
                 <User :info="user" />
             </div>
-            <i @click="right" class="fas fa-chevron-right"></i>
+
             <!-- <ul class="d-flex flex-wrap px-5">
                 <li v-for="(user, index) in filterUsers" :key="index" class="col-6 col-md-4 col-lg-3">
                     <User :info="user" />
@@ -61,7 +61,6 @@ export default {
                         }
                     }
                 }
-                console.log(usersArray)
                 var ristoranti = [] 
                 for (const i in this.users) {
                     for (const k in usersArray) {
@@ -85,18 +84,10 @@ export default {
     },
     methods: {
         getUsers(){
-            // const bodyParameters = {
-            //     key: "value",
-            // };
-
-            // const config = {
-            //     headers: { Authorization: `Bearer ${this.api_token}` },
-            // };
             axios
                 .get(this.url + 'users')
                 .then((resp)=>{
                     this.users = resp.data.results
-                    // console.log(resp.data.results);
                 })
                 .catch();
         },
@@ -115,7 +106,6 @@ export default {
                 .get(this.url + 'categoryUsers', bodyParameters, config)
                 .then((resp)=>{
                     this.categoryUsers = resp.data.results;
-                    console.log(this.categoryUsers);
                 })
                 .catch();
         },

@@ -2,7 +2,7 @@
     <div>
         <Header />
         <Main />
-        <Menu />
+        <!-- <Menu /> -->
         <!-- <Api /> -->
         <!-- <button @click="prova()">ciao</button> -->
 

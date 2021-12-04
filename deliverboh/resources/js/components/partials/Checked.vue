@@ -38,7 +38,6 @@ export default {
                 .get(this.url + 'categories', bodyParameters, config)
                 .then((resp)=>{
                     this.categories = resp.data.results
-                    console.log(this.categories);
                 })
                 .catch();
         },
