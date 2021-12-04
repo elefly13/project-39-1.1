@@ -6,7 +6,7 @@
                 <h1>Nome ristorante selezionato</h1>
                 <h3>Il nostro menu</h3>
             </div>
-            <Cart :cartContent="cart"/>
+            <Cart :cartContent="cart" :initialPrice="price"/>
             <div class="box">
                 <div class="big-box-img">
                     <div class="image" :key="dish['id']" v-for="dish in dishes">
@@ -70,18 +70,25 @@ export default {
                 this.restaurant = dish.user_id
             }
             
-            if(dish.user_id == this.restaurant) {
+            if((dish.user_id == this.restaurant) && (!this.cart.includes(dish))) 
+            {
                 this.cart.push(dish)
-            } else {
-                if(this.restaurant == 0) {
-                    this.restaurant = dish.user_id
-                }
-                if(dish.user_id == this.restaurant) {
-                    this.cart.push(dish)
-                } else {
-                    alert("Puoi ordinare da un solo ristorante alla volta")
+            } 
+            else if(this.cart.includes(dish)) {
+                this.price = dish.price * dish.quantity
+                console.log(this.price)
+                for (const i in this.cart) {
+                    if(this.cart[i].id == dish.id) {
+                        this.cart[i].quantity += 1 
+                    }
                 }
             }
+            else 
+            {
+                alert("Puoi ordinare da un solo ristorante alla volta")
+            }
+
+            // if(this.cart.includes(dish)) 
         }, 
         getDishes(){
             const bodyParameters = {
