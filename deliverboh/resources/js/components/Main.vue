@@ -1,10 +1,11 @@
 <template>
     <main class="wrapper">
-            <div class="check-box d-flex flex-column justify-content-around">
+            <!-- <div class="check-box d-flex flex-column justify-content-around">
                 <p v-for="category in categories" :key="category['id']">
                     {{category['cuisine']}}
                 </p>
-            </div>
+            </div> -->
+            <Checked :
             <Middle class="middle" />
             <Background class="background" />
     </main>
@@ -12,6 +13,7 @@
 
 <script>
 import Background from './partials/Background';
+import Checked from './partials/Checked.vue';
 import Middle from './partials/Middle';
 
 export default {
@@ -24,8 +26,10 @@ export default {
     },
     components: {
         Middle,
-        Background
+        Background,
+        Checked
     },
+        
     created() {
         this.getCategories()
     },

@@ -3,7 +3,7 @@
         <Header />
         <Main />
         <Menu />
-        <Api />
+        <!-- <Api /> -->
         <!-- <button @click="prova()">ciao</button> -->
 
         <!-- <Footer /> -->

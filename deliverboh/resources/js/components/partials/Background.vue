@@ -1,6 +1,6 @@
 <template>
     <section class="my-wrapper">
-                <img src="/images/unarota.svg" />
+                <!-- <img src="/images/unarota.svg" /> -->
     </section>
 </template>
 
