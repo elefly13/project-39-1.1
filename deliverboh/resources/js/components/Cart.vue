@@ -27,9 +27,11 @@
                             <form method="post" action="/checkout">
                                <input type="hidden" name="_token" v-bind:value="csrf">
                                  <!-- <input type="hidden" name="prova" v-bind:value="this.prova[0]"> -->
-                                  <input type="hidden" name="prova2" v-bind:value="this.prova[1].">
-                                 <div class="panel-body" v-for="(dish, i) in cartContent" :key="i">
-                                     <input type="hidden" name="prova[]" v-bind:value=dish[i]>
+                                  <input type="hidden" name="prova2" v-bind:value="this.prova[1]">
+                                 <div class="panel-body" v-for="dish in cartContent" :key="dish.id">
+                                     <input  type="hidden" name="price[]" v-bind:value="dish.price">
+                                     <input  type="hidden" name="name[]" v-bind:value="dish.name">
+                                     <input  type="hidden" name="description[]" v-bind:value="dish.description">
 
                                 </div>
 
@@ -82,7 +84,9 @@ export default {
     },
     methods: {
         
-
+        console(array){
+            console.log(array);
+        },
         moreQuantity(id) {
             for (const i in this.cartContent) {
                 if (this.cartContent[i].id == id) {
