@@ -3,7 +3,9 @@
         <Header />
         <Main />
         <Menu />
-        <Api />
+        <ConfermaOrdine />
+        <OrdineApprovato />
+        <!-- <Api /> -->
         <!-- <button @click="prova()">ciao</button> -->
 
         <!-- <Footer /> -->
@@ -12,20 +14,22 @@
 
 <script>
 import Header from "../components/Header";
-import Api from "../components/Api";
+// import Api from "../components/Api";
 import Main from "../components/Main";
 import Menu from "../components/Menu";
 import ConfermaOrdine from "../components/ConfermaOrdine";
+import OrdineApprovato from "../components/OrdineApprovato";
 import Footer from "../components/Footer";
 
 export default {
     name: "App",
     components: {
         Header,
-        Api,
+        // Api,
         Main,
         Menu,
         ConfermaOrdine,
+        OrdineApprovato,
         Footer
         
     },
@@ -46,5 +50,6 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
+
 
 </style>

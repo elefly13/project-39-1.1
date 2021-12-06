@@ -1,13 +1,17 @@
-<header class="container-fluid h-header">
-  <nav class="navbar navbar-expand-md navbar-light justify-content-around">
-    <a class="navbar-brand" href="{{ url('/') }}">
-      <img src=" {{ asset('images/Logo.png') }} " class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
+<header class="container-fluid ">
+  <nav class="navbar navbar-expand-md navbar-light justify-content-between px-5">
+    <a class="navbar-brand box-logo" href="{{ url('/') }}">
+      <img src=" {{ asset('images/LogoVerde.png') }} " class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
     </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <!-- Right Side Of Navbar -->
-      <ul class="navbar-nav">
-        <!-- Authentication Links -->
-        @if (Route::has('login'))
-          @auth
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <!-- Authentication Links -->
+          @if (Route::has('login'))
+            @auth
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
@@ -21,31 +25,32 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                  </a>
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
 
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
-                  </form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
               </div>
             </li>
-            
-        @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('/') }}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">Accedi</a>
-          </li>
-            @if (Route::has('register'))
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">Registrati</a>
-              </li>   
-            @endif 
-          @endauth
-        @endif
-      </ul>
+              
+          @else
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">Accedi</a>
+            </li>
+              @if (Route::has('register'))
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+                </li>   
+              @endif 
+            @endauth
+          @endif
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
