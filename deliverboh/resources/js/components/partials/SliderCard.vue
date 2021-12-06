@@ -2,10 +2,23 @@
     <section>
         <div class="card">
             <div class="box-img">
-                <img src="" alt="">
+                <img src="images/image-res/res-2.jpg" alt="">
             </div>
-            <h3>ciaoidoasjidjap</h3>
+            <h5>ciaoidoasjidjap</h5>
         </div>
+        <div class="card">
+            <div class="box-img">
+                <img src="images/image-res/res-3.jpg" alt="">
+            </div>
+            <h5>ciaoidoasjidjap</h5>
+        </div>
+        <div class="card">
+            <div class="box-img">
+                <img src="images/image-res/res-4.jpg" alt="">
+            </div>
+            <h5>ciaoidoasjidjap</h5>
+        </div>
+       
     </section>
 </template>
 
@@ -17,12 +30,11 @@ export default {
 
 <style lang="scss" scoped>
 
-
     .card {
         width: 170px;
         height: 200px;
-        display: flex;
-        align-items: center;
+        float: left;
+        margin-left: 20px;
         text-align: center;
         border: 0.3px solid rgb(228, 228, 228);
         border-top-left-radius: 30px;
@@ -34,7 +46,12 @@ export default {
       .box-img {
         width: 100%;
         height: 70%;
-        background: cornflowerblue;
+    }
+
+    .box-img > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
        
 

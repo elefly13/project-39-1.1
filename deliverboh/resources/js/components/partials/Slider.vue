@@ -1,9 +1,10 @@
 <template>
-    <section>
-        <div class="box-slider">
-            <div class="wrapper-uno">
-                <SliderCard />
-            </div>
+    <section class="box-slider">
+        <div class="titolo">
+            <h1>I più popolari</h1>
+        </div>
+        <div class="container-slider">
+            <SliderCard />
         </div>
     </section>
 </template>
@@ -20,12 +21,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .box-slider {
-    width: 100%;
+    width: 100% - 17%;
     height: 100%;
     display: flex;
-    align-items: center;
 }
+
+.titolo {
+    // width: calc(100%/6);
+    width: 20%;
+    height: 100%;
+}
+
+.container-slider {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
        
 
 </style>

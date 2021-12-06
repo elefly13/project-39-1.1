@@ -5,9 +5,10 @@
         </div>
             <Middle @search= "getCategories" class="middle" :categoriesArray="categories" />
             <!-- <Background class="background" /> -->
-        <!-- <div class="pippo">
+        <div class="container-sliders">
+            <div class="sliders"></div>
             <Slider />
-        </div> -->
+        </div>
     
     </main>
 </template>
@@ -34,7 +35,7 @@ export default {
     methods: {
         getCategories(selCategories) {
            this.categories = selCategories;
-           console.log(this.categories)
+        //    console.log('prova' + this.categories)
         },
     },
 };
@@ -46,40 +47,32 @@ export default {
     width: 100%;
     height: calc(100vh - 80px);
     display: flex;
-    // background: brown;
-    
 }
 .check-box {
     width: calc(100%/6);
     min-width: 220px;
     height: 100%;
-    padding-top: 180px;
-
+    padding-top: 100px;
 }
 
-.pippo {
+.container-sliders {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 20%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    flex-direction: row;
+    // flex-wrap: wrap;
     background: #F4F0E2;
+    background: #628F64;
+    background: #DBE7D6;
+    background: #f4f0e2;
 }
-// .middle {
-//     // width: calc((100%/6) * 3);
-//     width: calc((100%/6) * 5);
-//     background-image: url(/images/unarota.svg);
-//     background-repeat: no-repeat;
-//     background-position: right;
-//     background: brown;
 
-//     // height: 100%;
-//     // background-color: chocolate;
-// }
-// .background {
-//     width: calc((100%/6) * 2);
-//     height: 100%;
-//     background-color: chocolate;
-// }
+.sliders {
+    width: calc(100%/6);
+    min-width: 220px;
+    height: 100%;
+}
 </style>

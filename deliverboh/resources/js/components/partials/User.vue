@@ -2,35 +2,21 @@
     <section>
         <div class="card">
             <div class="box-img">
-                <img src="/images/img-restaurant/res-1.jpg" alt="">
+                <img src="/images/image-res/res-1.jpg" alt="">
             </div>
-            <ul>
-                <h3>
+                <h4>
                     {{info['restaurant_name']}}
-                </h3>
+                </h4>
+            <ul>
                 <li class="list-box">
                     <ul>
-                        <li>{{info['email']}}</li>
+                        <!-- <li>{{info['email']}}</li> -->
                         <li>{{info['restaurant_name']}}</li>
                         <li>{{info['address']}}</li>
                     </ul>  
                 </li>            
             </ul> 
         </div>
-        <!-- <div class="io">
-            <ul class="d-flex flex-wrap px-5">
-                    <h3>
-                        {{info['restaurant_name']}}
-                    </h3>
-                <li class="list-box">
-                    <ul>
-                        <li>{{info['email']}}</li>
-                        <li>{{info['restaurant_name']}}</li>
-                        <li>{{info['address']}}</li>
-                    </ul>  
-                </li>            
-            </ul> 
-        </div> -->
     </section>
 </template>
 
@@ -57,11 +43,16 @@ export default {
 
     .lista-box {
         padding: 10px;
+        color: #343434;
+    }
+
+    h4 {
+        color: #628F64;
     }
 
     .card {
-        width: 300px;
-        height: 350px;
+        width: 200px;
+        height: 300px;
         display: flex;
         align-items: center;
         text-align: center;
@@ -75,7 +66,7 @@ export default {
     .box-img {
         width: 100%;
         height: 50%;
-        background: cornflowerblue;
+        margin-bottom:10px;
     }
 
     .box-img > img {

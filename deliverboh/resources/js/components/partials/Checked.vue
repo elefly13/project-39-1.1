@@ -1,6 +1,6 @@
 <template>
     <section>
-       <div class="" v-for="(category, index) in categories" :key="index">
+       <div v-for="(category, index) in categories" :key="index">
             <input class="btn-check" type="checkbox" v-model="selectedCategories" v-on:change="$emit('selCategories', selectedCategories)" :value="category.id">
             <label class="check-buttom">{{category.cuisine}}</label>
         </div>    
@@ -24,6 +24,7 @@ export default {
     created() {
         this.getCategories()
     },
+
   
     methods: {
         getCategories(){
@@ -43,7 +44,7 @@ export default {
         },
         addCategory() {
 
-        },
+        },        
     },  
 };
 

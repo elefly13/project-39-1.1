@@ -1,22 +1,17 @@
 <template>
     <!-- <section class="middle d-flex flex-column align-items-center justify-content-center"> -->
     <section class="middle">
-        <div class="davide">
+        <div :class="((!searchText == '') ? 'box-user' : '')">
             <Search @performSearch="searchRest"/>
         </div>
-        <div class="test">
-       
-            <div v-for="(user, index) in filterUsers" :key="index" class="col-6 col-md-4 col-lg-3 fi">
+
+        <div :class="((!categoriesArray.length == 0) ? 'box-user' : '')">
+            <div v-for="(user, index) in filterUsers" :key="index" class="container-card">
                 <User :info="user" />
             </div>
-
-            <!-- <ul class="d-flex flex-wrap px-5">
-                <li v-for="(user, index) in filterUsers" :key="index" class="col-6 col-md-4 col-lg-3">
-                    <User :info="user" />
-                </li>
-            </ul> -->
         </div>
-        <div class="elena">
+
+        <div id="sfondo" class="sfondo">
             <img src="/images/unarota.svg" alt="">
         </div>
        
@@ -40,9 +35,9 @@ export default {
             users: [], 
             searchText: '',
             categoryUsers: [],
-            pippo: {
-                cusineCollection: []
-            }
+            // pippo: {
+            //     cusineCollection: []
+            // }
         };
     },
     created() {
@@ -54,6 +49,7 @@ export default {
             if (this.searchText === "") {
                 var usersArray = [];
                 for (const i in this.categoriesArray) {
+                    // console.log(this.categoriesArray);
                     for (const j in this.categoryUsers) {
                         if (this.categoryUsers[j].category_id == this.categoriesArray[i]){
                             if(!usersArray.includes(this.categoryUsers[j].user_id))
@@ -80,7 +76,7 @@ export default {
                 })
                 return filteredList;
             } 
-        }
+        },
     },
     methods: {
         getUsers(){
@@ -121,7 +117,7 @@ export default {
     position: relative;
 }
 
-.elena {
+.sfondo {
     width: 80%;
     height: 100%;
     position: absolute;
@@ -130,28 +126,33 @@ export default {
     z-index: -1;
 }
 
-.elena > img {
+.sfondo > img {
     width: 100%;
     height: 85%;
     object-fit:contain;
     object-position: 120%;
 }
 
-.davide {
+.box-search {
     width: 100%;
-    height: 30%;
-    // position: absolute;
+    height: 20%;
+    // display: block;
+    background: red;
 }
 
-.test {
-    width: 100%;
-    height: 45%;
-    // background: rgba(191, 215, 188, 0.2);
-    background: white;
-    overflow: auto;
-    margin-bottom: 150px;
+.box-user {
+    width: 75%;
+    height: 60%;
+    overflow-y: scroll;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(252, 248, 240, 0.577);
+    // background: orange;
+    // display: none;
+}
+
+.container-card {
+    padding: 20px;
 }
 
 </style>

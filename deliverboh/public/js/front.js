@@ -2358,6 +2358,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2377,8 +2378,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getCategories: function getCategories(selCategories) {
-      this.categories = selCategories;
-      console.log(this.categories);
+      this.categories = selCategories; //    console.log('prova' + this.categories)
     }
   }
 });
@@ -2612,11 +2612,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2632,10 +2627,10 @@ __webpack_require__.r(__webpack_exports__);
       searchrestaurant: "",
       users: [],
       searchText: '',
-      categoryUsers: [],
-      pippo: {
-        cusineCollection: []
-      }
+      categoryUsers: [] // pippo: {
+      //     cusineCollection: []
+      // }
+
     };
   },
   created: function created() {
@@ -2650,6 +2645,7 @@ __webpack_require__.r(__webpack_exports__);
         var usersArray = [];
 
         for (var i in this.categoriesArray) {
+          // console.log(this.categoriesArray);
           for (var j in this.categoryUsers) {
             if (this.categoryUsers[j].category_id == this.categoriesArray[i]) {
               if (!usersArray.includes(this.categoryUsers[j].user_id)) usersArray.push(this.categoryUsers[j].user_id);
@@ -2730,6 +2726,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Search",
   data: function data() {
@@ -2751,6 +2748,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SliderCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SliderCard.vue */ "./resources/js/components/partials/SliderCard.vue");
+//
 //
 //
 //
@@ -2791,6 +2789,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SliderCard"
 });
@@ -2806,20 +2817,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2950,7 +2947,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n  padding-top: 180px;\n}\n.pippo[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 20%;\n  display: flex;\n  align-items: center;\n  background: #F4F0E2;\n}", ""]);
+exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n  padding-top: 100px;\n}\n.container-sliders[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 20%;\n  display: flex;\n  flex-direction: column;\n  flex-direction: row;\n  background: #F4F0E2;\n  background: #628F64;\n  background: #DBE7D6;\n  background: #f4f0e2;\n}\n.sliders[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -3026,7 +3023,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.elena[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.elena > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.davide[data-v-1c77d2d7] {\n  width: 100%;\n  height: 30%;\n}\n.test[data-v-1c77d2d7] {\n  width: 100%;\n  height: 45%;\n  background: white;\n  overflow: auto;\n  margin-bottom: 150px;\n  display: flex;\n  align-items: center;\n}", ""]);
+exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  background: red;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 75%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -3045,7 +3042,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".search-box[data-v-22e11d6a] {\n  width: 30%;\n}\n.search-box .search[data-v-22e11d6a] {\n  height: 50px;\n  width: 70%;\n  color: grey;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  margin-right: 30px;\n}\n.search-box .search-button[data-v-22e11d6a] {\n  margin-right: 10px;\n  width: 30%;\n  height: 50px;\n  color: white;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  background-color: #638f64;\n}\n.box-slogan-search[data-v-22e11d6a] {\n  padding-top: 180px;\n}", ""]);
+exports.push([module.i, ".search-box[data-v-22e11d6a] {\n  width: 700px;\n}\n.search-box .search[data-v-22e11d6a] {\n  height: 50px;\n  width: 300px;\n  color: grey;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  margin-right: 30px;\n  background: #f8fafc;\n}\n.search-box .search-button[data-v-22e11d6a] {\n  margin-right: 10px;\n  width: 120px;\n  height: 50px;\n  color: white;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  background-color: #638f64;\n}\n.box-slogan-search[data-v-22e11d6a] {\n  padding-top: 100px;\n}", ""]);
 
 // exports
 
@@ -3064,7 +3061,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-slider[data-v-e1ae27ba] {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n}", ""]);
+exports.push([module.i, ".box-slider[data-v-e1ae27ba] {\n  width: 83%;\n  height: 100%;\n  display: flex;\n}\n.titolo[data-v-e1ae27ba] {\n  width: 20%;\n  height: 100%;\n}\n.container-slider[data-v-e1ae27ba] {\n  width: 80%;\n  height: 100%;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  flex-wrap: wrap;\n}", ""]);
 
 // exports
 
@@ -3083,7 +3080,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card[data-v-377ff45a] {\n  width: 170px;\n  height: 200px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-377ff45a] {\n  width: 100%;\n  height: 70%;\n  background: cornflowerblue;\n}", ""]);
+exports.push([module.i, ".card[data-v-377ff45a] {\n  width: 170px;\n  height: 200px;\n  float: left;\n  margin-left: 20px;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-377ff45a] {\n  width: 100%;\n  height: 70%;\n}\n.box-img > img[data-v-377ff45a] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
 
 // exports
 
@@ -3102,7 +3099,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-c67fc6e6] {\n  height: 100%;\n  width: 100%;\n}\nli[data-v-c67fc6e6] {\n  list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n  padding: 10px;\n}\n.card[data-v-c67fc6e6] {\n  width: 300px;\n  height: 350px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  background: cornflowerblue;\n}\n.box-img > img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, ".middle[data-v-c67fc6e6] {\n  height: 100%;\n  width: 100%;\n}\nli[data-v-c67fc6e6] {\n  list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n  padding: 10px;\n  color: #343434;\n}\nh4[data-v-c67fc6e6] {\n  color: #628F64;\n}\n.card[data-v-c67fc6e6] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
 
 // exports
 
@@ -5018,6 +5015,13 @@ var render = function () {
         attrs: { categoriesArray: _vm.categories },
         on: { search: _vm.getCategories },
       }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container-sliders" },
+        [_c("div", { staticClass: "sliders" }), _vm._v(" "), _c("Slider")],
+        1
+      ),
     ],
     1
   )
@@ -5239,18 +5243,18 @@ var render = function () {
   return _c("section", { staticClass: "middle" }, [
     _c(
       "div",
-      { staticClass: "davide" },
+      { class: !_vm.searchText == "" ? "box-user" : "" },
       [_c("Search", { on: { performSearch: _vm.searchRest } })],
       1
     ),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "test" },
+      { class: !_vm.categoriesArray.length == 0 ? "box-user" : "" },
       _vm._l(_vm.filterUsers, function (user, index) {
         return _c(
           "div",
-          { key: index, staticClass: "col-6 col-md-4 col-lg-3 fi" },
+          { key: index, staticClass: "container-card" },
           [_c("User", { attrs: { info: user } })],
           1
         )
@@ -5266,7 +5270,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "elena" }, [
+    return _c("div", { staticClass: "sfondo", attrs: { id: "sfondo" } }, [
       _c("img", { attrs: { src: "/images/unarota.svg", alt: "" } }),
     ])
   },
@@ -5295,7 +5299,7 @@ var render = function () {
   return _c("section", { staticClass: "box-slogan-search" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "search-box d-flex justify-content-center" }, [
+    _c("div", { staticClass: "search-box d-flex" }, [
       _c("input", {
         directives: [
           {
@@ -5363,13 +5367,22 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", [
-    _c("div", { staticClass: "box-slider" }, [
-      _c("div", { staticClass: "wrapper-uno" }, [_c("SliderCard")], 1),
-    ]),
+  return _c("section", { staticClass: "box-slider" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container-slider" }, [_c("SliderCard")], 1),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "titolo" }, [
+      _c("h1", [_vm._v("I più popolari")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -5401,10 +5414,26 @@ var staticRenderFns = [
     return _c("section", [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "box-img" }, [
-          _c("img", { attrs: { src: "", alt: "" } }),
+          _c("img", { attrs: { src: "images/image-res/res-2.jpg", alt: "" } }),
         ]),
         _vm._v(" "),
-        _c("h3", [_vm._v("ciaoidoasjidjap")]),
+        _c("h5", [_vm._v("ciaoidoasjidjap")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "box-img" }, [
+          _c("img", { attrs: { src: "images/image-res/res-3.jpg", alt: "" } }),
+        ]),
+        _vm._v(" "),
+        _c("h5", [_vm._v("ciaoidoasjidjap")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "box-img" }, [
+          _c("img", { attrs: { src: "images/image-res/res-4.jpg", alt: "" } }),
+        ]),
+        _vm._v(" "),
+        _c("h5", [_vm._v("ciaoidoasjidjap")]),
       ]),
     ])
   },
@@ -5434,19 +5463,17 @@ var render = function () {
     _c("div", { staticClass: "card" }, [
       _vm._m(0),
       _vm._v(" "),
+      _c("h4", [
+        _vm._v(
+          "\n                " +
+            _vm._s(_vm.info["restaurant_name"]) +
+            "\n            "
+        ),
+      ]),
+      _vm._v(" "),
       _c("ul", [
-        _c("h3", [
-          _vm._v(
-            "\n                " +
-              _vm._s(_vm.info["restaurant_name"]) +
-              "\n            "
-          ),
-        ]),
-        _vm._v(" "),
         _c("li", { staticClass: "list-box" }, [
           _c("ul", [
-            _c("li", [_vm._v(_vm._s(_vm.info["email"]))]),
-            _vm._v(" "),
             _c("li", [_vm._v(_vm._s(_vm.info["restaurant_name"]))]),
             _vm._v(" "),
             _c("li", [_vm._v(_vm._s(_vm.info["address"]))]),
@@ -5462,9 +5489,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "box-img" }, [
-      _c("img", {
-        attrs: { src: "/images/img-restaurant/res-1.jpg", alt: "" },
-      }),
+      _c("img", { attrs: { src: "/images/image-res/res-1.jpg", alt: "" } }),
     ])
   },
 ]
@@ -18962,7 +18987,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/davidenapolitano/Desktop/HTML-CSS-JS/progetto-finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

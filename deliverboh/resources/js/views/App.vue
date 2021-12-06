@@ -27,7 +27,6 @@ export default {
         Menu,
         ConfermaOrdine,
         Footer
-        
     },
     data() {
         return {
