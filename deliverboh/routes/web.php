@@ -90,11 +90,17 @@ Route::post('/conferma', function(Request $request){
     $new_order = new order();
     // $new_order->fill($data);
     $new_order['lastname_user']=$request['lastname'];
-    $new_order->save();
+    $new_order['name_user']=$request['name'];
+    $new_order['delivery_address']=$request['address'];
+    $new_order['date']= date("Y-m-d") ;
+    $new_order['total']=$amount;
+    $new_order['note']=$request['note'];
+     
     // dd( $new_order['lastname']);
     if ($result->success) 
     {
-      
+        $new_order['status']=1;
+        $new_order->save();
         // $new_order->dishes()->attach($data['dish']);
  
         $transaction = $result->transaction;
@@ -102,7 +108,8 @@ Route::post('/conferma', function(Request $request){
         return back()->with('success_message','Transaction complete ID:'. $transaction->id);
     } else {
         $errorString = "";
-
+        $new_order['status']=0;
+        $new_order->save();
         foreach($result->errors->deepAll() as $error) {
             $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
         }

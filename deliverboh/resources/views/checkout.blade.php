@@ -48,6 +48,12 @@
                                 <input type="text" class="form-control" id="address" name="address">
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="note">note</label>
+                                 <textarea  type="text" class="form-control" id="note" name="note"></textarea>
+                            </div>
+                        </div>
                 <section>
                     <label for="amount">
                         <span class="input-label">Amount</span>
