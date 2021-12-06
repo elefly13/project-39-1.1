@@ -46,7 +46,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
 
 // Route::get('/checkout', 'HomeController@checkout')->name('homepage');
 
-Route::get('/checkout', function(){
+Route::post('/checkout', function(Request $request){
+     dd($request);
     $gateway = new Braintree\Gateway([
         'environment' => 'sandbox',
         'merchantId' => 'zfjjgykn84td5wdp',
