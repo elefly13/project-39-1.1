@@ -2357,8 +2357,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -2378,7 +2376,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getCategories: function getCategories(selCategories) {
-      this.categories = selCategories; //    console.log('prova' + this.categories)
+      this.categories = selCategories;
     }
   }
 });
@@ -2608,10 +2606,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2627,64 +2621,80 @@ __webpack_require__.r(__webpack_exports__);
       searchrestaurant: "",
       users: [],
       searchText: '',
-      categoryUsers: [] // pippo: {
-      //     cusineCollection: []
-      // }
-
+      categoryUsers: [],
+      ristoranti: [],
+      appoggioDue: []
     };
   },
   created: function created() {
     this.getUsers();
     this.getCategoryUsers();
   },
-  computed: {
-    filterUsers: function filterUsers() {
+  watch: {
+    searchText: function searchText() {
       var _this = this;
 
-      if (this.searchText === "") {
-        var usersArray = [];
-
-        for (var i in this.categoriesArray) {
-          // console.log(this.categoriesArray);
-          for (var j in this.categoryUsers) {
-            if (this.categoryUsers[j].category_id == this.categoriesArray[i]) {
-              if (!usersArray.includes(this.categoryUsers[j].user_id)) usersArray.push(this.categoryUsers[j].user_id);
-            }
-          }
-        }
-
-        var ristoranti = [];
-
-        for (var _i in this.users) {
-          for (var k in usersArray) {
-            if (this.users[_i].id == usersArray[k]) {
-              if (!ristoranti.includes(this.users[_i])) ristoranti.push(this.users[_i]);
-            }
-          }
-        }
-
-        return ristoranti;
-      } else {
-        var filteredList = this.users.filter(function (item) {
+      if (this.searchText != '') {
+        var filteredList = this.ristoranti.filter(function (item) {
           return item.name.toLowerCase().includes(_this.searchText.toLowerCase());
         });
-        return filteredList;
+
+        if (filteredList.length == 0) {
+          this.ristoranti = this.users;
+        } else {
+          this.ristoranti = filteredList;
+        }
+      } else {
+        this.ristoranti = this.appoggioDue;
+      }
+    },
+    categoriesArray: function filterUsers() {
+      var _this2 = this;
+
+      var usersArray = [];
+
+      for (var i in this.categoriesArray) {
+        for (var j in this.categoryUsers) {
+          if (this.categoryUsers[j].category_id == this.categoriesArray[i]) {
+            if (!usersArray.includes(this.categoryUsers[j].user_id)) usersArray.push(this.categoryUsers[j].user_id);
+          }
+        }
+      }
+
+      var appoggio = [];
+
+      for (var _i in this.users) {
+        for (var k in usersArray) {
+          if (this.users[_i].id == usersArray[k]) {
+            if (!appoggio.includes(this.users[_i])) appoggio.push(this.users[_i]);
+          }
+        }
+      }
+
+      this.appoggioDue = appoggio;
+      this.ristoranti = appoggio;
+
+      if (this.searchText != '') {
+        var filteredList = this.ristoranti.filter(function (item) {
+          return item.name.toLowerCase().includes(_this2.searchText.toLowerCase());
+        });
+        this.ristoranti = filteredList;
       }
     }
   },
   methods: {
     getUsers: function getUsers() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.get(this.url + 'users').then(function (resp) {
-        _this2.users = resp.data.results;
+        _this3.users = resp.data.results;
       })["catch"]();
     },
     searchRest: function searchRest(text) {
       this.searchText = text;
     },
     getCategoryUsers: function getCategoryUsers() {
-      var _this3 = this;
+      var _this4 = this;
 
       var bodyParameters = {
         key: "value"
@@ -2695,7 +2705,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
       axios.get(this.url + 'categoryUsers', bodyParameters, config).then(function (resp) {
-        _this3.categoryUsers = resp.data.results;
+        _this4.categoryUsers = resp.data.results;
       })["catch"]();
     }
   }
@@ -2838,7 +2848,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "User",
   props: ['info']
@@ -2947,7 +2956,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n  padding-top: 100px;\n}\n.container-sliders[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 20%;\n  display: flex;\n  flex-direction: column;\n  flex-direction: row;\n  background: #F4F0E2;\n  background: #628F64;\n  background: #DBE7D6;\n  background: #f4f0e2;\n}\n.sliders[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n}", ""]);
+exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n  padding-top: 100px;\n}\n.container-sliders[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 20%;\n  display: flex;\n  flex-direction: column;\n  flex-direction: row;\n  background: #f4f0e2;\n}\n.sliders[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -3023,7 +3032,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  background: red;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 75%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 75%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -5241,17 +5250,17 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "middle" }, [
-    _c(
-      "div",
-      { class: !_vm.searchText == "" ? "box-user" : "" },
-      [_c("Search", { on: { performSearch: _vm.searchRest } })],
-      1
-    ),
+    _c("div", [_c("Search", { on: { performSearch: _vm.searchRest } })], 1),
     _vm._v(" "),
     _c(
       "div",
-      { class: !_vm.categoriesArray.length == 0 ? "box-user" : "" },
-      _vm._l(_vm.filterUsers, function (user, index) {
+      {
+        class:
+          !_vm.categoriesArray.length == 0 || _vm.searchText != ""
+            ? "backgrey box-user"
+            : "box-user",
+      },
+      _vm._l(this.ristoranti, function (user, index) {
         return _c(
           "div",
           { key: index, staticClass: "container-card" },
@@ -5313,6 +5322,15 @@ var render = function () {
         attrs: { type: "text", placeholder: "cerca un tipo di ristorante" },
         domProps: { value: _vm.searchrestaurant },
         on: {
+          keyup: function ($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.$emit("performSearch", _vm.searchrestaurant)
+          },
           input: function ($event) {
             if ($event.target.composing) {
               return

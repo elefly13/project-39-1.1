@@ -10,7 +10,6 @@
             <ul>
                 <li class="list-box">
                     <ul>
-                        <!-- <li>{{info['email']}}</li> -->
                         <li>{{info['restaurant_name']}}</li>
                         <li>{{info['address']}}</li>
                     </ul>  
@@ -35,11 +34,6 @@ export default {
        li{
         list-style: none;
     }
-    // .list-box{
-    //     width: 50%;
-    //     height: 10rem;
-    //     background: chocolate;
-    // }
 
     .lista-box {
         padding: 10px;

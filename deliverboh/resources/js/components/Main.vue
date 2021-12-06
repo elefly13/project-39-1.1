@@ -4,12 +4,10 @@
             <Checked @selCategories = "getCategories" />
         </div>
             <Middle @search= "getCategories" class="middle" :categoriesArray="categories" />
-            <!-- <Background class="background" /> -->
         <div class="container-sliders">
             <div class="sliders"></div>
             <Slider />
         </div>
-    
     </main>
 </template>
 
@@ -35,7 +33,6 @@ export default {
     methods: {
         getCategories(selCategories) {
            this.categories = selCategories;
-        //    console.log('prova' + this.categories)
         },
     },
 };
@@ -63,10 +60,6 @@ export default {
     display: flex;
     flex-direction: column;
     flex-direction: row;
-    // flex-wrap: wrap;
-    background: #F4F0E2;
-    background: #628F64;
-    background: #DBE7D6;
     background: #f4f0e2;
 }
 

@@ -5,7 +5,7 @@
         </div>     
         <!-- <div class="search-box d-flex justify-content-center"> -->
         <div class="search-box d-flex">
-            <input class="search" v-model="searchrestaurant" type="text" placeholder="cerca un tipo di ristorante"/>
+            <input @keyup.enter="$emit('performSearch', searchrestaurant)" class="search" v-model="searchrestaurant" type="text" placeholder="cerca un tipo di ristorante"/>
             <button class="search-button" @click.prevent="$emit('performSearch', searchrestaurant)">
                 Cerca
             </button>
@@ -28,11 +28,9 @@ export default {
 <style scoped lang="scss">
 
 .search-box{
-    // width: 30%;
     width: 700px;
     .search {
         height: 50px;
-        // width: 70%;
         width: 300px;
         color: grey;
         font-size: 1em;
@@ -45,7 +43,6 @@ export default {
     }
     .search-button {
         margin-right: 10px;
-        // width: 30%;
         width: 120px;
         height: 50px;
         color: white;

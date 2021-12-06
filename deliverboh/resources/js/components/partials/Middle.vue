@@ -1,20 +1,16 @@
 <template>
-    <!-- <section class="middle d-flex flex-column align-items-center justify-content-center"> -->
     <section class="middle">
-        <div :class="((!searchText == '') ? 'box-user' : '')">
+        <div>
             <Search @performSearch="searchRest"/>
         </div>
-
-        <div :class="((!categoriesArray.length == 0) ? 'box-user' : '')">
-            <div v-for="(user, index) in filterUsers" :key="index" class="container-card">
+        <div :class="((!categoriesArray.length == 0 || searchText != '') ? 'backgrey box-user' : 'box-user')">
+            <div v-for="(user, index) in this.ristoranti" :key="index" class="container-card">
                 <User :info="user" />
             </div>
         </div>
-
         <div id="sfondo" class="sfondo">
             <img src="/images/unarota.svg" alt="">
         </div>
-       
     </section>
 </template>
 
@@ -35,47 +31,62 @@ export default {
             users: [], 
             searchText: '',
             categoryUsers: [],
-            // pippo: {
-            //     cusineCollection: []
-            // }
+            ristoranti: [],
+            appoggioDue: [],
         };
     },
     created() {
         this.getUsers();
         this.getCategoryUsers();
     },
-    computed: {
-        filterUsers() {
-            if (this.searchText === "") {
-                var usersArray = [];
-                for (const i in this.categoriesArray) {
-                    // console.log(this.categoriesArray);
-                    for (const j in this.categoryUsers) {
-                        if (this.categoryUsers[j].category_id == this.categoriesArray[i]){
-                            if(!usersArray.includes(this.categoryUsers[j].user_id))
-                                usersArray.push(this.categoryUsers[j].user_id)
-                        }
-                    }
-                }
-                var ristoranti = [] 
-                for (const i in this.users) {
-                    for (const k in usersArray) {
-                        if (this.users[i].id == usersArray[k]) {
-                            if(!ristoranti.includes(this.users[i]))
-                                ristoranti.push(this.users[i])
-                        }
-                    }
-                }
-                return ristoranti;
-        
-            } else {
-                let filteredList = this.users.filter( item => {
+    watch: {
+        searchText: function () {
+            if (this.searchText != '') {
+                let filteredList = this.ristoranti.filter( item => {
                     return item.name
                         .toLowerCase()
                         .includes(this.searchText.toLowerCase());
                 })
-                return filteredList;
-            } 
+                 if(filteredList.length == 0) {
+                    this.ristoranti = this.users;
+                } else {
+                    this.ristoranti = filteredList;
+                }
+            }
+            else {
+                this.ristoranti =  this.appoggioDue;
+            }
+        },
+        categoriesArray: function filterUsers() {
+            var usersArray = [];
+            for (const i in this.categoriesArray) {
+                for (const j in this.categoryUsers) {
+                    if (this.categoryUsers[j].category_id == this.categoriesArray[i]){
+                        if(!usersArray.includes(this.categoryUsers[j].user_id))
+                            usersArray.push(this.categoryUsers[j].user_id)
+                    }
+                }
+            }
+            var appoggio = [];
+            for (const i in this.users) {
+                for (const k in usersArray) {
+                    if (this.users[i].id == usersArray[k]) {
+                        if(!appoggio.includes(this.users[i]))
+                            appoggio.push(this.users[i])
+                    }
+                }
+            }
+            this.appoggioDue =  appoggio;
+            this.ristoranti =  appoggio;
+            
+            if (this.searchText != '') {
+                let filteredList = this.ristoranti.filter( item => {
+                    return item.name
+                        .toLowerCase()
+                        .includes(this.searchText.toLowerCase());
+                })
+                this.ristoranti = filteredList;
+            }
         },
     },
     methods: {
@@ -94,7 +105,6 @@ export default {
             const bodyParameters = {
                 key: "value",
             };
-
             const config = {
                 headers: { Authorization: `Bearer ${this.api_token}` },
             };
@@ -136,8 +146,7 @@ export default {
 .box-search {
     width: 100%;
     height: 20%;
-    // display: block;
-    background: red;
+    display: block;
 }
 
 .box-user {
@@ -146,9 +155,10 @@ export default {
     overflow-y: scroll;
     display: flex;
     flex-wrap: wrap;
+}
+
+.backgrey {
     background-color: rgba(252, 248, 240, 0.577);
-    // background: orange;
-    // display: none;
 }
 
 .container-card {
