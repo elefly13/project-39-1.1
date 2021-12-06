@@ -1945,14 +1945,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
-  props: ['cartContent'],
+  props: ['cartContent', 'initialPrice'],
   data: function data() {
     return {
+      finalPrice: 0,
       price: 0,
       test: 0
     };
   },
   watch: {
+    initialPrice: function initialPrice() {
+      this.finalPrice = this.initialPrice;
+    },
     cartContent: function cartContent() {
       var somma = 0;
 
@@ -1962,6 +1966,10 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.price = somma;
+
+      if (this.cartContent == 0) {
+        this.finalPrice = 0;
+      }
     }
   },
   methods: {
@@ -2279,19 +2287,21 @@ __webpack_require__.r(__webpack_exports__);
         this.restaurant = dish.user_id;
       }
 
-      if (dish.user_id == this.restaurant) {
+      if (dish.user_id == this.restaurant && !this.cart.includes(dish)) {
         this.cart.push(dish);
-      } else {
-        if (this.restaurant == 0) {
-          this.restaurant = dish.user_id;
-        }
+      } else if (this.cart.includes(dish)) {
+        this.price = dish.price * dish.quantity;
+        console.log(this.price);
 
-        if (dish.user_id == this.restaurant) {
-          this.cart.push(dish);
-        } else {
-          alert("Puoi ordinare da un solo ristorante alla volta");
+        for (var i in this.cart) {
+          if (this.cart[i].id == dish.id) {
+            this.cart[i].quantity += 1;
+          }
         }
-      }
+      } else {
+        alert("Puoi ordinare da un solo ristorante alla volta");
+      } // if(this.cart.includes(dish)) 
+
     },
     getDishes: function getDishes() {
       var _this = this;
@@ -4060,7 +4070,11 @@ var render = function () {
               }),
               _vm._v(" "),
               _c("div", { staticClass: "panel-footer" }, [
-                _c("span", [_vm._v("totale: " + _vm._s(_vm.price) + " €")]),
+                _c("span", [
+                  _vm._v(
+                    "totale: " + _vm._s(_vm.price + this.finalPrice) + " €"
+                  ),
+                ]),
                 _vm._v(" "),
                 _c("button", { staticClass: "cart-btn" }, [
                   _vm._v("Procedi al pagamento"),
@@ -4463,13 +4477,16 @@ var render = function () {
           ]),
         ]),
         _vm._v(" "),
-        _c("Cart", { attrs: { cartContent: _vm.cart } }),
+        _c("Cart", {
+          attrs: { cartContent: _vm.cart, initialPrice: _vm.price },
+        }),
         _vm._v(" "),
         _c("div", { staticClass: "box" }, [
           _c(
             "div",
             { staticClass: "big-box-img" },
             _vm._l(_vm.dishes, function (dish) {
+<<<<<<< HEAD
               return _c(
                 "div",
                 { key: dish["id"], staticClass: "image" },
@@ -4507,6 +4524,31 @@ var render = function () {
                         click: function ($event) {
                           return _vm.sendCart(dish)
                         },
+=======
+              return _c("div", { key: dish["id"], staticClass: "image" }, [
+                _c("img", {
+                  attrs: {
+                    src: "./images/image-dish/" + dish.image,
+                    alt: dish.name,
+                  },
+                }),
+                _vm._v(" "),
+                _c("h4", [_vm._v(_vm._s(dish.name))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(dish.description))]),
+                _vm._v(" "),
+                _c("h4", [_vm._v(_vm._s(dish.price) + "€")]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(dish.ingredients))]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "button",
+                    on: {
+                      click: function ($event) {
+                        return _vm.sendCart(dish)
+>>>>>>> main
                       },
                     },
                     [_vm._v("Aggiungi al carrello")]
@@ -17796,7 +17838,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/elena/Desktop/classe 39/Esecizio Finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
