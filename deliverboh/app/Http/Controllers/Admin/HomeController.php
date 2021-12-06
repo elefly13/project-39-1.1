@@ -35,7 +35,7 @@ class HomeController extends Controller
     {
         $data_month=[];
         $year_now=now()->year;
-
+        $user = Auth::user();
         for ($i = 1; $i <= 12; $i++) {
             $temp =count( Order::whereMonth('created_at', $i)->whereYear('created_at', $year_now )->get());
            array_push($data_month, $temp);
@@ -48,7 +48,7 @@ class HomeController extends Controller
            array_push($data_year, $temp);
         };
        
-        $user = Auth::user();
+       
         $test=Order::whereHas('dishes',function($q ) use ($user) {
             $q->where('user_id', $user['id']);
         })->get();

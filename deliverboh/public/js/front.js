@@ -2495,10 +2495,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
 /* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
+<<<<<<< HEAD
 /* harmony import */ var _components_ConfermaOrdine__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ConfermaOrdine */ "./resources/js/components/ConfermaOrdine.vue");
 /* harmony import */ var _components_OrdineApprovato__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/OrdineApprovato */ "./resources/js/components/OrdineApprovato.vue");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
 //
+=======
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
+/* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
+>>>>>>> pagame
 //
 //
 //
@@ -2533,7 +2538,16 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
+<<<<<<< HEAD
   methods: {}
+=======
+  methods: {
+    passCart: function passCart(cartContent) {
+      this.cart = cartContent;
+      console.log(this.cart);
+    }
+  }
+>>>>>>> pagame
 });
 
 /***/ }),
@@ -4773,11 +4787,17 @@ var render = function () {
     [
       _c("Header"),
       _vm._v(" "),
+<<<<<<< HEAD
       _c("Main"),
       _vm._v(" "),
       _c("Menu"),
       _vm._v(" "),
       _c("ConfermaOrdine"),
+=======
+      _c("Cart", { attrs: { cartContent: _vm.cart } }),
+      _vm._v(" "),
+      _c("Main"),
+>>>>>>> pagame
       _vm._v(" "),
       _c("OrdineApprovato"),
     ],
