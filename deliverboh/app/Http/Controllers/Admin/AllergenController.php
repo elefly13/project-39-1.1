@@ -14,7 +14,7 @@ class AllergenController extends Controller
      */
     public function index()
     {
-         
+        
         $allergen = Allergen::all();
         
         $data = $allergen;

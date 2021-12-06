@@ -1,8 +1,19 @@
 <?php
 
 return [
+
     [
         "id"=>"1",
+        "name"=>"superUser",
+        "email"=>"superUser@gmail.com",
+        "password"=>"$2y$10$1ezeu1JUT3RvReknhZMtAeexTYfyz1Y95h6sOGi2RvnbpQtSte2QC",
+        "restaurant_name"=>"no name",
+        "address"=>"sede legale DeliverBoh",
+        "vat_number"=>"01010101100",
+
+    ],
+    [
+        "id"=>"2",
         "name"=>"trattoria conconi",
         "email"=>"trattoria.conconi@gmail.com",
         "password"=>"$2y$10$1ezeu1JUT3RvReknhZMtAeexTYfyz1Y95h6sOGi2RvnbpQtSte2QC",
@@ -12,7 +23,7 @@ return [
 
     ],
     [
-        "id"=>"2",
+        "id"=>"3",
         "name"=>"la coppa d'oro",
         "email"=>"la.coppa.doro@gmail.com",
         "password"=>"$2y$10$1ezeu1JUT3RvReknhZMtAeexTYfyz1Y95h6sOGi2RvnbpQtSte2QC",
@@ -22,7 +33,7 @@ return [
 
     ],
     [
-        "id"=>"3",
+        "id"=>"4",
         "name"=>"strippoli osteria pugliese",
         "email"=>"strippoli.osteria.pugliese@gmail.com",
         "password"=>"$2y$10$1ezeu1JUT3RvReknhZMtAeexTYfyz1Y95h6sOGi2RvnbpQtSte2QC",

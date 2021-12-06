@@ -2495,15 +2495,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
 /* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
-<<<<<<< HEAD
 /* harmony import */ var _components_ConfermaOrdine__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ConfermaOrdine */ "./resources/js/components/ConfermaOrdine.vue");
 /* harmony import */ var _components_OrdineApprovato__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/OrdineApprovato */ "./resources/js/components/OrdineApprovato.vue");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
 //
-=======
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
-/* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
->>>>>>> pagame
 //
 //
 //
@@ -2538,16 +2533,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-<<<<<<< HEAD
   methods: {}
-=======
-  methods: {
-    passCart: function passCart(cartContent) {
-      this.cart = cartContent;
-      console.log(this.cart);
-    }
-  }
->>>>>>> pagame
 });
 
 /***/ }),
@@ -4500,7 +4486,6 @@ var render = function () {
             "div",
             { staticClass: "big-box-img" },
             _vm._l(_vm.dishes, function (dish) {
-<<<<<<< HEAD
               return _c(
                 "div",
                 { key: dish["id"], staticClass: "image" },
@@ -4538,31 +4523,6 @@ var render = function () {
                         click: function ($event) {
                           return _vm.sendCart(dish)
                         },
-=======
-              return _c("div", { key: dish["id"], staticClass: "image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "./images/image-dish/" + dish.image,
-                    alt: dish.name,
-                  },
-                }),
-                _vm._v(" "),
-                _c("h4", [_vm._v(_vm._s(dish.name))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.description))]),
-                _vm._v(" "),
-                _c("h4", [_vm._v(_vm._s(dish.price) + "€")]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "button",
-                    on: {
-                      click: function ($event) {
-                        return _vm.sendCart(dish)
->>>>>>> main
                       },
                     },
                     [_vm._v("Aggiungi al carrello")]
@@ -4787,17 +4747,11 @@ var render = function () {
     [
       _c("Header"),
       _vm._v(" "),
-<<<<<<< HEAD
       _c("Main"),
       _vm._v(" "),
       _c("Menu"),
       _vm._v(" "),
       _c("ConfermaOrdine"),
-=======
-      _c("Cart", { attrs: { cartContent: _vm.cart } }),
-      _vm._v(" "),
-      _c("Main"),
->>>>>>> pagame
       _vm._v(" "),
       _c("OrdineApprovato"),
     ],
@@ -17858,7 +17812,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! F:\Boolean\project-39-1.1\deliverboh\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
