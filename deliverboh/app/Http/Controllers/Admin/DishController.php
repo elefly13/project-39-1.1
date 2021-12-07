@@ -59,7 +59,7 @@ class DishController extends Controller
     {
         $request->validate([
             'name'=>'required',  
-            'price'=>'required',
+            'price'=>'required|digits_between:1,4',
             'course'=>'required',
         ]);
         $user = Auth::user();
