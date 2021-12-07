@@ -1,12 +1,12 @@
-body {
+// body {
    
-    background-color: white;
-    background-image: url('../images/nuvola-1.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-position: right;
-}
+//     background-color: white;
+//     background-image: url('../images/nuvola-1.png');
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: bottom;
+//     background-position: right;
+// }
 // .nuvola {
 //     background-image: url('../images/nuvola-1.png');
 //     background-size: 70%;
@@ -56,22 +56,10 @@ body {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(89 145 117 / 25%);
 }
-.my-check {
-    position: absolute;
-    margin-top: 0.3rem;
-    margin-left: -1.25rem;
-}
-.my-check:checked {
-    background-color: #fff7df;
-}
-.my-btn-link {
-    font-weight: 400;
-    color: #439373;
-    text-decoration: none;
-}
 .my-btn {
     color: #fff;
     background-color: #439373;
     border-color: #439373; 
+    margin-bottom: 20px;
    
 }

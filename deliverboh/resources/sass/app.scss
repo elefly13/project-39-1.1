@@ -15,4 +15,11 @@
 @import "./partials/header";
 @import "./partials/main";
 @import "./partials/login";
+@import "./partials/register";
 @import "./partials/color";
+@import "./partials/dashboard";
+
+//Partial/dishes
+@import "./partials/dishes/edit";
+@import "./partials/dishes/index";
+@import "./partials/dishes/create";
