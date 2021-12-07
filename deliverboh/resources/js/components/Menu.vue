@@ -202,7 +202,6 @@ export default {
             border-bottom-right-radius: 40px;
             transition: 0.5s;
             box-shadow: 5px 10px 18px #cfcece;
-            
             padding: 10px;
             margin: 20px;
             img {
