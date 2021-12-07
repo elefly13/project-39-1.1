@@ -27,15 +27,16 @@
                             <form method="post" action="/checkout">
                                <input type="hidden" name="_token" v-bind:value="csrf">
                                  <!-- <input type="hidden" name="prova" v-bind:value="this.prova[0]"> -->
-                                  <input type="hidden" name="prova2" v-bind:value="this.prova[1]">
+                                  
                                  <div class="panel-body" v-for="dish in cartContent" :key="dish.id">
                                      <input  type="hidden" name="price[]" v-bind:value="dish.price">
                                      <input  type="hidden" name="name[]" v-bind:value="dish.name">
                                      <input  type="hidden" name="description[]" v-bind:value="dish.description">
-
+                                     <input  type="hidden" name="quantity[]" v-bind:value="dish.quantity">
+                                     <input  type="hidden" name="id[]" v-bind:value="dish.id">
                                 </div>
 
-                                <button class="cart-btn"  name="array" v-bind:value="this.prova">Procedi al pagamento</button>
+                                <button class="cart-btn" v-if="price!=0"  >Procedi al pagamento</button>
                             </form>
                             
                         </div>

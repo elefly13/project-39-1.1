@@ -1954,6 +1954,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   props: ['cartContent', 'initialPrice'],
@@ -1987,6 +1990,19 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    console: function (_console) {
+      function console(_x) {
+        return _console.apply(this, arguments);
+      }
+
+      console.toString = function () {
+        return _console.toString();
+      };
+
+      return console;
+    }(function (array) {
+      console.log(array);
+    }),
     moreQuantity: function moreQuantity(id) {
       for (var i in this.cartContent) {
         if (this.cartContent[i].id == id) {
@@ -4101,28 +4117,44 @@ var render = function () {
                       domProps: { value: _vm.csrf },
                     }),
                     _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "hidden", name: "prova2" },
-                      domProps: { value: this.prova[1].name },
+                    _vm._l(_vm.cartContent, function (dish) {
+                      return _c(
+                        "div",
+                        { key: dish.id, staticClass: "panel-body" },
+                        [
+                          _c("input", {
+                            attrs: { type: "hidden", name: "price[]" },
+                            domProps: { value: dish.price },
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "hidden", name: "name[]" },
+                            domProps: { value: dish.name },
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "hidden", name: "description[]" },
+                            domProps: { value: dish.description },
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "hidden", name: "quantity[]" },
+                            domProps: { value: dish.quantity },
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "hidden", name: "id[]" },
+                            domProps: { value: dish.id },
+                          }),
+                        ]
+                      )
                     }),
                     _vm._v(" "),
-                    _vm._l(_vm.cartContent, function (dish, i) {
-                      return _c("div", { key: i, staticClass: "panel-body" }, [
-                        _c("input", {
-                          attrs: { type: "hidden", name: "prova[]" },
-                          domProps: { value: dish[i].name },
-                        }),
-                      ])
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "cart-btn",
-                        attrs: { name: "array", value: this.prova },
-                      },
-                      [_vm._v("Procedi al pagamento")]
-                    ),
+                    _vm.price != 0
+                      ? _c("button", { staticClass: "cart-btn" }, [
+                          _vm._v("Procedi al pagamento"),
+                        ])
+                      : _vm._e(),
                   ],
                   2
                 ),
