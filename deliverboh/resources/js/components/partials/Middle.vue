@@ -3,9 +3,25 @@
         <div>
             <Search @performSearch="searchRest"/>
         </div>
-        <div :class="((!categoriesArray.length == 0 || searchText != '') ? 'backgrey box-user' : 'box-user')">
+        
+        <div  v-if="this.switchMenu == false"  :class="((!categoriesArray.length == 0 || searchText != '') ? 'backgrey box-user' : 'box-user')">
             <div v-for="(user, index) in this.ristoranti" :key="index" class="container-card">
-                <User :info="user" :indexMenu ="index"/>
+                <button class="user-btn" @click="menuShow(user)"><User :info="user"/></button>
+            </div>
+        </div>
+        <div v-if="this.switchMenu == true" class="box-user">
+            <div v-for="(dish, index) in this.filterDishes" :key="index">
+                <div class="image">
+                    <img :src="'./images/image-dish/' + dish.image" :alt="dish.name">
+                    <h4>{{ dish.name }}</h4>
+                    <p>{{ dish.description }}</p>
+                    <h4>{{ dish.price }}</h4>
+                    <p>Ingredienti:</p>
+                    <p>{{ dish.ingredients }}</p>
+                    <p>Allergeni:</p>
+                    <p :key="(allergenDish['id'])" v-for="allergenDish in allergenDishes">{{ allergenDish.allergen_id }}</p>
+                    <button class="button" @click="sendCart(dish)">Aggiungi al carrello</button>               
+                </div>
             </div>
         </div>
         <div class="test">
@@ -32,18 +48,23 @@ export default {
             url: "http://127.0.0.1:8000/api/",
             searchrestaurant: "",
             users: [], 
+            dishes: [],
+            filterDishes:[],
             searchText: '',
             categoryUsers: [],
             ristoranti: [],
             appoggioDue: [],
+            switchMenu: false,
         };
     },
     created() {
+        this.getDishes();
         this.getUsers();
         this.getCategoryUsers();
     },
     watch: {
         searchText: function () {
+            this.switchMenu = false
             if (this.searchText != '') {
                 let filteredList = this.ristoranti.filter( item => {
                     return item.name
@@ -65,6 +86,7 @@ export default {
             }
         },
         categoriesArray: function filterUsers() {
+            this.switchMenu = false
             var usersArray = [];
             for (const i in this.categoriesArray) {
                 for (const j in this.categoryUsers) {
@@ -96,9 +118,26 @@ export default {
         },
     },
     methods: {
+        menuShow(user) {
+            this.switchMenu = true
+            let userdish = []
+            for (const i in this.dishes) {
+                if(this.dishes[i].user_id == user.id) {
+                    userdish.push(this.dishes[i])
+                }
+            }
+            this.filterDishes = userdish
+        },
         getUsers(){
+           const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
             axios
-                .get(this.url + 'users')
+                .get(this.url + 'users', bodyParameters, config)
                 .then((resp)=>{
                     this.users = resp.data.results
                 })
@@ -121,6 +160,21 @@ export default {
                 })
                 .catch();
         },
+        getDishes(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'dishes' , bodyParameters, config)
+                .then((resp)=>{
+                    this.dishes = resp.data.results
+                })
+                .catch();
+        },
     },
 };
 </script>
@@ -128,6 +182,83 @@ export default {
 
 <style lang="scss" scoped>
 
+.user-btn {
+    border: none;
+}
+.image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    background-color:white ;
+    border-radius: 5px;
+    border-bottom-right-radius: 40px;
+    transition: 0.5s;
+    box-shadow: 5px 10px 18px #cfcece;
+    padding: 10px;
+    margin: 20px;
+    img {
+        width: 230px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        border-bottom-right-radius: 40px;
+    }
+    h4 {
+        font-size: 18px; 
+        color: #be541e; 
+        padding: 8px 0;
+        text-transform: capitalize;
+    }
+    p {
+        font-size: 12px;
+        padding: 3px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+                line-clamp: 2; 
+        -webkit-box-orient: vertical;                
+        width: 200px; 
+            
+    }
+    
+    button {
+        position: absolute;
+        left:-10%;
+        bottom: 0;
+        transform: translate(50%, 50%);
+        box-shadow: 5px 10px 18px #a09f9f;
+        margin: 10px;
+        padding: 10px;
+        border: none;
+        border-color: #439373;
+        border-radius: 3px;
+        border-bottom-right-radius: 10px;
+        background-color:  #439373;
+        color: #f4f0e2;
+        transition: 0.6s;
+    }
+    button:hover {            
+        margin: 10px;
+        padding: 10px;
+        border: none;
+        border-color: #f1c692;
+        border-radius: 3px;
+        border-bottom-right-radius: 10px;
+        background-color:  #f1c692;
+        color: #343434;
+    }
+}
+.image:hover {
+    transform: scale(1.05);
+}
+.image:active {
+    transform: scale(1);
+}
 .middle {
     width: calc((100%/6) * 5);
     height:calc(100vh - 80px);

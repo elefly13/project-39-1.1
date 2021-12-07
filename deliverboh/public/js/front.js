@@ -2490,6 +2490,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2504,19 +2520,25 @@ __webpack_require__.r(__webpack_exports__);
       url: "http://127.0.0.1:8000/api/",
       searchrestaurant: "",
       users: [],
+      dishes: [],
+      filterDishes: [],
       searchText: '',
       categoryUsers: [],
       ristoranti: [],
-      appoggioDue: []
+      appoggioDue: [],
+      switchMenu: false
     };
   },
   created: function created() {
+    this.getDishes();
     this.getUsers();
     this.getCategoryUsers();
   },
   watch: {
     searchText: function searchText() {
       var _this = this;
+
+      this.switchMenu = false;
 
       if (this.searchText != '') {
         var filteredList = this.ristoranti.filter(function (item) {
@@ -2538,6 +2560,7 @@ __webpack_require__.r(__webpack_exports__);
     categoriesArray: function filterUsers() {
       var _this2 = this;
 
+      this.switchMenu = false;
       var usersArray = [];
 
       for (var i in this.categoriesArray) {
@@ -2570,10 +2593,30 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    menuShow: function menuShow(user) {
+      this.switchMenu = true;
+      var userdish = [];
+
+      for (var i in this.dishes) {
+        if (this.dishes[i].user_id == user.id) {
+          userdish.push(this.dishes[i]);
+        }
+      }
+
+      this.filterDishes = userdish;
+    },
     getUsers: function getUsers() {
       var _this3 = this;
 
-      axios.get(this.url + 'users').then(function (resp) {
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'users', bodyParameters, config).then(function (resp) {
         _this3.users = resp.data.results;
       })["catch"]();
     },
@@ -2593,6 +2636,21 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.get(this.url + 'categoryUsers', bodyParameters, config).then(function (resp) {
         _this4.categoryUsers = resp.data.results;
+      })["catch"]();
+    },
+    getDishes: function getDishes() {
+      var _this5 = this;
+
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'dishes', bodyParameters, config).then(function (resp) {
+        _this5.dishes = resp.data.results;
       })["catch"]();
     }
   }
@@ -2748,75 +2806,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "User",
-  props: ['info', 'indexMenu'],
-  data: function data() {
-    return {
-      url: "http://127.0.0.1:8000/api/",
-      flag: false,
-      dishes: [],
-      allergens: [],
-      allergenDishes: [],
-      api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k"
-    };
-  },
-  created: function created() {
-    this.getDishes();
-    this.getAllergenDishes();
-    this.getAllergens();
-  },
-  methods: {
-    getAllergens: function getAllergens() {
-      var _this = this;
-
-      var bodyParameters = {
-        key: "value"
-      };
-      var config = {
-        headers: {
-          Authorization: "Bearer ".concat(this.api_token)
-        }
-      };
-      axios.get(this.url + 'allergens', bodyParameters, config).then(function (resp) {
-        _this.allergens = resp.data.results;
-        console.log('sono allergeni');
-        console.log(_this.allergens);
-      })["catch"]();
-    },
-    getAllergenDishes: function getAllergenDishes() {
-      var _this2 = this;
-
-      var bodyParameters = {
-        key: "value"
-      };
-      var config = {
-        headers: {
-          Authorization: "Bearer ".concat(this.api_token)
-        }
-      };
-      axios.get(this.url + 'allergenDishes', bodyParameters, config).then(function (resp) {
-        _this2.allergenDishes = resp.data.results;
-        console.log('sono allergeni dishes');
-        console.log(_this2.allergensDishes);
-      })["catch"]();
-    },
-    getDishes: function getDishes() {
-      var _this3 = this;
-
-      var bodyParameters = {
-        key: "value"
-      };
-      var config = {
-        headers: {
-          Authorization: "Bearer ".concat(this.api_token)
-        }
-      };
-      axios.get(this.url + 'dishes', bodyParameters, config).then(function (resp) {
-        _this3.dishes = resp.data.results;
-        console.log('sono dishes');
-        console.log(_this3.dishes);
-      })["catch"]();
-    }
-  }
+  props: ['info']
 });
 
 /***/ }),
@@ -3021,7 +3011,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.test[data-v-1c77d2d7] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n  -webkit-text-orientation: mixed;\n          text-orientation: mixed;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translate(-5%, -80%);\n  color: #638F64;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 93%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".user-btn[data-v-1c77d2d7] {\n  border: none;\n}\n.image[data-v-1c77d2d7] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n  width: 250px;\n  height: 400px;\n  background-color: white;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #cfcece;\n  padding: 10px;\n  margin: 20px;\n}\n.image img[data-v-1c77d2d7] {\n  width: 230px;\n  height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n}\n.image h4[data-v-1c77d2d7] {\n  font-size: 18px;\n  color: #be541e;\n  padding: 8px 0;\n  text-transform: capitalize;\n}\n.image p[data-v-1c77d2d7] {\n  font-size: 12px;\n  padding: 3px 0;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  /* number of lines to show */\n  line-clamp: 2;\n  -webkit-box-orient: vertical;\n  width: 200px;\n}\n.image button[data-v-1c77d2d7] {\n  position: absolute;\n  left: -10%;\n  bottom: 0;\n  transform: translate(50%, 50%);\n  box-shadow: 5px 10px 18px #a09f9f;\n  margin: 10px;\n  padding: 10px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.image button[data-v-1c77d2d7]:hover {\n  margin: 10px;\n  padding: 10px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.image[data-v-1c77d2d7]:hover {\n  transform: scale(1.05);\n}\n.image[data-v-1c77d2d7]:active {\n  transform: scale(1);\n}\n.middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.test[data-v-1c77d2d7] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n  -webkit-text-orientation: mixed;\n          text-orientation: mixed;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translate(-5%, -80%);\n  color: #638F64;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 93%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -5299,24 +5289,91 @@ var render = function () {
   return _c("section", { staticClass: "middle" }, [
     _c("div", [_c("Search", { on: { performSearch: _vm.searchRest } })], 1),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        class:
-          !_vm.categoriesArray.length == 0 || _vm.searchText != ""
-            ? "backgrey box-user"
-            : "box-user",
-      },
-      _vm._l(this.ristoranti, function (user, index) {
-        return _c(
+    this.switchMenu == false
+      ? _c(
           "div",
-          { key: index, staticClass: "container-card" },
-          [_c("User", { attrs: { info: user, indexMenu: index } })],
-          1
+          {
+            class:
+              !_vm.categoriesArray.length == 0 || _vm.searchText != ""
+                ? "backgrey box-user"
+                : "box-user",
+          },
+          _vm._l(this.ristoranti, function (user, index) {
+            return _c("div", { key: index, staticClass: "container-card" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "user-btn",
+                  on: {
+                    click: function ($event) {
+                      return _vm.menuShow(user)
+                    },
+                  },
+                },
+                [_c("User", { attrs: { info: user } })],
+                1
+              ),
+            ])
+          }),
+          0
         )
-      }),
-      0
-    ),
+      : _vm._e(),
+    _vm._v(" "),
+    this.switchMenu == true
+      ? _c(
+          "div",
+          { staticClass: "box-user" },
+          _vm._l(this.filterDishes, function (dish, index) {
+            return _c("div", { key: index }, [
+              _c(
+                "div",
+                { staticClass: "image" },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "./images/image-dish/" + dish.image,
+                      alt: dish.name,
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v(_vm._s(dish.name))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(dish.description))]),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v(_vm._s(dish.price))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Ingredienti:")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(dish.ingredients))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Allergeni:")]),
+                  _vm._v(" "),
+                  _vm._l(_vm.allergenDishes, function (allergenDish) {
+                    return _c("p", { key: allergenDish["id"] }, [
+                      _vm._v(_vm._s(allergenDish.allergen_id)),
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button",
+                      on: {
+                        click: function ($event) {
+                          return _vm.sendCart(dish)
+                        },
+                      },
+                    },
+                    [_vm._v("Aggiungi al carrello")]
+                  ),
+                ],
+                2
+              ),
+            ])
+          }),
+          0
+        )
+      : _vm._e(),
     _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
@@ -5604,7 +5661,19 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Main")], 1)
+  return _c(
+    "div",
+    [
+      _c("Main"),
+      _vm._v(" "),
+      _c("Menu"),
+      _vm._v(" "),
+      _c("ConfermaOrdine"),
+      _vm._v(" "),
+      _c("OrdineApprovato"),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
