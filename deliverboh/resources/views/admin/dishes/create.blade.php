@@ -20,7 +20,7 @@
 	</div>
 	<div class="form-group">
 		<label for="price">price</label>
-		<input value="{{old('price')}}"v type="number" name="price" class="form-control  @error('price') is-invalid @enderror" id="price" placeholder="inserisci il prezzo">
+		<input value="{{old('price')}}" type="number" name="price" class="form-control  @error('price') is-invalid @enderror" id="price" placeholder="inserisci il prezzo">
 		@error('price')
 			<div class="alert alert-danger">{{ $message }}  </div>
 		@enderror
