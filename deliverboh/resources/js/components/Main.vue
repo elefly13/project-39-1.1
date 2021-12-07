@@ -48,8 +48,10 @@ export default {
 .check-box {
     width: calc(100%/6);
     min-width: 220px;
-    height: 100%;
+    height: 78%;
     padding-top: 100px;
+    // background: blue;
+    // z-index: 999;
 }
 
 .container-sliders {
