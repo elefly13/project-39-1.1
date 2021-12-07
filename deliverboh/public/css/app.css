@@ -13071,6 +13071,10 @@ body {
      object-fit: cover;
 }
 
+header {
+  background-image: linear-gradient(to right, white, 0);
+}
+
 .h-header {
   height: 80px;
 }
@@ -13120,7 +13124,7 @@ body {
   border-radius: 5px;
   border-bottom-right-radius: 40px;
   box-shadow: 5px 10px 18px #cfcece;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 .my-form {
@@ -13167,4 +13171,303 @@ body {
   color: #fff;
   background-color: #439373;
   border-color: #439373;
+}
+
+.header {
+  background-color: #b5d8ba;
+  border-bottom-right-radius: 20px;
+  color: #343434;
+}
+
+.my-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 5px 10px 18px #cfcece;
+  margin-top: 200px;
+}
+
+.my-form {
+  display: block;
+  width: 100%;
+  height: calc(1.6em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #896c5c;
+  background-color: #f4f0e2;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.my-form:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #439373;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(89, 145, 117, 0.25);
+}
+
+.my-btn {
+  color: #fff;
+  background-color: #439373;
+  border-color: #439373;
+  margin-bottom: 20px;
+}
+
+.space {
+  width: 100%;
+  height: 80vh;
+}
+
+.box-center {
+  width: 90%;
+  height: 100%;
+  margin: 50px auto;
+  background-image: url("../images/bike.png");
+  background-size: 10%;
+  background-repeat: no-repeat;
+  background-position: left, bottom;
+}
+
+.box-side-left-dash {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  height: 100%;
+}
+
+.box-side-right-dash {
+  background-color: rgba(52, 52, 52, 0.2);
+  border-bottom-right-radius: 40px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.top-dash-right {
+  width: 100%;
+  height: 10vh;
+  background-color: #439373;
+  color: white;
+  background-image: url("../images/citta.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.link-dash {
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  background-color: #b5d8ba;
+  font-size: 40px;
+  color: white;
+  font-weight: 800;
+}
+
+.overflow-edit {
+  width: 80%;
+  height: 70vh;
+  margin: 0px auto;
+  overflow-x: hidden;
+}
+
+.header-edit {
+  background-color: #b5d8ba;
+  border-bottom-right-radius: 20px;
+  color: #be541e;
+}
+
+.my-card-edit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 5px 10px 18px #cfcece;
+  padding: 30px;
+}
+
+.check {
+  color: #999999;
+  font-weight: 800;
+  height: 30px;
+  background-color: #b5d8ba;
+  padding-right: 20px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+}
+
+[type=checkbox]:checked + label {
+  font-weight: 800;
+  color: #be541e;
+}
+
+.big-box-dish {
+  width: 80%;
+  height: 60vh;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.card-dish-index {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  width: 250px;
+  height: 550px;
+  background-color: white;
+  border-radius: 5px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 5px 10px 18px #9c9b9b;
+  padding: 10px;
+  margin: 20px;
+}
+
+.img-dish-index {
+  display: block;
+  width: 230px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  border-bottom-right-radius: 40px;
+  background-color: #f4f0e2;
+}
+
+.nome-dish-index {
+  font-size: 18px;
+  color: #be541e;
+  padding: 8px 0;
+  text-transform: capitalize;
+}
+
+.p-dish-index {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.det-mod {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-dish-index {
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  border-color: red;
+  border-radius: 3px;
+  background-color: red;
+  color: #f4f0e2;
+}
+
+.link-dish-index {
+  color: #439373;
+  transition: 0.5s;
+}
+
+.link-dish-index:hover {
+  color: #be541e;
+  background-color: #b5d8ba;
+  text-decoration: none;
+}
+
+.btn-top-index {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #439373;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.overlay-dish-index {
+  position: absolute;
+  bottom: 0;
+  background: rgba(189, 215, 188, 0.5);
+  width: 100%;
+  border-radius: 5px;
+  border-bottom-right-radius: 40px;
+  padding: 5px;
+}
+
+.overflow-create {
+  width: 80%;
+  height: 70vh;
+  margin: 0px auto;
+  overflow-x: hidden;
+}
+
+.header-create {
+  background-color: #b5d8ba;
+  border-bottom-right-radius: 20px;
+  color: #be541e;
+}
+
+.my-card-create {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 5px 10px 18px #cfcece;
+  padding: 30px;
+}
+
+.check {
+  height: 30px;
+  background-color: #b5d8ba;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+}
+
+[type=checkbox]:checked + label {
+  font-weight: 800;
+  color: #be541e;
 }
