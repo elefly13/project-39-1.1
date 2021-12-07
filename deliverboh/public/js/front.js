@@ -4500,7 +4500,6 @@ var render = function () {
             "div",
             { staticClass: "big-box-img" },
             _vm._l(_vm.dishes, function (dish) {
-<<<<<<< HEAD
               return _c(
                 "div",
                 { key: dish["id"], staticClass: "image" },
@@ -4538,31 +4537,6 @@ var render = function () {
                         click: function ($event) {
                           return _vm.sendCart(dish)
                         },
-=======
-              return _c("div", { key: dish["id"], staticClass: "image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "./images/image-dish/" + dish.image,
-                    alt: dish.name,
-                  },
-                }),
-                _vm._v(" "),
-                _c("h4", [_vm._v(_vm._s(dish.name))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.description))]),
-                _vm._v(" "),
-                _c("h4", [_vm._v(_vm._s(dish.price) + "€")]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "button",
-                    on: {
-                      click: function ($event) {
-                        return _vm.sendCart(dish)
->>>>>>> main
                       },
                     },
                     [_vm._v("Aggiungi al carrello")]
@@ -17858,7 +17832,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/elena/Desktop/classe 39/Esecizio Finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
