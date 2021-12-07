@@ -1,5 +1,6 @@
 <?php
 
+use App\DishOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Facades\Auth;
@@ -46,7 +47,22 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
 
 // Route::get('/checkout', 'HomeController@checkout')->name('homepage');
 
-Route::get('/checkout', function(){
+Route::post('/checkout', function(Request $request){
+     
+    $sum=array_sum( $request['price']);
+    
+     $cart=[
+        'dish_id'=>$request['id'],
+        'name'=>$request['name'],
+        'price'=> $request['price'],
+        'description'=> $request['description'],
+        'quantity'=> $request['quantity'],
+        'sum'=>$sum
+     ];
+    //  $name=$request['name'];
+    //  $price= $request['price'];
+    //  $description= $request['description'];
+    // $quantity= $request['quantity'];
     $gateway = new Braintree\Gateway([
         'environment' => 'sandbox',
         'merchantId' => 'zfjjgykn84td5wdp',
@@ -56,7 +72,7 @@ Route::get('/checkout', function(){
  
     
     $token =$gateway->ClientToken()->generate();
-    return view('checkout', ['token' => $token]);
+    return view('checkout', ['token' => $token],['cart'=>$cart]);
 }); 
 
 Route::post('/conferma', function(Request $request){
@@ -96,16 +112,26 @@ Route::post('/conferma', function(Request $request){
     $new_order['total']=$amount;
     $new_order['note']=$request['note'];
      
+    //  $new_order->dishes()->attach($data['dish']);
     // dd( $new_order['lastname']);
     if ($result->success) 
     {
         $new_order['status']=1;
         $new_order->save();
-        // $new_order->dishes()->attach($data['dish']);
+        
+        
+        for ($i=0; $i< count( $request['id']); $i++ ){
+            $prova= new DishOrder();
+            $prova['dish_id']=$request['id'][$i];
+            $prova['order_id']=$new_order['id'];
+            $prova->save();
+        };
+        
  
         $transaction = $result->transaction;
+        return view('admin.statistiche');
         // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
-        return back()->with('success_message','Transaction complete ID:'. $transaction->id);
+        // return back()->with('success_message','Transaction complete ID:'. $transaction->id);
     } else {
         $errorString = "";
         $new_order['status']=0;
