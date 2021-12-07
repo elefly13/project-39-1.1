@@ -5,7 +5,7 @@
         </div>
         <div :class="((!categoriesArray.length == 0 || searchText != '') ? 'backgrey box-user' : 'box-user')">
             <div v-for="(user, index) in this.ristoranti" :key="index" class="container-card">
-                <User :info="user" />
+                <User :info="user" :indexMenu ="index"/>
             </div>
         </div>
         <div class="test">
@@ -107,7 +107,7 @@ export default {
         searchRest(text) {
             this.searchText = text;
         },
-         getCategoryUsers(){
+        getCategoryUsers(){
             const bodyParameters = {
                 key: "value",
             };

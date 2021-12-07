@@ -2748,7 +2748,75 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "User",
-  props: ['info']
+  props: ['info', 'indexMenu'],
+  data: function data() {
+    return {
+      url: "http://127.0.0.1:8000/api/",
+      flag: false,
+      dishes: [],
+      allergens: [],
+      allergenDishes: [],
+      api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k"
+    };
+  },
+  created: function created() {
+    this.getDishes();
+    this.getAllergenDishes();
+    this.getAllergens();
+  },
+  methods: {
+    getAllergens: function getAllergens() {
+      var _this = this;
+
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'allergens', bodyParameters, config).then(function (resp) {
+        _this.allergens = resp.data.results;
+        console.log('sono allergeni');
+        console.log(_this.allergens);
+      })["catch"]();
+    },
+    getAllergenDishes: function getAllergenDishes() {
+      var _this2 = this;
+
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'allergenDishes', bodyParameters, config).then(function (resp) {
+        _this2.allergenDishes = resp.data.results;
+        console.log('sono allergeni dishes');
+        console.log(_this2.allergensDishes);
+      })["catch"]();
+    },
+    getDishes: function getDishes() {
+      var _this3 = this;
+
+      var bodyParameters = {
+        key: "value"
+      };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(this.api_token)
+        }
+      };
+      axios.get(this.url + 'dishes', bodyParameters, config).then(function (resp) {
+        _this3.dishes = resp.data.results;
+        console.log('sono dishes');
+        console.log(_this3.dishes);
+      })["catch"]();
+    }
+  }
 });
 
 /***/ }),
@@ -5243,7 +5311,7 @@ var render = function () {
         return _c(
           "div",
           { key: index, staticClass: "container-card" },
-          [_c("User", { attrs: { info: user } })],
+          [_c("User", { attrs: { info: user, indexMenu: index } })],
           1
         )
       }),
@@ -5536,25 +5604,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-<<<<<<< HEAD
   return _c("div", [_c("Main")], 1)
-=======
-  return _c(
-    "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _c("Main"),
-      _vm._v(" "),
-      _c("Menu"),
-      _vm._v(" "),
-      _c("ConfermaOrdine"),
-      _vm._v(" "),
-      _c("OrdineApprovato"),
-    ],
-    1
-  )
->>>>>>> main
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19045,7 +19095,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\Boolean\project-39-1.1\deliverboh\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

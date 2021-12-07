@@ -22,7 +22,76 @@
 <script>
 export default {
     name: "User",
-    props: ['info']
+    props: ['info','indexMenu'],
+    data() {
+        return {
+            url: "http://127.0.0.1:8000/api/",
+            flag: false,
+            dishes: [],
+            allergens: [],
+            allergenDishes: [],
+            api_token:
+                "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
+        };
+    },
+    created() {
+        this.getDishes();
+        this.getAllergenDishes();
+        this.getAllergens();
+    },
+    methods: {
+        getAllergens(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'allergens', bodyParameters, config)
+                .then((resp)=>{
+                    this.allergens = resp.data.results
+                    console.log('sono allergeni')
+                    console.log(this.allergens)
+                })
+                .catch();
+        },
+        getAllergenDishes(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'allergenDishes', bodyParameters, config)
+                .then((resp)=>{
+                    this.allergenDishes = resp.data.results
+                    console.log('sono allergeni dishes')
+                    console.log(this.allergensDishes)
+                })
+                .catch();
+        },
+        getDishes(){
+            const bodyParameters = {
+                key: "value",
+            };
+
+            const config = {
+                headers: { Authorization: `Bearer ${this.api_token}` },
+            };
+            axios
+                .get(this.url + 'dishes' , bodyParameters, config)
+                .then((resp)=>{
+                    this.dishes = resp.data.results
+                    console.log('sono dishes')
+                    console.log(this.dishes)
+                })
+                .catch();
+        },
+    }
 }
 </script>
 
