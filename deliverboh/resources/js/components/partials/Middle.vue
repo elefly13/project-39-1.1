@@ -48,7 +48,13 @@ export default {
                         .includes(this.searchText.toLowerCase());
                 })
                  if(filteredList.length == 0) {
-                    this.ristoranti = this.users;
+                    // this.ristoranti = this.users;
+                    filteredList = this.users.filter( item => {
+                    return item.name
+                        .toLowerCase()
+                        .includes(this.searchText.toLowerCase());
+                })
+                        this.ristoranti = filteredList;
                 } else {
                     this.ristoranti = filteredList;
                 }
