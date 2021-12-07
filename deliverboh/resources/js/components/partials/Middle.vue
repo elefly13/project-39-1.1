@@ -8,6 +8,9 @@
                 <User :info="user" />
             </div>
         </div>
+        <div class="test">
+            <h3>#aCasaTuaConDeliverboh</h3>
+        </div>
         <div id="sfondo" class="sfondo">
             <img src="/images/unarota.svg" alt="">
         </div>
@@ -124,10 +127,21 @@ export default {
 
 
 <style lang="scss" scoped>
+
 .middle {
     width: calc((100%/6) * 5);
     height:calc(100vh - 80px);
     position: relative;
+}
+
+.test {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-5%, -80%);
+    color: #638F64;
 }
 
 .sfondo {
@@ -153,7 +167,7 @@ export default {
 }
 
 .box-user {
-    width: 75%;
+    width: 93%;
     height: 60%;
     overflow-y: scroll;
     display: flex;

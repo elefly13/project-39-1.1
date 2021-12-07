@@ -2606,6 +2606,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2959,7 +2962,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 78%;\n  padding-top: 100px;\n}\n.container-sliders[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 20%;\n  display: flex;\n  flex-direction: column;\n  flex-direction: row;\n  background: #f4f0e2;\n}\n.sliders[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n}", ""]);
+exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 78%;\n  padding-top: 50px;\n}\n.container-sliders[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 20%;\n  display: flex;\n  flex-direction: column;\n  flex-direction: row;\n  background: #f4f0e2;\n}\n.sliders[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -3035,7 +3038,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 75%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.test[data-v-1c77d2d7] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n  -webkit-text-orientation: mixed;\n          text-orientation: mixed;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translate(-5%, -80%);\n  color: #638F64;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 93%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -3054,7 +3057,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".search-box[data-v-22e11d6a] {\n  width: 700px;\n}\n.search-box .search[data-v-22e11d6a] {\n  height: 50px;\n  width: 300px;\n  color: grey;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  margin-right: 30px;\n  background: #f8fafc;\n}\n.search-box .search-button[data-v-22e11d6a] {\n  margin-right: 10px;\n  width: 120px;\n  height: 50px;\n  color: white;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  background-color: #638f64;\n}\n.box-slogan-search[data-v-22e11d6a] {\n  padding-top: 100px;\n}", ""]);
+exports.push([module.i, ".search-box[data-v-22e11d6a] {\n  width: 700px;\n}\n.search-box .search[data-v-22e11d6a] {\n  height: 50px;\n  width: 300px;\n  color: grey;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  margin-right: 30px;\n  background: #f8fafc;\n}\n.search-box .search-button[data-v-22e11d6a] {\n  margin-right: 10px;\n  width: 120px;\n  height: 50px;\n  color: white;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 10px;\n  padding: 5px;\n  background-color: #638f64;\n}\n.box-slogan-search[data-v-22e11d6a] {\n  padding-top: 50px;\n}", ""]);
 
 // exports
 
@@ -5275,9 +5278,19 @@ var render = function () {
     ),
     _vm._v(" "),
     _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "test" }, [
+      _c("h3", [_vm._v("#aCasaTuaConDeliverboh")]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

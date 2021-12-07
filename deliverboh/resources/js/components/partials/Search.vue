@@ -55,6 +55,6 @@ export default {
     }
     }
     .box-slogan-search {
-        padding-top: 100px;
+        padding-top: 50px;
     }
 </style>
