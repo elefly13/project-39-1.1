@@ -23,7 +23,7 @@
                             </ul>
                         </div>
                         <div class="panel-footer">
-                            <span>totale: {{ price }} €</span>
+                            <span>totale: {{ price + this.finalPrice}} €</span>
                             <button class="cart-btn">Procedi al pagamento</button>
                         </div>
                     </div>
@@ -37,24 +37,33 @@
 export default {
     
     name: "Cart",
-    props: ['cartContent'],
+    props: ['cartContent','initialPrice'],
     data() {
         return {
+            finalPrice: 0,
             price: 0,
             test: 0,
         };
     },
     watch: {
-        cartContent: function() {
-
+        initialPrice: function () {
+            this.finalPrice = this.initialPrice
+        },
+        cartContent: function () {
             let somma = 0;
             
             for (const i in this.cartContent) {
                 let totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
                 somma += totalPrice;   
             }
+            
             this.price = somma;
-        }
+
+            
+            if(this.cartContent == 0) {
+                this.finalPrice = 0
+            }
+        },
     },
     methods: {
         moreQuantity(id) {
@@ -86,8 +95,9 @@ export default {
         .panel-group {
             padding: 20px;
             background-color: white;
-            width: 230px;
+            width: 400px;
             border-bottom-left-radius: 20px;
+            box-shadow: 5px 10px 18px #cfcece;
             .cart-title {
                 text-align: center;
                 a {
@@ -98,6 +108,7 @@ export default {
                 font-size: 15px;
                 margin: 10px;
                 padding: 5px;
+                border: none;
                 border-color: #439373;
                 border-radius: 3px;
                 border-bottom-right-radius: 10px;
@@ -108,6 +119,7 @@ export default {
             .cart-btn:hover {
                 margin: 10px;
                 padding: 5px;
+                border: none;
                 border-color: #f1c692;
                 border-radius: 3px;
                 border-bottom-right-radius: 10px;

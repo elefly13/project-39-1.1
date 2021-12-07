@@ -31,7 +31,7 @@
                 {{ allergenDish.dish_id }}
             </li>
             <br>
-            <li :key="(categoryUser['id']) + 600" v-for="categoryUser in categoryUsers">
+            <li :key="(categoryUser['id']) + 700" v-for="categoryUser in categoryUsers">
                 {{ categoryUser.category_id }}
                 {{ categoryUser.user_id }}
             </li>

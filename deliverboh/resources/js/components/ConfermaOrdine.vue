@@ -32,33 +32,51 @@
                             Grazie
                         </p>
                     </div>
-                    <button  type="submit" class="button">Modifica il tuo ordine</button>
+                    <div class="btn">
+                        <button  type="submit" class="button">Modifica il tuo ordine</button>
+                    </div>
+                    
                 </div>
                 <!-- Fine scontrino di riepilogo dell'ordine  -->
                 <!-- Sezione pagamento con carta  -->
                 <div class="box-pago">
-                    <h2>Inserisci i tuoi dati per il pagamento</h2>
-                    <form class="row g-3">
-                        <div class="input-group input-group-sm mb-3">
+                    <h2>Inserisci i tuoi dati per la consegna</h2>
+                    <form class="row coll-12">
+                        <div class="col-6 input">
                             <label for="inputName" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="inputName" placeholder="Inserisci il tuo nome">
                         </div>
-                        <div class="col-12 input">
+                        <div class="col-6 input">
                             <label for="inputLastname" class="form-label">Cognome</label>
                             <input type="text" class="form-control" id="inputLastname" placeholder="Inserisci il tuo cognome">
+                        </div>
+                        <div class="col-12 input">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                         </div>
                         <div class="col-12 input">
                             <label for="inputAddress" class="form-label">Indirizzo</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="Via/Corso, numero città CAP ">
                         </div>
-                        <div class="input-group input">
-                            <span class="input-group-text">Note di consegna</span>
+                        <div class="col-12 input">
+                            <span class="">Note di consegna</span>
                             <textarea class="form-control text-area" aria-label="With textarea"></textarea>
                         </div>
-                       
-                        <h3 class="totale">Totale € 34,00</h3>
-                         
-                        <div class="input">
+                        <h2>Inserisci i dati della carta</h2>
+                        <div class="col-12 input">
+                            <label for="inputCardNumber" class="form-label">Numero carta</label>
+                            <input type="text" class="form-control" id="inputCard" placeholder="Inserisci il numero della carta">
+                        </div>
+                         <div class="col-6 input">
+                            <label for="inputDate" class="form-label">Data scadenza</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="MM/YY">
+                        </div>
+                        <div class="col-6 input">
+                            <label for="inputCVV" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="inputLastname" placeholder="xxx">
+                        </div>
+                        <div class="box-tot">
+                            <h3 class="totale">Totale € 34,00</h3>
                             <button  type="submit" class="button">Procedi al pagamento</button>
                         </div>
                     </form>
@@ -87,15 +105,10 @@ export default {
 // FontAwesome
 //@import "node_modules/font-awesome/scss/font-awesome.scss";
 // @import "../partial/color.scss";
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
-}
+
 .container-conf-ordine {
     width: 100%;
-    height: 900px;
+    height: 100%;
     background-image: linear-gradient(to bottom right, #b5d8ba 20%, #f1c692 80%);
     display: flex;
     justify-content: center;
@@ -107,7 +120,6 @@ export default {
             display: column;
             width: 40%;
             min-width: 300px;
-            position: relative;
             margin: 20px;
             padding: 20px;
             border-radius: 5px;
@@ -115,7 +127,6 @@ export default {
             box-shadow: 5px 10px 18px #a09f9f;
             background-color: white;
             h2 {
-                margin-bottom: 15px;
                 border-bottom: 1px solid #439373;
                 color: #be541e;
                 padding: 10px;
@@ -131,7 +142,7 @@ export default {
             }
             .sezione-totale {
 
-                 h4 {
+                h4 {
                 font-size: 30px;
                 color: #be541e;
                 text-align: right;
@@ -144,25 +155,32 @@ export default {
                 padding: 8px;
                 border-radius: 5px;
             } 
-            button {
-                position: absolute;
-                left: 20px;
-                bottom: 20px;
-                padding: 5px;
-                border-color: #439373;
-                border-radius: 3px;
-                border-bottom-right-radius: 10px;
-                background-color:  #439373;
-                color: #f4f0e2;
-                transition: 0.6s;
+            .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 200px;
+                
+                button {
+                    padding: 10px;
+                    border: none;
+                    border-color: #439373;
+                    border-radius: 3px;
+                    border-bottom-right-radius: 10px;
+                    background-color:  #439373;
+                    color: #f4f0e2;
+                    transition: 0.6s;
+                }
+                button:hover {
+                    border-color: #f1c692;
+                    border-radius: 3px;
+                    border: none;
+                    border-bottom-right-radius: 10px;
+                    background-color:  #f1c692;
+                    color: #343434;
+                }  
             }
-            button:hover {
-                border-color: #f1c692;
-                border-radius: 3px;
-                border-bottom-right-radius: 10px;
-                background-color:  #f1c692;
-                color: #343434;
-            }  
         }
         .box-pago {
             width:60%;
@@ -174,7 +192,7 @@ export default {
             border-bottom-right-radius: 40px;
             box-shadow: 5px 10px 18px #a09f9f;
             background-color: white;
-             h2 {
+            h2 {
                 margin-bottom: 15px;
                 border-bottom: 1px solid #439373;
                 color: #be541e;
@@ -185,9 +203,6 @@ export default {
                 .input {
                     margin-top: 30px;
                 }
-                label {
-                    margin-bottom: 20px;
-                }
                 input {
                     width: 100%;
                     height: 30px;
@@ -197,37 +212,37 @@ export default {
                 .text-area {
                     width: 100%;
                     height: 60px;
-                    margin-top: 10px;
+                    margin: 10px 0;
                     padding: 10px;
                 }
-                .totale {
-                    margin: 30px 0;
-                }
-                button {
-                    position: absolute;
-                    left: 20px;
-                    bottom: 20px;
-                    margin-top: 20px;
-                    padding: 5px;
-                    border-color: #be541e;
-                    border-radius: 3px;
-                    border-bottom-right-radius: 10px;
-                    background-color:  #be541e;
-                    color: #f4f0e2;
-                    transition: 0.6s;
-                }
-                button:hover {
-                    border-color: #f1c692;
-                    border-radius: 3px;
-                    border-bottom-right-radius: 10px;
-                    background-color:  #f1c692;
-                    color: #343434;
+                .box-tot {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 200px;                    
+                    button {
+                        
+                        padding: 10px;
+                        border: none;
+                        border-color: #be541e;
+                        border-radius: 3px;
+                        border-bottom-right-radius: 10px;
+                        background-color: #be541e;
+                        color: #f4f0e2;
+                        transition: 0.6s;
+                    }
+                    button:hover {
+                        border-color: #f1c692;
+                        border-radius: 3px;
+                        border: none;
+                        border-bottom-right-radius: 10px;
+                        background-color: #f1c692;
+                        color: #343434;
+                    } 
                 }  
-                
             }
-        }
-        
-        
+        }   
     }
 }
 

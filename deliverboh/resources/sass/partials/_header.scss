@@ -1,5 +1,10 @@
+.box-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 .logo {
-    width: 150px;
+    width: 180px;
     object-fit: cover;
 }
 header{
@@ -13,7 +18,10 @@ header{
 .h-header {
     height: 80px;
 }
-
-.space {
-    margin-top: 200px;
+nav {
+    height: 100%; 
 }
+
+// .space {
+//     margin-top: 200px;
+// }
