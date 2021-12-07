@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="tipo">
         <div class="card">
             <div class="box-img">
                 <img src="images/image-res/res-2.jpg" alt="">
@@ -17,8 +17,7 @@
                 <img src="images/image-res/res-4.jpg" alt="">
             </div>
             <h5>ciaoidoasjidjap</h5>
-        </div>
-       
+        </div>       
     </section>
 </template>
 
@@ -53,6 +52,12 @@ export default {
         height: 100%;
         object-fit: cover;
     }
-       
 
+    .tipo {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+    }
 </style>

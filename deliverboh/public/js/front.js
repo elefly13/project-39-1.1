@@ -2656,11 +2656,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Slider",
   components: {
     SliderCard: _SliderCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  methods: {
+    scroll_left: function scroll_left() {
+      var content = document.querySelector(".container-slider");
+      content.scrollLeft -= content.scrollWidth * 4 / 6;
+    },
+    scroll_right: function scroll_right() {
+      var content = document.querySelector(".container-slider");
+      content.scrollLeft += content.scrollWidth * 4 / 6;
+    }
   }
 });
 
@@ -2675,7 +2687,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2754,8 +2765,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header */ "./resources/js/components/Header.vue");
 /* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Menu */ "./resources/js/components/Menu.vue");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
-/* harmony import */ var _components_Cart_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Cart.vue */ "./resources/js/components/Cart.vue");
+/* harmony import */ var _components_ConfermaOrdine__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ConfermaOrdine */ "./resources/js/components/ConfermaOrdine.vue");
+/* harmony import */ var _components_OrdineApprovato__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/OrdineApprovato */ "./resources/js/components/OrdineApprovato.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/components/Footer.vue");
+//
 //
 //
 //
@@ -2790,12 +2803,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {
-    passCart: function passCart(cartContent) {
-      this.cart = cartContent;
-      console.log(this.cart);
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -2850,7 +2858,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  margin-top: 80px;\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 78%;\n  padding-top: 50px;\n}\n.container-sliders[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 20%;\n  display: flex;\n  flex-direction: column;\n  flex-direction: row;\n  background: #f4f0e2;\n}\n.sliders[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 100%;\n}", ""]);
+exports.push([module.i, ".wrapper[data-v-b9c20fb8] {\n  width: 100%;\n  height: calc(100vh - 80px);\n  display: flex;\n}\n.check-box[data-v-b9c20fb8] {\n  width: 16.6666666667%;\n  min-width: 220px;\n  height: 78%;\n  padding-top: 50px;\n}\n.sliders-container[data-v-b9c20fb8] {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 25%;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  background: #f4f0e2;\n}", ""]);
 
 // exports
 
@@ -2983,7 +2991,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-slider[data-v-e1ae27ba] {\n  width: 83%;\n  height: 100%;\n  display: flex;\n}\n.titolo[data-v-e1ae27ba] {\n  width: 20%;\n  height: 100%;\n}\n.container-slider[data-v-e1ae27ba] {\n  width: 80%;\n  height: 100%;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  flex-wrap: wrap;\n}", ""]);
+exports.push([module.i, ".box-slider[data-v-e1ae27ba] {\n  width: 83%;\n  height: 100%;\n  display: flex;\n  position: relative;\n  justify-content: center;\n}\n.titolo[data-v-e1ae27ba] {\n  width: 20%;\n  height: 100%;\n  position: absolute;\n  left: 10%;\n}\n.container-slider[data-v-e1ae27ba] {\n  width: 75%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  flex-wrap: nowrap;\n  overflow: auto;\n  scroll-behavior: smooth;\n}\n.left[data-v-e1ae27ba] {\n  z-index: 10;\n  transform: translate(50%, -50%);\n  position: absolute;\n  left: 0%;\n  top: 50%;\n  font-size: 30px;\n  color: black;\n}\n.rigth[data-v-e1ae27ba] {\n  z-index: 10;\n  position: absolute;\n  transform: translate(-50%, -50%);\n  right: 0;\n  top: 50%;\n  font-size: 30px;\n  color: black;\n}", ""]);
 
 // exports
 
@@ -3002,7 +3010,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card[data-v-377ff45a] {\n  width: 170px;\n  height: 200px;\n  float: left;\n  margin-left: 20px;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-377ff45a] {\n  width: 100%;\n  height: 70%;\n}\n.box-img > img[data-v-377ff45a] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, ".card[data-v-377ff45a] {\n  width: 170px;\n  height: 200px;\n  float: left;\n  margin-left: 20px;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-377ff45a] {\n  width: 100%;\n  height: 70%;\n}\n.box-img > img[data-v-377ff45a] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.tipo[data-v-377ff45a] {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 40px;\n}", ""]);
 
 // exports
 
@@ -4940,12 +4948,7 @@ var render = function () {
         on: { search: _vm.getCategories },
       }),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "container-sliders" },
-        [_c("div", { staticClass: "sliders" }), _vm._v(" "), _c("Slider")],
-        1
-      ),
+      _c("div", { staticClass: "sliders-container" }, [_c("Slider")], 1),
     ],
     1
   )
@@ -4994,35 +4997,47 @@ var render = function () {
             "div",
             { staticClass: "big-box-img" },
             _vm._l(_vm.dishes, function (dish) {
-              return _c("div", { key: dish["id"], staticClass: "image" }, [
-                _c("img", {
-                  attrs: {
-                    src: "./images/image-dish/" + dish.image,
-                    alt: dish.name,
-                  },
-                }),
-                _vm._v(" "),
-                _c("h4", [_vm._v(_vm._s(dish.name))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.description))]),
-                _vm._v(" "),
-                _c("h4", [_vm._v(_vm._s(dish.price) + "€")]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "button",
-                    on: {
-                      click: function ($event) {
-                        return _vm.sendCart(dish)
+              return _c(
+                "div",
+                { key: dish["id"], staticClass: "image" },
+                [
+                  _c("img", {
+                    attrs: {
+                      src: "./images/image-dish/" + dish.image,
+                      alt: dish.name,
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v(_vm._s(dish.name))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(dish.description))]),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v(_vm._s(dish.price) + "€")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Ingredienti:")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(dish.ingredients))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Allergeni:")]),
+                  _vm._v(" "),
+                  _vm._l(_vm.allergenDishes, function (allergenDish) {
+                    return _c("p", { key: allergenDish["id"] }, [
+                      _vm._v(_vm._s(allergenDish.allergen_id)),
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button",
+                      on: {
+                        click: function ($event) {
+                          return _vm.sendCart(dish)
+                        },
                       },
                     },
-                  }
                     [_vm._v("Aggiungi al carrello")]
-                  
-                ),
+                  ),
                 ],
                 2
               )
@@ -5362,7 +5377,22 @@ var render = function () {
   return _c("section", { staticClass: "box-slider" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "container-slider" }, [_c("SliderCard")], 1),
+    _c(
+      "div",
+      { staticClass: "container-slider" },
+      [
+        _c("div", { staticClass: "left", on: { click: _vm.scroll_left } }, [
+          _vm._v("L"),
+        ]),
+        _vm._v(" "),
+        _c("SliderCard"),
+        _vm._v(" "),
+        _c("div", { staticClass: "rigth", on: { click: _vm.scroll_right } }, [
+          _vm._v("R"),
+        ]),
+      ],
+      1
+    ),
   ])
 }
 var staticRenderFns = [
@@ -5403,7 +5433,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", [
+    return _c("section", { staticClass: "tipo" }, [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "box-img" }, [
           _c("img", { attrs: { src: "images/image-res/res-2.jpg", alt: "" } }),
@@ -5506,21 +5536,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-
-  return _c(
-    "div",
-    [
-      _c("Header"),
-      _vm._v(" "),
-      _c("Cart", { attrs: { cartContent: _vm.cart } }),
-      _vm._v(" "),
-      _c("Main"),
-      _vm._v(" "),
-      _c("OrdineApprovato"),
-    ],
-    1
-  )
-
+  return _c("div", [_c("Main")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19011,7 +19027,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/davidenapolitano/Desktop/HTML-CSS-JS/progetto-finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

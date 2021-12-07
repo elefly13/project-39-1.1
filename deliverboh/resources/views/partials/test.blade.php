@@ -1,4 +1,4 @@
-<header class="container-fluid ">
+{{-- <header class="container-fluid ">
   <nav class="navbar navbar-expand-md navbar-light justify-content-between px-5">
     <a class="navbar-brand box-logo" href="{{ url('/') }}">
       <img src=" {{ asset('images/LogoVerde.png') }} " class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
@@ -54,4 +54,7 @@
     </div>
   </nav>
 </header>
+ --}}
+
+
 

@@ -4,8 +4,8 @@
             <Checked @selCategories = "getCategories" />
         </div>
             <Middle @search= "getCategories" class="middle" :categoriesArray="categories" />
-        <div class="container-sliders">
-            <div class="sliders"></div>
+        <div class="sliders-container">
+            <!-- <div class="sliders"></div> -->
             <Slider />
         </div>
     </main>
@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper{
-    margin-top: 80px;
+    // margin-top: 80px;
     width: 100%;
     height: calc(100vh - 80px);
     display: flex;
@@ -54,20 +54,21 @@ export default {
     // z-index: 999;
 }
 
-.container-sliders {
+.sliders-container {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 20%;
+    height: 25%;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     flex-direction: row;
+    justify-content: center;
     background: #f4f0e2;
 }
 
-.sliders {
-    width: calc(100%/6);
-    min-width: 220px;
-    height: 100%;
-}
+// .sliders {
+//     width: calc(100%/6);
+//     min-width: 220px;
+//     height: 100%;
+// }
 </style>
