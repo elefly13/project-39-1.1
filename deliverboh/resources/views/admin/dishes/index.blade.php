@@ -7,6 +7,8 @@
 	</div>
 @endif
 <div>
+    <a href="{{route('admin.dishes.create')}}">aggiungi un nuovo piatto</a>
+        <a href="{{route('admin.index')}}">torna indietro</a> 
     @foreach ($data as $dish)
         <div>
             {{$dish['name']}} 
@@ -35,7 +37,6 @@
         <br>
         
         @endforeach
-        <a href="{{route('admin.dishes.create')}}">aggiungi un nuovo piatto</a>
-        <a href="{{route('admin.index')}}">torna indietro</a>   
+          
 </div>
 @endsection

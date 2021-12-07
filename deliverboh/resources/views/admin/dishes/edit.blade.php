@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <form action="{{route('admin.dishes.update', $dish['id'] )}}" method="post">
 	@csrf
 	@method('PUT') 
@@ -5,6 +8,9 @@
 	<div class="form-group">
 		<label for="name">name</label>
 		<input value="{{old('name', $dish->name)}}" type="text" name="name" class="form-control" id="name" placeholder="Inserisci il nome">     
+		@error('name')
+			<div class="alert alert-danger">{{ $message }}  </div>
+		@enderror
 	</div>
 	<div class="form-group">
 		<label for="ingredients">ingredients</label>
@@ -12,7 +18,10 @@
 	</div>
 	<div class="form-group">
 		<label for="price">price</label>
-		<input value="{{old('price', $dish->price)}}"  type="number" name="price" class="form-control" id="price" placeholder="inserisci il prezzo">
+		<input  step="any" value="{{old('price', $dish->price)}}"  type="number" name="price" class="form-control" id="price" placeholder="inserisci il prezzo">
+		@error('price')
+			<div class="alert alert-danger">{{ $message }}  </div>
+		@enderror
 	</div>
 	<div class="form-group">
 		<label for="description">description</label>
@@ -29,6 +38,9 @@
 	<div class="form-group">
 		<label for="course">course</label>
 		<input value="{{old('course', $dish->course)}}"  type="text" name="course" class="form-control" id="course" placeholder="scrivi il tipo di portata">     
+		@error('course')
+			<div class="alert alert-danger">{{ $message }}  </div>
+		@enderror
 	</div>
 	<div class="form-group">
     <p>Seleziona gli allergeni:</p>
@@ -43,3 +55,5 @@
 
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+@endsection

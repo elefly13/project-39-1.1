@@ -118,6 +118,11 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'=>'required',  
+            'price'=>'required|digits_between:1,4',
+            'course'=>'required',
+        ]);
         $dish = Dish::findOrFail($id);
 
         $data = $request->all();

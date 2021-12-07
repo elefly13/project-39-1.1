@@ -22,7 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    @include('partials.header')
+    @yield('header')
     <section class="space">
         @yield('content')
     </section>
