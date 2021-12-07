@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Header />
+        <!-- <Header /> -->
         <Main />
-        <Menu />
+        <!-- <Menu />
         <ConfermaOrdine />
-        <OrdineApprovato />
+        <OrdineApprovato /> -->
         <!-- <Api /> -->
         <!-- <button @click="prova()">ciao</button> -->
 
@@ -31,7 +31,6 @@ export default {
         ConfermaOrdine,
         OrdineApprovato,
         Footer
-        
     },
     data() {
         return {
