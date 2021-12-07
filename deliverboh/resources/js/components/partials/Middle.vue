@@ -47,19 +47,17 @@ export default {
                         .toLowerCase()
                         .includes(this.searchText.toLowerCase());
                 })
-                 if(filteredList.length == 0) {
-                    // this.ristoranti = this.users;
+                if(filteredList.length == 0) {
                     filteredList = this.users.filter( item => {
-                    return item.name
-                        .toLowerCase()
-                        .includes(this.searchText.toLowerCase());
-                })
-                        this.ristoranti = filteredList;
+                        return item.name
+                            .toLowerCase()
+                            .includes(this.searchText.toLowerCase());
+                    })  
+                    this.ristoranti = filteredList;
                 } else {
                     this.ristoranti = filteredList;
                 }
-            }
-            else {
+            } else {
                 this.ristoranti =  this.appoggioDue;
             }
         },
@@ -84,7 +82,6 @@ export default {
             }
             this.appoggioDue =  appoggio;
             this.ristoranti =  appoggio;
-            
             if (this.searchText != '') {
                 let filteredList = this.ristoranti.filter( item => {
                     return item.name

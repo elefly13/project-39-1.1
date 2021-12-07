@@ -2640,7 +2640,6 @@ __webpack_require__.r(__webpack_exports__);
         });
 
         if (filteredList.length == 0) {
-          // this.ristoranti = this.users;
           filteredList = this.users.filter(function (item) {
             return item.name.toLowerCase().includes(_this.searchText.toLowerCase());
           });
