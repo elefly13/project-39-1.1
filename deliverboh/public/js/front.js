@@ -5615,14 +5615,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-<<<<<<< HEAD
-  return _c("div", [_c("Main")], 1)
-=======
   return _c(
     "div",
     [
-      _c("Header"),
-      _vm._v(" "),
       _c("Main"),
       _vm._v(" "),
       _c("Menu"),
@@ -5630,10 +5625,11 @@ var render = function () {
       _c("ConfermaOrdine"),
       _vm._v(" "),
       _c("OrdineApprovato"),
+      _vm._v(" -->\n "),
+      _c("Api"),
     ],
     1
   )
->>>>>>> main
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19124,7 +19120,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\Boolean\project-39-1.1\deliverboh\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\felk0\OneDrive\Desktop\Boolan\project-39-1.1-1\deliverboh\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

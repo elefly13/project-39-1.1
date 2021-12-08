@@ -9,6 +9,7 @@ return [
         "total"=>5.50,
         "name_user"=>"Paolo",
         "lastname_user"=>"Paolo",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 18:00:36",
         "updated_at"=>"2021-11-12 18:30:36"
@@ -22,6 +23,7 @@ return [
         "total"=>"7",
         "name_user"=>"Alessio",
         "lastname_user"=>"Alessio",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 20:00:00",
         "updated_at"=>"2021-11-12 21:00:36"
@@ -35,7 +37,9 @@ return [
         "total"=>"7.50",
         "name_user"=>"Filippo",
         "lastname_user"=>"Filippo",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
+
         "created_at"=>"2021-11-12 19:50:36",
         "updated_at"=>"2021-11-12 21:20:36"
 
