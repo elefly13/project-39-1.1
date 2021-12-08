@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Dish;
 use App\Order;
+use App\Dish_Order;
+use App\DishOrder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -17,8 +19,18 @@ class OrderController extends Controller
      */
     public function index()
     {   
-        $orders = Order::all();
-        $data = $orders;
+        $user = Auth::user();
+        if($user->id === 1){
+            $orders = Order::all();
+            // $i = 0;
+            $data = $orders;
+        }else {
+
+            $orders=Order::whereHas('dishes',function($q ) use ($user) {
+                $q->where('user_id', $user['id']);
+            })->get();
+            $data = $orders;
+        }
         return view('admin.orders.index', compact('data'));
     }
 

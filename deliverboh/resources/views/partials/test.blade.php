@@ -1,7 +1,7 @@
-<header class="container-fluid h-header">
+{{-- <header class="container-fluid ">
   <nav class="navbar navbar-expand-md navbar-light justify-content-between px-5">
     <a class="navbar-brand box-logo" href="{{ url('/') }}">
-      <img src=" {{ asset('images/LogoVerde.png') }} " class="logo" alt="{{ config('app.name', 'DeliverBoh') }}">
+      <img src=" {{ asset('images/LogoVerde.png') }} " class="logo" alt="{{ config('app.name', 'DELIVERBOH') }}">
     </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
               </div>
             </li>
               
-            @else
+          @else
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
@@ -53,6 +53,8 @@
       </div>
     </div>
   </nav>
-</header>  
+</header>
+ --}}
+
 
 

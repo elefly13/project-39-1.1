@@ -35,6 +35,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-link-dash" href="{{route('admin.orders.index')}}">Ordini</a>
                         </li>
+                        @auth
+                            @if(Auth::user()->id === 1)
+                            <div><a href="{{route('admin.categories.index')}}">categorie</a></div>
+                            <div><a href="{{route('admin.user.index')}}">modifica categorie associate allo user</a></div>
+                            @endif
+                        @endauth
                         <li class="nav-item">
                             <a class="nav-link text-link-dash" href="/admin/statistiche">Statistiche</a>
                         </li>

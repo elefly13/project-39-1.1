@@ -6,7 +6,9 @@
 		<div class="coll-sm-12">
             @foreach ($data as $dish)
             <div class="coll-sm-6 card-dish-show" >
-                <img class="img-dish-show" src="{{ asset('./images/image-dish/' . $dish['image']) }}" alt="{{$dish['name']}} ">
+                @if(isset($dish->image))
+                <img src="{{ asset('storage/'.$dish->image)}}" alt="{{ $dish->image}}">
+                @endif
                 <h2 class="text-show">{{$dish['name']}} </h2>
                 <h2 class="text-show">€ {{$dish['price']}}</h2>
                 <div class="text-show">Descrizione: {{$dish['description']}}</div>

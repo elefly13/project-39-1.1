@@ -9,7 +9,7 @@
 					<h4>Modifica un piatto del tuo menu</h4>
 				</div>
 				<div class="card my-card-edit">
-					<form action="{{route('admin.dishes.update', $dish['id'] )}}" method="post">
+					<form action="{{route('admin.dishes.update', $dish['id'] )}}" method="post" enctype='multipart/form-data' >
 						@csrf
 						@method('PUT') 
 						
@@ -28,6 +28,10 @@
 						<div class="form-group">
 							<label for="description">Descrizione</label>
 							<input value="{{old('description', $dish->description)}}"  type="text" name="description" class="form-control my-form" id="description" placeholder="descrivi il piatto">     
+						</div>
+						<div class="form-group">
+							<label for="description">modifica immagine piatto</label><br>
+							<input type="file" name='image' id='image' class="@error('image') is-invalid @enderror">
 						</div>
 						<div class="form-group">
 							<label for="price">Prezzo</label>
@@ -54,7 +58,8 @@
 							<input value="{{old('visibility', $dish->visibility)}}"  type="checkbox" name="visibility" class="form-control my-form" id="visibility" value="{{ ('checked' ? 1 : NULL)}}">     
 						</div>
 
-						<button type="submit" class="btn my-btn">Esegui modifica</button>
+
+						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
 				</div>
 			</div>

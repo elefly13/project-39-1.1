@@ -23,13 +23,20 @@
             </div>
         @endif
 
-
-
-
-
+  
+ 
+@for ($i=0; $i< count( $cart['name'] ); $i++ )
+<div> {{$cart['name'][$i]}}  quantità:{{$cart['quantity'][$i]}} {{$cart['price'][$i]}}€</div>
+<div>{{$cart['description'][$i]}} </div>
+@endfor
+ 
+  
 <form method="post" id="payment-form" action="{{ url('/conferma') }}">
   @csrf
-    
+    @foreach ($cart['dish_id'] as $pip)
+    <input  type="hidden" name="id[]" value="{{$pip}}">
+    @endforeach
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name">name</label>
@@ -58,7 +65,7 @@
                     <label for="amount">
                         <span class="input-label">Amount</span>
                         <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$cart['sum']}}" readonly>
                         </div>
                     </label>
 
