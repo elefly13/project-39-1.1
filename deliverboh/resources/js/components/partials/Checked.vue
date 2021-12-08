@@ -1,8 +1,8 @@
 <template>
-    <section>
-       <div v-for="(category, index) in categories" :key="index">
+    <section class="check-container">
+       <div v-for="(category, index) in categories" :key="index" class="check-list">
             <input class="btn-check" type="checkbox" v-model="selectedCategories" v-on:change="$emit('selCategories', selectedCategories)" :value="category.id">
-            <label class="check-buttom">{{category.cuisine}}</label>
+            <label class="check-button">{{category.cuisine}}</label>
         </div>    
     </section>
 </template>
@@ -24,8 +24,6 @@ export default {
     created() {
         this.getCategories()
     },
-
-  
     methods: {
         getCategories(){
             const bodyParameters = {
@@ -41,10 +39,7 @@ export default {
                     this.categories = resp.data.results
                 })
                 .catch();
-        },
-        addCategory() {
-
-        },        
+        },       
     },  
 };
 
@@ -52,30 +47,45 @@ export default {
 
 <style scoped lang="scss">
 
-[type=checkbox] { 
-   position: absolute;
-   opacity: 0;
-   width: 200px;
-   height: 50px;
-}
+    
+    .check-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 3%;
+        width: 18%;
+        height: 100%;
 
-[type=checkbox]:checked + label {
-background-color:#638F64;
-color: white;
-}
+        .check-list {
+            width: 100%;
+            height: 6.5%;
+            margin: 5px 0;
+        }
+    }
 
-.check-buttom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 40px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 5px;
-    border-top: 1px solid #638F64;
-    border-bottom: 1px solid #638F64;
-    border-right: 1px solid #638F64;
-}
+    .btn-check { 
+        opacity: 0;
+        width: 12.6%;
+        height: 5%;
+    }
+
+    [type=checkbox]:checked + label {
+        background-color:#638F64;
+        color: white;
+    }
+
+    .check-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 120px;
+        width: 70%;
+        height: 100%;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border-top: 1px solid #638F64;
+        border-bottom: 1px solid #638F64;
+        border-right: 1px solid #638F64;
+    }
 
 </style>

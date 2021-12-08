@@ -1,15 +1,13 @@
 <template>
-    <section class="box-slogan-search">
-        <div>
-            <h1>I piatti che ami, a domicilio</h1>
-        </div>     
-        <!-- <div class="search-box d-flex justify-content-center"> -->
-        <div class="search-box d-flex">
-            <input @keyup.enter="$emit('performSearch', searchrestaurant)" class="search" v-model="searchrestaurant" type="text" placeholder="cerca un tipo di ristorante"/>
-            <button class="search-button" @click.prevent="$emit('performSearch', searchrestaurant)">
-                Cerca
-            </button>
+    <section class="search">
+      
+        <span class="slogan">I piatti che ami, a domicilio</span>
+            
+        <div class="search-box">
+            <input @keyup.enter="$emit('performSearch', searchrestaurant)" class="search-input" v-model="searchrestaurant" type="text" placeholder="cerca un tipo di ristorante"/>
+            <button class="search-button" @click.prevent="$emit('performSearch', searchrestaurant)">Cerca</button>
         </div>
+
     </section>
 </template>
 
@@ -26,34 +24,44 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.search-box{
-    width: 700px;
+    
     .search {
-        height: 50px;
-        width: 300px;
+        // background-color: crimson;
+        min-width: 290px;
+        width: 30%;
+        padding-top: 3%;
+    }
+
+    .slogan {
+        font-size: 2vw;
+    }
+
+    .search-input {
+        height: 35px;
+        width: 70%;
+        min-width: 200px;
+        max-width: 350px;
         color: grey;
         font-size: 1em;
         outline: none;
         border: 0px;
-        border-radius: 10px;
-        padding: 5px;
-        margin-right: 30px;
+        border-radius: 7px;
+        padding-left: 5px;
+        margin-right: 10px;
         background: #f8fafc;
     }
+
     .search-button {
-        margin-right: 10px;
-        width: 120px;
-        height: 50px;
+        height: 35px;
         color: white;
         font-size: 1em;
         outline: none;
-        border: 0px;
-        border-radius: 10px;
-        padding: 5px;
+        border: none;
+        border-radius: 7px;
+        padding: 0 15px;
         background-color: #638f64;
     }
-    }
+
     .box-slogan-search {
         padding-top: 50px;
     }

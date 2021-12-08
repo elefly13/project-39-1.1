@@ -1,39 +1,52 @@
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
-    
-<div>
-    @foreach ($data as $order)
-        <div>
-            {{$order['delivery_address']}} 
-        </div>
-        <div>
-            {{$order['total']}}
-        </div>
-        <div>
-            {{$order['note']}}
-        </div>
-        <div>
-            {{$order['name_user']}}
-        </div>
-        <div>
-            {{$order['lastname_user']}}
-        </div>
+@section('dashboard')
 
-        <a href="{{route('admin.orders.show', $order->id)}}">dettaglio</a>
-        <a href="{{route('admin.orders.edit', $order->id)}}">modifica ordine</a>
-        <form action="{{route('admin.orders.destroy', $order->id)}}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Delete</button>
-        </form> 
-             
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 box-order-index">
+            @foreach ($data as $order)
+            <div class="box-card-order">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">N.Ordine</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cognome</th>
+                        <th scope="col">indirizzo consegna</th>
+                        <th scope="col">Importo Totale</th>
+                        <th scope="col">Nota del cliente</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{$order['id']}}</th>
+                        <td>{{$order['name_user']}}</td>
+                        <td>{{$order['lastname_user']}}</td>
+                        <td>{{$order['delivery_address']}}</td>
+                        <td>€ {{$order['total']}}</td>
+                        <td>{{$order['note']}}</td>
+                      </tr>
+                    </tbody>
+                  </table>   
+                
+                
         
-        
-    @endforeach
-    <br>
-        <a href="{{route('admin.orders.create')}}">aggiungi un nuovo ordine</a>
+                <a href="{{route('admin.orders.show', $order->id)}}">dettaglio</a>
+                {{-- <a href="{{route('admin.orders.edit', $order->id)}}">modifica ordine</a>
+                <form action="{{route('admin.orders.destroy', $order->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>  --}}
+            </div>
+        @endforeach
+        {{-- <br>
+            <a href="{{route('admin.orders.create')}}">aggiungi un nuovo ordine</a> --}}
+
+        </div>
+    </div>
+   
 </div>
+
 @endsection
-
-

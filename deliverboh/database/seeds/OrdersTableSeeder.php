@@ -22,6 +22,7 @@ class OrdersTableSeeder extends Seeder
             $new_order->name_user = $order['name_user'];
             $new_order->lastname_user = $order['lastname_user'];
             $new_order->note = $order['note'];
+            $new_order->email = $order['email'];
             $new_order->created_at = $order['created_at'];
             $new_order->updated_at = $order['updated_at'];
             $new_order->save();
