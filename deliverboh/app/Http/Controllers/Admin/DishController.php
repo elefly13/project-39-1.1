@@ -24,7 +24,7 @@ class DishController extends Controller
             // $i = 0;
             $data = $dish;
         }else {
-            $dish = Dish::where('user_id', $user->id)->get();
+            $dish = Dish::where('user_id', $user->id)->orderBy('name')->get();
             $i = 0;
             $data = $dish;
         }
