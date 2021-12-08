@@ -11,18 +11,26 @@
 
 export default {
     name: "Checked",
-        data() {
-        return {
-            url: "http://127.0.0.1:8000/api/",
-            categories: [],
-            selectedCategories: [],
-            flag: false,
-            api_token:
-                "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
-        };
+    props: ['emptycheck'],
+    data() {
+    return {
+        url: "http://127.0.0.1:8000/api/",
+        categories: [],
+        selectedCategories: [],
+        flag: false,
+        api_token:
+            "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
+    };
     },
     created() {
         this.getCategories()
+    },
+    watch: {
+        emptycheck: function () {
+            if(this.emptycheck == true) {
+                this.selectedCategories = []
+            }
+        }
     },
     methods: {
         getCategories(){

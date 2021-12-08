@@ -1,90 +1,88 @@
 <template>
-    <section class="box-slider">
-        <div class="titolo">
-            <h1>I più popolari</h1>
-        </div>
-        <div class="container-slider">
-            <div @click="scroll_left" class="left">L</div>
-            <SliderCard />
-            <div @click="scroll_right" class="rigth">R</div>
+    <section class="popolari">
+        <div class="container">
+            <div class="box">
+                <img src="images/image-res/res-2.jpg" alt="">
+                <h5>Ristorante uno</h5>
+            </div>
+            <div class="box">
+                <img src="images/image-res/res-3.jpg" alt="">
+                <h5>Ristorante uno</h5>
+            </div>
+            <div class="box">
+                <img src="images/image-res/res-4.jpg" alt="">
+                <h5>Ristorante uno</h5>
+            </div>
+            <div class="box">
+                <img src="images/image-res/res-2.jpg" alt="">
+                <h5>Ristorante uno</h5>
+            </div>
         </div>
     </section>
 </template>
 
 <script>
-import SliderCard from "./SliderCard.vue"
-
 export default {
-    name: "Slider",
-    components: {
-        SliderCard,
-    },
-    methods:{
-    scroll_left() {
-      let content = document.querySelector(".container-slider");
-      content.scrollLeft -= content.scrollWidth * 4 / 6;
-    },
-    scroll_right() {
-      let content = document.querySelector(".container-slider");
-      content.scrollLeft += content.scrollWidth * 4 / 6;
-    },
-    } 
+    name: "SliderCard",
 }
 </script>
 
 <style lang="scss" scoped>
 
-.box-slider {
-    width: 100% - 17%;
+.popolari {
     height: 100%;
     display: flex;
-    position: relative;
     justify-content: center;
-}
-
-.titolo {
-    width: 20%;
-    height: 100%;
-    position: absolute;
-    left: 10%;
-    // left: 261px;
-}
-
-.container-slider {
-    width: 75%;
-    height: 100%;
-    display: flex;
-    // justify-content: space-around;
-    // justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    overflow: auto;
-    // position: relative;
-    scroll-behavior: smooth;
-    // background: chartreuse;
+    margin-top: 40px;
 }
 
-.left {
-    z-index: 10;
-    transform: translate(50%, -50%);
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    font-size: 30px;
-    color: black;
+.container {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100%;
 }
 
-.rigth {
-    z-index: 10;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    right: 0;
-    top: 50%;
-    font-size: 30px;
-    color: black;
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+  z-index: 10;
+  text-align: center;
+  border: 0.3px solid rgb(228, 228, 228);
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: rgb(255, 255, 255);
 }
 
-       
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  height: 60%;
+  object-fit: cover; 
+  transition: .5s;
+}
 
+.box > h5 {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+span {
+    font-size: 12px;
+}
 </style>
-
