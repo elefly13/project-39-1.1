@@ -1,9 +1,14 @@
 <?php
 
+use App\DishOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Facades\Auth;
 use App\Order;
+use App\User;
+use App\Dish;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendNewMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,7 +56,27 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
 
 // Route::get('/checkout', 'HomeController@checkout')->name('homepage');
 
-Route::get('/checkout', function(){
+Route::post('/checkout', function(Request $request){
+
+    $sum=0;
+     
+    for ($i=0; $i <count( $request['price']); $i++){
+        $sum=$sum+ ( $request['price'][$i]*$request['quantity'][$i]);
+    };
+    
+    
+     $cart=[
+        'dish_id'=>$request['id'],
+        'name'=>$request['name'],
+        'price'=> $request['price'],
+        'description'=> $request['description'],
+        'quantity'=> $request['quantity'],
+        'sum'=>$sum
+     ];
+    //  $name=$request['name'];
+    //  $price= $request['price'];
+    //  $description= $request['description'];
+    // $quantity= $request['quantity'];
     $gateway = new Braintree\Gateway([
         'environment' => 'sandbox',
         'merchantId' => 'zfjjgykn84td5wdp',
@@ -61,7 +86,7 @@ Route::get('/checkout', function(){
  
     
     $token =$gateway->ClientToken()->generate();
-    return view('checkout', ['token' => $token]);
+    return view('checkout', ['token' => $token],['cart'=>$cart]);
 }); 
 
 Route::post('/conferma', function(Request $request){
@@ -91,9 +116,9 @@ Route::post('/conferma', function(Request $request){
         ]
     ]);
     
-    $data = $request->all();
+
     $new_order = new order();
-    // $new_order->fill($data);
+    $new_order['email']=$request['email'];
     $new_order['lastname_user']=$request['lastname'];
     $new_order['name_user']=$request['name'];
     $new_order['delivery_address']=$request['address'];
@@ -101,17 +126,33 @@ Route::post('/conferma', function(Request $request){
     $new_order['total']=$amount;
     $new_order['note']=$request['note'];
      
+    //  $new_order->dishes()->attach($data['dish']);
     // dd( $new_order['lastname']);
     if ($result->success) 
     {
         $new_order['status']=1;
         $new_order->save();
-        // $new_order->dishes()->attach($data['dish']);
+        
+        
+        for ($i=0; $i< count( $request['id']); $i++ ){
+            $prova= new DishOrder();
+            $prova['dish_id']=$request['id'][$i];
+            $prova['order_id']=$new_order['id'];
+            $prova->save();
+        };
+        $dish = Dish::findOrFail($prova['dish_id']);
+        
+        $user=User::whereHas('dishes',function($q ) use ($dish) {
+            $q->where('user_id', $dish['user_id']);
+        })->get();
+        $mailristorante=$user[0]['email'];
+        Mail::to( $mailristorante)->send(new SendNewMail());
+        Mail::to($new_order['email'])->send(new SendNewMail());
  
         $transaction = $result->transaction;
+        return view('admin.statistiche');
         // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
-        return back()->with('success_message','Transaction complete ID:'. $transaction->id);
-        // qui va la pagina ordine ok
+        // return back()->with('success_message','Transaction complete ID:'. $transaction->id);
     } else {
         $errorString = "";
         $new_order['status']=0;

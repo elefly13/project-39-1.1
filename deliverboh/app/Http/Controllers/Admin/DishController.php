@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -19,9 +19,16 @@ class DishController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $dish = Dish::where('user_id', $user->id)->get();
-        $i = 0;
-        $data = $dish;
+        if($user->id === 1){
+            $dish = Dish::all();
+            // $i = 0;
+            $data = $dish;
+        }else {
+            $dish = Dish::where('user_id', $user->id)->orderBy('name')->get();
+            $i = 0;
+            $data = $dish;
+        }
+        
         return view('admin.dishes.index', compact('data'));
     }
 
@@ -33,7 +40,13 @@ class DishController extends Controller
     public function create()
     {
         $allergens = Allergen::all();
+        $user = Auth::user();
+        if($user->id === 1 ) {
+            return redirect()->route('admin.dishes.index')->with('status', 'il super user, non può aggiungere piatti');
+        }
+        else {
         return view('admin.dishes.create', compact('allergens'));
+        }
     }
 
     /**
@@ -46,16 +59,33 @@ class DishController extends Controller
     {
         $request->validate([
             'name'=>'required',  
-            'price'=>'required',
+            'price'=>'required|regex:/\b\d{1,4}(?:\.\d{2})?\b/',
+            // \b      # word boundary assertion
+            // \d{1,3} # 1-3 digits
+            // (?:     # followed by this group...
+            // ,?     # an optional comma
+            // \d{3}  # exactly three digits
+            // )*      # ...any number of times
+            // (?:     # followed by this group...
+            // \.     # a literal dot
+            // \d{2}  # exactly two digits
+            // )?      # ...zero or one times
+            // \b      # word boundary assertion
             'course'=>'required',
+            'image' => 'nullable|image'
         ]);
         $user = Auth::user();
         $data = $request->all();
         $new_dish = new Dish();
         $new_dish->user_id = $user->id;
+        if(array_key_exists('image', $data)){
+            $cover_path = Storage::put('dish_photos', $data['image']);
+            $data['image'] = $cover_path;
+            // dd($data);
+        }
         $new_dish->fill($data);
         $new_dish->save();
-        //issued to not choosing any allergen solved
+        //letting user to choose no allergen
         if(isset($data['allergens'])){
             $new_dish->allergens()->attach( $data['allergens']);
         }
@@ -85,7 +115,10 @@ class DishController extends Controller
     {
         $dish = Dish::find($id);
         $user = Auth::user();
-        if ($dish['user_id']==$user['id']){
+        if($user->id === 1 ) {
+            return redirect()->route('admin.dishes.index')->with('status', 'il super user, non può modificare i piatti dei ristoratori');
+        }
+        elseif ($dish['user_id']==$user['id']){
             
         
         $allergens = Allergen::all();
@@ -102,9 +135,20 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'=>'required',  
+            'price'=>'required|regex:/\b\d{1,4}(?:\.\d{2})?\b/',
+            'course'=>'required',
+            'image'=>'nullable|image'
+        ]);
         $dish = Dish::findOrFail($id);
 
         $data = $request->all();
+        if(array_key_exists('image', $data)){
+            Storage::delete($dish->image);
+            $cover_path = Storage::put('dish_photos', $data['image']);
+            $data['image'] = $cover_path;
+        }
         $dish->update($data);
         if(isset($data['allergens'])){
             $dish->allergens()->sync($data['allergens']);

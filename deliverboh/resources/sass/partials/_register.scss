@@ -1,3 +1,4 @@
+
 .header {
     background-color: #b5d8ba;
     border-bottom-right-radius: 20px;
@@ -16,7 +17,7 @@
     border-radius: 5px;
     border-bottom-right-radius: 40px;
     box-shadow: 5px 10px 18px #cfcece;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .my-form {
     display: block;
@@ -41,22 +42,10 @@
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(89 145 117 / 25%);
 }
-.my-check {
-    position: absolute;
-    margin-top: 0.3rem;
-    margin-left: -1.25rem;
-}
-.my-check:checked {
-    background-color: #fff7df;
-}
-.my-btn-link {
-    font-weight: 400;
-    color: #439373;
-    text-decoration: none;
-}
 .my-btn {
     color: #fff;
     background-color: #439373;
     border-color: #439373; 
+    // margin-bottom: 20px;
    
 }

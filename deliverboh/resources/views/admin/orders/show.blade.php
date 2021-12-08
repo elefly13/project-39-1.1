@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 @foreach ($data as $item)
      <div>
         {{$item['delivery_address']}} 
@@ -16,5 +19,7 @@
     </div>
     <a href="{{route('admin.orders.index')}}">torna indietro</a>   
 @endforeach
+@endsection
+
 
 

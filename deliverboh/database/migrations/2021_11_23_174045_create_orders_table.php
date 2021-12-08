@@ -22,6 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('name_user');
             $table->string('lastname_user');
             $table->text('note'); 
+            $table->string('email')->nullable(); 
             $table->timestamps();
         });
     }
