@@ -20,6 +20,11 @@ Route::get('/', 'HomeController@home')->name('homepage');
 
 Auth::routes();
 
+// Pagina pagamento ok
+Route::get('/pagamento', 'HomeController@pagamento')->name('pagamento');
+// Pagina pagamento non ok
+Route::get('/pagamentoFallito', 'HomeController@pagamentoFallito')->name('pagamentoFallito');
+
 
  
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
@@ -106,6 +111,7 @@ Route::post('/conferma', function(Request $request){
         $transaction = $result->transaction;
         // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
         return back()->with('success_message','Transaction complete ID:'. $transaction->id);
+        // qui va la pagina ordine ok
     } else {
         $errorString = "";
         $new_order['status']=0;
@@ -117,6 +123,7 @@ Route::post('/conferma', function(Request $request){
         // $_SESSION["errors"] = $errorString;
         // header("Location: " . $baseUrl . "index.php");
         return back()->withErrors('An error occurred with the message: '.$result->message);
+        // qui va la pagina ordine non ok
     }
 });
 

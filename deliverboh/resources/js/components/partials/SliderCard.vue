@@ -1,23 +1,23 @@
 <template>
-    <section class="tipo">
-        <div class="card">
-            <div class="box-img">
+    <section class="popolari">
+        <div class="container">
+            <div class="box">
                 <img src="images/image-res/res-2.jpg" alt="">
+                <h5>Ristorante uno</h5>
             </div>
-            <h5>ciaoidoasjidjap</h5>
-        </div>
-        <div class="card">
-            <div class="box-img">
+            <div class="box">
                 <img src="images/image-res/res-3.jpg" alt="">
+                <h5>Ristorante uno</h5>
             </div>
-            <h5>ciaoidoasjidjap</h5>
-        </div>
-        <div class="card">
-            <div class="box-img">
+            <div class="box">
                 <img src="images/image-res/res-4.jpg" alt="">
+                <h5>Ristorante uno</h5>
             </div>
-            <h5>ciaoidoasjidjap</h5>
-        </div>       
+            <div class="box">
+                <img src="images/image-res/res-2.jpg" alt="">
+                <h5>Ristorante uno</h5>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -29,35 +29,60 @@ export default {
 
 <style lang="scss" scoped>
 
-    .card {
-        width: 170px;
-        height: 200px;
-        float: left;
-        margin-left: 20px;
-        text-align: center;
-        border: 0.3px solid rgb(228, 228, 228);
-        border-top-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        background: rgb(255, 255, 255);
-        overflow: auto;
-    }
+.popolari {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
 
-      .box-img {
-        width: 100%;
-        height: 70%;
-    }
+.container {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100%;
+}
 
-    .box-img > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+  z-index: 10;
+  text-align: center;
+  border: 0.3px solid rgb(228, 228, 228);
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: rgb(255, 255, 255);
+}
 
-    .tipo {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 40px;
-    }
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  height: 60%;
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.box > h5 {
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+span {
+    font-size: 12px;
+}
 </style>

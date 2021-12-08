@@ -1,18 +1,15 @@
 <template>
     <section>
-        <h1>Sono la pagina OrdineApprovato</h1>
+        
         <div class="big-box">
-
-            <img :src="'../images/bike.png'" alt="">
             <h1>Il tuo Ordine è stato correttamente processato</h1>
             <h3>A breve riceverai una mail di riepilogo</h3>
-            <h2>Grazie per averci scelto</h2>
-            <a href="#">Torna alla Home</a>
-            
-            
+            <h2 class="muovi">Grazie per averci scelto</h2>
+            <a href="/">Torna alla Home</a> 
         </div>
-       
-               
+        <div class="bici">
+            <img class="prova" :src="'../images/bike.png'" alt="">
+        </div>
     </section>
 </template>
 
@@ -30,37 +27,63 @@ export default {
 
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
+@import 'styles/_color';
+@import 'styles/_general';
 section{
     width: 100%;
-    height: 1000px;
-    background-color:#f4f0e2 ;
+    height: calc(100vh - 59px);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('/images/paese.svg');
+    background-repeat: no-repeat;
+    // background: $verdechiaro;
+
     .big-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         width: 100%;
-        height: 100%;
         margin: 0 auto;
         text-align: center;
+        background: $bianco;
+        padding: 30px;
+        @include display-flex();
         img {
             width: 300px;
         }
         h1 {
             font-size: 40px;
+            color: $grigioscuro;
         }
         h2 {
-            color: #be541e;
+            color: $grigioscuro;
         }
         a {
             text-decoration: none;
             font-size: 20px;
-            color: #439373;
+            color: $arancione;
         }
-
     }
 }
+
+.bici {
+    width: 100%;
+    // height: 30%;
+}
+
+.prova {
+    // width: 100px;
+    // height: 100px;
+    position: relative;
+    animation: mytest 10s 10;
+  } 
+
+  @keyframes mytest {
+    0%   {left: 0%;}
+    25%  {left: 30%;}
+    50%  {left: 30%;}
+    75%  {left: 30%;}
+    100% {left: 30%;}
+  } 
+
 
 </style>

@@ -3,8 +3,8 @@
         <!-- <Header /> -->
         <Main />
         <!-- <Menu />
-        <ConfermaOrdine />
-        <OrdineApprovato /> -->
+        <ConfermaOrdine /> -->
+        <!-- <OrdineApprovato /> -->
         <!-- <Api /> -->
         <!-- <button @click="prova()">ciao</button> -->
 

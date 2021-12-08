@@ -58,7 +58,7 @@ export default {
     // justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    overflow: auto;
+    // overflow: auto;
     // position: relative;
     scroll-behavior: smooth;
     // background: chartreuse;

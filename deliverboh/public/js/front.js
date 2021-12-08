@@ -2368,9 +2368,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "OrdineApprovato",
   data: function data() {},
@@ -2893,10 +2890,10 @@ exports.push([module.i, "*[data-v-7fa2c4ca] {\n  margin: 0;\n  padding: 0;\n  bo
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap);", ""]);
+
 
 // module
-exports.push([module.i, "section[data-v-01eb3eca] {\n  width: 100%;\n  height: 1000px;\n  background-color: #f4f0e2;\n}\nsection .big-box[data-v-01eb3eca] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n  margin: 0 auto;\n  text-align: center;\n}\nsection .big-box img[data-v-01eb3eca] {\n  width: 300px;\n}\nsection .big-box h1[data-v-01eb3eca] {\n  font-size: 40px;\n}\nsection .big-box h2[data-v-01eb3eca] {\n  color: #be541e;\n}\nsection .big-box a[data-v-01eb3eca] {\n  text-decoration: none;\n  font-size: 20px;\n  color: #439373;\n}", ""]);
+exports.push([module.i, "section[data-v-01eb3eca] {\n  width: 100%;\n  height: calc(100vh - 59px);\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  background: url(\"/images/paese.svg\");\n  background-repeat: no-repeat;\n}\nsection .big-box[data-v-01eb3eca] {\n  width: 100%;\n  margin: 0 auto;\n  text-align: center;\n  background: white;\n  padding: 30px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\nsection .big-box img[data-v-01eb3eca] {\n  width: 300px;\n}\nsection .big-box h1[data-v-01eb3eca] {\n  font-size: 40px;\n  color: #343434;\n}\nsection .big-box h2[data-v-01eb3eca] {\n  color: #343434;\n}\nsection .big-box a[data-v-01eb3eca] {\n  text-decoration: none;\n  font-size: 20px;\n  color: #E69E42;\n}\n.bici[data-v-01eb3eca] {\n  width: 100%;\n}\n.prova[data-v-01eb3eca] {\n  position: relative;\n  -webkit-animation: mytest-data-v-01eb3eca 10s 10;\n          animation: mytest-data-v-01eb3eca 10s 10;\n}\n@-webkit-keyframes mytest-data-v-01eb3eca {\n0% {\n    left: 0%;\n}\n25% {\n    left: 30%;\n}\n50% {\n    left: 30%;\n}\n75% {\n    left: 30%;\n}\n100% {\n    left: 30%;\n}\n}\n@keyframes mytest-data-v-01eb3eca {\n0% {\n    left: 0%;\n}\n25% {\n    left: 30%;\n}\n50% {\n    left: 30%;\n}\n75% {\n    left: 30%;\n}\n100% {\n    left: 30%;\n}\n}", ""]);
 
 // exports
 
@@ -2991,7 +2988,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".box-slider[data-v-e1ae27ba] {\n  width: 83%;\n  height: 100%;\n  display: flex;\n  position: relative;\n  justify-content: center;\n}\n.titolo[data-v-e1ae27ba] {\n  width: 20%;\n  height: 100%;\n  position: absolute;\n  left: 10%;\n}\n.container-slider[data-v-e1ae27ba] {\n  width: 75%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  flex-wrap: nowrap;\n  overflow: auto;\n  scroll-behavior: smooth;\n}\n.left[data-v-e1ae27ba] {\n  z-index: 10;\n  transform: translate(50%, -50%);\n  position: absolute;\n  left: 0%;\n  top: 50%;\n  font-size: 30px;\n  color: black;\n}\n.rigth[data-v-e1ae27ba] {\n  z-index: 10;\n  position: absolute;\n  transform: translate(-50%, -50%);\n  right: 0;\n  top: 50%;\n  font-size: 30px;\n  color: black;\n}", ""]);
+exports.push([module.i, ".box-slider[data-v-e1ae27ba] {\n  width: 83%;\n  height: 100%;\n  display: flex;\n  position: relative;\n  justify-content: center;\n}\n.titolo[data-v-e1ae27ba] {\n  width: 20%;\n  height: 100%;\n  position: absolute;\n  left: 10%;\n}\n.container-slider[data-v-e1ae27ba] {\n  width: 75%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  flex-wrap: nowrap;\n  scroll-behavior: smooth;\n}\n.left[data-v-e1ae27ba] {\n  z-index: 10;\n  transform: translate(50%, -50%);\n  position: absolute;\n  left: 0%;\n  top: 50%;\n  font-size: 30px;\n  color: black;\n}\n.rigth[data-v-e1ae27ba] {\n  z-index: 10;\n  position: absolute;\n  transform: translate(-50%, -50%);\n  right: 0;\n  top: 50%;\n  font-size: 30px;\n  color: black;\n}", ""]);
 
 // exports
 
@@ -3010,7 +3007,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card[data-v-377ff45a] {\n  width: 170px;\n  height: 200px;\n  float: left;\n  margin-left: 20px;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-377ff45a] {\n  width: 100%;\n  height: 70%;\n}\n.box-img > img[data-v-377ff45a] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.tipo[data-v-377ff45a] {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 40px;\n}", ""]);
+exports.push([module.i, ".popolari[data-v-377ff45a] {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 40px;\n}\n.container[data-v-377ff45a] {\n  display: flex;\n  width: 100%;\n  padding: 4% 2%;\n  box-sizing: border-box;\n  height: 100%;\n}\n.box[data-v-377ff45a] {\n  flex: 1;\n  overflow: hidden;\n  transition: 0.5s;\n  margin: 0 2%;\n  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);\n  line-height: 0;\n  z-index: 10;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n}\n.box > img[data-v-377ff45a] {\n  width: 200%;\n  height: calc(100% - 10vh);\n  height: 60%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: 0.5s;\n}\n.box > h5[data-v-377ff45a] {\n  font-size: 20px;\n  display: block;\n  text-align: center;\n  height: 10vh;\n  line-height: 2.6;\n}\n.box[data-v-377ff45a]:hover {\n  flex: 1 1 50%;\n}\n.box:hover > img[data-v-377ff45a] {\n  width: 100%;\n  height: 100%;\n}\nspan[data-v-377ff45a] {\n  font-size: 12px;\n}", ""]);
 
 // exports
 
@@ -5088,22 +5085,32 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _c("h1", [_vm._v("Sono la pagina OrdineApprovato")]),
+    _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "big-box" }, [
-      _c("img", { attrs: { src: "../images/bike.png", alt: "" } }),
-      _vm._v(" "),
+    _c("div", { staticClass: "bici" }, [
+      _c("img", {
+        staticClass: "prova",
+        attrs: { src: "../images/bike.png", alt: "" },
+      }),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "big-box" }, [
       _c("h1", [_vm._v("Il tuo Ordine è stato correttamente processato")]),
       _vm._v(" "),
       _c("h3", [_vm._v("A breve riceverai una mail di riepilogo")]),
       _vm._v(" "),
-      _c("h2", [_vm._v("Grazie per averci scelto")]),
+      _c("h2", { staticClass: "muovi" }, [_vm._v("Grazie per averci scelto")]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [_vm._v("Torna alla Home")]),
-    ]),
-  ])
-}
-var staticRenderFns = []
+      _c("a", { attrs: { href: "/" } }, [_vm._v("Torna alla Home")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -5433,29 +5440,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "tipo" }, [
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "box-img" }, [
+    return _c("section", { staticClass: "popolari" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "box" }, [
           _c("img", { attrs: { src: "images/image-res/res-2.jpg", alt: "" } }),
+          _vm._v(" "),
+          _c("h5", [_vm._v("Ristorante uno")]),
         ]),
         _vm._v(" "),
-        _c("h5", [_vm._v("ciaoidoasjidjap")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "box-img" }, [
+        _c("div", { staticClass: "box" }, [
           _c("img", { attrs: { src: "images/image-res/res-3.jpg", alt: "" } }),
+          _vm._v(" "),
+          _c("h5", [_vm._v("Ristorante uno")]),
         ]),
         _vm._v(" "),
-        _c("h5", [_vm._v("ciaoidoasjidjap")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _c("div", { staticClass: "box-img" }, [
+        _c("div", { staticClass: "box" }, [
           _c("img", { attrs: { src: "images/image-res/res-4.jpg", alt: "" } }),
+          _vm._v(" "),
+          _c("h5", [_vm._v("Ristorante uno")]),
         ]),
         _vm._v(" "),
-        _c("h5", [_vm._v("ciaoidoasjidjap")]),
+        _c("div", { staticClass: "box" }, [
+          _c("img", { attrs: { src: "images/image-res/res-2.jpg", alt: "" } }),
+          _vm._v(" "),
+          _c("h5", [_vm._v("Ristorante uno")]),
+        ]),
       ]),
     ])
   },
