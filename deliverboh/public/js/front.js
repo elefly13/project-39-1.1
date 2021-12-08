@@ -5600,7 +5600,25 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+<<<<<<< HEAD
+  return _c(
+    "div",
+    [
+      _c("Main"),
+      _vm._v(" "),
+      _c("Menu"),
+      _vm._v(" "),
+      _c("ConfermaOrdine"),
+      _vm._v(" "),
+      _c("OrdineApprovato"),
+      _vm._v(" -->\n "),
+      _c("Api"),
+    ],
+    1
+  )
+=======
   return _c("div", [_c("Main")], 1)
+>>>>>>> main
 }
 var staticRenderFns = []
 render._withStripped = true

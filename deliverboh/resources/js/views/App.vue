@@ -2,10 +2,10 @@
     <div>
         <!-- <Header /> -->
         <Main />
-        <!-- <Menu /> -->
-        <!-- <ConfermaOrdine /> -->
-        <!-- <OrdineApprovato /> -->
-        <!-- <Api /> -->
+        <Menu />
+        <ConfermaOrdine />
+        <OrdineApprovato /> -->
+     <Api />
         <!-- <button @click="prova()">ciao</button> -->
 
         <!-- <Footer /> -->
