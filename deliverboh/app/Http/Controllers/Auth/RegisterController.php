@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Category;
 
 class RegisterController extends Controller
 {
@@ -53,6 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'categories' => ['required']
         ]);
     }
 
@@ -64,14 +66,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'restaurant_name' => $data['restaurant_name'],
-            'address' => $data['address'],
-            'vat_number' => $data['vat_number'],
+
+        
+        User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password']),
+        'restaurant_name' => $data['restaurant_name'],
+        'address' => $data['address'],
+        'vat_number' => $data['vat_number'],
 
         ]);
+          
+        $user = User::latest('updated_at')->first();
+        if(isset($data['categories'])){
+            $user->categories()->attach( $data['categories']);
+            return $user;
+        }
+        
     }
 }
+// try rewriting this functions as a create + a store should work same way maybe could work?

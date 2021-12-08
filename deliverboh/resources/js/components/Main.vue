@@ -1,49 +1,38 @@
 <template>
     <main class="wrapper">
-            <div class="check-box d-flex flex-column justify-content-around">
-                <p v-for="category in categories" :key="category['id']">
-                    {{category['cuisine']}}
-                </p>
-            </div>
-            <Middle class="middle" />
-            <Background class="background" />
+        <div class="check-box d-flex flex-column">
+            <Checked @selCategories = "getCategories" />
+        </div>
+            <Middle @search= "getCategories" class="middle" :categoriesArray="categories" />
+        <div class="sliders-container">
+            <!-- <div class="sliders"></div> -->
+            <Slider />
+        </div>
     </main>
 </template>
 
 <script>
 import Background from './partials/Background';
 import Middle from './partials/Middle';
+import Checked from './partials/Checked.vue';
+import Slider from "./partials/Slider.vue";
 
 export default {
     name: "Main",
-    data() {
-        return {
-            url: "http://127.0.0.1:8000/api/",
-            categories: [],
-        };
-    },
     components: {
         Middle,
-        Background
+        Background,
+        Checked,
+        Slider
     },
-    created() {
-        this.getCategories()
+    data() {
+        return {
+            categories: [],
+        } 
     },
     methods: {
-        getCategories(){
-            const bodyParameters = {
-                key: "value",
-            };
-
-            const config = {
-                headers: { Authorization: `Bearer ${this.api_token}` },
-            };
-            axios
-                .get(this.url + 'categories', bodyParameters, config)
-                .then((resp)=>{
-                    this.categories = resp.data.results
-                })
-                .catch();
+        getCategories(selCategories) {
+           this.categories = selCategories;
         },
     },
 };
@@ -51,24 +40,35 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper{
-    margin-top: 80px;
+    // margin-top: 80px;
     width: 100%;
     height: calc(100vh - 80px);
     display: flex;
 }
 .check-box {
     width: calc(100%/6);
-    height: 100%;
-    background-color: chocolate;
+    min-width: 220px;
+    height: 78%;
+    padding-top: 50px;
+    // background: blue;
+    // z-index: 999;
 }
-.middle {
-    width: calc((100%/6) * 3);
-    // height: 100%;
-    // background-color: chocolate;
+
+.sliders-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    // flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    background: #f4f0e2;
 }
-.background {
-    width: calc((100%/6) * 2);
-    // height: 100%;
-    // background-color: chocolate;
-}
+
+// .sliders {
+//     width: calc(100%/6);
+//     min-width: 220px;
+//     height: 100%;
+// }
 </style>

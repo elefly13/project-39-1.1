@@ -1,42 +1,38 @@
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('dashboard')
 @if (session('status'))
 	<div class="alert alert-success">
 		{{ session('status') }}
 	</div>
+    
 @endif
-<div>
-    <a href="{{route('admin.dishes.create')}}">aggiungi un nuovo piatto</a>
-        <a href="{{route('admin.index')}}">torna indietro</a> 
+<a class="link-dish-index btn-top-index" href="{{route('admin.dishes.create')}}">Aggiungi un nuovo piatto</a>
+<a class="link-dish-index btn-top-index" href="{{route('admin.index')}}">Torna indietro</a> 
+<div class="big-box-dish" >
     @foreach ($data as $dish)
-        <div>
-            {{$dish['name']}} 
-        </div>
-        <div>
-            {{$dish['price']}}
-        </div>
-        <div>
-            {{$dish['description']}}
-        </div>
-        <div>
-            {{$dish['ingredients']}}
-        </div>
-        <div>
-            {{$dish['course']}}
-        </div>
+    <div class="card-dish-index" >
 
-        <a href="{{route('admin.dishes.show', $dish->id)}}">dettaglio</a>
-        <a href="{{route('admin.dishes.edit', $dish->id)}}">modifica piatto</a>
-        <form action="{{route('admin.dishes.destroy', $dish->id)}}" class="d-inline-block delete-post"  method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger  ">Delete</button>
-        </form> 
-            
-        <br>
-        
-        @endforeach
-          
+        <img class="img-dish-index" src="{{ asset('storage/' . $dish['image']) }}" alt="{{$dish['name']}} ">
+        <h4 class="nome-dish-index">{{$dish['name']}} </h4>
+        <p>Descrizione:</p>
+        <p class="p-dish-index">{{$dish['description']}}</p>
+        <h4 class="nome-dish-index">€{{$dish['price']}}</h4>
+        <p>Ingredienti:</p>
+        <p class="p-dish-index">{{$dish['ingredients']}}</p>
+        <p class="p-dish-index">{{$dish['course']}}</p>
+        <div class="overlay-dish-index">
+            <div class="det-mod">
+                <a class="link-dish-index" href="{{route('admin.dishes.show', $dish->id)}}">Dettaglio</a>
+                <a class="link-dish-index" href="{{route('admin.dishes.edit', $dish->id)}}">Modifica piatto</a>
+            </div>
+            <form action="{{route('admin.dishes.destroy', $dish->id)}}" class="d-inline-block delete-post"  method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-dish-index">Delete</button>
+            </form> 
+        </div>
+    </div>
+    @endforeach   
 </div>
 @endsection
