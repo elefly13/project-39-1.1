@@ -14,9 +14,9 @@
                 <div>
                     {{$dish['description']}}
                 </div>
-                <div>
-                    {{$dish['course']}}
-                </div>
+                @if(isset($dish->image))
+                <img src="{{ asset('storage/'.$dish->image)}}" alt="{{ $dish->image}}">
+                @endif
                 <div>
                     {{$dish['updated_at']}}
                 </div>
