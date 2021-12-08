@@ -2,31 +2,46 @@
 
 @section('content')
  
-<div class="container-fluid space">
-    {{-- AVVISO sei loggato --}}
-    {{-- <div class="card-body">
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
+<div class="container-fluid ">
+    <div class="row coll-sm-12">
 
-        {{ __('You are logged in!') }}
-    </div> --}}
-
-    <div class="row box-center">
-        <div class="col-3 box-side-left-dash ">
-           
-            <div class="dash-box link-dash"><a href="{{route('admin.dishes.index')}}">Menu</a></div>
-            <div class="dash-box"><a href="{{route('admin.orders.index')}}">Ordini</a></div>
-            {{-- <div><a href="{{route('admin.categories.index')}}">categorie</a></div> --}}
+    {{-- link super user --}}
+             {{-- <div><a href="{{route('admin.categories.index')}}">categorie</a></div> --}}
             {{-- <div><a href="{{route('admin.user.index')}}">modifica categorie associate allo user</a></div> --}}
-            <div class="dash-box"><a href="/admin/statistiche">Statistiche</a></div>
-        </div>
-        <div class="col-9 box-side-right-dash" >
-            <div class="col-12 top-dash-right">
-                
+        {{-- </div> --}}
+
+        <div class="col-sm-12  col-md-11 space-dash box-big-dash" >
+            <div class="col-sm-12 top-dash">
+                <nav class="navbar navbar-expand-sm d-flex align-items-center">
+                    {{-- AVVISO sei loggato --}}
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        {{ __('You are logged in!') }}
+                    </div>
+                    
+                    <!-- Links -->
+                    <ul class="navbar-nav d-flex align-items-center">
+                        <li class="nav-item mx-3">
+                            <span class="text-name-dash">Nome del ristorante</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-link-dash" href="{{route('admin.dishes.index')}}">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-link-dash" href="{{route('admin.orders.index')}}">Ordini</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-link-dash" href="/admin/statistiche">Statistiche</a>
+                        </li>
+                    </ul>        
+                  </nav>    
             </div>
+
             @yield('dashboard')  
 
         </div>

@@ -1,10 +1,10 @@
 @extends('admin.dashboard')
 
 @section('dashboard')
-	<div class="container">
+	<div class="container-fluid">
 		{{-- pagina modifica piatto dishes/edit  --}}
 		<div class="row justify-content-center">
-			<div class="col-md-8 overflow-edit">
+			<div class="col-sm-12 col-md-8">
 				<div class="card-header header-edit">
 					<h4>Modifica un piatto del tuo menu</h4>
 				</div>

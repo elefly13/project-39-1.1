@@ -1,9 +1,9 @@
 @extends('admin.dashboard')
 
 @section('dashboard')
-<div class="container">
+<div class="container-fluid">
 	<div class="row justify-content-center">
-		<div class="col-md-8 overflow-create">
+		<div class="coll-sm-12 col-md-8">
 			<div class="card-header header-create">
 				<h4>Aggiungi un piatto al tuo menu</h4>
 			</div>

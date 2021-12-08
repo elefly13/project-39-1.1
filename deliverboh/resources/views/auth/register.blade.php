@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class=" col-sm-12 col-md-6">
             <div class="my-card">
                 <div class="card-header header">{{ __('Registrati') }}</div>
 
-                <div class="card-body">
+                <div class="card-body ">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -102,7 +102,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn my-btn">
                                     {{ __('Register') }}
