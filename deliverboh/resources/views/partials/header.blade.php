@@ -1,6 +1,3 @@
-@extends('layouts/app')
-
-@section('header')
 <header class="container-fluid ">
   <nav class="navbar navbar-expand-md navbar-light justify-content-between px-5">
     <a class="navbar-brand box-logo" href="{{ url('/') }}">
@@ -57,7 +54,6 @@
     </div>
   </nav>
 </header>  
-@endsection
 
 
 

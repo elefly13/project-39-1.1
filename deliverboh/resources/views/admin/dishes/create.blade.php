@@ -20,7 +20,7 @@
 	</div>
 	<div class="form-group">
 		<label for="price">price</label>
-		<input value="{{old('price')}}" type="number" name="price" class="form-control  @error('price') is-invalid @enderror" id="price" placeholder="inserisci il prezzo">
+		<input step="any" value="{{old('price')}}" type="number" name="price" class="form-control  @error('price') is-invalid @enderror" id="price" placeholder="inserisci il prezzo">
 		@error('price')
 			<div class="alert alert-danger">{{ $message }}  </div>
 		@enderror
@@ -29,6 +29,14 @@
 		<label for="description">description</label>
 		<input value="{{old('description')}}" type="text" name="description" class="form-control" id="description" placeholder="descrivi il piatto">     
 	</div>
+	<div class="form-group">
+		<label for="description">inserisci una foto</label>		
+		<input type="file" name='image' id='image' class="@error('image') is-invalid @enderror">
+		@error('image')
+			<div class="alert alert-danger">{{$message}}</div>
+		@enderror
+	</div>
+
 	 <div class="form-group">
 		<label for="visibility">visibility</label>
 		<input   type="checkbox" name="visibility" class="form-control" id="visibility" value="{{ ('checked' ? 1 : 0)}}">     

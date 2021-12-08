@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{route('admin.dishes.update', $dish['id'] )}}" method="post">
+<form action="{{route('admin.dishes.update', $dish['id'] )}}" method="post" enctype='multipart/form-data'>
 	@csrf
 	@method('PUT') 
 
@@ -26,6 +26,10 @@
 	<div class="form-group">
 		<label for="description">description</label>
 		<input value="{{old('description', $dish->description)}}"  type="text" name="description" class="form-control" id="description" placeholder="descrivi il piatto">     
+	</div>
+	<div class="form-group">
+		<label for="description">modifica immagine piatto</label>
+		<input type="file" name='image' id='image' class="@error('image') is-invalid @enderror">
 	</div>
 	<div class="form-group">
 		<label for="visibility">visibility</label>

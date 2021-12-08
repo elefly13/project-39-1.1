@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <form action="{{route('admin.orders.update', $orders['id'] )}}" method="post">
 	@csrf
 	@method('PUT') 
@@ -38,3 +41,5 @@
 	@endforeach
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
+	
+@endsection

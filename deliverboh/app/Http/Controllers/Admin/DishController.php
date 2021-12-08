@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Dish;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -59,13 +59,30 @@ class DishController extends Controller
     {
         $request->validate([
             'name'=>'required',  
-            'price'=>'required|digits_between:1,4',
+            'price'=>'required|regex:/\b\d{1,4}(?:\.\d{2})?\b/',
+            // \b      # word boundary assertion
+            // \d{1,3} # 1-3 digits
+            // (?:     # followed by this group...
+            // ,?     # an optional comma
+            // \d{3}  # exactly three digits
+            // )*      # ...any number of times
+            // (?:     # followed by this group...
+            // \.     # a literal dot
+            // \d{2}  # exactly two digits
+            // )?      # ...zero or one times
+            // \b      # word boundary assertion
             'course'=>'required',
+            'image' => 'nullable|image'
         ]);
         $user = Auth::user();
         $data = $request->all();
         $new_dish = new Dish();
         $new_dish->user_id = $user->id;
+        if(array_key_exists('image', $data)){
+            $cover_path = Storage::put('dish_photos', $data['image']);
+            $data['image'] = $cover_path;
+            // dd($data);
+        }
         $new_dish->fill($data);
         $new_dish->save();
         //letting user to choose no allergen
@@ -120,12 +137,18 @@ class DishController extends Controller
     {
         $request->validate([
             'name'=>'required',  
-            'price'=>'required|digits_between:1,4',
+            'price'=>'required|regex:/\b\d{1,4}(?:\.\d{2})?\b/',
             'course'=>'required',
+            'image'=>'nullable|image'
         ]);
         $dish = Dish::findOrFail($id);
 
         $data = $request->all();
+        if(array_key_exists('image', $data)){
+            Storage::delete($dish->image);
+            $cover_path = Storage::put('dish_photos', $data['image']);
+            $data['image'] = $cover_path;
+        }
         $dish->update($data);
         if(isset($data['allergens'])){
             $dish->allergens()->sync($data['allergens']);

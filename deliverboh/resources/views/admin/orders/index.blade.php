@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+    
 <div>
     @foreach ($data as $order)
         <div>
@@ -30,5 +34,6 @@
     <br>
         <a href="{{route('admin.orders.create')}}">aggiungi un nuovo ordine</a>
 </div>
+@endsection
 
 

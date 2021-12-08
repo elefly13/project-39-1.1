@@ -27,7 +27,7 @@
         </div>
 
         <a href="{{route('admin.dishes.show', $dish->id)}}">dettaglio</a>
-        <a href="{{route('admin.dishes.edit', $dish->id)}}">modifica ordine</a>
+        <a href="{{route('admin.dishes.edit', $dish->id)}}">modifica piatto</a>
         <form action="{{route('admin.dishes.destroy', $dish->id)}}" class="d-inline-block delete-post"  method="POST">
             @csrf
             @method('DELETE')
