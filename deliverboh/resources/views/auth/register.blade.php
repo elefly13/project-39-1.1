@@ -82,11 +82,16 @@
                         <div class="form-group">
                             <p>Seleziona le categorie:</p>
                                 @foreach ($categories as $category)
-                                    <div class="form-check form-check-inline check">
+                                    <div class="form-check form-check-inline check @error('categories') is-invalid @enderror">
                                         <input {{in_array($category->id, old('categorys', [])) ? 'checked' : null}}
                                         value="{{ $category->id }}" type="checkbox" name="categories[]" class="form-check-input" id="{{'category' . $category->id}}">
                                         <label class="form-check-label" for="{{'category' . $category->id}}">{{ $category->cuisine }}</label>
-                                    </div>   
+                                    </div> 
+                                    @error('categories')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 @endforeach
                             </div>
                         </div>
