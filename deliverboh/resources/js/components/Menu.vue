@@ -16,7 +16,7 @@
             <div class="box">
                 <div class="big-box-img">
                     <div class="image" :key="dish['id']" v-for="dish in dishes">
-                        <img :src="'./images/image-dish/' + dish.image" :alt="dish.name">
+                        <img :src="'./storage/' + dish.image" :alt="dish.name">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
                         <h4>{{ dish.price }}€</h4>

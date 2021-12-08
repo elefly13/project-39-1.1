@@ -2985,7 +2985,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.test[data-v-1c77d2d7] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n  -webkit-text-orientation: mixed;\n          text-orientation: mixed;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translate(-5%, -80%);\n  color: #638F64;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 93%;\n  height: 60%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 83.3333333333%;\n  height: calc(100vh - 80px);\n  position: relative;\n}\n.test[data-v-1c77d2d7] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n  -webkit-text-orientation: mixed;\n          text-orientation: mixed;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translate(-5%, -80%);\n  color: #638F64;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.box-user[data-v-1c77d2d7] {\n  width: 93%;\n  height: 60%;\n  overflow-y: auto;\n  display: flex;\n  flex-wrap: wrap;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -5081,10 +5081,7 @@ var render = function () {
                 { key: dish["id"], staticClass: "image" },
                 [
                   _c("img", {
-                    attrs: {
-                      src: "./images/image-dish/" + dish.image,
-                      alt: dish.name,
-                    },
+                    attrs: { src: "./storage/" + dish.image, alt: dish.name },
                   }),
                   _vm._v(" "),
                   _c("h4", [_vm._v(_vm._s(dish.name))]),
@@ -5615,7 +5612,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Main")], 1)
+  return _c(
+    "div",
+    [_c("Main"), _vm._v(" "), _c("Menu"), _vm._v(" "), _c("ConfermaOrdine")],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

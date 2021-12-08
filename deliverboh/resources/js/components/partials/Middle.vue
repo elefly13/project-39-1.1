@@ -169,7 +169,7 @@ export default {
 .box-user {
     width: 93%;
     height: 60%;
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
 }
