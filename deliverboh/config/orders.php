@@ -38,6 +38,7 @@ return [
         "name_user"=>"Filippo",
         "lastname_user"=>"Filippo",
         "email"=>"test@mail.com",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
 
         "created_at"=>"2021-11-12 19:50:36",
@@ -52,6 +53,7 @@ return [
         "total"=>"7",
         "name_user"=>"Davide",
         "lastname_user"=>"Davide",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 17:00:36",
         "updated_at"=>"2021-11-12 21:00:36"
@@ -65,6 +67,7 @@ return [
         "total"=>"7.50",
         "name_user"=>"Federico",
         "lastname_user"=>"Federico",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 12:00:36",
         "updated_at"=>"2021-11-12 12:50:36"
@@ -78,6 +81,7 @@ return [
         "total"=>"7.50",
         "name_user"=>"Luigi",
         "lastname_user"=>"Luigi",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 13:00:36",
         "updated_at"=>"2021-11-12 13:46:36"
@@ -91,6 +95,7 @@ return [
         "total"=>"7.50",
         "name_user"=>"Elena",
         "lastname_user"=>"Elena",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 12:00:36",
         "updated_at"=>"2021-11-12 13:00:12"
@@ -104,6 +109,7 @@ return [
         "total"=>"1",
         "name_user"=>"Stefano",
         "lastname_user"=>"Stefano",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 18:00:23",
         "updated_at"=>"2021-11-12 20:20:52"
@@ -117,6 +123,7 @@ return [
         "total"=>"1",
         "name_user"=>"Bruce",
         "lastname_user"=>"Wayne",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 12:00:22",
         "updated_at"=>"2021-11-12 13:20:36"
@@ -130,6 +137,7 @@ return [
         "total"=>"3.50",
         "name_user"=>"Clark",
         "lastname_user"=>"Kent",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 18:16:26",
         "updated_at"=>"2021-11-12 18:50:52"
@@ -143,6 +151,7 @@ return [
         "total"=>"3.40",
         "name_user"=>"Geralt",
         "lastname_user"=>"Di Rivia",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-11-12 21:00:21",
         "updated_at"=>"2021-11-13 13:00:12"
@@ -156,6 +165,7 @@ return [
         "total"=>"1.10",
         "name_user"=>"John",
         "lastname_user"=>"Shepard",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 07:00:23",
         "updated_at"=>"2021-10-21 14:00:36"
@@ -169,6 +179,7 @@ return [
         "total"=>"1.60",
         "name_user"=>"Lara",
         "lastname_user"=>"Croft",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 18:00:36",
         "updated_at"=>"2021-10-21 19:00:32"
@@ -182,6 +193,7 @@ return [
         "total"=>"3.50",
         "name_user"=>"Jill",
         "lastname_user"=>"Valentine",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 19:00:36",
         "updated_at"=>"2021-10-21 21:00:36"
@@ -195,6 +207,7 @@ return [
         "total"=>"3.50",
         "name_user"=>"Jason",
         "lastname_user"=>"Brody",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 21:00:00",
         "updated_at"=>"2021-10-21 23:00:00"
@@ -208,6 +221,7 @@ return [
         "total"=>"4",
         "name_user"=>"Vaas",
         "lastname_user"=>"Montenegro",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 18:20:36",
         "updated_at"=>"2021-10-21 19:04:36"
@@ -221,6 +235,7 @@ return [
         "total"=>"4",
         "name_user"=>"Baraka",
         "lastname_user"=>"Baraka",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 18:00:36",
         "updated_at"=>"2021-10-21 18:20:36"
@@ -234,6 +249,7 @@ return [
         "total"=>"4.50",
         "name_user"=>"Johnny",
         "lastname_user"=>"Cage",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 18:10:36",
         "updated_at"=>"2021-10-21 20:13:21"
@@ -247,6 +263,7 @@ return [
         "total"=>"4.50",
         "name_user"=>"Kung",
         "lastname_user"=>"Lao",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 12:00:36",
         "updated_at"=>"2021-10-21 14:20:36"
@@ -260,6 +277,7 @@ return [
         "total"=>"4",
         "name_user"=>"Liu",
         "lastname_user"=>"Kang",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 18:00:36",
         "updated_at"=>"2021-10-22 08:00:36"
@@ -273,6 +291,7 @@ return [
         "total"=>"5.50",
         "name_user"=>"Shang",
         "lastname_user"=>"Tsung",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 12:00:36",
         "updated_at"=>"2021-10-21 23:00:36"
@@ -286,6 +305,7 @@ return [
         "total"=>"5.50",
         "name_user"=>"Quan",
         "lastname_user"=>"Chi",
+        "email"=>"test@mail.com",
         "note"=>"ho fame",
         "created_at"=>"2021-10-21 08:00:36",
         "updated_at"=>"2021-10-21 08:45:36"
