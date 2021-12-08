@@ -79,6 +79,16 @@
                                 @enderror --}}
                             </div>
                         </div>
+                        <div class="form-group">
+                            <p>Seleziona le categorie:</p>
+                                @foreach ($categories as $category)
+                                    <div class="form-check form-check-inline check">
+                                        <input {{in_array($category->id, old('categorys', [])) ? 'checked' : null}}
+                                        value="{{ $category->id }}" type="checkbox" name="categories[]" class="form-check-input" id="{{'category' . $category->id}}">
+                                        <label class="form-check-label" for="{{'category' . $category->id}}">{{ $category->cuisine }}</label>
+                                    </div>   
+                                @endforeach
+                            </div>
                         </div>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
