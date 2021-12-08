@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class=" col-sm-12 col-md-6">
             <div class="my-card">
                 <div class="card-header header">{{ __('Registrati') }}</div>
 
-                <div class="card-body">
+                <div class="card-body ">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -79,6 +79,21 @@
                                 @enderror --}}
                             </div>
                         </div>
+                        <div class="form-group">
+                            <p>Seleziona le categorie:</p>
+                                @foreach ($categories as $category)
+                                    <div class="form-check form-check-inline check @error('categories') is-invalid @enderror">
+                                        <input {{in_array($category->id, old('categorys', [])) ? 'checked' : null}}
+                                        value="{{ $category->id }}" type="checkbox" name="categories[]" class="form-check-input" id="{{'category' . $category->id}}">
+                                        <label class="form-check-label" for="{{'category' . $category->id}}">{{ $category->cuisine }}</label>
+                                    </div> 
+                                    @error('categories')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                @endforeach
+                            </div>
                         </div>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -102,7 +117,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn my-btn">
                                     {{ __('Register') }}

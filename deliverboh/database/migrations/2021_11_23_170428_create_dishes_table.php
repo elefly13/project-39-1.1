@@ -18,9 +18,9 @@ class CreateDishesTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('name', 100);
             $table->string('ingredients')->nullable();
-            $table->float('price', 7,2);
-            $table->text('description');
-            $table->boolean('visibility');
+            $table->decimal('price', 7,2);
+            $table->text('description')->nullable();
+            $table->boolean('visibility')->default(0);
             $table->string('image')->nullable();
             $table->string('course')->nullable();
             $table->timestamps();

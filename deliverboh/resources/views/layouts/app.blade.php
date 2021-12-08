@@ -23,12 +23,14 @@
     {{-- <link href="{{ asset('scss/app.scss') }}" rel="stylesheet"> --}}
 </head>
 <body>
+    
     <section>
         @include('partials.header')
     </section>
     
-    <section>
+    <section class="sfondo">
         @yield('content')
     </section>
+    
 </body>
 </html>

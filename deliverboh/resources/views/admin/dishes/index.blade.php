@@ -1,19 +1,19 @@
 @extends('admin.dashboard')
 
 @section('dashboard')
-<a class="link-dish-index btn-top-index" href="{{route('admin.dishes.create')}}">Aggiungi un nuovo piatto</a>
-<a class="link-dish-index btn-top-index" href="{{route('admin.index')}}">Torna indietro</a> 
 @if (session('status'))
 	<div class="alert alert-success">
 		{{ session('status') }}
 	</div>
     
 @endif
+<a class="link-dish-index btn-top-index" href="{{route('admin.dishes.create')}}">Aggiungi un nuovo piatto</a>
+<a class="link-dish-index btn-top-index" href="{{route('admin.index')}}">Torna indietro</a> 
 <div class="big-box-dish" >
     @foreach ($data as $dish)
     <div class="card-dish-index" >
 
-        <img class="img-dish-index" src="{{ asset('./images/image-dish/' . $dish['image']) }}" alt="{{$dish['name']}} ">
+        <img class="img-dish-index" src="{{ asset('storage/' . $dish['image']) }}" alt="{{$dish['name']}} ">
         <h4 class="nome-dish-index">{{$dish['name']}} </h4>
         <p>Descrizione:</p>
         <p class="p-dish-index">{{$dish['description']}}</p>

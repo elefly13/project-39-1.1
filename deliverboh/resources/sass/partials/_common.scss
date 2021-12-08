@@ -3,8 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // font-family: "Nunito";
-    
+    // font-family: "Nunito"; 
 }
 
 body {
@@ -15,4 +14,14 @@ body {
     // ho messo un po di padding a sinistra per poter leggere quello che stampiamo nella parte di backend
     // -Stefano decommentare se necessario
     font-family: 'Raleway', sans-serif;
+}
+.sfondo {
+    width: 100vw;
+    height: 92vh;
+    background-color: white;
+    background-image: url('../images/nuvola-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-origin: border-box;
 }

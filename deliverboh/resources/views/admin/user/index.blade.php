@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+    
 <div>
     {{-- @dd($categories) --}}
         <div>
@@ -19,5 +22,7 @@
         <a href="{{route('admin.index')}}">torna indietro</a>   
         
 </div>
+
+@endsection
 
 
