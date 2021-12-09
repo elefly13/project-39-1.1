@@ -1,6 +1,17 @@
 <template>
-    <section>
-        <div class="area-carrello">
+    <section class="cart"> 
+        <button class="openbtn" @click="openNav()"><img class="cart-logo" :src="'../images/icons/carrello.svg'" alt=""></button>
+
+        <div id="mySidepanel" class="sidepanel">
+            <a class="closebtn" @click="closeNav()">×</a>
+            <a >About</a>
+            <a >Services</a>
+            <a >Clients</a>
+            <a >Contact</a>
+        </div>
+
+       
+        <!-- <div class="area-carrello">
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -17,33 +28,33 @@
                                 <li>{{ dish.price }}</li>
                                 <li>
                                     <!-- <button @click="dish.quantity++, moreQuantity(dish.id)">+</button> -->
-                                    {{ dish.quantity }}
-                                    <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">x</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="panel-footer">
+                                    <!-- {{ dish.quantity }} -->
+                                    <!-- <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">x</button> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        <!-- </div> -->
+                        <!-- <div class="panel-footer">
                             <span>totale: {{ price + this.finalPrice}} €</span>
                             <form method="post" action="/checkout">
                                <input type="hidden" name="_token" v-bind:value="csrf">
                                  <!-- <input type="hidden" name="prova" v-bind:value="this.prova[0]"> -->
                                   
-                                 <div class="panel-body" v-for="dish in cartContent" :key="dish.id">
-                                     <input  type="hidden" name="price[]" v-bind:value="dish.price">
-                                     <input  type="hidden" name="name[]" v-bind:value="dish.name">
-                                     <input  type="hidden" name="description[]" v-bind:value="dish.description">
-                                     <input  type="hidden" name="quantity[]" v-bind:value="dish.quantity">
-                                     <input  type="hidden" name="id[]" v-bind:value="dish.id">
-                                </div>
+                                 <!-- <div class="panel-body" v-for="dish in cartContent" :key="dish.id"> -->
+                                     <!-- <input  type="hidden" name="price[]" v-bind:value="dish.price"> -->
+                                     <!-- <input  type="hidden" name="name[]" v-bind:value="dish.name"> -->
+                                     <!-- <input  type="hidden" name="description[]" v-bind:value="dish.description"> -->
+                                     <!-- <input  type="hidden" name="quantity[]" v-bind:value="dish.quantity"> -->
+                                     <!-- <input  type="hidden" name="id[]" v-bind:value="dish.id"> -->
+                                <!-- </div> -->
 
-                                <button class="cart-btn" v-if="price!=0"  >Procedi al pagamento</button>
-                            </form>
+                                <!-- <button class="cart-btn" v-if="price!=0"  >Procedi al pagamento</button> -->
+                            <!-- </form> -->
                             
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div>   -->
     </section>
 </template>
 
@@ -85,6 +96,16 @@ export default {
     },
     methods: {
         
+        openNav() {
+            document.getElementById("mySidepanel").style.width = "250px";
+            console.log('ciao')
+        },
+
+        closeNav() {
+            document.getElementById("mySidepanel").style.width = "60px";
+            console.log('ciao')
+        },
+
         console(array){
             console.log(array);
         },
@@ -117,7 +138,7 @@ export default {
         right: 0;
         .panel-group {
             padding: 20px;
-            background-color: white;
+            background-color: fdf6e0;
             width: 400px;
             border-bottom-left-radius: 20px;
             box-shadow: 5px 10px 18px #cfcece;
@@ -150,5 +171,59 @@ export default {
                 color: #343434;
             }
         }
+    }
+    .cart {
+        position: relative;
+    }
+
+    .cart-logo {
+        width: 30px;
+    }
+    .sidepanel  {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        width: 0;
+        position: relative;
+        z-index: 99;
+        // height: 250px;
+        background-color: white;
+        overflow: hidden;
+        transition: 0.5s;
+        
+        // padding-top: 60px;
+    }
+
+    .sidepanel a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        // color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidepanel a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidepanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 36px;
+    }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: white;
+        // color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+
+    .openbtn:hover {
+        // background-color:#444;
     }
 </style>

@@ -13050,13 +13050,13 @@ h3 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
   width: 100vw;
   height: calc(100vh - 80px);
   background-color: white;
-  font-family: "Raleway", sans-serif;
 }
 
 .sfondo {

@@ -12,14 +12,15 @@
         </div>
         
         <div class="middle-bottom">
+            
             <div  v-if="this.switchMenu == false"  :class="((!categoriesArray.length == 0 || searchText != '') ? 'backgrey box-user' : 'box-user')">
                 <div v-for="(user, index) in this.ristoranti" :key="index" class="container-card">
-                    <button class="user-btn" @click="menuShow(user), $emit('menuFlag', switchMenu)"><User :info="user"/></button>
+                    <button id="user-btn" @click="menuShow(user), $emit('menuFlag', switchMenu)"><User :info="user"/></button>
                 </div>
             </div>
-
+            
             <div v-if="this.switchMenu == true" class="box-menu">
-                <Cart :cartContent="cart" :initialPrice="price"/> 
+                
                 <div v-for="(dish, index) in this.filterDishes" :key="index">
                     <div class="image">
                         <img :src="'./storage/' + dish.image" :alt="dish.name">
@@ -33,8 +34,12 @@
                         <button class="button" @click="sendCart(dish)">Aggiungi al carrello</button>               
                     </div>
                 </div>
+                
             </div>
-
+            <div class="cart-container">
+                <Cart :cartContent="cart" :initialPrice="price"/>
+            </div>
+             
         </div>
         
         <!-- <div class="test">
@@ -242,8 +247,14 @@ export default {
 
 <style lang="scss" scoped>
     
-   
-
+    .cart-container {
+        width: 250px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #user-btn {
+        border: none;
+    }
     .middle {
         width: 82%;
         height: 100%;
@@ -275,26 +286,26 @@ export default {
                 font-size: 1.5vw;
             }
         }
-        .user-btn {
-            border: none;
-        }
     }
 
     .middle-bottom {
+        width: 100%;
+        display: flex;
         height: 75%;
 
         .box-user {
-            width: 100%;
+            width: calc(100% - 250px);
             height: 430px;
-            overflow-y: scroll;
+            overflow-y: auto;
             display: flex;
             flex-wrap: wrap;
         }
 
         .box-menu {
-            width: 65%;
-            height: 530px;
-            overflow-y: scroll;
+            width: calc(100% - 250px);
+            height: 72vh;
+            overflow-y: auto;
+            scrollbar-width: none;
             display: flex;
             flex-wrap: wrap;
         }
@@ -339,7 +350,7 @@ export default {
             // position: absolute;
             // left: 20px;
             // bottom: -20px;
-            // transform: translate(0, 80%);
+            transform: translate(0, 80%);
             box-shadow: 5px 10px 18px #a09f9f;
             margin: 10px;
             padding: 5px;
@@ -406,9 +417,9 @@ export default {
   
     
 
-    .backgrey {
-        background-color: rgba(252, 248, 240, 0.577);
-    }
+    // .backgrey {
+        // background-color: rgba(252, 248, 240, 0.577);
+    // }
 
     .container-card {
         padding: 20px;
