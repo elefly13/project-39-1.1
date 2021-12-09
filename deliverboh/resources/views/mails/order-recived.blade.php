@@ -1,3 +1,3 @@
 <div>
-    prova
+    Conferma di ordine effettuato
 </div>

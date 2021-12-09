@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->float('total', 7,2);
             $table->string('name_user');
             $table->string('lastname_user');
-            $table->text('note'); 
+            $table->text('note')->nullable();
             $table->string('email')->nullable(); 
             $table->timestamps();
         });

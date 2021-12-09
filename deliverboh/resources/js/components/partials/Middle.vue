@@ -28,8 +28,8 @@
                         <h4>€ {{ dish.price }}</h4>
                         <p>Ingredienti:</p>
                         <p>{{ dish.ingredients }}</p>
-                        <p>Allergeni:</p>
-                        <p :key="(allergenDish['id'])" v-for="allergenDish in allergenDishes">{{ allergenDish.allergen_id }}</p>
+                        <!-- <p>Allergeni:</p>
+                        <p :key="(allergenDish['id'])" v-for="allergenDish in allergenDishes">{{ allergenDish.allergen_id }}</p> -->
                         <button class="button" @click="sendCart(dish)">Aggiungi al carrello</button>               
                     </div>
                 </div>
@@ -236,6 +236,8 @@ export default {
 
 
 <style lang="scss" scoped>
+    
+   
 
     .middle {
         width: 82%;
@@ -274,13 +276,11 @@ export default {
     }
 
     .middle-bottom {
-        overflow: hidden;
         height: 75%;
-        // background-color: darkcyan;
 
         .box-user {
             width: 100%;
-            min-height: 100%;
+            height: 430px;
             overflow-y: scroll;
             display: flex;
             flex-wrap: wrap;
@@ -295,8 +295,8 @@ export default {
         // }
         .box-menu {
             width: 65%;
-            height: 100%;
-            overflow-y: auto;
+            height: 530px;
+            overflow-y: scroll;
             display: flex;
             flex-wrap: wrap;
         }
@@ -305,13 +305,14 @@ export default {
     
 
     .image {
-        position: relative;
+        line-height: 1.2em;
+        // position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 250px;
-        height: 400px;
+        width: 200px;
+        height: 350px;
         background-color:white ;
         border-radius: 5px;
         border-bottom-right-radius: 40px;
@@ -319,8 +320,9 @@ export default {
         box-shadow: 5px 10px 18px #cfcece;
         padding: 10px;
         margin: 20px;
+
         img {
-            width: 230px;
+            width: 98%;
             height: 150px;
             object-fit: cover;
             border-radius: 5px;
@@ -329,30 +331,20 @@ export default {
         h4 {
             font-size: 18px; 
             color: #be541e; 
-            padding: 8px 0;
             text-transform: capitalize;
         }
         p {
             font-size: 12px;
-            padding: 3px 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* number of lines to show */
-                    line-clamp: 2; 
-            -webkit-box-orient: vertical;                
-            width: 200px; 
-                
         }
         
         button {
-            position: absolute;
-            left:-10%;
-            bottom: 0;
-            transform: translate(50%, 50%);
+            // position: absolute;
+            // left: 20px;
+            // bottom: -20px;
+            // transform: translate(0, 80%);
             box-shadow: 5px 10px 18px #a09f9f;
             margin: 10px;
-            padding: 10px;
+            padding: 5px;
             border: none;
             border-color: #439373;
             border-radius: 3px;
