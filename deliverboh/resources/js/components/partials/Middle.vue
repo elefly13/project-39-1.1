@@ -25,7 +25,7 @@
                         <img :src="'./storage/' + dish.image" :alt="dish.name">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
-                        <h4>{{ dish.price }}</h4>
+                        <h4>€ {{ dish.price }}</h4>
                         <p>Ingredienti:</p>
                         <p>{{ dish.ingredients }}</p>
                         <!-- <p>Allergeni:</p>
@@ -140,27 +140,22 @@ export default {
     },
     methods: {
         sendCart(dish) {
-            if(this.restaurant == 0) {
-                this.restaurant = dish.user_id
+
+            if(this.cart.length === 0){
+                this.cart.push(dish)
+            }else{
+                    this.cart.push(dish)
+                    for (let i = 0; i < this.cart.length - 1; i++){
+                        if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
+                        this.cart.pop();
+                        this.cart[i].quantity++;
+                        console.log('sono qui dentro')
+                        return
+                        }                             
+                    }
+
             }
             
-            if((dish.user_id == this.restaurant) && (!this.cart.includes(dish))) 
-            {
-                this.cart.push(dish)
-            } 
-            else if(this.cart.includes(dish)) {
-                this.price = dish.price * dish.quantity
-                console.log(this.price)
-                for (const i in this.cart) {
-                    if(this.cart[i].id == dish.id) {
-                        this.cart[i].quantity += 1 
-                    }
-                }
-            }
-            else 
-            {
-                alert("Puoi ordinare da un solo ristorante alla volta")
-            }
         }, 
         menuShow(user) {
             this.switchMenu = true
@@ -291,6 +286,13 @@ export default {
             flex-wrap: wrap;
         }
 
+        // .box-user {
+        //     width: 93%;
+        //     height: 60%;
+        //     overflow-y: auto;
+        //     display: flex;
+        //     flex-wrap: wrap;
+        // }
         .box-menu {
             width: 65%;
             height: 530px;
