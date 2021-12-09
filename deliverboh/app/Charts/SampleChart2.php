@@ -3,12 +3,14 @@
 declare(strict_types = 1);
 
 namespace App\Charts;
-use Illuminate\Support\Facades\Auth;
+
 use Chartisan\PHP\Chartisan;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Order;
-class SampleChart extends BaseChart
+
+class SampleChart2 extends BaseChart
 {
     /**
      * Handles the HTTP request for the given chart.
@@ -17,22 +19,23 @@ class SampleChart extends BaseChart
      */
     public function handler(Request $request): Chartisan
     {
-        $user = Auth::user();
        
+        $data_month=[];
         $year_now=now()->year;
-        $data_year=[];
+        $user = Auth::user();
         $asse_x=[];
-        for ($i = 0; $i <= 4; $i++) {
-            $temp =count( Order::whereYear('created_at', ($year_now - $i))->whereHas('dishes',function($q ) use ($user) {
+        for ($i = 1; $i <= 12; $i++) {
+            $temp =count( Order::whereMonth('created_at', $i)->whereYear('created_at', $year_now )->whereHas('dishes',function($q ) use ($user) {
                 $q->where('user_id', $user['id']);
-            })->get()
-        );
-            array_push($asse_x, ($year_now - $i));
-           array_push($data_year, $temp);
+            })->get());
+            
+            array_push($asse_x, ( $i));
+           array_push($data_month, $temp);
         };
-    
+
         return Chartisan::build()
             ->labels( $asse_x)
-            ->dataset('Sample 2', $data_year);
+            ->dataset('Sample', $data_month);
+            
     }
 }

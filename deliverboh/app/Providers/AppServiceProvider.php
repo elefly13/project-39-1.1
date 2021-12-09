@@ -32,7 +32,10 @@ class AppServiceProvider extends ServiceProvider
             View::share('categories', $categories);
         }
         $charts->register([
-            \App\Charts\SampleChart::class
+            \App\Charts\SampleChart::class,
+            \App\Charts\SampleChart3::class,
+            \App\Charts\SampleChart4::class,
+            \App\Charts\SampleChart2::class
         ]);
     }
   
