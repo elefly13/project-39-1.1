@@ -22,7 +22,7 @@
                 <Cart :cartContent="cart" :initialPrice="price"/> 
                 <div v-for="(dish, index) in this.filterDishes" :key="index">
                     <div class="image">
-                        <img :src="'./images/image-dish/' + dish.image" :alt="dish.name">
+                        <img :src="'./storage/' + dish.image" :alt="dish.name">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
                         <h4>{{ dish.price }}</h4>

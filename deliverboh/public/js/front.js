@@ -1962,7 +1962,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['cartContent', 'initialPrice'],
   data: function data() {
     return {
-      prova: this.cartContent,
+      // prova:this.cartContent,
       finalPrice: 0,
       price: 0,
       test: 0,
@@ -2003,15 +2003,14 @@ __webpack_require__.r(__webpack_exports__);
     }(function (array) {
       console.log(array);
     }),
-    moreQuantity: function moreQuantity(id) {
-      for (var i in this.cartContent) {
-        if (this.cartContent[i].id == id) {
-          this.price += this.cartContent[i].price;
-        }
-      }
-
-      console.log(this.cartContent);
-    },
+    // moreQuantity(id) {
+    //     for (const i in this.cartContent) {
+    //         if (this.cartContent[i].id == id) {
+    //             this.price += this.cartContent[i].price
+    //         }
+    //     }
+    //     console.log(this.cartContent)
+    // },
     lessQuantity: function lessQuantity(id) {
       for (var i in this.cartContent) {
         if (this.cartContent[i].id == id) {
@@ -4480,17 +4479,6 @@ var render = function () {
                     _c("li", [_vm._v(_vm._s(dish.price))]),
                     _vm._v(" "),
                     _c("li", [
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function ($event) {
-                              dish.quantity++, _vm.moreQuantity(dish.id)
-                            },
-                          },
-                        },
-                        [_vm._v("+")]
-                      ),
                       _vm._v(
                         "\n                                " +
                           _vm._s(dish.quantity) +
@@ -5201,10 +5189,7 @@ var render = function () {
                 return _c("div", { key: index }, [
                   _c("div", { staticClass: "image" }, [
                     _c("img", {
-                      attrs: {
-                        src: "./images/image-dish/" + dish.image,
-                        alt: dish.name,
-                      },
+                      attrs: { src: "./storage/" + dish.image, alt: dish.name },
                     }),
                     _vm._v(" "),
                     _c("h4", [_vm._v(_vm._s(dish.name))]),
