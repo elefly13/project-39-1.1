@@ -145,7 +145,7 @@ Route::post('/conferma', function(Request $request){
         Mail::to($new_order['email'])->send(new SendNewMail());
  
         $transaction = $result->transaction;
-        return view('admin.statistiche');
+        return view('api.home');
         // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
         // return back()->with('success_message','Transaction complete ID:'. $transaction->id);
     } else {

@@ -14,7 +14,7 @@
                 <h5>Ristorante uno</h5>
             </div>
             <div class="box">
-                <img src="images/image-res/res-2.jpg" alt="">
+                <img src="images/image-res/res-6.jpg" alt="">
                 <h5>Ristorante uno</h5>
             </div>
         </div>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: "SliderCard",
+    name: "Slider",
 }
 </script>
 
