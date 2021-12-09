@@ -2,12 +2,12 @@
     <main class="main">
         
         <div class="main-top">
-            <Checked @selCategories = "getCategories" />
+            <Checked @selCategories = "getCategories" :emptycheck="menuFlag" />
             <Middle class="middle" @search= "getCategories" @menuFlag="myflag"  :categoriesArray="categories" />
         </div>
         
-        <div class="main-bottom" v-if="this.menuFlag == null">
-            <Slider />
+        <div class="main-bottom" v-if="this.menuFlag == false">
+            <!-- <Slider /> -->
         </div>
         
     </main>
@@ -28,8 +28,13 @@ export default {
     data() {
         return {
             categories: [],
-            menuFlag: null
+            menuFlag: false
         } 
+    },
+    watch: {
+        categories: function () {
+            this.menuFlag = false
+        }
     },
     methods: {
         getCategories(selCategories) {
@@ -37,8 +42,6 @@ export default {
         },
         myflag(flag) {
             this.menuFlag = flag
-            console.log('sono il flag')
-            console.log(this.menuFlag)
         }
     },
 };
@@ -58,7 +61,7 @@ export default {
 
     .main-bottom {
         width: 100vw;
-        height: 20%;
+        height: 200px;
         background-color: #F4F0E2;
     }
 </style>
