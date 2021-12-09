@@ -140,27 +140,29 @@ export default {
     },
     methods: {
         sendCart(dish) {
-            if(this.restaurant == 0) {
-                this.restaurant = dish.user_id
-            }
+
+            this.cart.push(dish)
+            // if(this.restaurant == 0) {
+            //     this.restaurant = dish.user_id
+            // }
             
-            if((dish.user_id == this.restaurant) && (!this.cart.includes(dish))) 
-            {
-                this.cart.push(dish)
-            } 
-            else if(this.cart.includes(dish)) {
-                this.price = dish.price * dish.quantity
-                console.log(this.price)
-                for (const i in this.cart) {
-                    if(this.cart[i].id == dish.id) {
-                        this.cart[i].quantity += 1 
-                    }
-                }
-            }
-            else 
-            {
-                alert("Puoi ordinare da un solo ristorante alla volta")
-            }
+            // if((dish.user_id == this.restaurant) && (!this.cart.includes(dish))) 
+            // {
+            //     this.cart.push(dish)
+            // } 
+            // else if(this.cart.includes(dish)) {
+            //     this.price = dish.price * dish.quantity
+            //     console.log(this.price)
+            //     for (const i in this.cart) {
+            //         if(this.cart[i].id == dish.id) {
+            //             this.cart[i].quantity += 1 
+            //         }
+            //     }
+            // }
+            // else 
+            // {
+            //     alert("Puoi ordinare da un solo ristorante alla volta")
+            // }
         }, 
         menuShow(user) {
             this.switchMenu = true

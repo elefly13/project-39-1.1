@@ -2573,24 +2573,26 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendCart: function sendCart(dish) {
-      if (this.restaurant == 0) {
-        this.restaurant = dish.user_id;
-      }
-
-      if (dish.user_id == this.restaurant && !this.cart.includes(dish)) {
-        this.cart.push(dish);
-      } else if (this.cart.includes(dish)) {
-        this.price = dish.price * dish.quantity;
-        console.log(this.price);
-
-        for (var i in this.cart) {
-          if (this.cart[i].id == dish.id) {
-            this.cart[i].quantity += 1;
-          }
-        }
-      } else {
-        alert("Puoi ordinare da un solo ristorante alla volta");
-      }
+      this.cart.push(dish); // if(this.restaurant == 0) {
+      //     this.restaurant = dish.user_id
+      // }
+      // if((dish.user_id == this.restaurant) && (!this.cart.includes(dish))) 
+      // {
+      //     this.cart.push(dish)
+      // } 
+      // else if(this.cart.includes(dish)) {
+      //     this.price = dish.price * dish.quantity
+      //     console.log(this.price)
+      //     for (const i in this.cart) {
+      //         if(this.cart[i].id == dish.id) {
+      //             this.cart[i].quantity += 1 
+      //         }
+      //     }
+      // }
+      // else 
+      // {
+      //     alert("Puoi ordinare da un solo ristorante alla volta")
+      // }
     },
     menuShow: function menuShow(user) {
       this.switchMenu = true;
@@ -4550,7 +4552,7 @@ var render = function () {
             },
             [
               _vm._l(_vm.cartContent, function (dish, index) {
-                return _c("div", { key: index, staticClass: "panel-body" }, [
+                return _c("div", { key: dish.id, staticClass: "panel-body" }, [
                   _c("ul", [
                     _c("li", [_vm._v(_vm._s(dish.name))]),
                     _vm._v(" "),
@@ -4598,9 +4600,7 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "panel-footer" }, [
                 _c("span", [
-                  _vm._v(
-                    "totale: " + _vm._s(_vm.price + this.finalPrice) + " €"
-                  ),
+                  _vm._v("totale: " + _vm._s(_vm.price.toFixed(2)) + " €"),
                 ]),
                 _vm._v(" "),
                 _c(
@@ -5597,21 +5597,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("Main"),
-      _vm._v(" "),
-      _c("Menu"),
-      _vm._v(" "),
-      _c("ConfermaOrdine"),
-      _vm._v(" "),
-      _c("OrdineApprovato"),
-      _vm._v(" -->\n "),
-      _c("Api"),
-    ],
-    1
-  )
+  return _c("div", [_c("Main")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

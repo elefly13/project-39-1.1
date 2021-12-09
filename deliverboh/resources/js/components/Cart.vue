@@ -9,8 +9,8 @@
                         </h4>
                     </div>
                     <div id="collapse1" class="panel-collapse collapse">
-                        <div class="panel-body" v-for="(dish, index) in cartContent" :key="index">
-                            <ul>
+                        <div class="panel-body" v-for="(dish, index) in cartContent" :key="dish.id">
+                            <ul v-if="key">
                                 <li>{{ dish.name }}</li>
                                 <li>{{ dish.description}}</li>
                                 <li>{{ dish.ingredients }}</li>
@@ -23,7 +23,7 @@
                             </ul>
                         </div>
                         <div class="panel-footer">
-                            <span>totale: {{ price + this.finalPrice}} €</span>
+                            <span>totale: {{ price.toFixed(2) }} €</span>
                             <form method="post" action="/checkout">
                                <input type="hidden" name="_token" v-bind:value="csrf">
                                  <!-- <input type="hidden" name="prova" v-bind:value="this.prova[0]"> -->

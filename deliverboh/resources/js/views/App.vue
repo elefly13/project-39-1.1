@@ -2,8 +2,8 @@
     <div>
         <!-- <Header /> -->
         <Main />
-        <Menu />
-        <ConfermaOrdine />
+        <!-- <Menu /> -->
+        <!-- <ConfermaOrdine /> -->
         <!-- <OrdineApprovato /> -->
         <!-- <Api /> -->
         <!-- <button @click="prova()">ciao</button> -->
