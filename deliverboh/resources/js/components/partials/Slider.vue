@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 
 .popolari {
-    height: 100%;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,10 +42,11 @@ export default {
   width: 100%;
   padding: 4% 2%;
   box-sizing: border-box;
-  height: 100%;
+  height: 200px;
 }
 
 .box {
+  height: 200px;
   flex: 1;
   overflow: hidden;
   transition: .5s;

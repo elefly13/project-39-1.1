@@ -2887,7 +2887,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main[data-v-b9c20fb8] {\n  width: 100vw;\n  height: calc(100vh - 58.95px);\n}\n.main-top[data-v-b9c20fb8] {\n  display: flex;\n  width: 100vw;\n  min-height: 80%;\n}\n.main-bottom[data-v-b9c20fb8] {\n  width: 100vw;\n  height: 20%;\n  background-color: #F4F0E2;\n}", ""]);
+exports.push([module.i, ".main[data-v-b9c20fb8] {\n  width: 100vw;\n  height: calc(100vh - 58.95px);\n}\n.main-top[data-v-b9c20fb8] {\n  display: flex;\n  width: 100vw;\n  min-height: 80%;\n}\n.main-bottom[data-v-b9c20fb8] {\n  width: 100vw;\n  height: 200px;\n  background-color: #F4F0E2;\n}", ""]);
 
 // exports
 
@@ -3001,7 +3001,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".popolari[data-v-e1ae27ba] {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 40px;\n}\n.container[data-v-e1ae27ba] {\n  display: flex;\n  width: 100%;\n  padding: 4% 2%;\n  box-sizing: border-box;\n  height: 100%;\n}\n.box[data-v-e1ae27ba] {\n  flex: 1;\n  overflow: hidden;\n  transition: 0.5s;\n  margin: 0 2%;\n  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);\n  line-height: 0;\n  z-index: 10;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n}\n.box > img[data-v-e1ae27ba] {\n  width: 200%;\n  height: calc(100% - 10vh);\n  height: 60%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: 0.5s;\n}\n.box > h5[data-v-e1ae27ba] {\n  font-size: 20px;\n  display: block;\n  text-align: center;\n  height: 10vh;\n  line-height: 2.6;\n}\n.box[data-v-e1ae27ba]:hover {\n  flex: 1 1 50%;\n}\n.box:hover > img[data-v-e1ae27ba] {\n  width: 100%;\n  height: 100%;\n}\nspan[data-v-e1ae27ba] {\n  font-size: 12px;\n}", ""]);
+exports.push([module.i, ".popolari[data-v-e1ae27ba] {\n  height: 200px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 40px;\n}\n.container[data-v-e1ae27ba] {\n  display: flex;\n  width: 100%;\n  padding: 4% 2%;\n  box-sizing: border-box;\n  height: 200px;\n}\n.box[data-v-e1ae27ba] {\n  height: 200px;\n  flex: 1;\n  overflow: hidden;\n  transition: 0.5s;\n  margin: 0 2%;\n  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);\n  line-height: 0;\n  z-index: 10;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n}\n.box > img[data-v-e1ae27ba] {\n  width: 200%;\n  height: calc(100% - 10vh);\n  height: 60%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: 0.5s;\n}\n.box > h5[data-v-e1ae27ba] {\n  font-size: 20px;\n  display: block;\n  text-align: center;\n  height: 10vh;\n  line-height: 2.6;\n}\n.box[data-v-e1ae27ba]:hover {\n  flex: 1 1 50%;\n}\n.box:hover > img[data-v-e1ae27ba] {\n  width: 100%;\n  height: 100%;\n}\nspan[data-v-e1ae27ba] {\n  font-size: 12px;\n}", ""]);
 
 // exports
 
@@ -4874,7 +4874,7 @@ var render = function () {
     ),
     _vm._v(" "),
     this.menuFlag == false
-      ? _c("div", { staticClass: "main-bottom" }, [_c("Slider")], 1)
+      ? _c("div", { staticClass: "main-bottom" })
       : _vm._e(),
   ])
 }

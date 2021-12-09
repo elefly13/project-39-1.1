@@ -7,7 +7,7 @@
         </div>
         
         <div class="main-bottom" v-if="this.menuFlag == false">
-            <Slider />
+            <!-- <Slider /> -->
         </div>
         
     </main>
@@ -61,7 +61,7 @@ export default {
 
     .main-bottom {
         width: 100vw;
-        height: 20%;
+        height: 200px;
         background-color: #F4F0E2;
     }
 </style>
