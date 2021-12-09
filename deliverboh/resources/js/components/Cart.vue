@@ -16,7 +16,7 @@
                                 <li>{{ dish.ingredients }}</li>
                                 <li>{{ dish.price }}</li>
                                 <li>
-                                    <button @click="dish.quantity++, moreQuantity(dish.id)">+</button>
+                                    <!-- <button @click="dish.quantity++, moreQuantity(dish.id)">+</button> -->
                                     {{ dish.quantity }}
                                     <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">x</button>
                                 </li>
@@ -54,7 +54,7 @@ export default {
     props: ['cartContent','initialPrice'],
     data() {
         return {
-            prova:this.cartContent,
+            // prova:this.cartContent,
             finalPrice: 0,
             price: 0,
             test: 0,
@@ -88,14 +88,14 @@ export default {
         console(array){
             console.log(array);
         },
-        moreQuantity(id) {
-            for (const i in this.cartContent) {
-                if (this.cartContent[i].id == id) {
-                    this.price += this.cartContent[i].price
-                }
-            }
-            console.log(this.cartContent)
-        },
+        // moreQuantity(id) {
+        //     for (const i in this.cartContent) {
+        //         if (this.cartContent[i].id == id) {
+        //             this.price += this.cartContent[i].price
+        //         }
+        //     }
+        //     console.log(this.cartContent)
+        // },
         lessQuantity(id) {
             for (const i in this.cartContent) {
                 if (this.cartContent[i].id == id) {
