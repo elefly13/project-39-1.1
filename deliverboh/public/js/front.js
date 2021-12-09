@@ -1956,7 +1956,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   props: ['cartContent', 'initialPrice'],
@@ -1971,9 +1970,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   watch: {
-    initialPrice: function initialPrice() {
-      this.finalPrice = this.initialPrice;
-    },
     cartContent: function cartContent() {
       var somma = 0;
 
@@ -1983,10 +1979,6 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.price = somma;
-
-      if (this.cartContent == 0) {
-        this.finalPrice = 0;
-      }
     }
   },
   methods: {
@@ -2573,26 +2565,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendCart: function sendCart(dish) {
-      this.cart.push(dish); // if(this.restaurant == 0) {
-      //     this.restaurant = dish.user_id
-      // }
-      // if((dish.user_id == this.restaurant) && (!this.cart.includes(dish))) 
-      // {
-      //     this.cart.push(dish)
-      // } 
-      // else if(this.cart.includes(dish)) {
-      //     this.price = dish.price * dish.quantity
-      //     console.log(this.price)
-      //     for (const i in this.cart) {
-      //         if(this.cart[i].id == dish.id) {
-      //             this.cart[i].quantity += 1 
-      //         }
-      //     }
-      // }
-      // else 
-      // {
-      //     alert("Puoi ordinare da un solo ristorante alla volta")
-      // }
+      if (this.cart.length === 0) {
+        this.cart.push(dish);
+      } else {
+        this.cart.push(dish);
+
+        for (var i = 0; i < this.cart.length - 1; i++) {
+          if (this.cart[i].id === dish.id && this.cart.length > 1) {
+            this.cart.pop();
+            this.cart[i].quantity++;
+            console.log('sono qui dentro');
+            return;
+          }
+        }
+      }
     },
     menuShow: function menuShow(user) {
       this.switchMenu = true;
@@ -4552,7 +4538,7 @@ var render = function () {
             },
             [
               _vm._l(_vm.cartContent, function (dish, index) {
-                return _c("div", { key: dish.id, staticClass: "panel-body" }, [
+                return _c("div", { key: index, staticClass: "panel-body" }, [
                   _c("ul", [
                     _c("li", [_vm._v(_vm._s(dish.name))]),
                     _vm._v(" "),
@@ -4560,20 +4546,9 @@ var render = function () {
                     _vm._v(" "),
                     _c("li", [_vm._v(_vm._s(dish.ingredients))]),
                     _vm._v(" "),
-                    _c("li", [_vm._v(_vm._s(dish.price))]),
+                    _c("li", [_vm._v("€ " + _vm._s(dish.price))]),
                     _vm._v(" "),
                     _c("li", [
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function ($event) {
-                              dish.quantity++, _vm.moreQuantity(dish.id)
-                            },
-                          },
-                        },
-                        [_vm._v("+")]
-                      ),
                       _vm._v(
                         "\n                                " +
                           _vm._s(dish.quantity) +
@@ -4591,7 +4566,7 @@ var render = function () {
                             },
                           },
                         },
-                        [_vm._v("x")]
+                        [_vm._v("-")]
                       ),
                     ]),
                   ]),
@@ -4600,7 +4575,7 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "panel-footer" }, [
                 _c("span", [
-                  _vm._v("totale: " + _vm._s(_vm.price.toFixed(2)) + " €"),
+                  _vm._v("totale: € " + _vm._s(_vm.price.toFixed(2))),
                 ]),
                 _vm._v(" "),
                 _c(
@@ -4612,10 +4587,10 @@ var render = function () {
                       domProps: { value: _vm.csrf },
                     }),
                     _vm._v(" "),
-                    _vm._l(_vm.cartContent, function (dish) {
+                    _vm._l(_vm.cartContent, function (dish, index) {
                       return _c(
                         "div",
-                        { key: dish.id, staticClass: "panel-body" },
+                        { key: index, staticClass: "panel-body" },
                         [
                           _c("input", {
                             attrs: { type: "hidden", name: "price[]" },
@@ -5289,7 +5264,7 @@ var render = function () {
                       _vm._v(" "),
                       _c("p", [_vm._v(_vm._s(dish.description))]),
                       _vm._v(" "),
-                      _c("h4", [_vm._v(_vm._s(dish.price))]),
+                      _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
                       _vm._v(" "),
                       _c("p", [_vm._v("Ingredienti:")]),
                       _vm._v(" "),
