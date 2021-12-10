@@ -8,6 +8,7 @@
                 <span class="saluto">Benvenuto nel nostro ristorante</span>
                 <span class="user-name">{{ this.restaurantName }}</span>
                 <span class="menu-text">Il nostro menu</span>
+                <button class="button" @click="emptyCart()">svuota carrello</button>
             </div>
         </div>
         
@@ -21,7 +22,7 @@
             <div v-if="this.switchMenu == true" class="box-menu">
                 <Cart :cartContent="cart" :initialPrice="price"/> 
                 <div v-for="(dish, index) in this.filterDishes" :key="index">
-                    <div class="image">
+                    <div v-if="dish.visibility == 1" class="image">
                         <img :src="'./storage/' + dish.image" :alt="dish.name">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
@@ -139,31 +140,35 @@ export default {
         },
     },
     methods: {
+        emptyCart(){
+            this.cart = []
+            this.restaurant = 0
+            return
+        },
         sendCart(dish) {
             
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
-            } 
-            if (dish.user_id == this.restaurant){
-                if(this.cart.length === 0){
-                    this.cart.push(dish)
-                }else{
-                        this.cart.push(dish)
-                        for (let i = 0; i < this.cart.length - 1; i++){
-                            if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
-                            this.cart.pop();
-                            this.cart[i].quantity++;
-                            // console.log('sono qui dentro')
-                            return
-                            }                             
-                        }
+            }
 
-                }
-             } else {
-                 alert('svuota il carrello per ordinare da un ristorante diverso    ')
-             }
-            
-        }, 
+            if(this.restaurant ==  dish.user_id){
+            if(this.cart.length === 0){
+                this.cart.push(dish)
+            }else{
+                    this.cart.push(dish)
+                    for (let i = 0; i < this.cart.length - 1; i++){
+                        if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
+                        this.cart.pop();
+                        this.cart[i].quantity++;
+                        console.log('sono qui dentro')
+                        return
+                        }                             
+                    }
+            }
+            } else {
+                alert('devi svuotare il carrello prima di poter ordinare di nuovo da questo ristorante')
+            }
+        },
         menuShow(user) {
             this.switchMenu = true
             this.restaurantName = user.name

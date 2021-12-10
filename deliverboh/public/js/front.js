@@ -2480,6 +2480,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2574,12 +2575,17 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    emptyCart: function emptyCart() {
+      this.cart = [];
+      this.restaurant = 0;
+      return;
+    },
     sendCart: function sendCart(dish) {
       if (this.restaurant == 0) {
         this.restaurant = dish.user_id;
       }
 
-      if (dish.user_id == this.restaurant) {
+      if (this.restaurant == dish.user_id) {
         if (this.cart.length === 0) {
           this.cart.push(dish);
         } else {
@@ -2588,14 +2594,14 @@ __webpack_require__.r(__webpack_exports__);
           for (var i = 0; i < this.cart.length - 1; i++) {
             if (this.cart[i].id === dish.id && this.cart.length > 1) {
               this.cart.pop();
-              this.cart[i].quantity++; // console.log('sono qui dentro')
-
+              this.cart[i].quantity++;
+              console.log('sono qui dentro');
               return;
             }
           }
         }
       } else {
-        alert('svuota il carrello per ordinare da un ristorante diverso    ');
+        alert('devi svuotare il carrello prima di poter ordinare di nuovo da questo ristorante');
       }
     },
     menuShow: function menuShow(user) {
@@ -5129,6 +5135,19 @@ var render = function () {
               _c("span", { staticClass: "menu-text" }, [
                 _vm._v("Il nostro menu"),
               ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button",
+                  on: {
+                    click: function ($event) {
+                      return _vm.emptyCart()
+                    },
+                  },
+                },
+                [_vm._v("svuota carrello")]
+              ),
             ])
           : _vm._e(),
       ],
@@ -5178,34 +5197,39 @@ var render = function () {
               _vm._v(" "),
               _vm._l(this.filterDishes, function (dish, index) {
                 return _c("div", { key: index }, [
-                  _c("div", { staticClass: "image" }, [
-                    _c("img", {
-                      attrs: { src: "./storage/" + dish.image, alt: dish.name },
-                    }),
-                    _vm._v(" "),
-                    _c("h4", [_vm._v(_vm._s(dish.name))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(dish.description))]),
-                    _vm._v(" "),
-                    _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Ingredienti:")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "button",
-                        on: {
-                          click: function ($event) {
-                            return _vm.sendCart(dish)
+                  dish.visibility == 1
+                    ? _c("div", { staticClass: "image" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "./storage/" + dish.image,
+                            alt: dish.name,
                           },
-                        },
-                      },
-                      [_vm._v("Aggiungi al carrello")]
-                    ),
-                  ]),
+                        }),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v(_vm._s(dish.name))]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(dish.description))]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Ingredienti:")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(dish.ingredients))]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "button",
+                            on: {
+                              click: function ($event) {
+                                return _vm.sendCart(dish)
+                              },
+                            },
+                          },
+                          [_vm._v("Aggiungi al carrello")]
+                        ),
+                      ])
+                    : _vm._e(),
                 ])
               }),
             ],
