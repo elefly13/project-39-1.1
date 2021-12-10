@@ -85,14 +85,6 @@ Route::post('/checkout', function(Request $request){
 }); 
 
 Route::post('/conferma', function(Request $request){
-     
-    // $order= [
-    //     $request->lastname,
-    //     $request->name,
-    //     $request->lastname,
-    //     // $request->lastname
-    // ];
-    // dd($order);
     $gateway = new Braintree\Gateway([
         'environment' => 'sandbox',
         'merchantId' => 'zfjjgykn84td5wdp',
@@ -133,6 +125,7 @@ Route::post('/conferma', function(Request $request){
             $prova= new DishOrder();
             $prova['dish_id']=$request['id'][$i];
             $prova['order_id']=$new_order['id'];
+            $prova['quantity']=$request['quantity'][$i];
             $prova->save();
         };
         $dish = Dish::findOrFail($prova['dish_id']);
@@ -141,13 +134,13 @@ Route::post('/conferma', function(Request $request){
             $q->where('user_id', $dish['user_id']);
         })->get();
         $mailristorante=$user[0]['email'];
+        // spedita mail conferma
         Mail::to( $mailristorante)->send(new SendNewMail());
         Mail::to($new_order['email'])->send(new SendNewMail());
  
         $transaction = $result->transaction;
         return view('api.home');
-        // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
-        // return back()->with('success_message','Transaction complete ID:'. $transaction->id);
+    
     } else {
         $errorString = "";
         $new_order['status']=0;
