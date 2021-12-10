@@ -26,7 +26,7 @@
                         <img :src="'./storage/' + dish.image" :alt="dish.name">
                         <h4>{{ dish.name }}</h4>
                         <p>{{ dish.description }}</p>
-                        <h4>{{ dish.price }}</h4>
+                        <h4>€ {{ dish.price }}</h4>
                         <p>Ingredienti:</p>
                         <p>{{ dish.ingredients }}</p>
                         <!-- <p>Allergeni:</p>
@@ -146,6 +146,7 @@ export default {
             return
         },
         sendCart(dish) {
+            
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
             }
@@ -297,6 +298,13 @@ export default {
             flex-wrap: wrap;
         }
 
+        // .box-user {
+        //     width: 93%;
+        //     height: 60%;
+        //     overflow-y: auto;
+        //     display: flex;
+        //     flex-wrap: wrap;
+        // }
         .box-menu {
             width: 65%;
             height: 530px;
