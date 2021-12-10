@@ -21,14 +21,12 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        {{ __('Benvenuto nella tua Dashboard') }}
+                       
                     </div>
                     
                     <!-- Links -->
                     <ul class="navbar-nav d-flex align-items-center">
-                        <li class="nav-item mx-3">
-                            <span class="text-name-dash">Nome del ristorante</span>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-link-dash" href="{{route('admin.dishes.index')}}">Menu</a>
                         </li>
