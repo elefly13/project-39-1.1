@@ -140,8 +140,13 @@ export default {
     },
     methods: {
         sendCart(dish) {
+            
+            if(this.restaurant == 0) {
+                this.restaurant = dish.user_id
+            }
 
-            if(this.cart.length === 0){
+
+            if(this.cart.length === 0 && dish.user_id == this.restaurant){
                 this.cart.push(dish)
             }else{
                     this.cart.push(dish)
@@ -149,7 +154,7 @@ export default {
                         if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
                         this.cart.pop();
                         this.cart[i].quantity++;
-                        console.log('sono qui dentro')
+                        // console.log('sono qui dentro')
                         return
                         }                             
                     }
