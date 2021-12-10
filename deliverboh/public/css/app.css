@@ -13293,7 +13293,7 @@ nav {
 
 .big-box-dish {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
@@ -13465,14 +13465,11 @@ nav {
 }
 
 .box-order-index {
-  width: 100%;
-  height: 70vh;
-  margin: 0 auto;
+  height: 80vh;
   overflow: auto;
 }
 
 .box-card-order {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13482,6 +13479,11 @@ nav {
   box-shadow: 5px 10px 18px #9c9b9b;
   padding: 10px;
   margin: 20px;
+  overflow-y: hidden;
+}
+
+.row-head {
+  background-color: #f1c692;
 }
 
 .big-box {
@@ -13603,4 +13605,24 @@ nav {
 
 .text-totale-check {
   font-size: 20px;
+}
+
+.big-box-sta {
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.box-chart {
+  box-shadow: 5px 10px 18px #9c9b9b;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.text-h3-stat {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.text-p-stat {
+  padding-left: 20px;
 }

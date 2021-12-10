@@ -2575,19 +2575,27 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendCart: function sendCart(dish) {
-      if (this.cart.length === 0) {
-        this.cart.push(dish);
-      } else {
-        this.cart.push(dish);
+      if (this.restaurant == 0) {
+        this.restaurant = dish.user_id;
+      }
 
-        for (var i = 0; i < this.cart.length - 1; i++) {
-          if (this.cart[i].id === dish.id && this.cart.length > 1) {
-            this.cart.pop();
-            this.cart[i].quantity++;
-            console.log('sono qui dentro');
-            return;
+      if (dish.user_id == this.restaurant) {
+        if (this.cart.length === 0) {
+          this.cart.push(dish);
+        } else {
+          this.cart.push(dish);
+
+          for (var i = 0; i < this.cart.length - 1; i++) {
+            if (this.cart[i].id === dish.id && this.cart.length > 1) {
+              this.cart.pop();
+              this.cart[i].quantity++; // console.log('sono qui dentro')
+
+              return;
+            }
           }
         }
+      } else {
+        alert('svuota il carrello per ordinare da un ristorante diverso    ');
       }
     },
     menuShow: function menuShow(user) {
@@ -5170,45 +5178,6 @@ var render = function () {
               _vm._v(" "),
               _vm._l(this.filterDishes, function (dish, index) {
                 return _c("div", { key: index }, [
-<<<<<<< HEAD
-                  _c(
-                    "div",
-                    { staticClass: "image" },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "./storage/" + dish.image,
-                          alt: dish.name,
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c("h4", [_vm._v(_vm._s(dish.name))]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v(_vm._s(dish.description))]),
-                      _vm._v(" "),
-                      _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("Ingredienti:")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("Allergeni:")]),
-                      _vm._v(" "),
-                      _vm._l(_vm.allergenDishes, function (allergenDish) {
-                        return _c("p", { key: allergenDish["id"] }, [
-                          _vm._v(_vm._s(allergenDish.allergen_id)),
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "button",
-                          on: {
-                            click: function ($event) {
-                              return _vm.sendCart(dish)
-                            },
-=======
                   _c("div", { staticClass: "image" }, [
                     _c("img", {
                       attrs: { src: "./storage/" + dish.image, alt: dish.name },
@@ -5218,7 +5187,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("p", [_vm._v(_vm._s(dish.description))]),
                     _vm._v(" "),
-                    _c("h4", [_vm._v(_vm._s(dish.price))]),
+                    _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
                     _vm._v(" "),
                     _c("p", [_vm._v("Ingredienti:")]),
                     _vm._v(" "),
@@ -5231,7 +5200,6 @@ var render = function () {
                         on: {
                           click: function ($event) {
                             return _vm.sendCart(dish)
->>>>>>> main
                           },
                         },
                       },
@@ -18646,11 +18614,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/elena/Desktop/classe 39/Esecizio Finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\felk0\OneDrive\Desktop\Boolan\project-39-1.1-1\deliverboh\resources\js\front.js */"./resources/js/front.js");
->>>>>>> main
 
 
 /***/ })
