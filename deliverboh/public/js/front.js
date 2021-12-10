@@ -1926,116 +1926,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   props: ['cartContent', 'initialPrice'],
-  data: function data() {
-    return {
-      // prova:this.cartContent,
-      finalPrice: 0,
-      price: 0,
-      test: 0,
-      api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    };
-  },
-  watch: {
-    initialPrice: function initialPrice() {
-      this.finalPrice = this.initialPrice;
-    },
-    cartContent: function cartContent() {
-      var somma = 0;
-
-      for (var i in this.cartContent) {
-        var totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
-        somma += totalPrice;
-      }
-
-      this.price = somma;
-
-      if (this.cartContent == 0) {
-        this.finalPrice = 0;
-      }
-    }
-  },
   methods: {
     openNav: function openNav() {
       document.getElementById("mySidepanel").style.width = "250px";
+      document.getElementById("openbtn").style.width = "250px";
       console.log('ciao');
     },
     closeNav: function closeNav() {
       document.getElementById("mySidepanel").style.width = "60px";
+      document.getElementById("openbtn").style.width = "60px";
       console.log('ciao');
-    },
-    console: function (_console) {
-      function console(_x) {
-        return _console.apply(this, arguments);
-      }
-
-      console.toString = function () {
-        return _console.toString();
-      };
-
-      return console;
-    }(function (array) {
-      console.log(array);
-    }),
-    // moreQuantity(id) {
-    //     for (const i in this.cartContent) {
-    //         if (this.cartContent[i].id == id) {
-    //             this.price += this.cartContent[i].price
-    //         }
-    //     }
-    //     console.log(this.cartContent)
-    // },
-    lessQuantity: function lessQuantity(id) {
-      for (var i in this.cartContent) {
-        if (this.cartContent[i].id == id) {
-          this.price -= this.cartContent[i].price;
-        }
-      }
     }
   }
 });
@@ -2872,7 +2775,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-b7f93bea] {\n  list-style: none;\n}\n.area-carrello[data-v-b7f93bea] {\n  position: absolute;\n  z-index: 99;\n  right: 0;\n}\n.area-carrello .panel-group[data-v-b7f93bea] {\n  padding: 20px;\n  background-color: fdf6e0;\n  width: 400px;\n  border-bottom-left-radius: 20px;\n  box-shadow: 5px 10px 18px #cfcece;\n}\n.area-carrello .panel-group .cart-title[data-v-b7f93bea] {\n  text-align: center;\n}\n.area-carrello .panel-group .cart-title a[data-v-b7f93bea] {\n  color: #439373;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea] {\n  font-size: 15px;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea]:hover {\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.cart[data-v-b7f93bea] {\n  position: relative;\n}\n.cart-logo[data-v-b7f93bea] {\n  width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-self: flex-end;\n  width: 0;\n  position: relative;\n  z-index: 99;\n  background-color: white;\n  overflow: hidden;\n  transition: 0.5s;\n}\n.sidepanel a[data-v-b7f93bea] {\n  padding: 8px 8px 8px 32px;\n  text-decoration: none;\n  font-size: 25px;\n  display: block;\n  transition: 0.3s;\n}\n.sidepanel a[data-v-b7f93bea]:hover {\n  color: #f1f1f1;\n}\n.sidepanel .closebtn[data-v-b7f93bea] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  font-size: 36px;\n}\n.openbtn[data-v-b7f93bea] {\n  font-size: 20px;\n  cursor: pointer;\n  background-color: white;\n  padding: 10px 15px;\n  border: none;\n}", ""]);
+exports.push([module.i, ".cart[data-v-b7f93bea] {\n  position: relative;\n}\n.cart-logo[data-v-b7f93bea] {\n  width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n  display: flex;\n  width: 60px;\n  position: relative;\n  z-index: 99;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  background-color: white;\n  overflow: hidden;\n  transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n  margin: 10px 0;\n  text-decoration: none;\n  display: block;\n  transition: 0.3s;\n}\n.icon_social[data-v-b7f93bea] {\n  height: 20px;\n  width: 20px;\n}\n.hastag[data-v-b7f93bea] {\n  width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n  font-size: 20px;\n  cursor: pointer;\n  background-color: white;\n  padding: 10px 15px;\n  border: none;\n  width: 60px;\n}", ""]);
 
 // exports
 
@@ -4479,49 +4382,61 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "cart" }, [
-    _c(
-      "button",
-      {
-        staticClass: "openbtn",
-        on: {
-          click: function ($event) {
-            return _vm.openNav()
-          },
-        },
-      },
-      [
-        _c("img", {
-          staticClass: "cart-logo",
-          attrs: { src: "../images/icons/carrello.svg", alt: "" },
-        }),
-      ]
-    ),
-    _vm._v(" "),
     _c("div", { staticClass: "sidepanel", attrs: { id: "mySidepanel" } }, [
-      _c(
-        "a",
-        {
-          staticClass: "closebtn",
-          on: {
-            click: function ($event) {
-              return _vm.closeNav()
+      _c("div", { staticClass: "sidepanel-left" }, [
+        _c(
+          "a",
+          {
+            staticClass: "openbtn",
+            on: {
+              click: function ($event) {
+                return _vm.openNav()
+              },
             },
           },
-        },
-        [_vm._v("×")]
-      ),
+          [
+            _c("img", {
+              staticClass: "cart-logo",
+              attrs: { src: "../images/icons/cart.svg", alt: "" },
+            }),
+          ]
+        ),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "" } }, [
+          _c("img", {
+            staticClass: "hastag",
+            attrs: { src: "../images/icons/hastag.svg", alt: "" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "closebtn",
+            on: {
+              click: function ($event) {
+                return _vm.closeNav()
+              },
+            },
+          },
+          [_vm._v("×")]
+        ),
+      ]),
       _vm._v(" "),
-      _c("a", [_vm._v("About")]),
-      _vm._v(" "),
-      _c("a", [_vm._v("Services")]),
-      _vm._v(" "),
-      _c("a", [_vm._v("Clients")]),
-      _vm._v(" "),
-      _c("a", [_vm._v("Contact")]),
+      _vm._m(0),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sidepanel-right" }, [
+      _c("h3", [_vm._v("Carrello")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
