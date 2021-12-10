@@ -143,23 +143,25 @@ export default {
             
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
-            }
-
-
-            if(this.cart.length === 0 && dish.user_id == this.restaurant){
-                this.cart.push(dish)
-            }else{
+            } 
+            if (dish.user_id == this.restaurant){
+                if(this.cart.length === 0){
                     this.cart.push(dish)
-                    for (let i = 0; i < this.cart.length - 1; i++){
-                        if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
-                        this.cart.pop();
-                        this.cart[i].quantity++;
-                        // console.log('sono qui dentro')
-                        return
-                        }                             
-                    }
+                }else{
+                        this.cart.push(dish)
+                        for (let i = 0; i < this.cart.length - 1; i++){
+                            if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
+                            this.cart.pop();
+                            this.cart[i].quantity++;
+                            // console.log('sono qui dentro')
+                            return
+                            }                             
+                        }
 
-            }
+                }
+             } else {
+                 alert('svuota il carrello per ordinare da un ristorante diverso    ')
+             }
             
         }, 
         menuShow(user) {
