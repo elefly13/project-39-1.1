@@ -155,6 +155,9 @@
     @foreach ($cart['dish_id'] as $pip)
     <input  type="hidden" name="id[]" value="{{$pip}}">
     @endforeach
+    @for ($i=0; $i< count( $cart['name'] ); $i++ )
+  <input  type="hidden" name="quantity[]" value="{{$cart['quantity'][$i]}}">
+    @endfor
 
                         <div class="col-md-6">
                             <div class="form-group">
