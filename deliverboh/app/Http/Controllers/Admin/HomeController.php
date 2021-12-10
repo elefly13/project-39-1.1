@@ -41,13 +41,6 @@ class HomeController extends Controller
            array_push($data_month, $temp);
         };
 
-
-        $data_year=[];
-        for ($i = 0; $i <= 4; $i++) {
-            $temp =count( Order::whereYear('created_at', ($year_now - $i))->get());
-           array_push($data_year, $temp);
-        };
-       
        
         $test=Order::whereHas('dishes',function($q ) use ($user) {
             $q->where('user_id', $user['id']);
@@ -57,8 +50,10 @@ class HomeController extends Controller
           for ($i = 0; $i < count($test); $i++){
             $sum=$test[$i]['total']+$sum;
         };
+
+
+
     
-         
-        return view('admin.statistiche',compact('test'));
+        return view('admin.statistiche',compact('sum'));
     }
 }

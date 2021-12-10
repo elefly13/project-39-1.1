@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Category;
 use Illuminate\Support\Facades\Schema;
+use ConsoleTVs\Charts\Registrar as Charts;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,11 +25,18 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Charts $charts)
     {
         if (Schema::hasTable('categories')) {
             $categories = Category::all();
             View::share('categories', $categories);
         }
+        $charts->register([
+            \App\Charts\SampleChart::class,
+            \App\Charts\SampleChart3::class,
+            \App\Charts\SampleChart4::class,
+            \App\Charts\SampleChart2::class
+        ]);
     }
+  
 }
