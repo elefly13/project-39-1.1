@@ -58,6 +58,9 @@
                     <h4 class="titolo-check">Inserisci i tuoi dati per la consegna</h4>
                     <form class="row coll-12" method="post" id="payment-form" action="{{ url('/conferma') }}">
                         @csrf
+                        @for ($i=0; $i< count( $cart['name'] ); $i++ )
+                            <input  type="hidden" name="quantity[]" value="{{$cart['quantity'][$i]}}">
+                         @endfor
                         @foreach ($cart['dish_id'] as $pip)
                         <input  type="hidden" name="id[]" value="{{$pip}}">
                         @endforeach
@@ -86,7 +89,7 @@
                                 <span class="input-label text-totale-check">Totale</span>
                                 <span class="input-wrapper amount-wrapper">
                                     <div>€ {{$cart['sum']}}</div>
-                                    <input class=" my-total " id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="€ {{$cart['sum']}}" readonly>
+                                    <input class=" my-total " id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{$cart['sum']}}" readonly>
                                 </span>
                             </label>
                         </div>
