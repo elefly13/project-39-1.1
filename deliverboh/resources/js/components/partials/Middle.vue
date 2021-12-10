@@ -140,21 +140,28 @@ export default {
     },
     methods: {
         sendCart(dish) {
-
-            if(this.cart.length === 0){
-                this.cart.push(dish)
-            }else{
+            
+            if(this.restaurant == 0) {
+                this.restaurant = dish.user_id
+            } 
+            if (dish.user_id == this.restaurant){
+                if(this.cart.length === 0){
                     this.cart.push(dish)
-                    for (let i = 0; i < this.cart.length - 1; i++){
-                        if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
-                        this.cart.pop();
-                        this.cart[i].quantity++;
-                        console.log('sono qui dentro')
-                        return
-                        }                             
-                    }
+                }else{
+                        this.cart.push(dish)
+                        for (let i = 0; i < this.cart.length - 1; i++){
+                            if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
+                            this.cart.pop();
+                            this.cart[i].quantity++;
+                            // console.log('sono qui dentro')
+                            return
+                            }                             
+                        }
 
-            }
+                }
+             } else {
+                 alert('svuota il carrello per ordinare da un ristorante diverso    ')
+             }
             
         }, 
         menuShow(user) {
