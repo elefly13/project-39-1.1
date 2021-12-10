@@ -26,8 +26,8 @@
 						<input value="{{old('name')}}" type="text-area" name="ingredients" class="form-control my-form" id="ingredients">     
 					</div>
 					<div class="form-group">
-						<label for="price">price</label>
-						<input step="any" value="{{old('price')}}" type="number" name="price" class="form-control  @error('price') is-invalid @enderror" id="price" placeholder="inserisci il prezzo">
+						<label for="price">Prezzo</label>
+						<input step="any" value="{{old('price')}}" type="number" name="price" class="form-control my-form @error('price') is-invalid @enderror" id="price" placeholder="inserisci il prezzo">
 						@error('price')
 							<div class="alert alert-danger">{{ $message }}  </div>
 						@enderror
@@ -47,10 +47,6 @@
 						<label for="visibility">Visibilità</label>
 						<input   type="checkbox" name="visibility" class="form-control my-form" id="visibility" value="{{ ('checked' ? 1 : 0)}}">     
 					</div>
-					{{-- <div class="form-group">
-						<label for="lastname">lastname</label> INSERIRE IMMAGINE
-						<input value="{{old('lastname_user')}}" type="text" name="lastname_user" class="form-control" id="lastname" placeholder="buyer lastname">     
-					</div> --}}
 					<div class="form-group">
 						<label for="course">Portata</label>
 						<input value="{{old('course')}}" type="text" name="course" class="form-control my-form @error('price') is-invalid @enderror" id="course" placeholder="scrivi il tipo di portata">  

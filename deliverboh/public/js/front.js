@@ -2749,7 +2749,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SliderCard"
+  name: "Slider"
 });
 
 /***/ }),
@@ -5360,7 +5360,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "box" }, [
-          _c("img", { attrs: { src: "images/image-res/res-2.jpg", alt: "" } }),
+          _c("img", { attrs: { src: "images/image-res/res-6.jpg", alt: "" } }),
           _vm._v(" "),
           _c("h5", [_vm._v("Ristorante uno")]),
         ]),
@@ -18623,7 +18623,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/elena/Desktop/classe 39/Esecizio Finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
