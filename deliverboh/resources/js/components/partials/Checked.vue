@@ -80,11 +80,14 @@ export default {
         // height: 5%;
         width: 250px;
         height: 40px;
+        height: 4vh;
+
     }
 
     [type=checkbox]:checked + label {
         background-color:#638F64;
         color: white;
+        
     }
 
     .check-button {
@@ -94,6 +97,8 @@ export default {
         // min-width: 120px;
         max-width: 250px;
         height: 40px;
+        max-width: 250px;
+        height: 4vh;
         // width: 100%;
         // height: 100%;
         border-top-right-radius: 7px;

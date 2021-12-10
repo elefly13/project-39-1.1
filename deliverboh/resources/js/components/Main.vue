@@ -60,7 +60,7 @@ export default {
     .box-main {
         display: flex;
         width: 100vw;
-        min-height: calc(100% - 250px);
+        min-height: calc(100% - 150px);
         // background: yellow;
     }
 
@@ -82,7 +82,7 @@ export default {
 
     .main-bottom {
         width: 100vw;
-        height: 250px;
+        height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
