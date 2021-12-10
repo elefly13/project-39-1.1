@@ -83,7 +83,7 @@ class OrderController extends Controller
             $q->where('order_id', $order['id']);
         })->get();
        
-        return view('admin.orders.show', compact('carrello','quanto'));
+        return view('admin.orders.show', compact('carrello','quanto', 'order'));
     }
 
     /**
