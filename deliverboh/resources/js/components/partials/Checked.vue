@@ -60,10 +60,13 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding-top: 3%;
-        width: 18%;
+        justify-content: center;
+        // padding-top: 3%;
+        // width: 18%;
+        width: 100%;
         height: 100%;
-
+        // background: rosybrown;
+        
         .check-list {
             width: 100%;
             height: 6.5%;
@@ -73,8 +76,10 @@ export default {
 
     .btn-check { 
         opacity: 0;
-        width: 12.6%;
-        height: 5%;
+        // width: 12.6%;
+        // height: 5%;
+        width: 250px;
+        height: 40px;
     }
 
     [type=checkbox]:checked + label {
@@ -86,14 +91,68 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        min-width: 120px;
-        width: 70%;
-        height: 100%;
+        // min-width: 120px;
+        max-width: 250px;
+        height: 40px;
+        // width: 100%;
+        // height: 100%;
         border-top-right-radius: 7px;
         border-bottom-right-radius: 7px;
         border-top: 1px solid #638F64;
         border-bottom: 1px solid #638F64;
         border-right: 1px solid #638F64;
+    }
+
+    @media screen and (max-width: 575px) {
+            
+    .check-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        // padding-top: 3%;
+        // width: 18%;
+        width: 50%;
+        height: 100%;
+        background: rosybrown;
+        
+        .check-list {
+            width: 100%;
+            height: 6.5%;
+            margin: 5px 0;
+        }
+    }
+
+    .btn-check { 
+        opacity: 0;
+        // width: 12.6%;
+        // height: 5%;
+        width: 250px;
+        height: 40px;
+    }
+
+    [type=checkbox]:checked + label {
+        background-color:#638F64;
+        color: white;
+    }
+
+    .check-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // min-width: 120px;
+        max-width: 250px;
+        height: 40px;
+        // width: 100%;
+        // height: 100%;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border: none;
+        // border-top: 1px solid #bb0c26;
+        // border-bottom: 1px solid #bb0c26;
+        // border-right: 1px solid #bb0c26;
+    }
+
     }
 
 </style>

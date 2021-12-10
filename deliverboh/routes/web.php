@@ -150,7 +150,9 @@ Route::post('/conferma', function(Request $request){
         Mail::to($new_order['email'])->send(new SendNewMail());
  
         $transaction = $result->transaction;
-        return view('api.home');
+        // return view('api.home');
+        return view('ordine-ok');
+
         // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
         // return back()->with('success_message','Transaction complete ID:'. $transaction->id);
     } else {
@@ -163,7 +165,8 @@ Route::post('/conferma', function(Request $request){
 
         // $_SESSION["errors"] = $errorString;
         // header("Location: " . $baseUrl . "index.php");
-        return back()->withErrors('An error occurred with the message: '.$result->message);
+        // return back()->withErrors('An error occurred with the message: '.$result->message);
+        return view('ordine-fallito');
         // qui va la pagina ordine non ok
     }
 });

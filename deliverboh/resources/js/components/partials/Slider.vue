@@ -23,18 +23,17 @@
 
 <script>
 export default {
-    name: "Slider",
+    name: "SliderCard",
 }
 </script>
 
 <style lang="scss" scoped>
 
 .popolari {
-    height: 200px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
 }
 
 .container {
@@ -42,36 +41,23 @@ export default {
   width: 100%;
   padding: 4% 2%;
   box-sizing: border-box;
-  height: 200px;
+  height: 100%;
 }
 
-.container-slider {
-    width: 75%;
-    height: 100%;
-    display: flex;
-    // justify-content: space-around;
-    // justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    // overflow: auto;
-    // position: relative;
-    scroll-behavior: smooth;
-    // background: chartreuse;
-// .box {
-//   height: 200px;
-//   flex: 1;
-//   overflow: hidden;
-//   transition: .5s;
-//   margin: 0 2%;
-//   box-shadow: 0 20px 30px rgba(0,0,0,.1);
-//   line-height: 0;
-//   z-index: 10;
-//   text-align: center;
-//   border: 0.3px solid rgb(228, 228, 228);
-//   border-top-left-radius: 30px;
-//   border-bottom-right-radius: 30px;
-//   background: rgb(255, 255, 255);
- }
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+  z-index: 10;
+  text-align: center;
+  border: 0.3px solid rgb(228, 228, 228);
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: rgb(255, 255, 255);
+}
 
 .box > img {
   width: 200%;

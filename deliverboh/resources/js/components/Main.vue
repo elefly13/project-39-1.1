@@ -1,15 +1,17 @@
 <template>
     <main class="main">
         
-        <div class="main-top">
-            <Checked @selCategories = "getCategories" :emptycheck="menuFlag" />
-            <Middle class="middle" @search= "getCategories" @menuFlag="myflag"  :categoriesArray="categories" />
+        <div class="box-main">
+            <div class="sidbar col-lg-2 col-sm-2">
+                <Checked @selCategories = "getCategories" :emptycheck="menuFlag" />
+            </div>
+            <div class="main-right col-lg-10 col-sm-10">
+                <Middle @search= "getCategories" @menuFlag="myflag"  :categoriesArray="categories" />
+            </div>
         </div>
-        
         <div class="main-bottom" v-if="this.menuFlag == false">
-            <!-- <Slider /> -->
+            <Slider />
         </div>
-        
     </main>
 </template>
 
@@ -51,17 +53,39 @@ export default {
     .main{
         width: 100vw;
         height: calc(100vh - 58.95px);
+        // background: violet;
     }
 
-    .main-top {
+
+    .box-main {
         display: flex;
         width: 100vw;
-        min-height: 80%;
+        min-height: calc(100% - 250px);
+        // background: yellow;
+    }
+
+    .sidbar {
+        // min-width: 300px;
+        // width: 15%;
+        padding: 20px 0px;
+        // background: red;
+    }
+
+    .main-right {
+        width: 100%;
+        background-image: url('/images/unarota.svg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        // background-position: bottom right;
+       background-position: 100% 0%; 
     }
 
     .main-bottom {
         width: 100vw;
-        height: 200px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #F4F0E2;
     }
 </style>

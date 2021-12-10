@@ -1923,100 +1923,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   props: ['cartContent', 'initialPrice'],
-  data: function data() {
-    return {
-      // prova:this.cartContent,
-      finalPrice: 0,
-      price: 0,
-      test: 0,
-      api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    };
-  },
-  watch: {
-    initialPrice: function initialPrice() {
-      this.finalPrice = this.initialPrice;
-    },
-    cartContent: function cartContent() {
-      var somma = 0;
-
-      for (var i in this.cartContent) {
-        var totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
-        somma += totalPrice;
-      }
-
-      this.price = somma;
-
-      if (this.cartContent == 0) {
-        this.finalPrice = 0;
-      }
-    }
-  },
   methods: {
-    console: function (_console) {
-      function console(_x) {
-        return _console.apply(this, arguments);
-      }
-
-      console.toString = function () {
-        return _console.toString();
-      };
-
-      return console;
-    }(function (array) {
-      console.log(array);
-    }),
-    // moreQuantity(id) {
-    //     for (const i in this.cartContent) {
-    //         if (this.cartContent[i].id == id) {
-    //             this.price += this.cartContent[i].price
-    //         }
-    //     }
-    //     console.log(this.cartContent)
-    // },
-    lessQuantity: function lessQuantity(id) {
-      for (var i in this.cartContent) {
-        if (this.cartContent[i].id == id) {
-          this.price -= this.cartContent[i].price;
-        }
-      }
+    openNav: function openNav() {
+      document.getElementById("mySidepanel").style.width = "250px";
+      document.getElementById("openbtn").style.width = "250px";
+      console.log('ciao');
+    },
+    closeNav: function closeNav() {
+      document.getElementById("mySidepanel").style.width = "60px";
+      document.getElementById("openbtn").style.width = "60px";
+      console.log('ciao');
     }
   }
 });
@@ -2142,6 +2061,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_Middle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./partials/Middle */ "./resources/js/components/partials/Middle.vue");
 /* harmony import */ var _partials_Checked_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/Checked.vue */ "./resources/js/components/partials/Checked.vue");
 /* harmony import */ var _partials_Slider_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/Slider.vue */ "./resources/js/components/partials/Slider.vue");
+//
+//
 //
 //
 //
@@ -2485,6 +2406,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -2528,12 +2451,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.searchText != '') {
         var filteredList = this.ristoranti.filter(function (item) {
-          return item.name.toLowerCase().includes(_this.searchText.toLowerCase());
+          return item.restaurant_name.toLowerCase().includes(_this.searchText.toLowerCase());
         });
 
         if (filteredList.length == 0) {
           filteredList = this.users.filter(function (item) {
-            return item.name.toLowerCase().includes(_this.searchText.toLowerCase());
+            return item.restaurant_name.toLowerCase().includes(_this.searchText.toLowerCase());
           });
           this.ristoranti = filteredList;
         } else {
@@ -2702,6 +2625,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Search",
   data: function data() {
@@ -2746,7 +2670,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Slider"
+  name: "SliderCard"
 });
 
 /***/ }),
@@ -2845,7 +2769,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-b7f93bea] {\n  list-style: none;\n}\n.area-carrello[data-v-b7f93bea] {\n  position: absolute;\n  z-index: 99;\n  right: 0;\n}\n.area-carrello .panel-group[data-v-b7f93bea] {\n  padding: 20px;\n  background-color: white;\n  width: 400px;\n  border-bottom-left-radius: 20px;\n  box-shadow: 5px 10px 18px #cfcece;\n}\n.area-carrello .panel-group .cart-title[data-v-b7f93bea] {\n  text-align: center;\n}\n.area-carrello .panel-group .cart-title a[data-v-b7f93bea] {\n  color: #439373;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea] {\n  font-size: 15px;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.area-carrello .panel-group .cart-btn[data-v-b7f93bea]:hover {\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}", ""]);
+exports.push([module.i, ".cart[data-v-b7f93bea] {\n  position: relative;\n}\n.cart-logo[data-v-b7f93bea] {\n  width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n  display: flex;\n  width: 60px;\n  position: relative;\n  z-index: 99;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  background-color: white;\n  overflow: hidden;\n  transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n  margin: 10px 0;\n  text-decoration: none;\n  display: block;\n  transition: 0.3s;\n}\n.icon_social[data-v-b7f93bea] {\n  height: 20px;\n  width: 20px;\n}\n.hastag[data-v-b7f93bea] {\n  width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n  font-size: 20px;\n  cursor: pointer;\n  background-color: white;\n  padding: 10px 15px;\n  border: none;\n  width: 60px;\n}", ""]);
 
 // exports
 
@@ -2883,7 +2807,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main[data-v-b9c20fb8] {\n  width: 100vw;\n  height: calc(100vh - 58.95px);\n}\n.main-top[data-v-b9c20fb8] {\n  display: flex;\n  width: 100vw;\n  min-height: 80%;\n}\n.main-bottom[data-v-b9c20fb8] {\n  width: 100vw;\n  height: 200px;\n  background-color: #F4F0E2;\n}", ""]);
+exports.push([module.i, ".main[data-v-b9c20fb8] {\n  width: 100vw;\n  height: calc(100vh - 58.95px);\n}\n.box-main[data-v-b9c20fb8] {\n  display: flex;\n  width: 100vw;\n  min-height: calc(100% - 250px);\n}\n.sidbar[data-v-b9c20fb8] {\n  padding: 20px 0px;\n}\n.main-right[data-v-b9c20fb8] {\n  width: 100%;\n  background-image: url(\"/images/unarota.svg\");\n  background-repeat: no-repeat;\n  background-attachment: fixed;\n  background-position: 100% 0%;\n}\n.main-bottom[data-v-b9c20fb8] {\n  width: 100vw;\n  height: 250px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: #F4F0E2;\n}", ""]);
 
 // exports
 
@@ -2940,7 +2864,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".check-container[data-v-b0c13a56] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  padding-top: 3%;\n  width: 18%;\n  height: 100%;\n}\n.check-container .check-list[data-v-b0c13a56] {\n  width: 100%;\n  height: 6.5%;\n  margin: 5px 0;\n}\n.btn-check[data-v-b0c13a56] {\n  opacity: 0;\n  width: 12.6%;\n  height: 5%;\n}\n[type=checkbox]:checked + label[data-v-b0c13a56] {\n  background-color: #638F64;\n  color: white;\n}\n.check-button[data-v-b0c13a56] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: 120px;\n  width: 70%;\n  height: 100%;\n  border-top-right-radius: 7px;\n  border-bottom-right-radius: 7px;\n  border-top: 1px solid #638F64;\n  border-bottom: 1px solid #638F64;\n  border-right: 1px solid #638F64;\n}", ""]);
+exports.push([module.i, ".check-container[data-v-b0c13a56] {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n}\n.check-container .check-list[data-v-b0c13a56] {\n  width: 100%;\n  height: 6.5%;\n  margin: 5px 0;\n}\n.btn-check[data-v-b0c13a56] {\n  opacity: 0;\n  width: 250px;\n  height: 40px;\n}\n[type=checkbox]:checked + label[data-v-b0c13a56] {\n  background-color: #638F64;\n  color: white;\n}\n.check-button[data-v-b0c13a56] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  max-width: 250px;\n  height: 40px;\n  border-top-right-radius: 7px;\n  border-bottom-right-radius: 7px;\n  border-top: 1px solid #638F64;\n  border-bottom: 1px solid #638F64;\n  border-right: 1px solid #638F64;\n}\n@media screen and (max-width: 575px) {\n.check-container[data-v-b0c13a56] {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    justify-content: center;\n    width: 50%;\n    height: 100%;\n    background: rosybrown;\n}\n.check-container .check-list[data-v-b0c13a56] {\n    width: 100%;\n    height: 6.5%;\n    margin: 5px 0;\n}\n.btn-check[data-v-b0c13a56] {\n    opacity: 0;\n    width: 250px;\n    height: 40px;\n}\n[type=checkbox]:checked + label[data-v-b0c13a56] {\n    background-color: #638F64;\n    color: white;\n}\n.check-button[data-v-b0c13a56] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    max-width: 250px;\n    height: 40px;\n    border-top-right-radius: 7px;\n    border-bottom-right-radius: 7px;\n    border: none;\n}\n}", ""]);
 
 // exports
 
@@ -2959,7 +2883,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-1c77d2d7] {\n  width: 82%;\n  height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n  height: 25%;\n  display: flex;\n  position: relative;\n  justify-content: space-between;\n}\n.middle-top .user-info[data-v-1c77d2d7] {\n  text-align: end;\n  display: flex;\n  flex-direction: column;\n  justify-content: end;\n  padding-right: 20px;\n  padding-top: 3%;\n}\n.middle-top .user-info .saluto[data-v-1c77d2d7] {\n  color: black;\n}\n.middle-top .user-info .user-name[data-v-1c77d2d7] {\n  color: #648F64;\n  font-size: 2vw;\n}\n.middle-top .user-info .menu-text[data-v-1c77d2d7] {\n  color: black;\n  font-size: 1.5vw;\n}\n.middle-top .user-btn[data-v-1c77d2d7] {\n  border: none;\n}\n.middle-bottom[data-v-1c77d2d7] {\n  height: 75%;\n}\n.middle-bottom .box-user[data-v-1c77d2d7] {\n  width: 100%;\n  height: 430px;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.middle-bottom .box-menu[data-v-1c77d2d7] {\n  width: 65%;\n  height: 530px;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.image[data-v-1c77d2d7] {\n  line-height: 1.2em;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n  width: 200px;\n  height: 350px;\n  background-color: white;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #cfcece;\n  padding: 10px;\n  margin: 20px;\n}\n.image img[data-v-1c77d2d7] {\n  width: 98%;\n  height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n}\n.image h4[data-v-1c77d2d7] {\n  font-size: 18px;\n  color: #be541e;\n  text-transform: capitalize;\n}\n.image p[data-v-1c77d2d7] {\n  font-size: 12px;\n}\n.image button[data-v-1c77d2d7] {\n  box-shadow: 5px 10px 18px #a09f9f;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.image button[data-v-1c77d2d7]:hover {\n  margin: 10px;\n  padding: 10px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.image[data-v-1c77d2d7]:hover {\n  transform: scale(1.05);\n}\n.image[data-v-1c77d2d7]:active {\n  transform: scale(1);\n}\n.test[data-v-1c77d2d7] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n  -webkit-text-orientation: mixed;\n          text-orientation: mixed;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translate(-5%, -80%);\n  color: #638F64;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 85%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.backgrey[data-v-1c77d2d7] {\n  background-color: rgba(252, 248, 240, 0.577);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".user-btn[data-v-1c77d2d7] {\n  border: 0px;\n  background: transparent;\n}\n.middle[data-v-1c77d2d7] {\n  height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n  height: 25%;\n  display: flex;\n  position: relative;\n  justify-content: space-between;\n  padding: 4vh 0vh;\n}\n.middle-top .user-info[data-v-1c77d2d7] {\n  text-align: end;\n  display: flex;\n  flex-direction: column;\n  justify-content: end;\n  padding-right: 20px;\n  padding-top: 3%;\n}\n.middle-top .user-info .saluto[data-v-1c77d2d7] {\n  color: black;\n}\n.middle-top .user-info .user-name[data-v-1c77d2d7] {\n  color: #648F64;\n  font-size: 2vw;\n}\n.middle-top .user-info .menu-text[data-v-1c77d2d7] {\n  color: black;\n  font-size: 1.5vw;\n}\n.middle-bottom[data-v-1c77d2d7] {\n  height: 75%;\n}\n.middle-bottom .box-user[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.middle-bottom .box-menu[data-v-1c77d2d7] {\n  width: 65%;\n  height: 72vh;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.image[data-v-1c77d2d7] {\n  line-height: 1.2em;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n  width: 200px;\n  height: 350px;\n  background-color: white;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #cfcece;\n  padding: 10px;\n  margin: 20px;\n}\n.image img[data-v-1c77d2d7] {\n  width: 98%;\n  height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  border-bottom-right-radius: 40px;\n}\n.image h4[data-v-1c77d2d7] {\n  font-size: 18px;\n  color: #be541e;\n  text-transform: capitalize;\n}\n.image p[data-v-1c77d2d7] {\n  font-size: 12px;\n}\n.image button[data-v-1c77d2d7] {\n  box-shadow: 5px 10px 18px #a09f9f;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n}\n.image button[data-v-1c77d2d7]:hover {\n  margin: 10px;\n  padding: 10px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.image[data-v-1c77d2d7]:hover {\n  transform: scale(1.05);\n}\n.image[data-v-1c77d2d7]:active {\n  transform: scale(1);\n}\n.test[data-v-1c77d2d7] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n  -webkit-text-orientation: mixed;\n          text-orientation: mixed;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translate(-5%, -80%);\n  color: #638F64;\n}\n.sfondo[data-v-1c77d2d7] {\n  width: 80%;\n  height: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n  background: coral;\n}\n.sfondo > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: 120%;\n     object-position: 120%;\n}\n.box-search[data-v-1c77d2d7] {\n  width: 100%;\n  height: 20%;\n  display: block;\n}\n.backgrey[data-v-1c77d2d7] {\n  width: 500px;\n  height: 100%;\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px;\n}\n.cart-container[data-v-1c77d2d7] {\n  width: 250px;\n  display: flex;\n  justify-content: flex-end;\n  position: absolute;\n  right: 0;\n  top: 4vh;\n}", ""]);
 
 // exports
 
@@ -2978,7 +2902,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".search[data-v-22e11d6a] {\n  min-width: 290px;\n  width: 30%;\n  padding-top: 3%;\n}\n.slogan[data-v-22e11d6a] {\n  font-size: 2vw;\n}\n.search-input[data-v-22e11d6a] {\n  height: 35px;\n  width: 70%;\n  min-width: 200px;\n  max-width: 350px;\n  color: grey;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 7px;\n  padding-left: 5px;\n  margin-right: 10px;\n  background: #f8fafc;\n}\n.search-button[data-v-22e11d6a] {\n  height: 35px;\n  color: white;\n  font-size: 1em;\n  outline: none;\n  border: none;\n  border-radius: 7px;\n  padding: 0 15px;\n  background-color: #638f64;\n}\n.box-slogan-search[data-v-22e11d6a] {\n  padding-top: 50px;\n}", ""]);
+exports.push([module.i, ".search[data-v-22e11d6a] {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-content: flex-start;\n  flex-wrap: nowrap;\n}\n.search-input[data-v-22e11d6a] {\n  height: 35px;\n  width: 70%;\n  min-width: 200px;\n  max-width: 350px;\n  color: grey;\n  font-size: 1em;\n  outline: none;\n  border: 0px;\n  border-radius: 7px;\n  padding-left: 5px;\n  margin-right: 10px;\n  background: #F4F0E1;\n}\n.search-button[data-v-22e11d6a] {\n  height: 35px;\n  color: white;\n  font-size: 1em;\n  outline: none;\n  border: none;\n  border-radius: 7px;\n  padding: 0 15px;\n  background-color: #638f64;\n}\n.box-slogan-search[data-v-22e11d6a] {\n  padding-top: 50px;\n}", ""]);
 
 // exports
 
@@ -2997,7 +2921,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".popolari[data-v-e1ae27ba] {\n  height: 200px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 40px;\n}\n.container[data-v-e1ae27ba] {\n  display: flex;\n  width: 100%;\n  padding: 4% 2%;\n  box-sizing: border-box;\n  height: 200px;\n}\n.container-slider[data-v-e1ae27ba] {\n  width: 75%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  flex-wrap: nowrap;\n  scroll-behavior: smooth;\n}\n.box > img[data-v-e1ae27ba] {\n  width: 200%;\n  height: calc(100% - 10vh);\n  height: 60%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: 0.5s;\n}\n.box > h5[data-v-e1ae27ba] {\n  font-size: 20px;\n  display: block;\n  text-align: center;\n  height: 10vh;\n  line-height: 2.6;\n}\n.box[data-v-e1ae27ba]:hover {\n  flex: 1 1 50%;\n}\n.box:hover > img[data-v-e1ae27ba] {\n  width: 100%;\n  height: 100%;\n}\nspan[data-v-e1ae27ba] {\n  font-size: 12px;\n}", ""]);
+exports.push([module.i, ".popolari[data-v-e1ae27ba] {\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.container[data-v-e1ae27ba] {\n  display: flex;\n  width: 100%;\n  padding: 4% 2%;\n  box-sizing: border-box;\n  height: 100%;\n}\n.box[data-v-e1ae27ba] {\n  flex: 1;\n  overflow: hidden;\n  transition: 0.5s;\n  margin: 0 2%;\n  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);\n  line-height: 0;\n  z-index: 10;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n}\n.box > img[data-v-e1ae27ba] {\n  width: 200%;\n  height: calc(100% - 10vh);\n  height: 60%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: 0.5s;\n}\n.box > h5[data-v-e1ae27ba] {\n  font-size: 20px;\n  display: block;\n  text-align: center;\n  height: 10vh;\n  line-height: 2.6;\n}\n.box[data-v-e1ae27ba]:hover {\n  flex: 1 1 50%;\n}\n.box:hover > img[data-v-e1ae27ba] {\n  width: 100%;\n  height: 100%;\n}\nspan[data-v-e1ae27ba] {\n  font-size: 12px;\n}", ""]);
 
 // exports
 
@@ -3016,7 +2940,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".middle[data-v-c67fc6e6] {\n  height: 100%;\n  width: 100%;\n}\nli[data-v-c67fc6e6] {\n  list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n  padding: 10px;\n  color: #343434;\n}\nh4[data-v-c67fc6e6] {\n  color: #628F64;\n}\n.card[data-v-c67fc6e6] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, "li[data-v-c67fc6e6] {\n  list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n  padding: 10px;\n  color: #343434;\n}\nh4[data-v-c67fc6e6] {\n  color: #628F64;\n}\n.card[data-v-c67fc6e6] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-top-left-radius: 30px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  overflow: auto;\n}\n.box-img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
 
 // exports
 
@@ -4451,135 +4375,51 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", [
-    _c("div", { staticClass: "area-carrello" }, [
-      _c("div", { staticClass: "panel-group" }, [
-        _c("div", { staticClass: "panel panel-default" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "panel-collapse collapse",
-              attrs: { id: "collapse1" },
+  return _c("section", { staticClass: "cart" }, [
+    _c("div", { staticClass: "sidepanel", attrs: { id: "mySidepanel" } }, [
+      _c("div", { staticClass: "sidepanel-left" }, [
+        _c(
+          "a",
+          {
+            staticClass: "openbtn",
+            on: {
+              click: function ($event) {
+                return _vm.openNav()
+              },
             },
-            [
-              _vm._l(_vm.cartContent, function (dish, index) {
-                return _c("div", { key: index, staticClass: "panel-body" }, [
-                  _c("ul", [
-                    _c("li", [_vm._v(_vm._s(dish.name))]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v(_vm._s(dish.description))]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v(_vm._s(dish.ingredients))]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v(_vm._s(dish.price))]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "\n                                " +
-                          _vm._s(dish.quantity) +
-                          "\n                                "
-                      ),
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function ($event) {
-                              dish.quantity > 1
-                                ? dish.quantity--
-                                : _vm.cartContent.splice(index, 1),
-                                _vm.lessQuantity(dish.id)
-                            },
-                          },
-                        },
-                        [_vm._v("x")]
-                      ),
-                    ]),
-                  ]),
-                ])
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "panel-footer" }, [
-                _c("span", [
-                  _vm._v(
-                    "totale: " + _vm._s(_vm.price + this.finalPrice) + " €"
-                  ),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  { attrs: { method: "post", action: "/checkout" } },
-                  [
-                    _c("input", {
-                      attrs: { type: "hidden", name: "_token" },
-                      domProps: { value: _vm.csrf },
-                    }),
-                    _vm._v(" "),
-                    _vm._l(_vm.cartContent, function (dish) {
-                      return _c(
-                        "div",
-                        { key: dish.id, staticClass: "panel-body" },
-                        [
-                          _c("input", {
-                            attrs: { type: "hidden", name: "price[]" },
-                            domProps: { value: dish.price },
-                          }),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: { type: "hidden", name: "name[]" },
-                            domProps: { value: dish.name },
-                          }),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: { type: "hidden", name: "description[]" },
-                            domProps: { value: dish.description },
-                          }),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: { type: "hidden", name: "quantity[]" },
-                            domProps: { value: dish.quantity },
-                          }),
-                          _vm._v(" "),
-                          _c("input", {
-                            attrs: { type: "hidden", name: "id[]" },
-                            domProps: { value: dish.id },
-                          }),
-                        ]
-                      )
-                    }),
-                    _vm._v(" "),
-                    _vm.price != 0
-                      ? _c("button", { staticClass: "cart-btn" }, [
-                          _vm._v("Procedi al pagamento"),
-                        ])
-                      : _vm._e(),
-                  ],
-                  2
-                ),
-              ]),
-            ],
-            2
-          ),
+          },
+          [
+            _c("img", {
+              staticClass: "cart-logo",
+              attrs: { src: "../images/icons/cart.svg", alt: "" },
+            }),
+          ]
+        ),
+        _vm._v(" "),
+        _c("a", [
+          _c("img", {
+            staticClass: "hastag",
+            attrs: { src: "../images/icons/hastag.svg", alt: "" },
+          }),
         ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "closebtn",
+            on: {
+              click: function ($event) {
+                return _vm.closeNav()
+              },
+            },
+          },
+          [_vm._v("×")]
+        ),
       ]),
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "panel-heading" }, [
-      _c("h4", { staticClass: "cart-title" }, [
-        _c("a", { attrs: { "data-toggle": "collapse", href: "#collapse1" } }, [
-          _vm._v("Carrello"),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -4840,26 +4680,34 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", { staticClass: "main" }, [
-    _c(
-      "div",
-      { staticClass: "main-top" },
-      [
-        _c("Checked", {
-          attrs: { emptycheck: _vm.menuFlag },
-          on: { selCategories: _vm.getCategories },
-        }),
-        _vm._v(" "),
-        _c("Middle", {
-          staticClass: "middle",
-          attrs: { categoriesArray: _vm.categories },
-          on: { search: _vm.getCategories, menuFlag: _vm.myflag },
-        }),
-      ],
-      1
-    ),
+    _c("div", { staticClass: "box-main" }, [
+      _c(
+        "div",
+        { staticClass: "sidbar col-lg-2 col-sm-2" },
+        [
+          _c("Checked", {
+            attrs: { emptycheck: _vm.menuFlag },
+            on: { selCategories: _vm.getCategories },
+          }),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "main-right col-lg-10 col-sm-10" },
+        [
+          _c("Middle", {
+            attrs: { categoriesArray: _vm.categories },
+            on: { search: _vm.getCategories, menuFlag: _vm.myflag },
+          }),
+        ],
+        1
+      ),
+    ]),
     _vm._v(" "),
     this.menuFlag == false
-      ? _c("div", { staticClass: "main-bottom" })
+      ? _c("div", { staticClass: "main-bottom" }, [_c("Slider")], 1)
       : _vm._e(),
   ])
 }
@@ -5187,62 +5035,47 @@ var render = function () {
         ? _c(
             "div",
             { staticClass: "box-menu" },
-            [
-              _c("Cart", {
-                attrs: { cartContent: _vm.cart, initialPrice: _vm.price },
-              }),
-              _vm._v(" "),
-              _vm._l(this.filterDishes, function (dish, index) {
-                return _c("div", { key: index }, [
-                  _c("div", { staticClass: "image" }, [
-                    _c("img", {
-                      attrs: { src: "./storage/" + dish.image, alt: dish.name },
-                    }),
-                    _vm._v(" "),
-                    _c("h4", [_vm._v(_vm._s(dish.name))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(dish.description))]),
-                    _vm._v(" "),
-                    _c("h4", [_vm._v(_vm._s(dish.price))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Ingredienti:")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "button",
-                        on: {
-                          click: function ($event) {
-                            return _vm.sendCart(dish)
-                          },
+            _vm._l(this.filterDishes, function (dish, index) {
+              return _c("div", { key: index }, [
+                _c("div", { staticClass: "image" }, [
+                  _c("img", {
+                    attrs: { src: "./storage/" + dish.image, alt: dish.name },
+                  }),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v(_vm._s(dish.name))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(dish.description))]),
+                  _vm._v(" "),
+                  _c("h4", [_vm._v(_vm._s(dish.price))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Ingredienti:")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(dish.ingredients))]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button",
+                      on: {
+                        click: function ($event) {
+                          return _vm.sendCart(dish)
                         },
                       },
-                      [_vm._v("Aggiungi al carrello")]
-                    ),
-                  ]),
-                ])
-              }),
-            ],
-            2
+                    },
+                    [_vm._v("Aggiungi al carrello")]
+                  ),
+                ]),
+              ])
+            }),
+            0
           )
         : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "cart-container" }, [_c("Cart")], 1),
     ]),
-    _vm._v(" "),
-    _vm._m(0),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sfondo", attrs: { id: "sfondo" } }, [
-      _c("img", { attrs: { src: "/images/unarota.svg", alt: "" } }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5265,7 +5098,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "search" }, [
-    _c("span", { staticClass: "slogan" }, [
+    _c("h1", { staticClass: "slogan" }, [
       _vm._v("I piatti che ami, a domicilio"),
     ]),
     _vm._v(" "),
@@ -5397,7 +5230,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", [
-    _c("div", { staticClass: "card" }, [
+    _c("div", { staticClass: "card " }, [
       _vm._m(0),
       _vm._v(" "),
       _c("h4", [

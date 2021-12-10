@@ -19,7 +19,6 @@
             </div>
 
             <div v-if="this.switchMenu == true" class="box-menu">
-                <Cart :cartContent="cart" :initialPrice="price"/> 
                 <div v-for="(dish, index) in this.filterDishes" :key="index">
                     <div class="image">
                         <img :src="'./storage/' + dish.image" :alt="dish.name">
@@ -34,15 +33,18 @@
                     </div>
                 </div>
             </div>
+            <div class="cart-container">
+                <Cart />
+            </div>
 
         </div>
         
         <!-- <div class="test">
             <h3>#aCasaTuaConDeliverboh</h3>
         </div> -->
-        <div id="sfondo" class="sfondo">
+        <!-- <div id="sfondo" class="sfondo">
             <img src="/images/unarota.svg" alt="">
-        </div>
+        </div> -->
     </section>
 </template>
 
@@ -88,13 +90,14 @@ export default {
             this.switchMenu = false
             if (this.searchText != '') {
                 let filteredList = this.ristoranti.filter( item => {
-                    return item.name
+                    return item.restaurant_name
                         .toLowerCase()
                         .includes(this.searchText.toLowerCase());
                 })
                 if(filteredList.length == 0) {
                     filteredList = this.users.filter( item => {
-                        return item.name
+                            return item.restaurant_name
+
                             .toLowerCase()
                             .includes(this.searchText.toLowerCase());
                     })  
@@ -242,10 +245,13 @@ export default {
 
 <style lang="scss" scoped>
     
-   
+   .user-btn {
+       border: 0px;
+       background: transparent;
+   }
 
     .middle {
-        width: 82%;
+        // width: 82%;
         height: 100%;
     }
 
@@ -254,6 +260,7 @@ export default {
         display: flex;
         position: relative;
         justify-content: space-between;
+        padding: 4vh 0vh;
     
         .user-info {
             text-align: end;
@@ -275,25 +282,26 @@ export default {
                 font-size: 1.5vw;
             }
         }
-        .user-btn {
-            border: none;
-        }
     }
 
     .middle-bottom {
         height: 75%;
 
         .box-user {
-            width: 100%;
-            height: 430px;
+            width: calc(100% - 250px);
+            // height: 430px;
+            height: 100%;
             overflow-y: scroll;
             display: flex;
             flex-wrap: wrap;
+            // background: blue;
         }
 
         .box-menu {
             width: 65%;
-            height: 530px;
+
+            // height: 530px;
+            height: 72vh;
             overflow-y: scroll;
             display: flex;
             flex-wrap: wrap;
@@ -369,8 +377,6 @@ export default {
         transform: scale(1);
     }
 
-
-    
     .test {
         writing-mode: vertical-rl;
         text-orientation: mixed;
@@ -388,11 +394,12 @@ export default {
         right: 0;
         bottom: 0;
         z-index: -1;
+        background: coral;
     }
 
     .sfondo > img {
         width: 100%;
-        height: 85%;
+        height: 100%;
         object-fit:contain;
         object-position: 120%;
     }
@@ -402,16 +409,29 @@ export default {
         height: 20%;
         display: block;
     }
- 
-  
-    
 
     .backgrey {
-        background-color: rgba(252, 248, 240, 0.577);
+        width: 500px;
+        height: 100%;
+        // background: rgb(218, 78, 78);
     }
 
     .container-card {
         padding: 20px;
+        // background: black;
     }
+
+
+    .cart-container {
+        width: 250px;
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        top: 4vh;
+        // transform: translateY(-50%);
+    }
+
+    
 
 </style>

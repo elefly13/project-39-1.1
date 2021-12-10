@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="card">
+        <div class="card ">
             <div class="box-img">
                 <img src="/images/image-res/res-1.jpg" alt="">
             </div>
@@ -27,11 +27,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .middle {
-        height: 100%;
-        width: 100%;
-    }
-       li{
+    // .middle {
+    //     height: 100%;
+    //     width: 100%;
+    // }
+    li{
         list-style: none;
     }
 
@@ -55,6 +55,7 @@ export default {
         border-bottom-right-radius: 30px;
         background: rgb(255, 255, 255);
         overflow: auto;
+        // background: red;
     }
 
     .box-img {
