@@ -14,21 +14,20 @@
                                 <li>{{ dish.name }}</li>
                                 <li>{{ dish.description}}</li>
                                 <li>{{ dish.ingredients }}</li>
-                                <li>{{ dish.price }}</li>
+                                <li>€ {{ dish.price }}</li>
                                 <li>
-                                    <!-- <button @click="dish.quantity++, moreQuantity(dish.id)">+</button> -->
                                     {{ dish.quantity }}
-                                    <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">x</button>
+                                    <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">-</button>
                                 </li>
                             </ul>
                         </div>
                         <div class="panel-footer">
-                            <span>totale: {{ price + this.finalPrice}} €</span>
+                            <span>totale: € {{ price.toFixed(2) }}</span>
                             <form method="post" action="/checkout">
                                <input type="hidden" name="_token" v-bind:value="csrf">
                                  <!-- <input type="hidden" name="prova" v-bind:value="this.prova[0]"> -->
                                   
-                                 <div class="panel-body" v-for="dish in cartContent" :key="dish.id">
+                                 <div class="panel-body" v-for="(dish, index) in cartContent" :key="index">
                                      <input  type="hidden" name="price[]" v-bind:value="dish.price">
                                      <input  type="hidden" name="name[]" v-bind:value="dish.name">
                                      <input  type="hidden" name="description[]" v-bind:value="dish.description">
@@ -64,23 +63,16 @@ export default {
         };
     },
     watch: {
-        initialPrice: function () {
-            this.finalPrice = this.initialPrice
-        },
         cartContent: function () {
             let somma = 0;
-            
+
             for (const i in this.cartContent) {
+
                 let totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
                 somma += totalPrice;   
             }
             
             this.price = somma;
-
-            
-            if(this.cartContent == 0) {
-                this.finalPrice = 0
-            }
         },
     },
     methods: {

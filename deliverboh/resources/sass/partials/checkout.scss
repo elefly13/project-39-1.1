@@ -1,0 +1,103 @@
+.big-box {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.box-riepilogo {
+    display: column;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 5px 10px 18px #a09f9f;
+    background-color:rgba(189, 215, 188, 0.3);
+}
+.box-pago {  
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 5px 10px 18px #a09f9f;
+    background-color: white;
+    background-color:rgba(189, 215, 188, 0.3);
+}   
+.titolo-check {
+    border-bottom: 1px solid #439373;
+    color: #be541e;
+    padding: 10px;
+} 
+.sezione-piatto {
+    margin-bottom: 20px;
+}
+.text-h6-check {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.text-p-chek {
+    text-align: right;
+}
+.text-h5-check {
+    font-size: 20px;
+    color: #be541e;
+    text-align: right;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}               
+.button-check {
+    padding: 10px;
+    border: none;
+    border-color: #439373;
+    border-radius: 3px;
+    border-bottom-right-radius: 10px;
+    background-color:  #439373;
+    color: #f4f0e2;
+    transition: 0.6s;
+}
+.button-check:hover {
+    border-color: #f1c692;
+    border-radius: 3px;
+    border: none;
+    border-bottom-right-radius: 10px;
+    background-color:  #f1c692;
+    color: #343434;
+}   
+.input-check {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.input-check:focus {
+    border-color: #439373;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(89 145 117 / 25%);
+}
+.text-area {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.text-area:focus {
+    border-color: #439373;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(89 145 117 / 25%);
+}
+.my-total {
+    border: none;
+    background-color:rgba(189, 215, 188, 0.1);
+    font-size: 20px;
+} 
+.my-total:focus {
+    border: none;
+    outline: 0;
+}
+.text-totale-check {
+    font-size: 20px;
+} 
