@@ -13071,10 +13071,6 @@ body {
      object-fit: cover;
 }
 
-header {
-  background-image: linear-gradient(to right, white, 0);
-}
-
 .h-header {
   height: 8vh;
 }
