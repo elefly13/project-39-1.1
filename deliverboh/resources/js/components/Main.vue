@@ -210,4 +210,13 @@ export default {
 
 }
 
+@media screen and (min-width:320px) and (max-width:3280px) and (orientation:landscape) {
+      .sidbar {
+        width: 15%;
+        margin-right: 30px;
+        // padding-right: 15px;
+        overflow: auto;
+    }
+}
+
 </style>
