@@ -83,14 +83,15 @@ export default {
         popUser: function () {
             var popDishes = [];
             for (const i in this.dishes) {
-                if (this.dishes[i].user_id == this.popUser) {
+                if (this.dishes[i].user_id == this.popUser.user_id) {
                     popDishes.push(this.dishes[i])
                 }
             }
             this.filterDishes = popDishes
             this.switchMenu = true
+            this.restaurantName = this.popUser.user_name
             console.log(popDishes)
-            console.log(this.filterDishes)
+            console.log(this.restaurantName)
             
         },
         searchText: function () {
@@ -323,14 +324,17 @@ export default {
         display: none;
     } 
   
-    .user-info-nascosto {
-        margin-right: 17%;
-        white-space: nowrap;
-        text-align: right;
-        display: none;
-    } 
+    // .user-info-nascosto {
+    //     margin-right: 17%;
+    //     white-space: nowrap;
+    //     text-align: right;
+    //     display: none;
+    // } 
 
     .user-info-nascosto {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
         display: block;
         position: absolute;
         bottom: 0;

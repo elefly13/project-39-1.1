@@ -114,7 +114,6 @@ export default {
     right: 0;
     width: calc(100% );
     height: 50px;
-    
     text-align: center;
     background: seagreen;
 }
