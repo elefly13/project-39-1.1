@@ -1,7 +1,7 @@
 <template>
     <section class="popolari">
         <div class="container">
-          <a class="box" v-for="(user, index) in this.users" :key="index" @click="sendPop(user.user_id), $emit('popShow', pop)">
+          <a class="box" v-for="(user, index) in this.users" :key="index" @click="sendPop(user), $emit('popShow', pop)">
             <img :src=" user.user_img " alt="">
             <h5>Ristorante uno</h5>
           </a>
@@ -18,24 +18,23 @@ export default {
            {
             user_id: 2,
             user_img: 'images/image-res/res-1.jpg',
-            user_name: ''
+            user_name: 'Trattoria Conconi'
            },
            {
             user_id: 2,
             user_img: 'images/image-res/res-2.jpg',
-            user_name: ''
+            user_name: 'La Coppa d\'oro'
            },
            {
             user_id: 2,
             user_img: 'images/image-res/res-3.jpg',
-            user_name: '',
+            user_name: 'Strippoli Osteria Pugliese',
            },
            {
             user_id: 2,
             user_img: 'images/image-res/res-2.jpg',
-            user_name: '',
+            user_name: 'Trattoria Conconi',
            }
-          
         ],
         pop: null
       }
