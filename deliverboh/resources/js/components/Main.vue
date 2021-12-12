@@ -6,13 +6,13 @@
                 <Checked @selCategories = "getCategories" :emptycheck="menuFlag" />
             </div>
             <div class="main-right ">
-                <Middle @search= "getCategories" @menuFlag="myflag"  :categoriesArray="categories" />
+                <Middle @search= "getCategories" @menuFlag="myflag"  :categoriesArray="categories" :popUser="pop" />
             </div>
         </div>
         <div class="main-bottom" v-if="this.menuFlag == false">
             <div class="vuoto"></div>
             <h1>I più popolari</h1>
-            <Slider />
+            <Slider @popShow="savePop" />
         </div>
     </main>
 </template>
@@ -32,7 +32,8 @@ export default {
     data() {
         return {
             categories: [],
-            menuFlag: false
+            menuFlag: false,
+            pop: null
         } 
     },
     watch: {
@@ -41,6 +42,11 @@ export default {
         }
     },
     methods: {
+        savePop(user) {
+            this.pop = user
+            this.menuFlag = true
+            // alert(this.menuFlag)
+        },
         getCategories(selCategories) {
            this.categories = selCategories;
         },
