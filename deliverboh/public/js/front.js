@@ -2193,12 +2193,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2583,7 +2577,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".panel-footer[data-v-b7f93bea] {\n  position: absolute;\n  bottom: 12px;\n  right: 0px;\n  width: calc(100% - 50px);\n  height: 50px;\n  text-align: center;\n  background: seagreen;\n}\n.cart[data-v-b7f93bea] {\n  position: relative;\n  padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n  width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n  display: flex;\n  width: 60px;\n  position: relative;\n  z-index: 99;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  background-color: white;\n  overflow: hidden;\n  transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 50px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 50px;\n  background: antiquewhite;\n}\n.sidepanel-right[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  background: aqua;\n  width: calc(100% - 50px);\n}\n.sidepanel a[data-v-b7f93bea] {\n  margin: 10px 0;\n  text-decoration: none;\n  display: block;\n  transition: 0.3s;\n}\n.icon_social[data-v-b7f93bea] {\n  height: 20px;\n  width: 20px;\n}\n.hastag[data-v-b7f93bea] {\n  width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n  font-size: 20px;\n  cursor: pointer;\n  background-color: white;\n  padding: 10px 15px;\n  border: none;\n  width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n  font-size: 50px;\n  cursor: pointer;\n}\n@media screen and (max-width: 575px) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n    display: none;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 30px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    background-color: #dc1a1a;\n    overflow: hidden;\n    transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    background-color: white;\n    padding: 10px 15px;\n    border: none;\n    width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 20px;\n    display: flex;\n    justify-content: center;\n    text-align: center;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 40px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    overflow: hidden;\n    transition: 0.5s;\n    height: 280px;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 15px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    border: none;\n    width: 50px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 1280px) and (orientation: landscape) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 20px;\n    display: flex;\n    justify-content: center;\n    text-align: center;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 40px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    overflow: hidden;\n    transition: 0.5s;\n    height: 280px;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 15px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    border: none;\n    width: 50px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}", ""]);
+exports.push([module.i, ".panel-footer[data-v-b7f93bea] {\n  position: absolute;\n  bottom: 12px;\n  right: 0;\n  width: 100%;\n  height: 50px;\n  text-align: center;\n  background: seagreen;\n}\n.cart[data-v-b7f93bea] {\n  position: relative;\n  padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n  width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n  display: flex;\n  width: 60px;\n  position: relative;\n  z-index: 99;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  background-color: white;\n  overflow: hidden;\n  transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 50px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 50px;\n  background: antiquewhite;\n}\n.sidepanel-right[data-v-b7f93bea] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-left: 8px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  background: aqua;\n  width: calc(100% - 50px);\n}\n.sidepanel a[data-v-b7f93bea] {\n  margin: 10px 0;\n  text-decoration: none;\n  display: block;\n  transition: 0.3s;\n}\n.icon_social[data-v-b7f93bea] {\n  height: 20px;\n  width: 20px;\n}\n.hastag[data-v-b7f93bea] {\n  width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n  font-size: 20px;\n  cursor: pointer;\n  background-color: white;\n  padding: 10px 15px;\n  border: none;\n  width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n  font-size: 50px;\n  cursor: pointer;\n}\n@media screen and (max-width: 575px) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n    display: none;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 30px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    background-color: #dc1a1a;\n    overflow: hidden;\n    transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    background-color: white;\n    padding: 10px 15px;\n    border: none;\n    width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 20px;\n    display: flex;\n    justify-content: center;\n    text-align: center;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 40px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    overflow: hidden;\n    transition: 0.5s;\n    height: 280px;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 15px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    border: none;\n    width: 50px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 1280px) and (orientation: landscape) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 20px;\n    display: flex;\n    justify-content: center;\n    text-align: center;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 40px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    overflow: hidden;\n    transition: 0.5s;\n    height: 280px;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 15px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    border: none;\n    width: 50px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}", ""]);
 
 // exports
 
@@ -4207,31 +4201,41 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", { staticClass: "main" }, [
-    _c("div", { staticClass: "box-main" }, [
-      _c(
-        "div",
-        { staticClass: "sidbar " },
-        [
-          _c("Checked", {
-            attrs: { emptycheck: _vm.menuFlag },
-            on: { selCategories: _vm.getCategories },
-          }),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "main-right " },
-        [
-          _c("Middle", {
-            attrs: { categoriesArray: _vm.categories, popUser: _vm.pop },
-            on: { search: _vm.getCategories, menuFlag: _vm.myflag },
-          }),
-        ],
-        1
-      ),
-    ]),
+    _c(
+      "div",
+      {
+        staticClass: "box-main",
+        style:
+          this.menuFlag == true
+            ? "height: calc(100%)"
+            : "height: calc(100% - 150px)",
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "sidbar " },
+          [
+            _c("Checked", {
+              attrs: { emptycheck: _vm.menuFlag },
+              on: { selCategories: _vm.getCategories },
+            }),
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "main-right " },
+          [
+            _c("Middle", {
+              attrs: { categoriesArray: _vm.categories, popUser: _vm.pop },
+              on: { search: _vm.getCategories, menuFlag: _vm.myflag },
+            }),
+          ],
+          1
+        ),
+      ]
+    ),
     _vm._v(" "),
     this.menuFlag == false
       ? _c(
@@ -4355,21 +4359,7 @@ var render = function () {
     _c(
       "div",
       { staticClass: "middle-top" },
-      [
-        _c("Search", { on: { performSearch: _vm.searchRest } }),
-        _vm._v(" "),
-        this.switchMenu == true
-          ? _c("div", { staticClass: "user-info" }, [
-              _c("h1", { staticClass: "user-name" }, [
-                _vm._v(_vm._s(this.restaurantName)),
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "menu-text" }, [
-                _vm._v("Il nostro menu"),
-              ]),
-            ])
-          : _vm._e(),
-      ],
+      [_c("Search", { on: { performSearch: _vm.searchRest } })],
       1
     ),
     _vm._v(" "),

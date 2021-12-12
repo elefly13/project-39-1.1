@@ -111,10 +111,10 @@ export default {
 .panel-footer {
     position: absolute;
     bottom: 12px;
-    right: 0px;
-    width: calc(100% - 50px);
+    right: 0;
+    width: calc(100% );
     height: 50px;
-    // padding-left: 10px;
+    
     text-align: center;
     background: seagreen;
 }
@@ -146,22 +146,23 @@ export default {
         width: 50px;
 
         display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50px;
-    background: antiquewhite;
+        flex-direction: column;
+        align-items: center;
+        width: 50px;
+        background: antiquewhite;
     }
 
     .sidepanel-right {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-            display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: aqua;
-    width: calc(100% - 50px);
+        margin-left: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: aqua;
+        width: calc(100% - 50px);
     }
 
     .sidepanel a {

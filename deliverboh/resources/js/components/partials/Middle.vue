@@ -3,18 +3,12 @@
 
         <div class="middle-top">
             <Search @performSearch="searchRest"/>
-
-            
-            <div class="user-info" v-if="this.switchMenu == true">
-                <h1 class="user-name">{{ this.restaurantName }}</h1>
-                <h4 class="menu-text">Il nostro menu</h4>
-            </div>
         </div>
 
-         <div class="user-info-nascosto" v-if="this.switchMenu == true">
-                <h1 class="user-name">{{ this.restaurantName }}</h1>
-                <h4 class="menu-text">Il nostro menu</h4>
-            </div>
+        <div class="user-info-nascosto" v-if="this.switchMenu == true">
+            <h1 class="user-name">{{ this.restaurantName }}</h1>
+            <h4 class="menu-text">Il nostro menu</h4>
+        </div>
         
         <div class="middle-bottom">
             <div  v-if="this.switchMenu == false" class="box-user">

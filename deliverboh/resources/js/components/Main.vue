@@ -1,7 +1,7 @@
 <template>
     <main class="main">
         
-        <div class="box-main">
+        <div class="box-main" :style="(this.menuFlag == true) ? 'height: calc(100%)' : 'height: calc(100% - 150px)'">
             <div class="sidbar ">
                 <Checked @selCategories = "getCategories" :emptycheck="menuFlag" />
             </div>
@@ -84,7 +84,7 @@ export default {
         background-attachment: fixed;
         background-position: 100% 0%; 
     }
-       .main-bottom {
+    .main-bottom {
         width: 100vw;
         height: 150px;
         display: flex;
