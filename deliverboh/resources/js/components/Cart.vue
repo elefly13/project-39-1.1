@@ -10,7 +10,7 @@
               
             <div class="sidepanel-right" > 
                 
-               
+               <div class="scontrino">
                     <ul v-for="(dish, index) in cartContent" :key="index">
                         <li>{{ dish.name }}</li>
                         <li>€ {{ dish.price }}</li>
@@ -19,6 +19,8 @@
                             <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">-</button>
                         </li>
                     </ul>
+
+               </div>
                
                 
                 <div class="panel-footer">
@@ -108,6 +110,22 @@ export default {
 
 <style lang="scss" scoped>
 
+.scontrino {
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    padding: 0px 20px;
+    flex-wrap: nowrap;
+    // background: sienna;
+    overflow-y: auto;
+}
+
+.scontrino > ul {
+    list-style-type: none;
+}
+
 .panel-footer {
     position: absolute;
     bottom: 12px;
@@ -116,7 +134,7 @@ export default {
     height: 50px;
     
     text-align: center;
-    background: seagreen;
+    // background: seagreen;
 }
               
     .cart {
@@ -144,12 +162,6 @@ export default {
         flex-direction: column;
         align-items: center;
         width: 50px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50px;
-        background: antiquewhite;
     }
 
     .sidepanel-right {
@@ -157,11 +169,9 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: aqua;
+        margin-left: 10px;
+        // background: aqua;
+
         width: calc(100% - 50px);
     }
 
