@@ -1,23 +1,10 @@
 <template>
     <section class="popolari">
         <div class="container">
-            <div class="box">
-                <img src="images/image-res/res-2.jpg" alt="">
-                <h5>Ristorante uno</h5>
-            </div>
-            <div class="box">
-                <img src="images/image-res/res-3.jpg" alt="">
-                <h5>Ristorante uno</h5>
-            </div>
-            <div class="box">
-                <img src="images/image-res/res-4.jpg" alt="">
-                <h5>Ristorante uno</h5>
-            </div>
-            <div class="box">
-                <img src="images/image-res/res-6.jpg" alt="">
-                <h5>Ristorante uno</h5>
-            </div>
-            
+          <a class="box" v-for="(user, index) in this.users" :key="index" @click="sendPop(user.user_id), $emit('popShow', pop)">
+            <img :src=" user.user_img " alt="">
+            <h5>Ristorante uno</h5>
+          </a>
         </div>
     </section>
 </template>
@@ -25,6 +12,39 @@
 <script>
 export default {
     name: "Slider",
+    data () {
+      return {
+        users: [
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-1.jpg',
+            user_name: ''
+           },
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-2.jpg',
+            user_name: ''
+           },
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-3.jpg',
+            user_name: '',
+           },
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-2.jpg',
+            user_name: '',
+           }
+          
+        ],
+        pop: null
+      }
+    },
+    methods: {
+      sendPop(user) {
+        this.pop = user
+      }
+    }
 }
 </script>
 
@@ -32,7 +52,7 @@ export default {
 
 .popolari {
     height: 100%;
-    height: 70%;
+    height: 80%;
     position: absolute;
     left: 50%;
     bottom: 5;
@@ -64,6 +84,12 @@ export default {
   // border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
   background: rgb(255, 255, 255);
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
 }
 
 .box > img {

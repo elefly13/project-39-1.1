@@ -54,7 +54,7 @@ import Cart from '../Cart.vue';
 
 export default {
     name: "Middle",
-    props: ['categoriesArray'],
+    props: ['categoriesArray','popUser'],
     components: {
         Cart,
         User,
@@ -86,6 +86,19 @@ export default {
         this.getCategoryUsers();
     },
     watch: {
+        popUser: function () {
+            var popDishes = [];
+            for (const i in this.dishes) {
+                if (this.dishes[i].user_id == this.popUser) {
+                    popDishes.push(this.dishes[i])
+                }
+            }
+            this.filterDishes = popDishes
+            this.switchMenu = true
+            console.log(popDishes)
+            console.log(this.filterDishes)
+            
+        },
         searchText: function () {
             this.switchMenu = false
             if (this.searchText != '') {
@@ -367,7 +380,7 @@ export default {
     .box-user {
         width: calc(100% - 250px);
         height: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
         display: flex;
         flex-wrap: wrap;
     }
@@ -375,7 +388,7 @@ export default {
     .box-menu {
         width: calc(100% - 250px);
         height: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
         display: flex;
         flex-wrap: wrap;
     }
