@@ -1,12 +1,12 @@
 @extends('admin.dashboard')
 
 @section('dashboard')
-@if (session('status'))
-	<div class="alert alert-success">
+{{-- @if (session('status'))
+	<div  class="alert alert-success">
 		{{ session('status') }}
 	</div>
     
-@endif
+@endif --}}
 <div class="container">
     <div class="row justify-content-center">
         <a class="link-dish-index btn-top-index" href="{{route('admin.dishes.create')}}">Aggiungi un nuovo piatto</a>
@@ -17,7 +17,8 @@
 {{-- <a class="link-dish-index btn-top-index" href="{{route('admin.index')}}">Torna indietro</a>  --}}
 <div class="col-sm-12 big-box-dish" >
     @foreach ($data as $dish)
-    <div class="card-dish-index" >
+    <div class="card-dish-index"  >
+        {{-- <div class="card-dish-index @if($dish.visibility = 0 ) "  > --}}
 
         <img class="img-dish-index" src="{{ asset('storage/' . $dish['image']) }}" alt="{{$dish['name']}} ">
         <h4 class="nome-dish-index">{{$dish['name']}} </h4>
