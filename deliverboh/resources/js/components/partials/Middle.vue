@@ -36,12 +36,12 @@
                             <p>Ingredienti:</p>
                             <p>{{ dish.ingredients }}</p>
                         </div>
-                    <button class="button" @click="sendCart(dish)">Aggiungi al carrello</button>              
+                    <button class="button" @click="sendCart(dish), openCart()">Aggiungi al carrello</button>              
                     </div>
                 </div>                        
             </div>
             <div class="cart-container">
-                <Cart :cartContent="cart" :initialPrice="price" />
+                <Cart :cartContent="cart" :initialPrice="price" :flag="cartFlag" />
             </div>
         </div>
     </section>
@@ -77,6 +77,7 @@ export default {
             ristoranti: [],
             appoggioDue: [],
             switchMenu: false,
+            cartFlag: false,
         };
     },
     created() {
@@ -150,23 +151,23 @@ export default {
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
             }
-            
-            if((dish.user_id == this.restaurant) && (!this.cart.includes(dish))) 
-            {
+
+            if(this.restaurant ==  dish.user_id){
+            if(this.cart.length === 0){
                 this.cart.push(dish)
-            } 
-            else if(this.cart.includes(dish)) {
-                this.price = dish.price * dish.quantity
-                console.log(this.price)
-                for (const i in this.cart) {
-                    if(this.cart[i].id == dish.id) {
-                        this.cart[i].quantity += 1 
+            }else{
+                    this.cart.push(dish)
+                    for (let i = 0; i < this.cart.length - 1; i++){
+                        if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
+                        this.cart.pop();
+                        this.cart[i].quantity++;
+                        console.log('sono qui dentro')
+                        return
+                        }                             
                     }
-                }
             }
-            else 
-            {
-                alert("Puoi ordinare da un solo ristorante alla volta")
+            } else {
+                alert('devi svuotare il carrello prima di poter ordinare di nuovo da questo ristorante')
             }
         }, 
         menuShow(user) {
@@ -179,6 +180,9 @@ export default {
                 }
             }
             this.filterDishes = userdish
+        },
+        openCart() {
+            this.cartFlag = true;
         },
         getUsers(){
            const bodyParameters = {

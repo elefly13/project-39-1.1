@@ -1958,7 +1958,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
-  props: ['cartContent', 'initialPrice'],
+  props: ['cartContent', 'initialPrice', 'flag'],
   data: function data() {
     return {
       // prova:this.cartContent,
@@ -1970,6 +1970,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   watch: {
+    flag: function flag() {
+      document.getElementById("mySidepanel").style.width = "250px";
+      document.getElementById("openbtn").style.width = "250px";
+    },
     cartContent: function cartContent() {
       var somma = 0;
 
@@ -2217,7 +2221,8 @@ __webpack_require__.r(__webpack_exports__);
       categoryUsers: [],
       ristoranti: [],
       appoggioDue: [],
-      switchMenu: false
+      switchMenu: false,
+      cartFlag: false
     };
   },
   created: function created() {
@@ -2294,19 +2299,23 @@ __webpack_require__.r(__webpack_exports__);
         this.restaurant = dish.user_id;
       }
 
-      if (dish.user_id == this.restaurant && !this.cart.includes(dish)) {
-        this.cart.push(dish);
-      } else if (this.cart.includes(dish)) {
-        this.price = dish.price * dish.quantity;
-        console.log(this.price);
+      if (this.restaurant == dish.user_id) {
+        if (this.cart.length === 0) {
+          this.cart.push(dish);
+        } else {
+          this.cart.push(dish);
 
-        for (var i in this.cart) {
-          if (this.cart[i].id == dish.id) {
-            this.cart[i].quantity += 1;
+          for (var i = 0; i < this.cart.length - 1; i++) {
+            if (this.cart[i].id === dish.id && this.cart.length > 1) {
+              this.cart.pop();
+              this.cart[i].quantity++;
+              console.log('sono qui dentro');
+              return;
+            }
           }
         }
       } else {
-        alert("Puoi ordinare da un solo ristorante alla volta");
+        alert('devi svuotare il carrello prima di poter ordinare di nuovo da questo ristorante');
       }
     },
     menuShow: function menuShow(user) {
@@ -2321,6 +2330,9 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.filterDishes = userdish;
+    },
+    openCart: function openCart() {
+      this.cartFlag = true;
     },
     getUsers: function getUsers() {
       var _this3 = this;
@@ -2538,7 +2550,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".cart[data-v-b7f93bea] {\n  position: relative;\n  padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n  width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n  display: flex;\n  width: 60px;\n  position: relative;\n  z-index: 99;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  background-color: white;\n  overflow: hidden;\n  transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n  margin: 10px 0;\n  text-decoration: none;\n  display: block;\n  transition: 0.3s;\n}\n.icon_social[data-v-b7f93bea] {\n  height: 20px;\n  width: 20px;\n}\n.hastag[data-v-b7f93bea] {\n  width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n  font-size: 20px;\n  cursor: pointer;\n  background-color: white;\n  padding: 10px 15px;\n  border: none;\n  width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n  font-size: 50px;\n  cursor: pointer;\n}\n@media screen and (max-width: 575px) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n    display: none;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 30px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    background-color: #dc1a1a;\n    overflow: hidden;\n    transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    background-color: white;\n    padding: 10px 15px;\n    border: none;\n    width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 20px;\n    display: flex;\n    justify-content: center;\n    text-align: center;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 40px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    overflow: hidden;\n    transition: 0.5s;\n    height: 280px;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 15px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    border: none;\n    width: 50px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}", ""]);
+exports.push([module.i, ".cart[data-v-b7f93bea] {\n  position: relative;\n  padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n  width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n  display: flex;\n  width: 60px;\n  position: relative;\n  z-index: 99;\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  background-color: white;\n  overflow: hidden;\n  transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n  margin: 10px 0;\n  text-decoration: none;\n  display: block;\n  transition: 0.3s;\n}\n.icon_social[data-v-b7f93bea] {\n  height: 20px;\n  width: 20px;\n}\n.hastag[data-v-b7f93bea] {\n  width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n  font-size: 20px;\n  cursor: pointer;\n  background-color: white;\n  padding: 10px 15px;\n  border: none;\n  width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n  font-size: 50px;\n  cursor: pointer;\n}\n@media screen and (max-width: 575px) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n    display: none;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 30px;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 30px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    background-color: #dc1a1a;\n    overflow: hidden;\n    transition: 0.5s;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 25px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    background-color: white;\n    padding: 10px 15px;\n    border: none;\n    width: 60px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 20px;\n    display: flex;\n    justify-content: center;\n    text-align: center;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 40px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    overflow: hidden;\n    transition: 0.5s;\n    height: 280px;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 15px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    border: none;\n    width: 50px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 1280px) and (orientation: landscape) {\n.cart[data-v-b7f93bea] {\n    position: relative;\n    padding-top: 5vh;\n}\n.cart-logo[data-v-b7f93bea] {\n    width: 20px;\n    display: flex;\n    justify-content: center;\n    text-align: center;\n}\n.sidepanel[data-v-b7f93bea] {\n    display: flex;\n    width: 40px;\n    position: relative;\n    z-index: 99;\n    border-top-left-radius: 20px;\n    border-bottom-left-radius: 20px;\n    overflow: hidden;\n    transition: 0.5s;\n    height: 280px;\n}\n.sidepanel-left[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel-right[data-v-b7f93bea] {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n.sidepanel a[data-v-b7f93bea] {\n    margin: 10px 0;\n    text-decoration: none;\n    display: block;\n    transition: 0.3s;\n}\n.hastag[data-v-b7f93bea] {\n    width: 15px;\n}\n.openbtn[data-v-b7f93bea] {\n    font-size: 20px;\n    cursor: pointer;\n    border: none;\n    width: 50px;\n}\n.closebtn[data-v-b7f93bea] {\n    font-size: 50px;\n    cursor: pointer;\n}\n}", ""]);
 
 // exports
 
@@ -2576,7 +2588,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".check-container[data-v-b0c13a56] {\n  display: flex;\n  flex-direction: column;\n  padding-top: 4vh;\n  height: calc(100vh - 150px);\n  overflow: auto;\n}\n.check-list[data-v-b0c13a56] {\n  width: 100%;\n  height: 6.5%;\n  margin: 5px 0;\n}\n.btn-check[data-v-b0c13a56] {\n  opacity: 0;\n  width: 250px;\n  height: 40px;\n}\n[type=checkbox]:checked + label[data-v-b0c13a56] {\n  background-color: #638F64;\n  color: white;\n}\n.check-button[data-v-b0c13a56] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  max-width: 250px;\n  height: 40px;\n  max-width: 250px;\n  border-top-right-radius: 7px;\n  border-bottom-right-radius: 7px;\n  border-top: 1px solid #638F64;\n  border-bottom: 1px solid #638F64;\n  border-right: 1px solid #638F64;\n}\n@media screen and (max-width: 575px) {\n.check-container[data-v-b0c13a56] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    padding-top: 0vh;\n    height: 100%;\n    overflow: none;\n    width: 100%;\n}\n.check-list[data-v-b0c13a56] {\n    width: 100%;\n    width: 80%;\n    height: 6.5%;\n    margin: 0px;\n    font-size: 10px;\n}\n.btn-check[data-v-b0c13a56] {\n    opacity: 0;\n    width: 23%;\n    height: 25px;\n}\n.check-button[data-v-b0c13a56] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    max-width: 250px;\n    width: 100%;\n    height: 25px;\n    border-top-right-radius: 7px;\n    border-bottom-right-radius: 7px;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.check-container[data-v-b0c13a56] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    padding-top: 0vh;\n    height: 100%;\n    overflow: none;\n    width: 100%;\n}\n.check-list[data-v-b0c13a56] {\n    width: 100%;\n    width: 80%;\n    height: 8%;\n    margin: 0px;\n    font-size: 9px;\n}\n.btn-check[data-v-b0c13a56] {\n    opacity: 0;\n    width: 10%;\n    height: 18px;\n}\n.check-button[data-v-b0c13a56] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    max-width: 250px;\n    width: 100%;\n    height: 18px;\n    border-top-right-radius: 7px;\n    border-bottom-right-radius: 7px;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 1280px) and (orientation: landscape) {\n.check-container[data-v-b0c13a56] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    padding-top: 0vh;\n    height: 100%;\n    overflow: none;\n    width: 100%;\n}\n.check-list[data-v-b0c13a56] {\n    width: 90%;\n    width: 80%;\n    height: 7.2%;\n    margin: 0px;\n    font-size: 12px;\n}\n.btn-check[data-v-b0c13a56] {\n    opacity: 0;\n    width: 10%;\n    height: 25px;\n}\n.check-button[data-v-b0c13a56] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    max-width: 250px;\n    width: 100%;\n    height: 25px;\n    border-top-right-radius: 7px;\n    border-bottom-right-radius: 7px;\n}\n}", ""]);
+exports.push([module.i, ".check-container[data-v-b0c13a56] {\n  display: flex;\n  flex-direction: column;\n  padding-top: 4vh;\n  height: calc(100vh - 150px);\n  overflow: auto;\n}\n.check-list[data-v-b0c13a56] {\n  width: 100%;\n  height: 6.5%;\n  margin: 5px 0;\n}\n.btn-check[data-v-b0c13a56] {\n  opacity: 0;\n  width: 250px;\n  height: 40px;\n}\n[type=checkbox]:checked + label[data-v-b0c13a56] {\n  background-color: #638F64;\n  color: white;\n}\n.check-button[data-v-b0c13a56] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  max-width: 250px;\n  height: 40px;\n  max-width: 250px;\n  border-top-right-radius: 7px;\n  border-bottom-right-radius: 7px;\n  border-top: 1px solid #638F64;\n  border-bottom: 1px solid #638F64;\n  border-right: 1px solid #638F64;\n}\n@media screen and (max-width: 575px) {\n.check-container[data-v-b0c13a56] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    padding-top: 0vh;\n    height: 100%;\n    overflow: none;\n    width: 100%;\n}\n.check-list[data-v-b0c13a56] {\n    width: 100%;\n    width: 80%;\n    height: 6.5%;\n    margin: 0px;\n    font-size: 10px;\n}\n.btn-check[data-v-b0c13a56] {\n    opacity: 0;\n    width: 23%;\n    height: 25px;\n}\n.check-button[data-v-b0c13a56] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    max-width: 250px;\n    width: 100%;\n    height: 25px;\n    border-top-right-radius: 7px;\n    border-bottom-right-radius: 7px;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.check-container[data-v-b0c13a56] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    padding-top: 0vh;\n    height: 100%;\n    overflow: none;\n    width: 100%;\n}\n.check-list[data-v-b0c13a56] {\n    width: 100%;\n    width: 80%;\n    height: 8%;\n    margin: 0px;\n    font-size: 9px;\n}\n.btn-check[data-v-b0c13a56] {\n    opacity: 0;\n    width: 10%;\n    height: 18px;\n}\n.check-button[data-v-b0c13a56] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    max-width: 250px;\n    width: 100%;\n    height: 18px;\n    border-top-right-radius: 7px;\n    border-bottom-right-radius: 7px;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 1280px) and (orientation: landscape) {\n.check-container[data-v-b0c13a56] {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    padding-top: 0vh;\n    height: 100%;\n    overflow: none;\n    width: 100%;\n}\n.check-list[data-v-b0c13a56] {\n    width: 100%;\n    height: 7.2%;\n    margin: 0px;\n    font-size: 12px;\n}\n.btn-check[data-v-b0c13a56] {\n    opacity: 0;\n    width: 12%;\n    height: 25px;\n}\n.check-button[data-v-b0c13a56] {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    max-width: 250px;\n    width: 100%;\n    height: 25px;\n    border-top-right-radius: 7px;\n    border-bottom-right-radius: 7px;\n}\n}", ""]);
 
 // exports
 
@@ -4384,7 +4396,7 @@ var render = function () {
                       staticClass: "button",
                       on: {
                         click: function ($event) {
-                          return _vm.sendCart(dish)
+                          _vm.sendCart(dish), _vm.openCart()
                         },
                       },
                     },
@@ -4402,7 +4414,11 @@ var render = function () {
         { staticClass: "cart-container" },
         [
           _c("Cart", {
-            attrs: { cartContent: _vm.cart, initialPrice: _vm.price },
+            attrs: {
+              cartContent: _vm.cart,
+              initialPrice: _vm.price,
+              flag: _vm.cartFlag,
+            },
           }),
         ],
         1
@@ -17535,7 +17551,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/davidenapolitano/Desktop/HTML-CSS-JS/progetto-finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

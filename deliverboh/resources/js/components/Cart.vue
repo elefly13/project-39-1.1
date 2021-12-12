@@ -50,7 +50,7 @@
 export default {
     
     name: "Cart",
-    props: ['cartContent','initialPrice'],
+    props: ['cartContent','initialPrice' , 'flag'],
    
     data() {
         return {
@@ -65,6 +65,10 @@ export default {
     },
 
     watch: {
+        flag: function() {
+            document.getElementById("mySidepanel").style.width = "250px";
+            document.getElementById("openbtn").style.width = "250px";
+        },
         cartContent: function () {
             let somma = 0;
 
@@ -103,8 +107,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-           
-           
+              
     .cart {
         position: relative;
         padding-top: 5vh;
@@ -208,11 +211,6 @@ export default {
         transition: 0.3s;
     }
 
-    // .icon_social {
-    //     height: 20px;
-    //     width: 20px;
-    // }
-
     .hastag {
         width: 25px;
     }
@@ -234,13 +232,12 @@ export default {
     }
 
 
-    @media screen and (min-width:320px) and (max-width:736px) and (orientation:landscape) {
-        .cart {
-            position: relative;
-            padding-top: 5vh;
-            // display: none;
+@media screen and (min-width:320px) and (max-width:736px) and (orientation:landscape) {
+    .cart {
+        position: relative;
+        padding-top: 5vh;
+        // display: none;
     }
-
     .cart-logo {
         width: 20px;
         display: flex;
@@ -286,18 +283,76 @@ export default {
     .openbtn {
         font-size: 20px;
         cursor: pointer;
-        // background-color: rgb(189, 54, 54);
-        // padding: 10px 15px;
         border: none;
         width: 50px;
     }
 
     .closebtn {
-        // margin: 0;
         font-size: 50px;
         cursor: pointer;
     }
+}
+
+@media screen and (min-width:320px) and (max-width:1280px) and (orientation:landscape) {
+    .cart {
+        position: relative;
+        padding-top: 5vh;
+        // display: none;
     }
+    .cart-logo {
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .sidepanel  {
+        display: flex;
+        width: 40px;
+        position: relative;
+        z-index: 99;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        // background-color: rgb(220, 26, 26);
+        overflow: hidden;
+        transition: 0.5s;
+        height: 280px;
+    }
+
+    .sidepanel-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidepanel-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidepanel a {
+        margin: 10px 0;
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .hastag {
+        width: 15px;
+    }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        width: 50px;
+    }
+
+    .closebtn {
+        font-size: 50px;
+        cursor: pointer;
+    }
+}
 
    
 </style>

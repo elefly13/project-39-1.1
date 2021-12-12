@@ -186,8 +186,7 @@ export default {
     }
 
     .check-list {
-        width: 90%;
-        width: 80%;
+        width: 100%;
         height: 7.2%;
         margin: 0px;
         font-size: 12px;
@@ -195,7 +194,7 @@ export default {
 
     .btn-check { 
         opacity: 0;
-        width: 10%;
+        width: 12%;
         height: 25px;
     }
 
