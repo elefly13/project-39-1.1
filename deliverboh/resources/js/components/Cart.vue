@@ -1,7 +1,7 @@
 <template>
     <section class="cart"> 
 
-        <div id="mySidepanel" class="sidepanel">
+        <div id="mySidepanel" class="sidepanel" style="width: 50px">
             <div class="sidepanel-left">
                 <a @click="openNav()" class="openbtn"><img class="cart-logo" :src="'../images/icons/cart.svg'" alt=""></a>
                 <img class="hastag" :src="'../images/icons/hastag.svg'" alt="">
@@ -110,9 +110,12 @@ export default {
 
 .panel-footer {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: 12px;
+    right: 0px;
+    width: calc(100% - 50px);
     height: 50px;
+    // padding-left: 10px;
+    text-align: center;
     background: seagreen;
 }
               
@@ -140,12 +143,25 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 50px;
+
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    background: antiquewhite;
     }
 
     .sidepanel-right {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+            display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: aqua;
+    width: calc(100% - 50px);
     }
 
     .sidepanel a {
