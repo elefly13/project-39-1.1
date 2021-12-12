@@ -9,10 +9,8 @@
                     {{info['restaurant_name']}}
                 </h4>
                 <li class="list-box">
-                    <ul>
-                        <li>{{info['restaurant_name']}}</li>
-                        <li>{{info['address']}}</li>
-                    </ul>  
+                    <span>{{info['restaurant_name']}}</span>
+                    <span>{{info['address']}}</span> 
                 </li>            
             </ul> 
         </div>
@@ -35,7 +33,7 @@ export default {
     .lista-box {
         padding: 10px;
         color: #343434;
-        overflow: auto;
+        // overflow: auto;
     }
 
     h4 {
@@ -45,7 +43,7 @@ export default {
     ul {
         width: 100%;
         height: 50%;
-        overflow-x: scroll;
+        overflow-y: auto;
     }
     .card {
         width: 200px;
@@ -82,7 +80,7 @@ export default {
     
      ul {
         // font-size: 10px;
-        overflow-x: scroll;
+        overflow-y: scroll;
     }
     li{
         list-style: none;
@@ -131,7 +129,7 @@ export default {
     }
     ul {
         font-size: 10px;
-        overflow-x: scroll;
+        overflow-y: scroll;
     }
     h4 {
         color: #628F64;

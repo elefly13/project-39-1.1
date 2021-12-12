@@ -1923,10 +1923,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   props: ['cartContent', 'initialPrice'],
+  data: function data() {
+    return {
+      // prova:this.cartContent,
+      finalPrice: 0,
+      price: 0,
+      test: 0,
+      api_token: "bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    };
+  },
+  watch: {
+    cartContent: function cartContent() {
+      var somma = 0;
+
+      for (var i in this.cartContent) {
+        var totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
+        somma += totalPrice;
+      }
+
+      this.price = somma;
+    }
+  },
   methods: {
+    lessQuantity: function lessQuantity(id) {
+      for (var i in this.cartContent) {
+        if (this.cartContent[i].id == id) {
+          this.price -= this.cartContent[i].price;
+        }
+      }
+    },
     openNav: function openNav() {
       document.getElementById("mySidepanel").style.width = "250px";
       document.getElementById("openbtn").style.width = "250px";
@@ -2222,6 +2284,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    emptyCart: function emptyCart() {
+      this.cart = [];
+      this.restaurant = 0;
+      return;
+    },
     sendCart: function sendCart(dish) {
       if (this.restaurant == 0) {
         this.restaurant = dish.user_id;
@@ -2423,8 +2490,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "User",
   props: ['info']
@@ -2530,7 +2595,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card-piatti[data-v-1c77d2d7] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  flex-direction: column;\n  border: 0.3px solid #e4e4e4;\n  border-bottom-right-radius: 30px;\n  background: white;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #e3e3e3;\n  position: relative;\n}\n.box-img-piatti[data-v-1c77d2d7] {\n  width: 100%;\n  height: 50%;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.nome-piatto[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100px;\n  position: absolute;\n  top: 45%;\n  overflow: scroll;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 10px;\n  margin-top: 15px;\n}\n.user-btn[data-v-1c77d2d7] {\n  border: 0px;\n  background: transparent;\n}\n.middle[data-v-1c77d2d7] {\n  height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n  height: 25%;\n  display: flex;\n  position: relative;\n  justify-content: space-between;\n  padding: 4vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n  margin-right: 17%;\n  white-space: nowrap;\n  text-align: right;\n  display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n  margin-right: 17%;\n  white-space: nowrap;\n  text-align: right;\n  display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n  display: block;\n  position: absolute;\n  bottom: 0;\n  margin-right: none;\n  text-align: left;\n  text-align: center;\n  width: 70%;\n  z-index: 10;\n  background: white;\n  box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n  margin: 0;\n  padding: 0;\n  color: #648F64;\n  color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n  color: black;\n}\n@media screen and (max-width: 930px) {\n.middle-top[data-v-1c77d2d7] {\n    flex-direction: column;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n}\n}\n.middle-bottom[data-v-1c77d2d7] {\n  height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.box-menu[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n@media screen and (max-width: 575px) {\n.box-user[data-v-1c77d2d7] {\n    width: 100%;\n    height: calc(100vh - 300px);\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: 100%;\n    height: 72vh;\n    height: 75vh;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    padding: 20px;\n}\n.middle-top[data-v-1c77d2d7] {\n    height: 15%;\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 0px;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-info[data-v-1c77d2d7] {\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n}\n.image[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\nh4[data-v-1c77d2d7] {\n  font-size: 18px;\n  color: #be541e;\n  text-transform: capitalize;\n}\np[data-v-1c77d2d7] {\n  font-size: 12px;\n  text-align: center;\n}\n.button[data-v-1c77d2d7] {\n  box-shadow: 5px 10px 18px #a09f9f;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n  position: absolute;\n  bottom: 0;\n}\n.button[data-v-1c77d2d7]:hover {\n  margin: 10px;\n  padding: 10px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n  transform: scale(1.05);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\n.cart-container[data-v-1c77d2d7] {\n  width: 250px;\n  display: flex;\n  justify-content: flex-end;\n  position: fixed;\n  right: 0;\n  top: 4vh;\n  z-index: 99;\n}\n@media screen and (max-width: 575px) {\n.container-card[data-v-1c77d2d7] {\n    padding: 20px;\n    height: 350px;\n}\n.cart-container[data-v-1c77d2d7] {\n    width: 250px;\n    display: flex;\n    justify-content: flex-end;\n    position: fixed;\n    right: 0;\n    top: 4vh;\n    z-index: 99;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.middle[data-v-1c77d2d7] {\n    height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 1vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: 17%;\n    white-space: nowrap;\n    text-align: right;\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n.user-name[data-v-1c77d2d7] {\n    margin: 0;\n    padding: 0;\n    color: #648F64;\n    color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n    color: black;\n}\n.middle-bottom[data-v-1c77d2d7] {\n    height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.container-card[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    align-items: flex-start;\n    height: 350px;\n}\n.user-btn[data-v-1c77d2d7] {\n    border: 0px;\n    background: transparent;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    height: 115%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.image[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    height: 350px;\n}\n.card-piatti[data-v-1c77d2d7] {\n    width: 150px;\n    height: 250px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border: 0.3px solid #e4e4e4;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n    transform: scale(1.05);\n}\n.box-img-piatti[data-v-1c77d2d7] {\n    width: 100%;\n    height: 50%;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.nome-piatto[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100px;\n    position: absolute;\n    top: 45%;\n    overflow: scroll;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    padding: 10px;\n    margin-top: 15px;\n}\n.nome-piatto > h4[data-v-1c77d2d7] {\n    font-size: 15px;\n}\n.nome-piatto > p[data-v-1c77d2d7] {\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7] {\n    box-shadow: 5px 10px 18px #a09f9f;\n    margin: 10px;\n    padding: 5px;\n    border: none;\n    border-color: #439373;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #439373;\n    color: #f4f0e2;\n    transition: 0.6s;\n    position: absolute;\n    bottom: 0;\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7]:hover {\n    margin: 10px;\n    padding: 10px;\n    border: none;\n    border-color: #f1c692;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #f1c692;\n    color: #343434;\n}\n.cart-container[data-v-1c77d2d7] {\n    width: 250px;\n    display: flex;\n    justify-content: flex-end;\n    position: fixed;\n    right: 0;\n    top: 4vh;\n    z-index: 99;\n}\n}", ""]);
+exports.push([module.i, ".card-piatti[data-v-1c77d2d7] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  flex-direction: column;\n  border: 0.3px solid #e4e4e4;\n  border-bottom-right-radius: 30px;\n  background: white;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #e3e3e3;\n  position: relative;\n}\n.box-img-piatti[data-v-1c77d2d7] {\n  width: 100%;\n  height: 50%;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.nome-piatto[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100px;\n  position: absolute;\n  top: 45%;\n  overflow-y: scroll;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 10px;\n  margin-top: 15px;\n}\n.user-btn[data-v-1c77d2d7] {\n  border: 0px;\n  background: transparent;\n}\n.middle[data-v-1c77d2d7] {\n  height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n  height: 25%;\n  display: flex;\n  position: relative;\n  justify-content: space-between;\n  padding: 4vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n  margin-right: 17%;\n  white-space: nowrap;\n  text-align: right;\n  display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n  margin-right: 17%;\n  white-space: nowrap;\n  text-align: right;\n  display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n  display: block;\n  position: absolute;\n  bottom: 0;\n  margin-right: none;\n  text-align: left;\n  text-align: center;\n  width: 70%;\n  z-index: 10;\n  background: white;\n  box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n  margin: 0;\n  padding: 0;\n  color: #648F64;\n  color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n  color: black;\n}\n@media screen and (max-width: 930px) {\n.middle-top[data-v-1c77d2d7] {\n    flex-direction: column;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n}\n}\n.middle-bottom[data-v-1c77d2d7] {\n  height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n.box-menu[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  overflow-y: scroll;\n  display: flex;\n  flex-wrap: wrap;\n}\n@media screen and (max-width: 575px) {\n.box-user[data-v-1c77d2d7] {\n    width: 100%;\n    height: calc(100vh - 300px);\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: 100%;\n    height: 72vh;\n    height: 75vh;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    padding: 20px;\n}\n.middle-top[data-v-1c77d2d7] {\n    height: 15%;\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 0px;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-info[data-v-1c77d2d7] {\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n}\n.image[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\nh4[data-v-1c77d2d7] {\n  font-size: 18px;\n  color: #be541e;\n  text-transform: capitalize;\n}\np[data-v-1c77d2d7] {\n  font-size: 12px;\n  text-align: center;\n}\n.button[data-v-1c77d2d7] {\n  box-shadow: 5px 10px 18px #a09f9f;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n  position: absolute;\n  bottom: 0;\n}\n.button[data-v-1c77d2d7]:hover {\n  margin: 10px;\n  padding: 10px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #f1c692;\n  color: #343434;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n  transform: scale(1.05);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\n.cart-container[data-v-1c77d2d7] {\n  width: 250px;\n  display: flex;\n  justify-content: flex-end;\n  position: fixed;\n  right: 0;\n  top: 4vh;\n  z-index: 99;\n}\n@media screen and (max-width: 575px) {\n.container-card[data-v-1c77d2d7] {\n    padding: 20px;\n    height: 350px;\n}\n.cart-container[data-v-1c77d2d7] {\n    width: 250px;\n    display: flex;\n    justify-content: flex-end;\n    position: fixed;\n    right: 0;\n    top: 4vh;\n    z-index: 99;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.middle[data-v-1c77d2d7] {\n    height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 1vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: 17%;\n    white-space: nowrap;\n    text-align: right;\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n.user-name[data-v-1c77d2d7] {\n    margin: 0;\n    padding: 0;\n    color: #648F64;\n    color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n    color: black;\n}\n.middle-bottom[data-v-1c77d2d7] {\n    height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.container-card[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    align-items: flex-start;\n    height: 350px;\n}\n.user-btn[data-v-1c77d2d7] {\n    border: 0px;\n    background: transparent;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    height: 115%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.image[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    height: 350px;\n}\n.card-piatti[data-v-1c77d2d7] {\n    width: 150px;\n    height: 250px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border: 0.3px solid #e4e4e4;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n    transform: scale(1.05);\n}\n.box-img-piatti[data-v-1c77d2d7] {\n    width: 100%;\n    height: 50%;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.nome-piatto[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100px;\n    position: absolute;\n    top: 45%;\n    overflow: scroll;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    padding: 10px;\n    margin-top: 15px;\n}\n.nome-piatto > h4[data-v-1c77d2d7] {\n    font-size: 15px;\n}\n.nome-piatto > p[data-v-1c77d2d7] {\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7] {\n    box-shadow: 5px 10px 18px #a09f9f;\n    margin: 10px;\n    padding: 5px;\n    border: none;\n    border-color: #439373;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #439373;\n    color: #f4f0e2;\n    transition: 0.6s;\n    position: absolute;\n    bottom: 0;\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7]:hover {\n    margin: 10px;\n    padding: 10px;\n    border: none;\n    border-color: #f1c692;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #f1c692;\n    color: #343434;\n}\n.cart-container[data-v-1c77d2d7] {\n    width: 250px;\n    display: flex;\n    justify-content: flex-end;\n    position: fixed;\n    right: 0;\n    top: 4vh;\n    z-index: 99;\n}\n}", ""]);
 
 // exports
 
@@ -2587,7 +2652,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "li[data-v-c67fc6e6] {\n  list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n  padding: 10px;\n  color: #343434;\n  overflow: auto;\n}\nh4[data-v-c67fc6e6] {\n  color: #628F64;\n}\nul[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  overflow-x: scroll;\n}\n.card[data-v-c67fc6e6] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-bottom-right-radius: 30px;\n  background: white;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #e3e3e3;\n  position: relative;\n}\n.card[data-v-c67fc6e6]:hover {\n  transform: scale(1.05);\n}\n.box-img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (max-width: 575px) {\nul[data-v-c67fc6e6] {\n    overflow-x: scroll;\n}\nli[data-v-c67fc6e6] {\n    list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n    padding: 10px;\n    color: #343434;\n}\nh4[data-v-c67fc6e6] {\n    color: #628F64;\n}\n.card[data-v-c67fc6e6] {\n    width: 200px;\n    height: 300px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border: 0.3px solid #e4e4e4;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card[data-v-c67fc6e6]:hover {\n    transform: scale(1.05);\n}\n.box-img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 50%;\n    margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\nli[data-v-c67fc6e6] {\n    list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n    padding: 10px;\n    color: #343434;\n}\nul[data-v-c67fc6e6] {\n    font-size: 10px;\n    overflow-x: scroll;\n}\nh4[data-v-c67fc6e6] {\n    color: #628F64;\n    font-size: 14px;\n}\n.card[data-v-c67fc6e6] {\n    width: 150px;\n    height: 250px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border: 0.3px solid #e4e4e4;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card[data-v-c67fc6e6]:hover {\n    transform: scale(1.05);\n}\n.box-img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 50%;\n    margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}", ""]);
+exports.push([module.i, "li[data-v-c67fc6e6] {\n  list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n  padding: 10px;\n  color: #343434;\n}\nh4[data-v-c67fc6e6] {\n  color: #628F64;\n}\nul[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  overflow-y: auto;\n}\n.card[data-v-c67fc6e6] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  border: 0.3px solid #e4e4e4;\n  border-bottom-right-radius: 30px;\n  background: white;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #e3e3e3;\n  position: relative;\n}\n.card[data-v-c67fc6e6]:hover {\n  transform: scale(1.05);\n}\n.box-img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 50%;\n  margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (max-width: 575px) {\nul[data-v-c67fc6e6] {\n    overflow-y: scroll;\n}\nli[data-v-c67fc6e6] {\n    list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n    padding: 10px;\n    color: #343434;\n}\nh4[data-v-c67fc6e6] {\n    color: #628F64;\n}\n.card[data-v-c67fc6e6] {\n    width: 200px;\n    height: 300px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border: 0.3px solid #e4e4e4;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card[data-v-c67fc6e6]:hover {\n    transform: scale(1.05);\n}\n.box-img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 50%;\n    margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\nli[data-v-c67fc6e6] {\n    list-style: none;\n}\n.lista-box[data-v-c67fc6e6] {\n    padding: 10px;\n    color: #343434;\n}\nul[data-v-c67fc6e6] {\n    font-size: 10px;\n    overflow-y: scroll;\n}\nh4[data-v-c67fc6e6] {\n    color: #628F64;\n    font-size: 14px;\n}\n.card[data-v-c67fc6e6] {\n    width: 150px;\n    height: 250px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border: 0.3px solid #e4e4e4;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card[data-v-c67fc6e6]:hover {\n    transform: scale(1.05);\n}\n.box-img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 50%;\n    margin-bottom: 10px;\n}\n.box-img > img[data-v-c67fc6e6] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}", ""]);
 
 // exports
 
@@ -3971,6 +4036,94 @@ var render = function () {
           [_vm._v("×")]
         ),
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "sidepanel-right" },
+        [
+          _vm._l(_vm.cartContent, function (dish, index) {
+            return _c("ul", { key: index }, [
+              _c("li", [_vm._v(_vm._s(dish.name))]),
+              _vm._v(" "),
+              _c("li", [_vm._v("€ " + _vm._s(dish.price))]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(dish.quantity) +
+                    "\n                        "
+                ),
+                _c(
+                  "button",
+                  {
+                    on: {
+                      click: function ($event) {
+                        dish.quantity > 1
+                          ? dish.quantity--
+                          : _vm.cartContent.splice(index, 1),
+                          _vm.lessQuantity(dish.id)
+                      },
+                    },
+                  },
+                  [_vm._v("-")]
+                ),
+              ]),
+            ])
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-footer" }, [
+            _c("span", [_vm._v("totale: € " + _vm._s(_vm.price.toFixed(2)))]),
+            _vm._v(" "),
+            _c(
+              "form",
+              { attrs: { method: "post", action: "/checkout" } },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf },
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.cartContent, function (dish, index) {
+                  return _c("div", { key: index, staticClass: "panel-body" }, [
+                    _c("input", {
+                      attrs: { type: "hidden", name: "price[]" },
+                      domProps: { value: dish.price },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", name: "name[]" },
+                      domProps: { value: dish.name },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", name: "description[]" },
+                      domProps: { value: dish.description },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", name: "quantity[]" },
+                      domProps: { value: dish.quantity },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", name: "id[]" },
+                      domProps: { value: dish.id },
+                    }),
+                  ])
+                }),
+                _vm._v(" "),
+                _vm.price != 0
+                  ? _c("button", { staticClass: "cart-btn" }, [
+                      _vm._v("Procedi al pagamento"),
+                    ])
+                  : _vm._e(),
+              ],
+              2
+            ),
+          ]),
+        ],
+        2
+      ),
     ]),
   ])
 }
@@ -4244,7 +4397,16 @@ var render = function () {
           )
         : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "cart-container" }, [_c("Cart")], 1),
+      _c(
+        "div",
+        { staticClass: "cart-container" },
+        [
+          _c("Cart", {
+            attrs: { cartContent: _vm.cart, initialPrice: _vm.price },
+          }),
+        ],
+        1
+      ),
     ]),
   ])
 }
@@ -4416,11 +4578,9 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "list-box" }, [
-          _c("ul", [
-            _c("li", [_vm._v(_vm._s(_vm.info["restaurant_name"]))]),
-            _vm._v(" "),
-            _c("li", [_vm._v(_vm._s(_vm.info["address"]))]),
-          ]),
+          _c("span", [_vm._v(_vm._s(_vm.info["restaurant_name"]))]),
+          _vm._v(" "),
+          _c("span", [_vm._v(_vm._s(_vm.info["address"]))]),
         ]),
       ]),
     ]),
@@ -17375,7 +17535,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/davidenapolitano/Desktop/HTML-CSS-JS/progetto-finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /home/glitch/Desktop/boolean#39/progetto_finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

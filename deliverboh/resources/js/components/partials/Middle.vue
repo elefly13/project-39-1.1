@@ -41,7 +41,7 @@
                 </div>                        
             </div>
             <div class="cart-container">
-                <Cart />
+                <Cart :cartContent="cart" :initialPrice="price" />
             </div>
         </div>
     </section>
@@ -141,6 +141,11 @@ export default {
         },
     },
     methods: {
+        emptyCart(){
+            this.cart = []
+            this.restaurant = 0
+            return
+        },
         sendCart(dish) {
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
@@ -275,7 +280,7 @@ export default {
         height: 100px;
         position: absolute;
         top: 45%;
-        overflow: scroll;
+        overflow-y: scroll;
         display: flex;
         align-items: center;
         flex-direction: column;

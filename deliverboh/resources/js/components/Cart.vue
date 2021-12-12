@@ -7,6 +7,39 @@
                 <img class="hastag" :src="'../images/icons/hastag.svg'" alt="">
                 <a class="closebtn" @click="closeNav()">×</a>
             </div>
+              
+            <div class="sidepanel-right" > 
+                
+               
+                    <ul v-for="(dish, index) in cartContent" :key="index">
+                        <li>{{ dish.name }}</li>
+                        <li>€ {{ dish.price }}</li>
+                        <li>
+                            {{ dish.quantity }}
+                            <button @click="((dish.quantity > 1 ) ? dish.quantity-- : cartContent.splice(index ,1)), lessQuantity(dish.id)">-</button>
+                        </li>
+                    </ul>
+               
+                
+                <div class="panel-footer">
+                    <span>totale: € {{ price.toFixed(2) }}</span>
+                    <form method="post" action="/checkout">
+                        <input type="hidden" name="_token" v-bind:value="csrf">
+                            <!-- <input type="hidden" name="prova" v-bind:value="this.prova[0]"> -->
+                            
+                            <div class="panel-body" v-for="(dish, index) in cartContent" :key="index">
+                                <input  type="hidden" name="price[]" v-bind:value="dish.price">
+                                <input  type="hidden" name="name[]" v-bind:value="dish.name">
+                                <input  type="hidden" name="description[]" v-bind:value="dish.description">
+                                <input  type="hidden" name="quantity[]" v-bind:value="dish.quantity">
+                                <input  type="hidden" name="id[]" v-bind:value="dish.id">
+                        </div>
+
+                        <button class="cart-btn" v-if="price!=0"  >Procedi al pagamento</button>
+                    </form>
+                </div>
+                
+            </div>
         </div>
        
         
@@ -19,8 +52,40 @@ export default {
     name: "Cart",
     props: ['cartContent','initialPrice'],
    
+    data() {
+        return {
+            // prova:this.cartContent,
+            finalPrice: 0,
+            price: 0,
+            test: 0,
+            api_token:"bbzRf42NwlCuPIdwL7AiHgXskzLa69GB61Tn8QA7VZ1woSustPL1NfelqeHpfolpwhwX6lR1OolmJf3k",
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+
+        };
+    },
+
+    watch: {
+        cartContent: function () {
+            let somma = 0;
+
+            for (const i in this.cartContent) {
+
+                let totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
+                somma += totalPrice;   
+            }
+            
+            this.price = somma;
+        },
+    },
 
     methods: {
+        lessQuantity(id) {
+            for (const i in this.cartContent) {
+                if (this.cartContent[i].id == id) {
+                    this.price -= this.cartContent[i].price
+                }
+            }
+        },
         
         openNav() {
             document.getElementById("mySidepanel").style.width = "250px";
