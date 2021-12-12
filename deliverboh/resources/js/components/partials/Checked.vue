@@ -172,4 +172,18 @@ export default {
 
 }
 
+@media screen and (min-width:320px) and (max-width:1280px) and (orientation:landscape) {
+ 
+
+    .check-list {
+        width: 90%;
+        width: 80%;
+        height: 8%;
+        margin: 0px;
+        font-size: 9px;
+    }
+
+   
+}
+
 </style>

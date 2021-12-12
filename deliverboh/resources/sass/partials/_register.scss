@@ -1,9 +1,21 @@
 
 .header {
     background-color: #b5d8ba;
+    // background-color: #439373;
     border-bottom-right-radius: 20px;
     color: #343434;
+    // color: white;
 }
+
+// .onde {
+//     background-image: url('../images/onde.svg');
+//     background-repeat: no-repeat;
+//     background-position: center -20%;
+//     background-size: 100%;
+//     width: 100%;
+//     height: 100%;
+// }
+
 .my-card {
     position: relative;
     display: flex;
@@ -13,11 +25,11 @@
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    // border-radius: 0.25rem;
     border-radius: 5px;
     border-bottom-right-radius: 40px;
     box-shadow: 5px 10px 18px #cfcece;
     margin-top: 100px;
+    
 }
 .my-form {
     display: block;
@@ -33,7 +45,6 @@
     border: 1px solid #ced4da;
     border-radius: 1rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    
 }
 .my-form:focus {
     color: #495057;
@@ -42,6 +53,7 @@
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(89 145 117 / 25%);
 }
+
 .my-btn {
     color: #fff;
     background-color: #439373;

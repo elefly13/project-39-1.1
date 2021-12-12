@@ -314,7 +314,7 @@ export default {
         display: none;
     } 
 
-         .user-info-nascosto {
+    .user-info-nascosto {
         display: block;
         position: absolute;
         bottom: 0;

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid onde">
     <div class="row justify-content-center">
         <div class=" col-sm-12 col-md-6">
             <div class="my-card">
