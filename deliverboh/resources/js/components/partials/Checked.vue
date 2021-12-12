@@ -175,12 +175,39 @@ export default {
 @media screen and (min-width:320px) and (max-width:1280px) and (orientation:landscape) {
  
 
+  .check-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 0vh;
+        height: 100%;
+        overflow: none;
+        width: 100%;
+    }
+
     .check-list {
         width: 90%;
         width: 80%;
-        height: 8%;
+        height: 7.2%;
         margin: 0px;
-        font-size: 9px;
+        font-size: 12px;
+    }
+
+    .btn-check { 
+        opacity: 0;
+        width: 10%;
+        height: 25px;
+    }
+
+    .check-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 250px;
+        width: 100%;
+        height: 25px;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
     }
 
    

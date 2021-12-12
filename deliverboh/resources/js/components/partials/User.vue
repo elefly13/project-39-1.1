@@ -45,7 +45,7 @@ export default {
     ul {
         width: 100%;
         height: 50%;
-        overflow: scroll;
+        overflow-x: scroll;
     }
     .card {
         width: 200px;
@@ -79,7 +79,11 @@ export default {
 
 
     @media screen and (max-width: 575px) {
-
+    
+     ul {
+        // font-size: 10px;
+        overflow-x: scroll;
+    }
     li{
         list-style: none;
     }
@@ -127,6 +131,7 @@ export default {
     }
     ul {
         font-size: 10px;
+        overflow-x: scroll;
     }
     h4 {
         color: #628F64;

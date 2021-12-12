@@ -132,7 +132,7 @@ export default {
             this.ristoranti =  appoggio;
             if (this.searchText != '') {
                 let filteredList = this.ristoranti.filter( item => {
-                    return item.name
+                    return item.restaurant_name
                         .toLowerCase()
                         .includes(this.searchText.toLowerCase());
                 })

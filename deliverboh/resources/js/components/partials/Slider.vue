@@ -32,8 +32,12 @@ export default {
 
 .popolari {
     height: 100%;
+    height: 70%;
     position: absolute;
     left: 50%;
+    bottom: 5;
+    display: flex;
+    align-items: flex-end;
     transform: translateX(-50%);
 }
 
@@ -41,8 +45,10 @@ export default {
   display: flex;
   width: 100%;
   padding: 4% 2%;
+  padding: 0% 2%;
   box-sizing: border-box;
   height: 100%;
+  height: 85%;
 }
 
 .box {
@@ -55,7 +61,7 @@ export default {
   z-index: 10;
   text-align: center;
   border: 0.3px solid rgb(228, 228, 228);
-  border-top-left-radius: 30px;
+  // border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
   background: rgb(255, 255, 255);
 }
