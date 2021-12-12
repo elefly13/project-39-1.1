@@ -16,11 +16,11 @@
                 <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/admin') }}">Dashboard</a>
+              <a class="nav-link" href="{{ url('/admin/dishes') }}">Dashboard</a>
             </li>
 
             <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              <a id="navbarDropdown" class="nav-link dropdown-toggle nome-ristorante" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
               </a>
 

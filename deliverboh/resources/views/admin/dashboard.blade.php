@@ -21,7 +21,7 @@
                             </div>
                         @endif
 
-                        {{ __('Benvenuto nella tua Dashboard') }}
+                        <h4>{{ __('Benvenuto nella tua Dashboard') }}</h4>
                        
                     </div>
                     

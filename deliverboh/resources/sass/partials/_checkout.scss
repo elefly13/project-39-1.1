@@ -99,5 +99,15 @@
     outline: 0;
 }
 .text-totale-check {
-    font-size: 20px;
+    font-size: 18px;
+    margin-right: 10px;
 } 
+.box-totale-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.num-tot-check {
+    font-size: 18px;
+}

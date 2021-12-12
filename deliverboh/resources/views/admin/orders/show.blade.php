@@ -2,69 +2,43 @@
 
 @section('dashboard')
 <div class="container-fluid">
-    <div class="row col-12 justify-content-center">
-        <div class="col-sm-12 col-md-8 box-order-index">
-            @foreach ($data as $item)
-            <div class=" col-12 box-card-order">
-                <table class="table table-order-index">
-                    <thead>
-                      <tr class="row-head">
-                        <th scope="col">N.Ordine</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Cognome</th>
-                        <th scope="col">indirizzo consegna</th>
-                        <th scope="col">Importo Totale</th>
-                        <th scope="col">Nota del cliente</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">{{$order['id']}}</th>
-                        <td>{{$order['name_user']}}</td>
-                        <td>{{$order['lastname_user']}}</td>
-                        <td>{{$order['delivery_address']}}</td>
-                        <td>€ {{$order['total']}}</td>
-                        <td>{{$order['note']}}</td>
-                      </tr>
-                    </tbody>
-                </table>   
+  <div class="row col-12 justify-content-center">
+    <div class="col-sm-12 col-md-8 box-order-index">
+      <div class=" col-11 box-card-order">
+        <table class="col-11 table table-order-index">
+          <thead>
+            <tr class="row-head">
+              <th scope="col">Numero piatto</th>
+              <th scope="col">Nome piatto</th>
+              <th scope="col">Ingredienti</th>
+              <th scope="col">Quantità</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for ($i=0; $i< count($carrello); $i++)
+            <tr>
+              <th scope="row">{{$carrello[$i]['id']}} </th>
+              <td>{{$carrello[$i]['name']}}</td>
+              <td>{{$carrello[$i]['ingredients']}}</td>
+              <td>{{ $quanto[$i]['quantity']}}</td> 
+            </tr>
+            @endfor
+          </tbody>
+        </table>  
+            {{-- <div>
+                {{$carrello[$i]['name']}} {{$carrello[$i]['id']}} 
                 
-                
-        
-                <a href="{{route('admin.orders.index')}}">Torna indietro</a>
-                {{-- <a href="{{route('admin.orders.edit', $order->id)}}">modifica ordine</a>
-                <form action="{{route('admin.orders.destroy', $order->id)}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>  --}}
-            </div>
-        @endforeach
-        {{-- <br>
-            <a href="{{route('admin.orders.create')}}">aggiungi un nuovo ordine</a> --}}
+                {{ $quanto[$i]['quantity']}}
+            </div> --}}
+             <p>Ordine effettuato il  {{ $order->created_at}} </p>   
+          <a class="link-dettaglio-order" href="{{route('admin.orders.index')}}">torna indietro</a>  
 
-        </div>
+        </div>   
+      </div>
     </div>
-   
+  </div>
 </div>
 
-
-
-
-
-
-
-@section('content')
-@for ($i=0; $i< count($carrello); $i++)
-     <div>
-         {{$carrello[$i]['name']}} {{$carrello[$i]['id']}} 
-         {{-- @dd($order) --}}
-        {{ $quanto[$i]['quantity']}}
-     </div>
-     
-     @endfor
-     {{ $order->created_at}}
-<a href="{{route('admin.orders.index')}}">torna indietro</a>  
 @endsection
 
 

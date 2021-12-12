@@ -1,6 +1,5 @@
 .big-box-dish {
-    width: 100%;
-    height: calc(100vh - 20vh);
+    height: calc(100vh - 30vh);
     margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +36,7 @@
     font-size: 18px; 
     color: #be541e; 
     padding: 8px 0;
-    text-transform: capitalize;
+    // text-transform: capitalize;
  }
 .p-dish-index {
     font-size: 12px;
@@ -63,36 +62,34 @@
     background-color:  red;
     color: #f4f0e2;
 }
-// .link-dish-index {
-//     color: #439373;
-//     transition: 0.5s;
-// }
+.link-dish-index {
+    color: #439373;
+    transition: 0.5s;
+}
 .link-dish-index:hover {
-    color: #343434;
-    background-color: #b5d8ba;
+    color: #f1c692;
     text-decoration: none;
 }
 .btn-top-index {
+    text-align: center;
     font-size: 16px;
-    padding: 10px;
-    background-color: #b5d8ba;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-right: 20px;
+    margin-top: 2px;
+    padding: 10px 100px;
+    background-color: #439373;
+    border-radius: 5px;
     text-decoration: none;
-    
-    color: #be541e;
-
+    color: white;
 }
 .overlay-dish-index {
     position: absolute;
     bottom: 0;
     background: rgba(189, 215, 188, 0.5);
     width: 100%;
-    
     border-radius: 5px;
     border-bottom-right-radius: 40px;
     padding: 5px;
- 
+  }
+  .nome-dish-index::first-letter {
+    text-transform: uppercase;
   }
 

@@ -91,7 +91,7 @@ Route::post('/conferma', function(Request $request){
         'publicKey' => 'mctc6yb5cscswrmn',
         'privateKey' => 'ac3d4ee7cf509dd7573af794ecbb6a2d',
     ]);
-
+    
     $amount = $request->amount;
     $nonce = $request->payment_method_nonce;
 
@@ -103,7 +103,7 @@ Route::post('/conferma', function(Request $request){
         ]
     ]);
     
-
+    
     $new_order = new order();
     $new_order['email']=$request['email'];
     $new_order['lastname_user']=$request['lastname'];
@@ -119,7 +119,6 @@ Route::post('/conferma', function(Request $request){
     {
         $new_order['status']=1;
         $new_order->save();
-        
         
         for ($i=0; $i< count( $request['id']); $i++ ){
             $prova= new DishOrder();

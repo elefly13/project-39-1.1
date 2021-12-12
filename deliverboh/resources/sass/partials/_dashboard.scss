@@ -1,6 +1,5 @@
 .space-dash{
-    margin: 0 auto;
-    
+    margin: 30px auto;
 }
 .box-big-dash {
     height: 100%;
@@ -12,20 +11,26 @@
 }
 .top-dash {
     background-color: #439373;
-    color: white;   
-}
-.text-link-dash {
     color: white;
+    border-top-right-radius: 5px; 
+    border-top-left-radius: 5px;   
+}
+
+.text-link-dash {
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+    transition: 0.5s;
 }
 .text-link-dash:hover {
-    color: #b5d8ba !important;
+    color: #f1c692;
+    border-bottom: 1px solid #f1c692;
 }
 .text-name-dash {
     color: #f1c692;
     font-size: 30px;
     // text-transform: initial;
     text-transform: capitalize;
-
 }
 
 

@@ -10,8 +10,8 @@
   </head>
   <body>
     <!-- Chart's container -->
-    <div class="col-sm-12 col-md-12 px-4 big-box-sta" >
-      <div class="row mx-2 justify-content-center">
+    <div class="container-fluid big-box-sta" >
+      <div class="row mx-2 justify-content-center ">
         <div class="col-sm-12 col-md-5 m-3 box-chart">
           <h3 class="text-h3-stat">Ordini ricevuti per anno</h3>
           <div id="chart" style="height: 300px;"></div>
