@@ -1,5 +1,5 @@
 .big-box-dish {
-    height: calc(100vh - 30vh);
+    height: calc(100vh - 20vh);
     margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
@@ -88,8 +88,17 @@
     border-radius: 5px;
     border-bottom-right-radius: 40px;
     padding: 5px;
-  }
-  .nome-dish-index::first-letter {
+}
+.nome-dish-index::first-letter {
     text-transform: uppercase;
-  }
+}
+.card-gray {
+    background-color: gray;
+}
+.my-alert {
+    width: 200px;
+    position: absolute;
+    color: $verdescuro;
+    background-color: $verdechiaro;
 
+}

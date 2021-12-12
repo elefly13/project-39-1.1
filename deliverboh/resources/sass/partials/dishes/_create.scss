@@ -1,7 +1,10 @@
+.big-box-dish-create {
+    height: 100%;
+}
 .header-create {
-    background-color: #b5d8ba;
+    background-color: $verdechiaro;
     border-bottom-right-radius: 20px;
-    color: #be541e;
+    color: $verdescuro;
 }
 .my-card-create {
     position: relative;
@@ -20,25 +23,33 @@
 }
 .check {
     height: 30px;
-    background-color:#b5d8ba;
+    background-color:$aranciochiaro;
+    color: white;
     padding-right:20px;
     border-radius: 5px;
+    cursor: pointer;
 }
 [type=checkbox] { 
     position: absolute;
     opacity: 0;
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 [type=checkbox]:checked + label {
 font-weight: 800;
-color: #be541e;
+color: $verdescuro;
+cursor: pointer;
+
 }
 .btn-create-dish {
     color: #fff;
     background-color: #439373;
     border-color: #439373;
     margin: 0 auto;
+}
+.btn-create-dish:hover {
+    color: $arancioscuro;
 }
 .box-btn-dish-create {
     display: flex;

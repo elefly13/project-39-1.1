@@ -10,16 +10,16 @@
             {{-- <div><a href="{{route('admin.user.index')}}">modifica categorie associate allo user</a></div> --}}
         {{-- </div> --}}
 
-        <div class="col-sm-12  col-md-11 space-dash box-big-dash" >
+        <div class="col-sm-12  col-md-12 space-dash box-big-dash" >
             <div class="col-sm-12 top-dash">
                 <nav class="navbar navbar-expand-sm d-flex align-items-center">
                     {{-- AVVISO sei loggato --}}
                     <div class="card-body">
-                        @if (session('status'))
+                        {{-- @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
-                        @endif
+                        @endif --}}
 
                         <h4>{{ __('Benvenuto nella tua Dashboard') }}</h4>
                        

@@ -5129,7 +5129,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "user-name" }, [
-                _vm._v(_vm._s(this.restaurant_name)),
+                _vm._v(_vm._s(this.restaurantName)),
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "menu-text" }, [

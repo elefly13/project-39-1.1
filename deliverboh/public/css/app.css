@@ -13084,7 +13084,7 @@ nav {
 }
 
 .nome-ristorante {
-  color: #be541e !important;
+  color: #e79e43 !important;
   font-size: 16px;
   font-weight: 800;
   text-transform: capitalize;
@@ -13223,23 +13223,21 @@ nav {
 }
 
 .space-dash {
-  margin: 30px auto;
+  height: 100%;
+  background-image: url("/images/nuovo-sfondo.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box-big-dash {
-  height: 100%;
-  background-color: rgba(52, 52, 52, 0.2);
-  border-radius: 5px;
-  border-bottom-right-radius: 40px;
+  height: calc(100vh - 58.94px);
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
 .top-dash {
-  background-color: #439373;
+  background-color: #e79e43;
   color: white;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
 }
 
 .text-link-dash {
@@ -13250,14 +13248,20 @@ nav {
 }
 
 .text-link-dash:hover {
-  color: #f1c692;
-  border-bottom: 1px solid #f1c692;
+  color: #449373;
+  border-bottom: 1px solid #449373;
 }
 
 .text-name-dash {
-  color: #f1c692;
+  color: #449373;
   font-size: 30px;
   text-transform: capitalize;
+}
+
+.my-alert {
+  position: absolute;
+  color: #449373;
+  background-color: #add39b;
 }
 
 .header-edit {
@@ -13305,7 +13309,7 @@ nav {
 }
 
 .big-box-dish {
-  height: 70vh;
+  height: 80vh;
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
@@ -13407,10 +13411,25 @@ nav {
   text-transform: uppercase;
 }
 
+.card-gray {
+  background-color: gray;
+}
+
+.my-alert {
+  width: 200px;
+  position: absolute;
+  color: #449373;
+  background-color: #add39b;
+}
+
+.big-box-dish-create {
+  height: 100%;
+}
+
 .header-create {
-  background-color: #b5d8ba;
+  background-color: #add39b;
   border-bottom-right-radius: 20px;
-  color: #be541e;
+  color: #449373;
 }
 
 .my-card-create {
@@ -13431,9 +13450,11 @@ nav {
 
 .check {
   height: 30px;
-  background-color: #b5d8ba;
+  background-color: #ebbb57;
+  color: white;
   padding-right: 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 [type=checkbox] {
@@ -13441,11 +13462,13 @@ nav {
   opacity: 0;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 [type=checkbox]:checked + label {
   font-weight: 800;
-  color: #be541e;
+  color: #449373;
+  cursor: pointer;
 }
 
 .btn-create-dish {
@@ -13453,6 +13476,10 @@ nav {
   background-color: #439373;
   border-color: #439373;
   margin: 0 auto;
+}
+
+.btn-create-dish:hover {
+  color: #e79e43;
 }
 
 .box-btn-dish-create {
