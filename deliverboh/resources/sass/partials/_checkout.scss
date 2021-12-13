@@ -24,7 +24,7 @@
 }   
 .titolo-check {
     border-bottom: 1px solid #439373;
-    color: #be541e;
+    color: #e79e43;
     padding: 10px;
 } 
 .sezione-piatto {
@@ -39,7 +39,7 @@
 }
 .text-h5-check {
     font-size: 20px;
-    color: #be541e;
+    color: #e79e43;
     text-align: right;
 }
 .btn {
@@ -58,11 +58,11 @@
     transition: 0.6s;
 }
 .button-check:hover {
-    border-color: #f1c692;
+    border-color: #ebbb57;
     border-radius: 3px;
     border: none;
     border-bottom-right-radius: 10px;
-    background-color:  #f1c692;
+    background-color:  #ebbb57;
     color: #343434;
 }   
 .input-check {
@@ -99,5 +99,15 @@
     outline: 0;
 }
 .text-totale-check {
-    font-size: 20px;
+    font-size: 18px;
+    margin-right: 10px;
 } 
+.box-totale-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.num-tot-check {
+    font-size: 18px;
+}

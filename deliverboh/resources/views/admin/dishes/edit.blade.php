@@ -30,7 +30,7 @@
 							<input value="{{old('description', $dish->description)}}"  type="text" name="description" class="form-control my-form" id="description" placeholder="descrivi il piatto">     
 						</div>
 						<div class="form-group">
-							<label for="description">modifica immagine piatto</label><br>
+							<label for="description">Modifica immagine piatto</label><br>
 							<input type="file" name='image' id='image' class="@error('image') is-invalid @enderror">
 						</div>
 						<div class="form-group">
@@ -54,12 +54,23 @@
 						@endforeach
 						</div>
 						<div class="form-group">
-							<label class="text-center" for="visibility">Pubblica</label>
+							{{-- Select visibilità  --}}
+							<select class="col-sm-12 col-md-3 py-2 form-select form-select-sm my-form" name="visibility" id="visibility">
+								<option value="1" selected>Seleziona la visibilità</option>
+								<option value="1">Visibile</option>
+								<option value="0">Non visibile</option>
+							</select>
+						</div>
+						{{-- <div class="form-group">
+							<label class="text-center" for="visibility"></label>
 							<input value="{{old('visibility', $dish->visibility)}}"  type="checkbox" name="visibility" class="form-control my-form" id="visibility" value="{{ ('checked' ? 1 : NULL)}}">     
+						</div> --}}
+						<div class="col-12 box-btn-dish-create">
+							<button type="submit" class="btn my-btn-dish btn-create-dish">Modifica piatto</button>
+							<a class="btn my-btn-dish btn-create-dish" href="{{ url('/admin/dishes') }}">Torna indietro</a>
 						</div>
 
-
-						<button type="submit" class="btn my-btn">Modifica piatto</button>
+						
 					</form>
 				</div>
 			</div>

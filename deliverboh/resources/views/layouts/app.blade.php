@@ -28,7 +28,7 @@
         @include('partials.header')
     </section>
     
-    <section class="sfondo">
+    <section>
         @yield('content')
     </section>
     

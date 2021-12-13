@@ -1,0 +1,32 @@
+.box-order-index {
+    height: calc(100vh - 22vh);
+    overflow-y: auto;
+}
+.box-card-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color:white ;
+    border-radius: 5px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 5px 10px 18px #9c9b9b;
+    padding: 10px;
+    margin: 20px;
+    // overflow-y: auto;
+    text-align: center;
+}
+.table-order-index {
+  
+}
+.row-head {
+    background-color:rgba(189, 215, 188, 0.3);
+    text-align: center;
+    color: #439373;
+}
+.link-dettaglio-order {
+    color: #be541e;
+}
+.link-dettaglio-order:hover {
+    color: #343434;
+}

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid box-image-login">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-sm-12 col-md-6">
             <div class="my-card">
-                <div class="card-header header">{{ __('Login') }}</div>
+                <div class="card-header header-login">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -44,7 +44,7 @@
                                 <div class="form-check">
                                     <input class="my-check" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label my-remember" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>

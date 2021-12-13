@@ -1,33 +1,40 @@
 .space-dash{
-    margin: 0 auto;
-    
+    height: calc(100vh - 58.94px);
+    background-image: url('/images/nuovo-sfondo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .box-big-dash {
-    height: 100%;
-    background-color: rgba($color: #343434, $alpha: 0.2);
-    border-radius: 5px;
-    border-bottom-right-radius: 40px;
+    height: calc(100vh - 58.94px);
+    // background-color: rgba($color: #343434, $alpha: 0.2);
+    // border-radius: 5px;
+    // border-bottom-right-radius: 40px;
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 .top-dash {
-    background-color: #439373;
-    color: white;   
-}
-.text-link-dash {
+    // background-color: #439373;
+    background-color: $arancioscuro;
     color: white;
+    // border-top-right-radius: 5px; 
+    // border-top-left-radius: 5px;   
+}
+
+.text-link-dash {
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+    transition: 0.5s;
 }
 .text-link-dash:hover {
-    color: #b5d8ba !important;
+    color: $verdescuro;
+    border-bottom: 1px solid $verdescuro;
 }
 .text-name-dash {
-    color: #f1c692;
+    color: $verdescuro;
     font-size: 30px;
     // text-transform: initial;
     text-transform: capitalize;
-
 }
-
-
 
 
