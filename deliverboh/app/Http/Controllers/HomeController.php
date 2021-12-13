@@ -29,6 +29,15 @@ class HomeController extends Controller
     public function home(){
         return view('api.home');
     }
+
+    public function pagamento(){
+        return view('ordine-ok');
+    }
+   
+    public function pagamentoFallito(){
+        return view('ordine-fallito');
+    }
+
     public function checkout()
     {
         // $gateway = new Braintree\Gateway([

@@ -1,23 +1,13 @@
 <template>
     <div>
-        <!-- <Header /> -->
         <Main />
-        <!-- <Menu /> -->
-        <!-- <ConfermaOrdine /> -->
-        <!-- <OrdineApprovato /> -->
-        <!-- <Api /> -->
-        <!-- <button @click="prova()">ciao</button> -->
-
-        <!-- <Footer /> -->
+     <!-- <Api /> -->
     </div>
 </template>
 
 <script>
 // import Api from "../components/Api";
 import Main from "../components/Main";
-import Menu from "../components/Menu";
-import ConfermaOrdine from "../components/ConfermaOrdine";
-import OrdineApprovato from "../components/OrdineApprovato";
 
 
 export default {
@@ -25,9 +15,6 @@ export default {
     components: {
         // Api,
         Main,
-        Menu,
-        ConfermaOrdine,
-        OrdineApprovato,
     },
 };
 </script>

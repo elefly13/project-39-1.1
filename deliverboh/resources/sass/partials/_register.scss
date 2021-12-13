@@ -27,10 +27,20 @@
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(89 145 117 / 25%);
 }
+
 .my-btn {
     color: #fff;
     background-color: #439373;
     border-color: #439373; 
     // margin-bottom: 20px;
    
+}
+
+.onde {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/images/nuovo-sfondo.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    
 }

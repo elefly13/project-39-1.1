@@ -25,6 +25,11 @@ Route::get('/', 'HomeController@home')->name('homepage');
 
 Auth::routes();
 
+// Pagina pagamento ok
+Route::get('/pagamento', 'HomeController@pagamento')->name('pagamento');
+// Pagina pagamento non ok
+Route::get('/pagamentoFallito', 'HomeController@pagamentoFallito')->name('pagamentoFallito');
+
 
  
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
@@ -59,15 +64,15 @@ Route::post('/checkout', function(Request $request){
         $sum=$sum+ ( $request['price'][$i]*$request['quantity'][$i]);
     };
     
-    
-     $cart=[
+    $sum = number_format($sum, 2);
+    $cart=[
         'dish_id'=>$request['id'],
         'name'=>$request['name'],
         'price'=> $request['price'],
         'description'=> $request['description'],
         'quantity'=> $request['quantity'],
         'sum'=>$sum
-     ];
+    ];
     //  $name=$request['name'];
     //  $price= $request['price'];
     //  $description= $request['description'];
@@ -138,8 +143,11 @@ Route::post('/conferma', function(Request $request){
         Mail::to($new_order['email'])->send(new SendNewMail());
  
         $transaction = $result->transaction;
-        return view('api.home');
-    
+        // return view('api.home');
+        return view('ordine-ok');
+
+        // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
+        // return back()->with('success_message','Transaction complete ID:'. $transaction->id);
     } else {
         $errorString = "";
         $new_order['status']=0;
@@ -150,7 +158,9 @@ Route::post('/conferma', function(Request $request){
 
         // $_SESSION["errors"] = $errorString;
         // header("Location: " . $baseUrl . "index.php");
-        return back()->withErrors('An error occurred with the message: '.$result->message);
+        // return back()->withErrors('An error occurred with the message: '.$result->message);
+        return view('ordine-fallito');
+        // qui va la pagina ordine non ok
     }
 });
 
