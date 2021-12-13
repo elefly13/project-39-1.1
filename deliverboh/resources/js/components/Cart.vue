@@ -66,6 +66,7 @@ export default {
         cartContent: function () {
             let somma = 0;
             for (const i in this.cartContent) {
+
                 let totalPrice = this.cartContent[i].quantity * this.cartContent[i].price;
                 somma += totalPrice;   
             }

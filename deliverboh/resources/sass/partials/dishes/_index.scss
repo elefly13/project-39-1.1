@@ -1,12 +1,11 @@
 .big-box-dish {
-    width: 100%;
-    height: calc(100vh - 30vh);
-    margin: 20px auto;
+    height: calc(100vh - 20vh);
+    margin: 2px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow-x: auto;
+    // overflow-x: auto;
 }
 .card-dish-index {
     position: relative;
@@ -21,23 +20,24 @@
     border-radius: 5px;
     border-bottom-right-radius: 40px;
     box-shadow: 5px 10px 18px #9c9b9b;
-    padding: 10px;
+    // padding: 10px;
     margin: 20px;
 }
 .img-dish-index {
     display: block;
-    width: 230px;
+    width: 250px;
     height: 150px;
     object-fit: cover;
-    border-radius: 5px;
-    border-bottom-right-radius: 40px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    // border-bottom-right-radius: 40px;
     background-color: #f4f0e2;
 }
 .nome-dish-index {
     font-size: 18px; 
-    color: #be541e; 
+    color: $arancioscuro; 
     padding: 8px 0;
-    text-transform: capitalize;
+    // text-transform: capitalize;
  }
 .p-dish-index {
     font-size: 12px;
@@ -52,6 +52,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .btn-dish-index {
@@ -63,36 +64,49 @@
     background-color:  red;
     color: #f4f0e2;
 }
-// .link-dish-index {
-//     color: #439373;
-//     transition: 0.5s;
-// }
+.link-dish-index {
+    color: $verdescuro;
+    transition: 0.5s;
+}
 .link-dish-index:hover {
-    color: #343434;
-    background-color: #b5d8ba;
+    color: $aranciochiaro;
     text-decoration: none;
 }
 .btn-top-index {
+    text-align: center;
     font-size: 16px;
-    padding: 10px;
-    background-color: #b5d8ba;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-right: 20px;
+    margin-top: 2px;
+    padding: 10px 100px;
+    background-color: $verdescuro;
+    border-radius: 5px;
     text-decoration: none;
-    
-    color: #be541e;
-
+    color: white;
 }
 .overlay-dish-index {
     position: absolute;
     bottom: 0;
     background: rgba(189, 215, 188, 0.5);
     width: 100%;
-    
     border-radius: 5px;
     border-bottom-right-radius: 40px;
     padding: 5px;
- 
-  }
+}
+.nome-dish-index::first-letter {
+    text-transform: uppercase;
+}
+.card-gray {
+    background-color: rgba($grigioscuro, $alpha: 0.2);
+}
+.my-alert {
+    width: 310px;
+    position: absolute;
+    left: 50px;
+    padding: 10px 0;
+    background-color: $verdechiaro;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 2px;
+    border-radius: 5px;
+    color: white;
 
+}

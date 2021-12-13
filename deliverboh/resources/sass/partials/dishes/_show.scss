@@ -27,8 +27,20 @@
     border-bottom-right-radius: 40px;
     background-color: #f4f0e2;
 }
+.card-title {
+    color: $verdescuro;
+}
 .text-show {
     max-width: 200px;
+}
+.link-dettaglio-dish {
+    color: #be541e;
+}
+.link-dettaglio-dish:hover {
+    color: #343434;
+}
+.nome-dish-show::first-letter {
+    text-transform: uppercase;
 }
 
 

@@ -2,6 +2,13 @@
     <section class="middle">
         <div class="middle-top">
             <Search @performSearch="searchRest"/>
+
+            <!-- <div class="user-info" v-if="this.switchMenu == true">
+                <span class="saluto">Benvenuto nel nostro ristorante</span>
+                <span class="user-name">{{ this.restaurantName }}</span>
+                <span class="menu-text">Il nostro menu</span>
+                <button class="button" @click="emptyCart()">svuota carrello</button>
+            </div> -->
         </div>
         <div class="user-info-nascosto" v-if="this.switchMenu == true">
             <h1 class="user-name">{{ this.restaurantName }}</h1>
@@ -23,7 +30,7 @@
                         <div class="nome-piatto">
                             <h4>{{ dish.name }}</h4>
                             <p>{{ dish.description }}</p>
-                            <h4>{{ dish.price }} €</h4>
+                            <h4>€ {{ dish.price }}</h4>
                             <p>Ingredienti:</p>
                             <p>{{ dish.ingredients }}</p>
                         </div>
@@ -154,7 +161,13 @@ export default {
         },
     },
     methods: {
+        emptyCart(){
+            this.cart = []
+            this.restaurant = 0
+            return
+        },
         sendCart(dish) {
+            
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
             }
@@ -167,7 +180,6 @@ export default {
                         if( (this.cart[i].id === dish.id) && (this.cart.length > 1)){
                         this.cart.pop();
                         this.cart[i].quantity++;
-                        console.log('sono qui dentro')
                         return
                         }                             
                     }
@@ -175,7 +187,7 @@ export default {
             } else {
                 alert('devi svuotare il carrello prima di poter ordinare di nuovo da questo ristorante')
             }
-        }, 
+        },
         menuShow(user) {
             this.switchMenu = true
             this.restaurantName = user.name

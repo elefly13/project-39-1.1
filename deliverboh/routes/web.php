@@ -90,21 +90,13 @@ Route::post('/checkout', function(Request $request){
 }); 
 
 Route::post('/conferma', function(Request $request){
-     
-    // $order= [
-    //     $request->lastname,
-    //     $request->name,
-    //     $request->lastname,
-    //     // $request->lastname
-    // ];
-    // dd($order);
     $gateway = new Braintree\Gateway([
         'environment' => 'sandbox',
         'merchantId' => 'zfjjgykn84td5wdp',
         'publicKey' => 'mctc6yb5cscswrmn',
         'privateKey' => 'ac3d4ee7cf509dd7573af794ecbb6a2d',
     ]);
-
+    
     $amount = $request->amount;
     $nonce = $request->payment_method_nonce;
 
@@ -116,7 +108,7 @@ Route::post('/conferma', function(Request $request){
         ]
     ]);
     
-
+    
     $new_order = new order();
     $new_order['email']=$request['email'];
     $new_order['lastname_user']=$request['lastname'];
@@ -133,11 +125,11 @@ Route::post('/conferma', function(Request $request){
         $new_order['status']=1;
         $new_order->save();
         
-        
         for ($i=0; $i< count( $request['id']); $i++ ){
             $prova= new DishOrder();
             $prova['dish_id']=$request['id'][$i];
             $prova['order_id']=$new_order['id'];
+            $prova['quantity']=$request['quantity'][$i];
             $prova->save();
         };
         $dish = Dish::findOrFail($prova['dish_id']);
@@ -146,6 +138,7 @@ Route::post('/conferma', function(Request $request){
             $q->where('user_id', $dish['user_id']);
         })->get();
         $mailristorante=$user[0]['email'];
+        // spedita mail conferma
         Mail::to( $mailristorante)->send(new SendNewMail());
         Mail::to($new_order['email'])->send(new SendNewMail());
  

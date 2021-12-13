@@ -7,13 +7,6 @@
     width: 180px;
     object-fit: cover;
 }
-// header{
-//     // position: fixed;
-//     // top: 0;
-//     // left: 0;
-//     // background-image: linear-gradient(to right, white , 0);
-//     // z-index: 999;
-// }
 
 .h-header {
     height: 8vh;
@@ -21,7 +14,9 @@
 nav {
     height: 100%; 
 }
-
-// .space {
-//     margin-top: 200px;
-// }
+.nome-ristorante {
+    color: #e79e43 !important;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: capitalize;
+}

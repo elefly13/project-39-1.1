@@ -28,7 +28,7 @@ class OrderController extends Controller
 
             $orders=Order::whereHas('dishes',function($q ) use ($user) {
                 $q->where('user_id', $user['id']);
-            })->get();
+            })->orderBy('created_at', 'desc')->get();
             $data = $orders;
         }
         return view('admin.orders.index', compact('data'));
@@ -72,9 +72,18 @@ class OrderController extends Controller
      */
     public function show($id)
     {
+        $user = Auth::user();
         $order = Order::find($id);
         $data = [$order];
-        return view('admin.orders.show', compact('data'));
+        $quanto=DishOrder::where('order_id',  $order['id'])->get();
+    
+
+        $carrello=Dish::whereHas('orders',function($q ) use ($order) {
+            
+            $q->where('order_id', $order['id']);
+        })->get();
+       
+        return view('admin.orders.show', compact('carrello','quanto', 'order'));
     }
 
     /**
