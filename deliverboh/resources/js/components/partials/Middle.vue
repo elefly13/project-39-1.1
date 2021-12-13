@@ -1,15 +1,12 @@
 <template>
     <section class="middle">
-
         <div class="middle-top">
             <Search @performSearch="searchRest"/>
         </div>
-
         <div class="user-info-nascosto" v-if="this.switchMenu == true">
             <h1 class="user-name">{{ this.restaurantName }}</h1>
             <h4 class="menu-text">Il nostro menu</h4>
         </div>
-        
         <div class="middle-bottom">
             <div  v-if="this.switchMenu == false" class="box-user">
                 <div v-for="(user, index) in this.ristoranti" :key="index" class="container-card">
@@ -80,6 +77,13 @@ export default {
         this.getCategoryUsers();
     },
     watch: {
+        cart: function () {
+            if (this.cart.length == 0) {
+                    this.cart = []
+                    this.restaurant = 0
+                    return
+            }
+        },
         popUser: function () {
             var popDishes = [];
             for (const i in this.dishes) {
@@ -150,16 +154,10 @@ export default {
         },
     },
     methods: {
-        emptyCart(){
-            this.cart = []
-            this.restaurant = 0
-            return
-        },
         sendCart(dish) {
             if(this.restaurant == 0) {
                 this.restaurant = dish.user_id
             }
-
             if(this.restaurant ==  dish.user_id){
             if(this.cart.length === 0){
                 this.cart.push(dish)
@@ -261,7 +259,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.card-piatti {
+    .card-piatti {
         width: 200px;
         height: 300px;
         display: flex;
@@ -274,7 +272,7 @@ export default {
         transition: 0.5s;
         box-shadow: 5px 10px 18px #e3e3e3;
         position: relative;
-}
+    }
 
     .box-img-piatti {
         width: 100%;
@@ -303,7 +301,7 @@ export default {
    .user-btn {
        border: 0px;
        background: transparent;
-   }
+    }
 
     .middle {
         height: 100%;
@@ -323,18 +321,10 @@ export default {
         text-align: right;
         display: none;
     } 
-  
-    // .user-info-nascosto {
-    //     margin-right: 17%;
-    //     white-space: nowrap;
-    //     text-align: right;
-    //     display: none;
-    // } 
 
     .user-info-nascosto {
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
-
         display: block;
         position: absolute;
         bottom: 0;
@@ -345,13 +335,11 @@ export default {
         z-index: 10;
         background: white;
         box-shadow: 5px 10px 18px #e3e3e3;
-
-        }
+    }
     
     .user-name {
         margin: 0;
         padding: 0;
-        color:#648F64;
         color:#E69E42;
     }
     
@@ -359,17 +347,18 @@ export default {
         color: black;
     }
         
-    @media screen and (max-width: 930px){
-        .middle-top {
-            flex-direction: column;
-        }
-
-        .user-info {
-            margin-right: none;
-            text-align: left;
-            text-align: center;
-        }
+@media screen and (max-width: 930px){
+    
+    .middle-top {
+        flex-direction: column;
     }
+
+    .user-info {
+        margin-right: none;
+        text-align: left;
+        text-align: center;
+    }
+}
 
     .middle-bottom {
         height: 75%;
@@ -386,12 +375,13 @@ export default {
     .box-menu {
         width: calc(100% - 250px);
         height: 100%;
+        height: 92%;
         overflow-y: auto;
         display: flex;
         flex-wrap: wrap;
     }
 
-    @media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) {
 
     .box-user {
         width: 100%;
@@ -399,7 +389,8 @@ export default {
         overflow-y: scroll;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-top: 30px;
     }
 
     .box-menu {
@@ -409,24 +400,23 @@ export default {
         overflow-y: scroll;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        padding: 20px;
+        justify-content: flex-start;
+        padding: 10px 0px;
     }
 
     .middle-top {
-        height: 15%;
+        height: 11%;
         display: flex;
         position: relative;
         justify-content: space-between;
         padding: 0px;
-        box-shadow: 5px 10px 18px #e3e3e3;
-        }
+    }
 
-      .user-info {
-          display: none;
-        }
+    .user-info {
+        display: none;
+    }
      
-      .user-info-nascosto {
+    .user-info-nascosto {
         display: block;
         position: absolute;
         bottom: 0;
@@ -437,98 +427,76 @@ export default {
         z-index: 10;
         background: white;
         box-shadow: 5px 10px 18px #e3e3e3;
-
-        }
-
-        .user-name {
-            font-size: 20px;
-        }
-
-        .menu-text {
-            font-size: 14px;
-        }
     }
-    
 
+    .user-name {
+        font-size: 20px;
+    }
+
+    .menu-text {
+        font-size: 14px;
+    }
+}
+    
     .image {
         padding: 20px 20px 20px 0px;
         height: 350px;
-        }
+    }
 
-        h4 {
-            font-size: 18px; 
-            color: #be541e; 
-            text-transform: capitalize;
-        }
+    h4 {
+        font-size: 18px; 
+        color: #E69E42; 
+        text-transform: capitalize;
+    }
 
-        p {
-            font-size: 12px;
-            text-align: center;
-        }
+    p {
+        font-size: 12px;
+        text-align: center;
+    }
         
-        .button {
-            box-shadow: 5px 10px 18px #a09f9f;
-            margin: 10px;
-            padding: 5px;
-            border: none;
-            border-color: #439373;
-            border-radius: 3px;
-            border-bottom-right-radius: 10px;
-            background-color:  #439373;
-            color: #f4f0e2;
-            transition: 0.6s;
-            position: absolute;
-            bottom: 0;
-        }
+    .button {
+        box-shadow: 5px 10px 18px #a09f9f;
+        margin: 10px;
+        padding: 5px;
+        border: none;
+        border-color: #439373;
+        border-radius: 3px;
+        border-bottom-right-radius: 10px;
+        background-color:  #439373;
+        color: #f4f0e2;
+        transition: 0.6s;
+        position: absolute;
+        bottom: 0;
+    }
 
-        .button:hover {            
-            margin: 10px;
-            padding: 10px;
-            border: none;
-            border-color: #f1c692;
-            border-radius: 3px;
-            border-bottom-right-radius: 10px;
-            background-color:  #f1c692;
-            color: #343434;
-        }
+    .button:hover {            
+        margin: 10px;
+        padding: 10px;
+        border: none;
+        border-color: #f1c692;
+        border-radius: 3px;
+        border-bottom-right-radius: 10px;
+        background-color:  #E69E42;
+        color: #343434;
+    }
     
-
     .card-piatti:hover {
         transform: scale(1.05);
     }
    
-
     .container-card {
         padding: 20px 20px 20px 0px;
         height: 350px;
     }
 
     .cart-container {
-        width: 250px;
         display: flex;
         justify-content: flex-end;
         position: fixed;
         right: 0;
-        top: 4vh;
+        top: 19vh;
         z-index: 99;
     }
-
-@media screen and (max-width: 575px) {
-    .container-card {
-        padding: 20px;
-        height: 350px;
-    }
-
-    .cart-container {
-        width: 250px;
-        display: flex;
-        justify-content: flex-end;
-        position: fixed;
-        right: 0;
-        top: 4vh;
-        z-index: 99;
-    }
-}
 
 @media screen and (min-width:320px) and (max-width:736px) and (orientation:landscape) {
 
@@ -561,23 +529,22 @@ export default {
         z-index: 10;
         background: white;
         box-shadow: 5px 10px 18px #e3e3e3;
+    }
 
-        }
+    .user-name {
+        font-size: 20px;
+    }
 
-        .user-name {
-            font-size: 20px;
-        }
-
-        .menu-text {
-            font-size: 14px;
-        }
+    .menu-text {
+        font-size: 14px;
+    }
   
     .user-name {
         margin: 0;
         padding: 0;
-        color:#648F64;
         color:#E69E42;
     }
+
     .menu-text {
         color: black;
     }
@@ -585,6 +552,7 @@ export default {
     .middle-bottom {
         height: 75%;
     }
+
     .box-user {
         width: calc(100% - 250px);
         height: 100%;
@@ -593,6 +561,7 @@ export default {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
+
     .container-card {
         display: flex;
         padding: 8px 8px 0px 0px;
@@ -600,10 +569,12 @@ export default {
         align-items: flex-start;
         height: 350px;
     }
+
     .user-btn {
        border: 0px;
        background: transparent;
     }
+
     .box-menu {
         width: calc(100% - 250px);
         height: 100%;
@@ -613,12 +584,14 @@ export default {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
+
     .image {
         display: flex;
         padding: 8px 8px 0px 0px;
         justify-content: center;
         height: 350px;
     }
+
     .card-piatti {
         width: 150px;
         height: 250px;
@@ -631,18 +604,22 @@ export default {
         transition: 0.5s;
         box-shadow: 5px 10px 18px #e3e3e3;
     }
+
     .card-piatti:hover {
         transform: scale(1.05);
     }
+
     .box-img-piatti {
         width: 100%;
         height: 50%;
     }
+
     .box-img-piatti > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+
     .nome-piatto {
         width: 100%;
         height: 100px;
@@ -655,9 +632,11 @@ export default {
         padding: 10px;
         margin-top: 15px;
     }
+
     .nome-piatto > h4 {
         font-size: 15px;
     }
+
     .nome-piatto > p {
         font-size: 12px;
     }
@@ -684,9 +663,10 @@ export default {
         border-color: #f1c692;
         border-radius: 3px;
         border-bottom-right-radius: 10px;
-        background-color:  #f1c692;
+        background-color:  #EBBB57;
         color: #343434;
     }
+
     .cart-container {
         width: 250px;
         display: flex;

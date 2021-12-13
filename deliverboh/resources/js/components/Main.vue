@@ -1,6 +1,5 @@
 <template>
     <main class="main">
-        
         <div class="box-main" :style="(this.menuFlag == true) ? 'height: calc(100%)' : 'height: calc(100% - 150px)'">
             <div class="sidbar ">
                 <Checked @selCategories = "getCategories" :emptycheck="menuFlag" />
@@ -45,7 +44,6 @@ export default {
         savePop(user) {
             this.pop = user
             this.menuFlag = true
-            // alert(this.menuFlag)
         },
         getCategories(selCategories) {
            this.categories = selCategories;
@@ -58,6 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    
     .main{
         width: 100vw;
         height: calc(100vh - 58.95px);
@@ -74,16 +73,16 @@ export default {
         margin-right: 30px;
         padding: 0px;
         overflow: auto;
-        // background: chocolate;
     }
 
     .main-right {
         width: 100%;
-        background-image: url('/images/unarota.svg');
+        background-image: url('/images/nuovo-back.svg');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: 100% 0%; 
     }
+
     .main-bottom {
         width: 100vw;
         height: 150px;
@@ -108,14 +107,13 @@ export default {
         width: 300px;
     }
 
-
-    @media screen and (max-width: 930px){
+@media screen and (max-width: 930px){
         .main-right {
             background: none;
         }
     }
    
-    @media screen and (max-width: 575px) { // cambiato
+@media screen and (max-width: 575px) {
        
         .box-main {
             display: flex;
@@ -129,98 +127,96 @@ export default {
             align-items: center;
             width: 30%;
             margin-right: 0px;
-            // background: #638F64;
         }
+
         .main-right {
             width: 70%;
-            // background: red;
         }
 
-         .main-bottom {
-        width: 100vw;
-        height: 150px;
-        display: flex;
-        align-items: center;
-        position: relative;
-        background-color: #F4F0E2;
-        flex-direction: column;
-    justify-content: flex-end;
-    }
+        .main-bottom {
+            width: 100vw;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: #F4F0E2;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
 
-    .vuoto {
-        display: none
-    }
+        .vuoto {
+            display: none
+        }
 
-    h1 {
-        display: flex;
-        position: absolute;
-        left: 0%;
-        top: 0;
-        justify-content: center;
-        width: 100%;
-        font-size: 22px;
-    }
-    }
+        h1 {
+            display: flex;
+            position: absolute;
+            left: 0%;
+            top: 0;
+            justify-content: center;
+            width: 100%;
+            font-size: 22px;
+        }
+}
 
 
-    @media screen and (min-width:320px) and (max-width:736px) and (orientation:landscape) {
-    .main{
-        width: 100vw;
-        height: calc(100vh - 58.95px);
-    }
+@media screen and (min-width:320px) and (max-width:736px) and (orientation:landscape) {
 
-    .box-main {
-        display: flex;
-        width: 100vw;
-        height: calc(100% - 80px);
-    }
+        .main{
+            width: 100vw;
+            height: calc(100vh - 58.95px);
+        }
 
-    .sidbar {
-        width: 15%;
-        margin-right: 30px;
-        padding: 0px;
-        overflow: auto;
-    }
+        .box-main {
+            display: flex;
+            width: 100vw;
+            height: calc(100% - 80px);
+        }
 
-    .main-right {
-        width: 100%;
-        background-image: url('/images/unarota.svg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: 100% 0%; 
-    }
-       .main-bottom {
-        width: 100vw;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        position: relative;
-        background-color: #F4F0E2;
-    }
+        .sidbar {
+            width: 15%;
+            margin-right: 30px;
+            padding: 0px;
+            overflow: auto;
+        }
 
-    .vuoto {
-        width: 15%;
-        height: 100%;
-        bottom: 0;
-        left: 0;
-    }
+        .main-right {
+            width: 100%;
+            background-image: url('/images/unarota.svg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 100% 0%; 
+        }
+        .main-bottom {
+            width: 100vw;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: #F4F0E2;
+        }
 
-    h1 {
-        display: flex;
-        position: absolute;
-        left: 15%;
-        top: 0;
-        width: 300px;
-        font-size: 18px;
-    }
+        .vuoto {
+            width: 15%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+        }
 
+        h1 {
+            display: flex;
+            position: absolute;
+            left: 15%;
+            top: 0;
+            width: 300px;
+            font-size: 18px;
+        }
 }
 
 @media screen and (min-width:320px) and (max-width:3280px) and (orientation:landscape) {
       .sidbar {
         width: 15%;
         margin-right: 30px;
-        // padding-right: 15px;
         overflow: auto;
     }
 }

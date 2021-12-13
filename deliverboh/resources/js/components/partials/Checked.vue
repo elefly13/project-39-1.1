@@ -37,7 +37,6 @@ export default {
             const bodyParameters = {
                 key: "value",
             };
-
             const config = {
                 headers: { Authorization: `Bearer ${this.api_token}` },
             };
@@ -72,12 +71,11 @@ export default {
     .btn-check { 
         opacity: 0;
         width: 250px;
-        // min-height: 40px;
         height: 40px;
     }
 
     [type=checkbox]:checked + label {
-        background-color:#638F64;
+        background-color:#439373;
         color: white;
     }
 
@@ -211,9 +209,7 @@ export default {
         border-top-right-radius: 7px;
         border-bottom-right-radius: 7px;
     }
-
 }
-
 
 @media screen and (min-width:320px) and (max-width:736px) and (orientation:landscape) {
 

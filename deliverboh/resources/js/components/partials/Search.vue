@@ -1,13 +1,10 @@
 <template>
     <section class="search">
-      
         <h1 class="slogan">I piatti che ami, a domicilio</h1>
-
         <div class="search-box">
             <input @keyup.enter="$emit('performSearch', searchrestaurant)" class="search-input" v-model="searchrestaurant" type="text" placeholder="cerca un tipo di ristorante"/>
             <button class="search-button" @click.prevent="$emit('performSearch', searchrestaurant)">Cerca</button>
         </div>
-    
     </section>
 </template>
 
@@ -42,7 +39,7 @@ export default {
         width: 70%;
         min-width: 200px;
         max-width: 350px;
-        color: grey;
+        color: #343434;
         font-size: 1em;
         outline: none;
         border: 0px;
@@ -60,7 +57,7 @@ export default {
         border: none;
         border-radius: 7px;
         padding: 0 15px;
-        background-color: #638f64;
+        background-color:#439373;
     }
 
 
@@ -72,11 +69,16 @@ export default {
         flex-direction: column;
         align-content: flex-start;
         flex-wrap: nowrap;
+        padding-top: 27px;
+        position: relative;
     }
 
     .slogan {
         white-space: normal;
         font-size: 22px;
+        position: absolute;
+        top: 0;
+        left: -19%;
     }
 
     .search-box {
@@ -89,7 +91,7 @@ export default {
         width: 70%;
         min-width: 200px;
         max-width: 350px;
-        color: grey;
+        color: #343434;
         font-size: 1em;
         outline: none;
         border: 0px;
@@ -107,7 +109,7 @@ export default {
         border: none;
         border-radius: 7px;
         padding: 0 15px;
-        background-color: #638f64;
+        background-color:#439373;
     }
 }
 
@@ -124,7 +126,7 @@ export default {
         width: 40%;
         min-width: 200px;
         max-width: 350px;
-        color: grey;
+        color: #343434;
         font-size: 1em;
         outline: none;
         border: 0px;
@@ -133,6 +135,7 @@ export default {
         margin-right: 10px;
         background: #F4F0E1;
     }
+
     .search-button {
         height: 20px;
         color: white;
@@ -141,7 +144,7 @@ export default {
         border: none;
         border-radius: 7px;
         padding: 0 15px;
-        background-color: #638f64;
+        background-color:#439373;
     }
 }
 

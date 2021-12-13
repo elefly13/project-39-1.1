@@ -3,7 +3,7 @@
     <a class="navbar-brand box-logo" href="{{ url('/') }}">
       <img src=" {{ asset('images/LogoVerde.png') }} " class="logo" alt="{{ config('app.name', 'DeliverBoh') }}">
     </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Right Side Of Navbar -->
