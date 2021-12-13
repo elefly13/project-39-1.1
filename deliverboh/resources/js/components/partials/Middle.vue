@@ -23,7 +23,7 @@
 
             <div v-if="this.switchMenu == true" class="box-menu">
                 <div class="image" v-for="(dish, index) in this.filterDishes" :key="index">
-                    <div class="card-piatti">
+                    <div v-if="dish.visibility == 1"  class="card-piatti">
                         <div class="box-img-piatti">
                             <img :src="'./storage/' + dish.image" :alt="dish.name">
                         </div>
