@@ -13305,7 +13305,6 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  overflow-x: auto;
 }
 
 .card-dish-index {
@@ -13344,7 +13343,7 @@ nav {
 .p-dish-index {
   font-size: 12px;
   white-space: nowrap;
-  overflow: auto;
+  overflow: hidden;
   text-overflow: ellipsis;
   max-width: 200px;
 }

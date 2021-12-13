@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow-x: auto;
+    // overflow-x: auto;
 }
 .card-dish-index {
     position: relative;
@@ -43,7 +43,7 @@
     font-size: 12px;
     // padding: 3px 0;
     white-space: nowrap;
-    overflow: auto;
+    overflow: hidden;
     text-overflow: ellipsis;
     max-width: 200px;
      
