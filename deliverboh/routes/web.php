@@ -64,15 +64,15 @@ Route::post('/checkout', function(Request $request){
         $sum=$sum+ ( $request['price'][$i]*$request['quantity'][$i]);
     };
     
-    
-     $cart=[
+    $sum = number_format($sum, 2);
+    $cart=[
         'dish_id'=>$request['id'],
         'name'=>$request['name'],
         'price'=> $request['price'],
         'description'=> $request['description'],
         'quantity'=> $request['quantity'],
         'sum'=>$sum
-     ];
+    ];
     //  $name=$request['name'];
     //  $price= $request['price'];
     //  $description= $request['description'];

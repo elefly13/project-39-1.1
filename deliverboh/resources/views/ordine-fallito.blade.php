@@ -24,7 +24,7 @@
     
     <div class="container-fluid-special">
         <div class="row justify-content-center">
-            <div class="big-box col-md-8 col-lg-12">
+            <div class="big-box-ordine col-md-8 col-lg-12">
                 <h1>Il tuo Ordine non è andato a buon fine</h1>
                 <h3>Controlla che tutto sia corretto!</h3>
                 <a href="/">Torna al pagamento</a> 

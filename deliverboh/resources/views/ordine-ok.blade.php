@@ -24,7 +24,7 @@
     
     <div class="container-fluid-special">
         <div class="row justify-content-center">
-            <div class="big-box col-md-8 col-lg-12">
+            <div class="big-box-ordine col-md-8 col-lg-12">
                 <h1>Il tuo Ordine è stato correttamente processato</h1>
                 <h3>A breve riceverai una mail di riepilogo</h3>
                 <h2>Grazie per averci scelto</h2>
