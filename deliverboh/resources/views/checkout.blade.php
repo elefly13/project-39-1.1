@@ -41,15 +41,6 @@
                             <h5 class="text-h5-check">€ {{$cart['sum']}}</h5>
                         </div>
                     </div>
-                    {{-- <div class="note-cliente">
-                        <h6>NOTE:</h6>
-                        <p>Una Pizza Margherita senza Mozzarella.
-                            Grazie
-                        </p>
-                    </div> --}}
-                    {{-- <div class="col-12 btn">
-                        <button type="submit" class="button button-check">Modifica il tuo ordine</button>
-                    </div> --}}
                 </div>
                 <!-- Fine scontrino di riepilogo dell'ordine  -->
 
@@ -89,7 +80,7 @@
                             <label for="amount" class="col- 12 box-totale-check">
                                 <span class="input-label text-totale-check">Totale</span>
                                 <span class="input-wrapper amount-wrapper">
-                                    <div class="num-tot-check">€ {{$cart['sum']}}</div>
+                                    <div class="num-tot-check">€ {{round($cart['sum'], 2)}}</div>
                                     <input class=" my-total " id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{$cart['sum']}}" readonly>
                                 </span>
                             </label>
@@ -146,98 +137,3 @@
 </script>
 
 @endsection
-  
- {{-- codice di Federico  --}}
-{{-- @for ($i=0; $i< count( $cart['name'] ); $i++ )
-<div> {{$cart['name'][$i]}}  quantità:{{$cart['quantity'][$i]}} {{$cart['price'][$i]}}€</div>
-<div>{{$cart['description'][$i]}} </div>
-@endfor
- 
-  
-<form method="post" id="payment-form" action="{{ url('/conferma') }}">
-  @csrf
-    @foreach ($cart['dish_id'] as $pip)
-    <input  type="hidden" name="id[]" value="{{$pip}}">
-    @endforeach
-    @for ($i=0; $i< count( $cart['name'] ); $i++ )
-  <input  type="hidden" name="quantity[]" value="{{$cart['quantity'][$i]}}">
-    @endfor
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="name">name</label>
-                                <input type="text" class="form-control" id="name" name="name">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="lastname">lastname</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email">email</label>
-                                <input type="text" class="form-control" id="email" name="email">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address" name="address">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="note">note</label>
-                                 <textarea  type="text" class="form-control" id="note" name="note"></textarea>
-                            </div>
-                        </div>
-                <section>
-                    <label for="amount">
-                        <span class="input-label">Amount</span>
-                        <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$cart['sum']}}" readonly>
-                        </div>
-                    </label>
-
-                    <div class="bt-drop-in-wrapper">
-                        <div id="bt-dropin"></div>
-                    </div>
-                </section>
-
-                <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="button" type="submit"><span>Test Transaction</span></button>
-            </form>
-            <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.min.js"></script>
-    <script>
-        var form = document.querySelector('#payment-form');
-        var client_token = "{{$token}}";
-
-        braintree.dropin.create({
-          authorization: client_token,
-          selector: '#bt-dropin',
-          paypal: {
-            flow: 'vault'
-          }
-        }, function (createErr, instance) {
-          if (createErr) {
-            console.log('Create Error', createErr);
-            return;
-          }
-          form.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            instance.requestPaymentMethod(function (err, payload) {
-              if (err) {
-                console.log('Request Payment Method Error', err);
-                return;
-              }
-
-              // Add the nonce to the form and submit
-              document.querySelector('#nonce').value = payload.nonce;
-              form.submit();
-            });
-          });
-        });
-    </script> --}}

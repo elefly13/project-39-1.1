@@ -10,7 +10,7 @@
                 <img src="{{ asset('storage/'.$dish->image)}}" alt="{{ $dish->image}}" class="card-img-top">
                 @endif
                 <div class="card-body">
-                    <h4 class="card-title">{{$dish['name']}}</h4>
+                    <h4 class="card-title nome-dish-show">{{$dish['name']}}</h4>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Descrizione: {{$dish['description']}}</li>

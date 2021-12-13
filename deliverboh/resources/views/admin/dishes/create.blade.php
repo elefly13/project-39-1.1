@@ -1,7 +1,7 @@
 @extends('admin.dashboard')
 
 @section('dashboard')
-<div class="container-fluid">
+<div class="container-fluid big-box-dish-create">
 	<div class="row justify-content-center">
 		<div class="coll-sm-12 col-md-8">
 			<div class="card-header header-create">
@@ -64,9 +64,9 @@
 					<div class="form-group">
 						{{-- Select visibilità  --}}
 						<select class="col-sm-12 col-md-3 py-2 form-select form-select-sm my-form" name="visibility" id="visibility">
-							<option selected>Seleziona la visibilità</option>
-							<option value="{{ ('1')}}">Visibile</option>
-							<option value="{{ ('0')}}">Non visibile</option>
+							<option value="1" selected>Seleziona la visibilità</option>
+							<option value="1">Visibile</option>
+							<option value="0">Non visibile</option>
 						</select>
 					</div>
 					{{-- <div class="form-group">

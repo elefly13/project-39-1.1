@@ -56,9 +56,9 @@
 						<div class="form-group">
 							{{-- Select visibilità  --}}
 							<select class="col-sm-12 col-md-3 py-2 form-select form-select-sm my-form" name="visibility" id="visibility">
-								<option selected>Seleziona la visibilità</option>
-								<option value="{{ ('1')}}">Visibile</option>
-								<option value="{{ ('0')}}">Non visibile</option>
+								<option value="1" selected>Seleziona la visibilità</option>
+								<option value="1">Visibile</option>
+								<option value="0">Non visibile</option>
 							</select>
 						</div>
 						{{-- <div class="form-group">
