@@ -15828,11 +15828,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/davidenapolitano/Desktop/HTML-CSS-JS/progetto-finale/project-39-1.1/deliverboh/resources/js/router.js */"./resources/js/router.js");
-=======
-module.exports = __webpack_require__(/*! /Users/elena/Desktop/classe 39/Esecizio Finale/project-39-1.1/deliverboh/resources/js/router.js */"./resources/js/router.js");
->>>>>>> main
 
 
 /***/ })

@@ -29,7 +29,7 @@
             <h4 class="nome-dish-index">€ {{$dish['price']}}</h4>
             <p>Ingredienti:</p>
             <p class="p-dish-index">{{$dish['ingredients']}}</p>
-            <p>Allergeni:</p>
+            {{-- <p>Allergeni:</p> --}}
             {{-- <p class="p-dish-index">{{$allergen['name']}}</p> --}}
             <p class="p-dish-index">{{$dish['course']}}</p>
             <p>{{($dish['visibility'] == 0) ? 'Non visibile' : 'Visibile'}}</p>
@@ -39,7 +39,7 @@
                     <form action="{{route('admin.dishes.destroy', $dish->id)}}" class="d-inline-block delete-post"  method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-dish-index" >Delete</button>
+                        <button onclick="window.confirmDelete()" type="submit" class="btn btn-dish-index" >Delete</button>
                     </form> 
                     <a class="link-dish-index" href="{{route('admin.dishes.edit', $dish->id)}}">Modifica piatto</a>
                 </div>

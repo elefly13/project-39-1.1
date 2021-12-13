@@ -46,10 +46,7 @@
 
 					<div class="form-group">
 						<label for="course">Portata</label>
-						<input value="{{old('course')}}" type="text" name="course" class="form-control my-form @error('price') is-invalid @enderror" id="course" placeholder="scrivi il tipo di portata">  
-						@error('course')
-							<div class="alert alert-danger">{{ $message }}  </div>
-						@enderror   
+						<input value="{{old('course')}}" type="text" name="course" class="form-control my-form" id="course" placeholder="scrivi il tipo di portata">  
 					</div>
 					<div class="form-group">
 						<p>Seleziona gli allergeni:</p>

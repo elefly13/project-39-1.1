@@ -2,7 +2,7 @@
     <section class="search">
         <h1 class="slogan">I piatti che ami, a domicilio</h1>
         <div class="search-box">
-            <input @keyup.enter="$emit('performSearch', searchrestaurant)" class="search-input" v-model="searchrestaurant" type="text" placeholder="cerca un tipo di ristorante"/>
+            <input @keyup.enter="$emit('performSearch', searchrestaurant)" @keyup.backspace="$emit('performSearch', searchrestaurant)" class="search-input" v-model="searchrestaurant" type="text" placeholder="cerca un tipo di ristorante"/>
             <button class="search-button" @click.prevent="$emit('performSearch', searchrestaurant)">Cerca</button>
         </div>
     </section>

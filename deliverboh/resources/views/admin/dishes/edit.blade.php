@@ -15,7 +15,10 @@
 						
 						<div class="form-group">
 							<label for="name">Nome piatto</label>
-							<input value="{{old('name', $dish->name)}}" type="text" name="name" class="form-control my-form" id="name" placeholder="Inserisci il nome">     
+							<input value="{{old('name', $dish->name)}}" type="text" name="name" class="form-control my-form @error('name') is-invalid @enderror" id="name" placeholder="Inserisci il nome"> 
+							@error('name')
+								<div class="alert alert-danger">{{ $message }}  </div>
+							@enderror    
 						</div>
 						<div class="form-group">
 							<label for="course">Portata</label>
@@ -35,7 +38,10 @@
 						</div>
 						<div class="form-group">
 							<label for="price">Prezzo</label>
-							<input value="{{old('price', $dish->price)}}"  step="any" type="number" name="price" class="form-control my-form" id="price" placeholder="inserisci il prezzo">
+							<input value="{{old('price', $dish->price)}}"  step="any" type="number" name="price" class="form-control my-form @error('price') is-invalid @enderror" id="price" placeholder="inserisci il prezzo">
+							@error('price')
+								<div class="alert alert-danger">{{ $message }}  </div>
+							@enderror 
 						</div>
 						
 						{{-- <div class="form-group">
