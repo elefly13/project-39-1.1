@@ -21,8 +21,8 @@
     ?>
     <div class="card-dish-index {{($dish['visibility'] == 0) ? 'card-gray' : ''}}"  >
         @if ($toggle == false)
-
-            <img class="img-dish-index" src="{{ asset('storage/' . $dish['image']) }}" alt="{{$dish['name']}} ">
+            
+            <img class="img-dish-index" src="{{ asset('storage/'.$dish['image']) }}" alt="{{$dish['name']}} ">
             <h4 class="nome-dish-index">{{$dish['name']}} </h4>
             <p>Descrizione:</p>
             <p class="p-dish-index">{{$dish['description']}}</p>

@@ -2637,7 +2637,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card-piatti[data-v-1c77d2d7] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  flex-direction: column;\n  border: 0.3px solid #e4e4e4;\n  border-bottom-right-radius: 30px;\n  background: white;\n  transition: 0.5s;\n  box-shadow: 5px 10px 18px #e3e3e3;\n  position: relative;\n}\n.box-img-piatti[data-v-1c77d2d7] {\n  width: 100%;\n  height: 50%;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.nome-piatto[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100px;\n  position: absolute;\n  top: 45%;\n  overflow-y: scroll;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 10px;\n  margin-top: 15px;\n}\n.user-btn[data-v-1c77d2d7] {\n  border: 0px;\n  background: transparent;\n}\n.middle[data-v-1c77d2d7] {\n  height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n  height: 25%;\n  display: flex;\n  position: relative;\n  justify-content: space-between;\n  padding: 4vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n  margin-right: 17%;\n  white-space: nowrap;\n  text-align: right;\n  display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  display: block;\n  position: absolute;\n  bottom: 0;\n  margin-right: none;\n  text-align: left;\n  text-align: center;\n  width: 70%;\n  z-index: 10;\n  background: white;\n  box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n  margin: 0;\n  padding: 0;\n  color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n  color: black;\n}\n@media screen and (max-width: 930px) {\n.middle-top[data-v-1c77d2d7] {\n    flex-direction: column;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n}\n}\n.middle-bottom[data-v-1c77d2d7] {\n  height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  overflow-y: auto;\n  display: flex;\n  flex-wrap: wrap;\n}\n.box-menu[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  height: 92%;\n  overflow-y: auto;\n  display: flex;\n  flex-wrap: wrap;\n}\n@media screen and (max-width: 575px) {\n.box-user[data-v-1c77d2d7] {\n    width: 100%;\n    height: calc(100vh - 300px);\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n    margin-top: 30px;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: 100%;\n    height: 72vh;\n    height: 75vh;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n    padding: 10px 0px;\n}\n.middle-top[data-v-1c77d2d7] {\n    height: 11%;\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 0px;\n}\n.user-info[data-v-1c77d2d7] {\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n}\n.image[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\nh4[data-v-1c77d2d7] {\n  font-size: 18px;\n  color: #E69E42;\n  text-transform: capitalize;\n}\np[data-v-1c77d2d7] {\n  font-size: 12px;\n  text-align: center;\n}\n.button[data-v-1c77d2d7] {\n  box-shadow: 5px 10px 18px #a09f9f;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n  position: absolute;\n  bottom: 0;\n}\n.button[data-v-1c77d2d7]:hover {\n  margin: 10px;\n  padding: 10px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #E69E42;\n  color: #343434;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n  transform: scale(1.05);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\n.cart-container[data-v-1c77d2d7] {\n  display: flex;\n  justify-content: flex-end;\n  position: fixed;\n  right: 0;\n  top: 19vh;\n  z-index: 99;\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.middle[data-v-1c77d2d7] {\n    height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 1vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: 17%;\n    white-space: nowrap;\n    text-align: right;\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n.user-name[data-v-1c77d2d7] {\n    margin: 0;\n    padding: 0;\n    color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n    color: black;\n}\n.middle-bottom[data-v-1c77d2d7] {\n    height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.container-card[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    align-items: flex-start;\n    height: 350px;\n}\n.user-btn[data-v-1c77d2d7] {\n    border: 0px;\n    background: transparent;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    height: 115%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.image[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    height: 350px;\n}\n.card-piatti[data-v-1c77d2d7] {\n    width: 150px;\n    height: 250px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border: 0.3px solid #e4e4e4;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n    transform: scale(1.05);\n}\n.box-img-piatti[data-v-1c77d2d7] {\n    width: 100%;\n    height: 50%;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.nome-piatto[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100px;\n    position: absolute;\n    top: 45%;\n    overflow: scroll;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    padding: 10px;\n    margin-top: 15px;\n}\n.nome-piatto > h4[data-v-1c77d2d7] {\n    font-size: 15px;\n}\n.nome-piatto > p[data-v-1c77d2d7] {\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7] {\n    box-shadow: 5px 10px 18px #a09f9f;\n    margin: 10px;\n    padding: 5px;\n    border: none;\n    border-color: #439373;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #439373;\n    color: #f4f0e2;\n    transition: 0.6s;\n    position: absolute;\n    bottom: 0;\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7]:hover {\n    margin: 10px;\n    padding: 10px;\n    border: none;\n    border-color: #f1c692;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #EBBB57;\n    color: #343434;\n}\n.cart-container[data-v-1c77d2d7] {\n    width: 250px;\n    display: flex;\n    justify-content: flex-end;\n    position: fixed;\n    right: 0;\n    top: 4vh;\n    z-index: 99;\n}\n}", ""]);
+exports.push([module.i, ".card-piatti[data-v-1c77d2d7] {\n  width: 200px;\n  height: 300px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  flex-direction: column;\n  border-radius: 5px;\n  border-bottom-right-radius: 30px;\n  background: white;\n  transition: 0.5s;\n  box-shadow: 5px 10px 13px #575555;\n  position: relative;\n}\n.box-img-piatti[data-v-1c77d2d7] {\n  width: 100%;\n  height: 50%;\n  padding: 3%;\n  border-radius: 5px;\n  border-bottom-right-radius: 30px;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  border-bottom-right-radius: 30px;\n}\n.nome-piatto[data-v-1c77d2d7] {\n  width: 100%;\n  height: 100px;\n  position: absolute;\n  top: 45%;\n  overflow-y: scroll;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  padding: 10px;\n  margin-top: 15px;\n}\n.user-btn[data-v-1c77d2d7] {\n  border: 0px;\n  background: transparent;\n}\n.middle[data-v-1c77d2d7] {\n  height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n  height: 25%;\n  display: flex;\n  position: relative;\n  justify-content: space-between;\n  padding: 4vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n  margin-right: 17%;\n  white-space: nowrap;\n  text-align: right;\n  display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  display: block;\n  position: absolute;\n  bottom: 0;\n  margin-right: none;\n  text-align: left;\n  text-align: center;\n  width: 70%;\n  z-index: 10;\n  background: white;\n  box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n  margin: 0;\n  padding: 0;\n  color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n  color: black;\n}\n@media screen and (max-width: 930px) {\n.middle-top[data-v-1c77d2d7] {\n    flex-direction: column;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n}\n}\n.middle-bottom[data-v-1c77d2d7] {\n  height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  overflow-y: auto;\n  display: flex;\n  flex-wrap: wrap;\n}\n.box-menu[data-v-1c77d2d7] {\n  width: calc(100% - 250px);\n  height: 100%;\n  height: 92%;\n  overflow-y: auto;\n  display: flex;\n  flex-wrap: wrap;\n}\n@media screen and (max-width: 575px) {\n.box-user[data-v-1c77d2d7] {\n    width: 100%;\n    height: calc(100vh - 300px);\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n    margin-top: 30px;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: 100%;\n    height: 72vh;\n    height: 75vh;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n    padding: 10px 0px;\n}\n.middle-top[data-v-1c77d2d7] {\n    height: 11%;\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 0px;\n}\n.user-info[data-v-1c77d2d7] {\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n}\n.image[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\nh4[data-v-1c77d2d7] {\n  font-size: 18px;\n  color: #E69E42;\n  text-transform: capitalize;\n}\np[data-v-1c77d2d7] {\n  font-size: 12px;\n  text-align: center;\n}\n.button[data-v-1c77d2d7] {\n  box-shadow: 1px 3px 3px #a09f9f;\n  margin: 10px;\n  padding: 5px;\n  border: none;\n  border-color: #439373;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #439373;\n  color: #f4f0e2;\n  transition: 0.6s;\n  position: absolute;\n  bottom: 0;\n}\n.button[data-v-1c77d2d7]:hover {\n  margin: 10px;\n  padding: 7px;\n  border: none;\n  border-color: #f1c692;\n  border-radius: 3px;\n  border-bottom-right-radius: 10px;\n  background-color: #E69E42;\n  color: white;\n  transition: 0.5s;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n  transform: scale(1.05);\n}\n.container-card[data-v-1c77d2d7] {\n  padding: 20px 20px 20px 0px;\n  height: 350px;\n}\n.cart-container[data-v-1c77d2d7] {\n  display: flex;\n  justify-content: flex-end;\n  position: fixed;\n  right: 0;\n  top: 19vh;\n  z-index: 99;\n}\n@media screen and (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {\n.middle[data-v-1c77d2d7] {\n    height: 100%;\n}\n.middle-top[data-v-1c77d2d7] {\n    display: flex;\n    position: relative;\n    justify-content: space-between;\n    padding: 1vh 0vh;\n}\n.user-info[data-v-1c77d2d7] {\n    margin-right: 17%;\n    white-space: nowrap;\n    text-align: right;\n    display: none;\n}\n.user-info-nascosto[data-v-1c77d2d7] {\n    display: block;\n    position: absolute;\n    bottom: 0;\n    margin-right: none;\n    text-align: left;\n    text-align: center;\n    width: 70%;\n    z-index: 10;\n    background: white;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.user-name[data-v-1c77d2d7] {\n    font-size: 20px;\n}\n.menu-text[data-v-1c77d2d7] {\n    font-size: 14px;\n}\n.user-name[data-v-1c77d2d7] {\n    margin: 0;\n    padding: 0;\n    color: #E69E42;\n}\n.menu-text[data-v-1c77d2d7] {\n    color: black;\n}\n.middle-bottom[data-v-1c77d2d7] {\n    height: 75%;\n}\n.box-user[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.container-card[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    align-items: flex-start;\n    height: 350px;\n}\n.user-btn[data-v-1c77d2d7] {\n    border: 0px;\n    background: transparent;\n}\n.box-menu[data-v-1c77d2d7] {\n    width: calc(100% - 250px);\n    height: 100%;\n    height: 115%;\n    overflow-y: scroll;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n.image[data-v-1c77d2d7] {\n    display: flex;\n    padding: 8px 8px 0px 0px;\n    justify-content: center;\n    height: 350px;\n    border-radius: 5px;\n    border-bottom-right-radius: 30px;\n}\n.card-piatti[data-v-1c77d2d7] {\n    width: 150px;\n    height: 250px;\n    display: flex;\n    align-items: center;\n    text-align: center;\n    border-radius: 5px;\n    border-bottom-right-radius: 30px;\n    background: white;\n    transition: 0.5s;\n    box-shadow: 5px 10px 18px #e3e3e3;\n}\n.card-piatti[data-v-1c77d2d7]:hover {\n    transform: scale(1.05);\n}\n.box-img-piatti[data-v-1c77d2d7] {\n    width: 100%;\n    height: 50%;\n    border-radius: 5px;\n    border-bottom-right-radius: 30px;\n}\n.box-img-piatti > img[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 5px;\n    border-bottom-right-radius: 30px;\n}\n.nome-piatto[data-v-1c77d2d7] {\n    width: 100%;\n    height: 100px;\n    position: absolute;\n    top: 45%;\n    overflow: scroll;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    padding: 10px;\n    margin-top: 15px;\n}\n.nome-piatto > h4[data-v-1c77d2d7] {\n    font-size: 15px;\n}\n.nome-piatto > p[data-v-1c77d2d7] {\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7] {\n    box-shadow: 5px 10px 18px #a09f9f;\n    margin: 10px;\n    padding: 5px;\n    border: none;\n    border-color: #439373;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #439373;\n    color: #f4f0e2;\n    transition: 0.6s;\n    position: absolute;\n    bottom: 0;\n    font-size: 12px;\n}\n.button[data-v-1c77d2d7]:hover {\n    margin: 10px;\n    padding: 5px;\n    border: none;\n    border-color: #f1c692;\n    border-radius: 3px;\n    border-bottom-right-radius: 10px;\n    background-color: #EBBB57;\n    color: #343434;\n}\n.cart-container[data-v-1c77d2d7] {\n    width: 250px;\n    display: flex;\n    justify-content: flex-end;\n    position: fixed;\n    right: 0;\n    top: 4vh;\n    z-index: 99;\n}\n}", ""]);
 
 // exports
 
@@ -4408,38 +4408,43 @@ var render = function () {
             { staticClass: "box-menu" },
             _vm._l(this.filterDishes, function (dish, index) {
               return _c("div", { key: index, staticClass: "image" }, [
-                _c("div", { staticClass: "card-piatti" }, [
-                  _c("div", { staticClass: "box-img-piatti" }, [
-                    _c("img", {
-                      attrs: { src: "./storage/" + dish.image, alt: dish.name },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "nome-piatto" }, [
-                    _c("h4", [_vm._v(_vm._s(dish.name))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(dish.description))]),
-                    _vm._v(" "),
-                    _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Ingredienti:")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(dish.ingredients))]),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button",
-                      on: {
-                        click: function ($event) {
-                          _vm.sendCart(dish), _vm.openCart()
+                dish.visibility == 1
+                  ? _c("div", { staticClass: "card-piatti" }, [
+                      _c("div", { staticClass: "box-img-piatti" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "./storage/" + dish.image,
+                            alt: dish.name,
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "nome-piatto" }, [
+                        _c("h4", [_vm._v(_vm._s(dish.name))]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(dish.description))]),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("€ " + _vm._s(dish.price))]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("Ingredienti:")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(dish.ingredients))]),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "button",
+                          on: {
+                            click: function ($event) {
+                              _vm.sendCart(dish), _vm.openCart()
+                            },
+                          },
                         },
-                      },
-                    },
-                    [_vm._v("Aggiungi al carrello")]
-                  ),
-                ]),
+                        [_vm._v("Aggiungi al carrello")]
+                      ),
+                    ])
+                  : _vm._e(),
               ])
             }),
             0
@@ -4501,7 +4506,7 @@ var render = function () {
           },
         ],
         staticClass: "search-input",
-        attrs: { type: "text", placeholder: "cerca un tipo di ristorante" },
+        attrs: { type: "text", placeholder: "Cerca un ristorante" },
         domProps: { value: _vm.searchrestaurant },
         on: {
           keyup: [
@@ -17597,7 +17602,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/davidenapolitano/Desktop/HTML-CSS-JS/progetto-finale/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/elena/Desktop/classe 39/Esecizio Finale/deliverboo/project-39-1.1/deliverboh/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

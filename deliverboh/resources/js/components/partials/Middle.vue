@@ -278,23 +278,28 @@ export default {
         align-items: center;
         text-align: center;
         flex-direction: column;
-        border: 0.3px solid rgb(228, 228, 228);
+        border-radius: 5px;
         border-bottom-right-radius: 30px;
         background: rgb(255, 255, 255);
         transition: 0.5s;
-        box-shadow: 5px 10px 18px #e3e3e3;
+        box-shadow: 5px 10px 13px #575555;
         position: relative;
     }
 
     .box-img-piatti {
         width: 100%;
         height: 50%;
+        padding: 3%;
+        border-radius: 5px;
+        border-bottom-right-radius: 30px;
     }
 
     .box-img-piatti > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 5px;
+        border-bottom-right-radius: 30px;
     }
 
     .nome-piatto {
@@ -467,7 +472,7 @@ export default {
     }
         
     .button {
-        box-shadow: 5px 10px 18px #a09f9f;
+        box-shadow: 1px 3px 3px #a09f9f;
         margin: 10px;
         padding: 5px;
         border: none;
@@ -483,13 +488,14 @@ export default {
 
     .button:hover {            
         margin: 10px;
-        padding: 10px;
+        padding: 7px;
         border: none;
         border-color: #f1c692;
         border-radius: 3px;
         border-bottom-right-radius: 10px;
         background-color:  #E69E42;
-        color: #343434;
+        color: white;
+        transition: 0.5s;
     }
     
     .card-piatti:hover {
@@ -602,6 +608,8 @@ export default {
         padding: 8px 8px 0px 0px;
         justify-content: center;
         height: 350px;
+        border-radius: 5px;
+        border-bottom-right-radius: 30px;
     }
 
     .card-piatti {
@@ -610,7 +618,7 @@ export default {
         display: flex;
         align-items: center;
         text-align: center;
-        border: 0.3px solid #e4e4e4;
+        border-radius: 5px;
         border-bottom-right-radius: 30px;
         background: white;
         transition: 0.5s;
@@ -624,12 +632,16 @@ export default {
     .box-img-piatti {
         width: 100%;
         height: 50%;
+        border-radius: 5px;
+        border-bottom-right-radius: 30px;
     }
 
     .box-img-piatti > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 5px;
+        border-bottom-right-radius: 30px;
     }
 
     .nome-piatto {
@@ -670,7 +682,7 @@ export default {
     }
     .button:hover {            
         margin: 10px;
-        padding: 10px;
+        padding: 5px;
         border: none;
         border-color: #f1c692;
         border-radius: 3px;
