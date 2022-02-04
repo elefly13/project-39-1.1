@@ -1,5 +1,5 @@
 <header class="container-fluid">
-  <nav class="navbar navbar-expand-md navbar-light ">
+  <nav class="navbar navbar-expand-md navbar-light">
     <a class="navbar-brand box-logo" href="{{ url('/') }}">
       <img src=" {{ asset('images/LogoVerde.png') }} " class="logo" alt="{{ config('app.name', 'DeliverBoh') }}">
     </a>
@@ -8,11 +8,11 @@
       </button>
       <!-- Right Side Of Navbar -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ">
           <!-- Authentication Links -->
           @if (Route::has('login'))
             @auth
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">

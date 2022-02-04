@@ -10,6 +10,7 @@
 
 .h-header {
     height: 8vh;
+    
 }
 nav {
     height: 100%; 
@@ -19,4 +20,7 @@ nav {
     font-size: 16px;
     font-weight: 800;
     text-transform: capitalize;
+}
+.navbar-expand-md .navbar-collapse {
+    justify-content: flex-end;
 }

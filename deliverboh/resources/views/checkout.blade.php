@@ -74,8 +74,8 @@
                             <input type="text" class="form-control input-check" id="address" name="address" placeholder="Via/Corso, numero città CAP ">
                         </div>
                         <div class="col-12 input">
-                            <label  class="form-label">Note di consegna</label>
-                            <textarea class="form-control text-area" aria-label="With textarea"></textarea>
+                            <label for="note" class="form-label">Note di consegna</label>
+                            <textarea class="form-control text-area" name="note" aria-label="With textarea"></textarea>
                         </div>
                         <div class="col-12 input">
                             <label for="amount" class="col- 12 box-totale-check">

@@ -21,20 +21,20 @@ export default {
             user_name: 'Trattoria Conconi'
            },
            {
-            user_id: 2,
+            user_id: 3,
             user_img: 'images/image-res/res-2.jpg',
             user_name: 'La Coppa d\'oro'
            },
            {
-            user_id: 2,
+            user_id: 4,
             user_img: 'images/image-res/res-3.jpg',
             user_name: 'Strippoli Osteria Pugliese',
            },
-           {
-            user_id: 2,
-            user_img: 'images/image-res/res-2.jpg',
-            user_name: 'Trattoria Conconi',
-           }
+          //  {
+          //   user_id: 4,
+          //   user_img: 'images/image-res/res-2.jpg',
+          //   user_name: 'Trattoria Conconi',
+          //  }
         ],
         pop: null
       }
@@ -80,7 +80,7 @@ export default {
       z-index: 10;
       text-align: center;
       border: 0.3px solid rgb(228, 228, 228);
-      border-bottom-right-radius: 30px;
+      border-radius: 10px;
       background: rgb(255, 255, 255);
     }
 
@@ -99,8 +99,9 @@ export default {
     }
 
     .box > h5 {
-      font-size: 20px;
-      display: block;
+      font-size: 15px;
+      position: relative;
+      display: inline;
       text-align: center;
       height: 10vh;
       line-height: 2.6;

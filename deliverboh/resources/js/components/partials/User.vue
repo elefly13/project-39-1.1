@@ -2,14 +2,14 @@
     <section>
         <div class="card ">
             <div class="box-img">
-                <img src="/images/image-res/res-1.jpg" alt="">
+                <img :src="'./images/image-res/' + info['restaurant_image']" alt="">
             </div>
             <ul>
                 <h4>
                     {{info['restaurant_name']}}
                 </h4>
                 <li class="list-box">
-                    <span>{{info['restaurant_name']}}</span>
+                    <!-- <span>{{info['restaurant_name']}}</span> -->
                     <span>{{info['address']}}</span> 
                 </li>            
             </ul> 
@@ -20,7 +20,34 @@
 <script>
 export default {
     name: "User",
-    props: ['info']
+    props: ['info'],
+    data () {
+      return {
+        users: [
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-1.jpg',
+            user_name: 'Trattoria Conconi'
+           },
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-2.jpg',
+            user_name: 'La Coppa d\'oro'
+           },
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-3.jpg',
+            user_name: 'Strippoli Osteria Pugliese',
+           },
+           {
+            user_id: 2,
+            user_img: 'images/image-res/res-2.jpg',
+            user_name: 'Trattoria Conconi',
+           }
+        ],
+        pop: null
+      }
+    },
 }
 </script>
 
@@ -51,11 +78,11 @@ export default {
         display: flex;
         align-items: center;
         text-align: center;
-        border: 0.3px solid rgb(228, 228, 228);
+        border-radius: 5px;
         border-bottom-right-radius: 30px;
         background: rgb(255, 255, 255);
         transition: 0.5s;
-        box-shadow: 5px 10px 18px #e3e3e3;
+        box-shadow: 5px 10px 18px #747373;
         position: relative;
     }
 
@@ -67,12 +94,15 @@ export default {
         width: 100%;
         height: 50%;
         margin-bottom:10px;
+        padding: 3%;
     }
 
     .box-img > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 5px;
+        border-bottom-right-radius: 30px;
     }
 
 

@@ -100,10 +100,11 @@ export default {
     }
 
     h1 {
+        font-size: 30px;
         display: flex;
         position: absolute;
         left: 15%;
-        top: 0;
+        top: 1%;
         width: 300px;
     }
 

@@ -34,7 +34,7 @@
                             <p>Ingredienti:</p>
                             <p>{{ dish.ingredients }}</p>
                         </div>
-                    <button class="button" @click="sendCart(dish), openCart()">Aggiungi al carrello</button>              
+                        <button class="button" @click="sendCart(dish), openCart()">Aggiungi al carrello</button>              
                     </div>
                 </div>                        
             </div>
@@ -322,6 +322,7 @@ export default {
 
     .middle {
         height: 100%;
+        padding-left: 20px;
     }
 
     .middle-top {
@@ -569,6 +570,7 @@ export default {
 
     .middle-bottom {
         height: 75%;
+         padding-left: 20px;
     }
 
     .box-user {

@@ -13086,6 +13086,10 @@ nav {
   text-transform: capitalize;
 }
 
+.navbar-expand-md .navbar-collapse {
+  justify-content: flex-end;
+}
+
 .sfondo > img {
   height: 75%;
   -o-object-fit: contain;
@@ -13316,9 +13320,9 @@ a:hover {
 
 .space-dash {
   height: calc(100vh - 58.94px);
-  background-image: url("/images/nuovo-sfondo.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #f4f0e2;
 }
 
 .box-big-dash {
@@ -13401,6 +13405,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  overflow-x: auto;
 }
 
 .card-dish-index {
